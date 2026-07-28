@@ -1,0 +1,6 @@
+.DS_Store
+.work/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+
