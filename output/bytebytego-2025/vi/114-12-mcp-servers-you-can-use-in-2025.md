@@ -74,3 +74,16 @@ Một agent làm báo cáo tài chính có thể dùng Google Drive MCP để đ
 - `Secret management`: quản lý khóa/API secret an toàn.
 - `Read-only mode`: chế độ chỉ đọc.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm MCP Server nào khác vào danh sách?
+
+**Trả lời:** Nên bổ sung evaluation harness để đo chất lượng thay vì cảm tính; guardrails/policy để giảm prompt injection và output nguy hiểm; observability cho prompt, context, latency, cost và hallucination; và model routing theo độ khó/cost của request. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: MCP chuẩn hóa việc nối AI model/agent với tool bên ngoài. Bài này lặp lại danh sách MCP server đã xuất hiện ở bài 074 và 108, nhưng vẫn được dịch riêng để giữ đúng thứ tự archive. Trong production, điểm quan trọng là permission và audit. File system MCP, database MCP hoặc Stripe MCP đều có thể rất mạnh, nên cần giới hạn quyền theo workspace, read-only mode, scope và secret management.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `12 MCP Server bạn có thể dùng trong năm 2025`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `MCP`, `MCP Server`, `Capability`, `Scope`, `Audit`.

@@ -61,3 +61,16 @@ Trong e-commerce, `Order Service` không nên ghi trực tiếp database của `
 - `Orchestration`: điều phối container/service bằng Kubernetes hoặc nền tảng tương tự.
 - `API Gateway`: cổng vào route request tới service phù hợp.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “A picture is worth a thousand words: 9 best practices for developing microservices”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Nếu rút thành checklist thiết kế thì ý chính là: Microservices không chỉ là “tách service nhỏ”. Mỗi service cần ownership dữ liệu, build/deploy độc lập, trách nhiệm rõ, stateless, containerized và được orchestration tốt. DDD giúp tách service theo business boundary, còn micro frontend giúp frontend không trở thành monolith khi backend đã tách nhỏ. Khi áp dụng vào hệ thống thật, hãy kiểm thêm requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team.
+
+**Thinking học tập + liên hệ:** Ôn tập `Một hình đáng giá ngàn lời: 9 best practice khi phát triển microservices` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Microservice`, `Data ownership`, `Stateless service`, `Container`, `DDD`.

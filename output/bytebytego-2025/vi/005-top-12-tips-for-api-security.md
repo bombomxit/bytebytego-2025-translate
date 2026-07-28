@@ -61,3 +61,17 @@ Nếu API trả lỗi, response nên là thông báo an toàn như `Permission d
 - `Allowlist`: danh sách được phép truy cập.
 - `OWASP`: tổ chức cung cấp danh sách rủi ro bảo mật phổ biến.
 - `Input validation`: kiểm tra input đúng kiểu, đúng format, đúng rule nghiệp vụ.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Top 12 Tips for API Security”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Nếu rút thành checklist thiết kế thì ý chính là: Bảo mật API không chỉ là bật HTTPS. Một API production cần nhiều lớp phòng vệ: mã hóa đường truyền, xác thực, phân quyền, giới hạn tần suất, validate input, quản lý version, kiểm soát allowlist, xử lý lỗi an toàn và giám sát các rủi ro đã biết. Trong system design, nên xem API security như một chuỗi kiểm soát từ ngoài vào trong. HTTPS bảo vệ dữ liệu khi truyền qua network. OAuth2, WebAuthn và API key giúp xác định ai đang gọi. Authorization quyết định người đó được làm gì. Rate limiting và allowlist giảm abuse.... Khi áp dụng vào hệ thống thật, hãy kiểm thêm actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke.
+
+**Thinking học tập + liên hệ:** Khi học `12 mẹo quan trọng để bảo mật API`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `HTTPS`, `OAuth2`, `WebAuthn`, `API key`, `Allowlist`.

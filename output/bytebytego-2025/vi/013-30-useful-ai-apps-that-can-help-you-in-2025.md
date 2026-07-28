@@ -52,3 +52,17 @@ Một developer có thể dùng ChatGPT hoặc Claude để brainstorm kiến tr
 - `AI notetaker`: công cụ ghi âm, chuyển giọng nói thành text và tóm tắt meeting.
 - `AI agent builder`: công cụ tạo agent có workflow, tool và memory.
 - `Video repurposing`: tái sử dụng video dài thành nhiều clip ngắn.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm AI app nào khác vào danh sách?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là evaluation harness để đo chất lượng thay vì cảm tính; guardrails/policy để giảm prompt injection và output nguy hiểm; observability cho prompt, context, latency, cost và hallucination; và model routing theo độ khó/cost của request. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Bài này phân loại AI app theo nhu cầu sử dụng. Với developer, nhóm `Writing Code` hỗ trợ viết, đọc, refactor và debug code. Nhóm `General Purpose` phù hợp hỏi đáp, research và tạo nội dung. Nhóm `Productivity` giúp xử lý tài liệu, email, slide, ghi chú và dictation. Các nhóm còn lại phục vụ sáng tạo, xây dựng audience và học tập cá nhân.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `30 ứng dụng AI hữu ích có thể giúp bạn trong năm 2025`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `General purpose AI app`, `Coding assistant`, `AI notetaker`, `AI agent builder`, `Video repurposing`.

@@ -57,3 +57,16 @@ Với một báo cáo PDF 200 trang có nhiều bảng, biểu đồ và layout 
 - `MoE`: Mixture of Experts, kiến trúc dùng nhiều expert và chọn một phần khi inference.
 - `Deep parsing`: phân tích sâu layout/table/document thành cấu trúc text.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Why is DeepSeek-OCR such a BIG DEAL?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: Ý tưởng chính là dùng hình ảnh như một dạng nén context. Văn bản dài nếu token hóa trực tiếp có thể tạo rất nhiều text token, làm attention tốn chi phí. Nếu biến trang tài liệu thành representation thị giác cô đọng, model có thể xử lý nhiều nội dung hơn với ít token hơn, đặc biệt hữu ích cho PDF, bảng và layout phức tạp. Khi áp dụng vào hệ thống thật, hãy kiểm thêm quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination.
+
+**Thinking học tập + liên hệ:** Đừng chỉ hỏi model này có nổi tiếng không; hãy hỏi nó có thắng trên benchmark của chính mình không. Liên hệ project AI bằng checklist: task nào cho DeepSeek, task nào giữ model khác, dữ liệu có được gửi ra ngoài không, cost/token giảm bao nhiêu và hallucination có tăng không. Các keyword cần tự giải thích lại: `OCR`, `Context window`, `Attention cost`, `Visual token`, `Encoder`.

@@ -67,3 +67,16 @@ Một SaaS đang tăng trưởng có thể bắt đầu bằng monolith Rails/La
 
 Asset `figure-02.png` của bài này được tách ra gần như là trang trắng. Mình vẫn giữ link ảnh để khớp bản gốc và tiện audit pipeline.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Shopify Tech Stacks and Tools”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: Điểm đáng học ở Shopify không phải chỉ là dùng Rails hay MySQL, mà là cách họ giữ một kiến trúc đơn giản đủ lâu trong khi liên tục thêm boundary, tooling và quy trình để scale. Modular monolith giúp tránh microservices hóa quá sớm, còn pod/failure domain/deployment pipeline giúp cô lập rủi ro khi quy mô tăng. Khi áp dụng vào hệ thống thật, hãy kiểm thêm requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team.
+
+**Thinking học tập + liên hệ:** Khi học `Tech stack và tool của Shopify`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Modular monolith`, `Failure domain`, `YJIT`, `Sorbet`, `Packwerk`.

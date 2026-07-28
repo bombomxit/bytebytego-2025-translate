@@ -56,3 +56,16 @@ Bạn có thể build RAG local bằng Streamlit UI, LlamaIndex, Sentence Transf
 - `Reranker`: xếp hạng lại kết quả.
 - `Ingestion`: nạp/xử lý dữ liệu vào index.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm open-source tool nào khác vào danh sách?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là evaluation harness để đo chất lượng thay vì cảm tính; guardrails/policy để giảm prompt injection và output nguy hiểm; observability cho prompt, context, latency, cost và hallucination; và model routing theo độ khó/cost của request. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Open-source RAG stack gồm các lớp từ UI, orchestration, model, vector store, retrieval/ranking, embedding tới data ingestion. RAG production cần cả pipeline offline để ingest/index dữ liệu và pipeline online để retrieve context rồi gọi LLM. Điểm quan trọng là chất lượng retrieval quyết định phần lớn chất lượng answer. Nếu chunk sai, embedding kém hoặc ranking yếu, LLM sẽ trả lời kém dù model mạnh.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `Open Source RAG Stack`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `RAG`, `Chunk`, `Embedding model`, `Vector database`, `Retriever`.

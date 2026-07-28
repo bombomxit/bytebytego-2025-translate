@@ -54,3 +54,16 @@ Một request mobile đi qua Cloud Load Balancer, vào Kong API Gateway để va
 - `Rate limiting`: giới hạn tốc độ request.
 - `Service discovery`: tìm endpoint service.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Load Balancers vs API Gateways vs Reverse Proxy! And how can they Work Together?
+
+**Trả lời:** Load balancer chủ yếu phân phối traffic giữa nhiều instance/server để tăng availability và throughput. API Gateway đứng ở tầng API nên xử lý nhiều logic hơn: authentication, authorization, rate limit, routing theo path/version, logging, caching và protocol conversion. Trong kiến trúc production, hai lớp này thường đi cùng nhau: load balancer đưa traffic tới cụm gateway, gateway mới quyết định request đi tới service nào.
+
+**Thinking học tập + liên hệ:** API Gateway là boundary quan trọng, nên thinking phải xoay quanh trách nhiệm nào đặt ở gateway và trách nhiệm nào vẫn phải giữ trong service. Khi liên hệ project, hãy vẽ đường đi request từ client tới gateway tới microservice, rồi gắn auth, rate limit, logging, cache và circuit breaker vào đúng điểm. Các keyword cần tự giải thích lại: `Load balancer`, `API Gateway`, `Reverse proxy`, `AuthN`, `AuthZ`.

@@ -63,3 +63,26 @@ Trong hệ thống order, `Order` là Aggregate Root, `OrderItem` là entity bê
 - `Factory`: tạo object/aggregate phức tạp.
 - `Domain Event`: sự kiện nghiệp vụ đã xảy ra.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn có biết cách check equality của hai Value Object không?
+
+**Trả lời:** Hai Value Object bằng nhau khi toàn bộ thuộc tính tạo nên giá trị của chúng bằng nhau. Ví dụ `Money(100, 'USD')` bằng một object khác cũng có amount `100` và currency `USD`, dù chúng là hai instance khác nhau. Vì Value Object không có identity riêng, equality dựa trên value, không dựa trên database id.
+
+**Thinking học tập + liên hệ:** Khi học `Thuật ngữ chính trong Domain-Driven Design`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `DDD`, `Entity`, `Value Object`, `Aggregate`, `Aggregate Root`.
+
+### Câu hỏi 2
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Còn hai Entity thì sao?
+
+**Trả lời:** Hai Entity thường được xem là cùng một thực thể khi chúng có cùng identity, ví dụ cùng `user_id` hoặc `order_id`, kể cả một số field khác đang thay đổi theo thời gian. Với Entity, equality dựa vào định danh bền vững; còn trạng thái chỉ mô tả phiên bản hiện tại của entity đó.
+
+**Thinking học tập + liên hệ:** Ôn tập `Thuật ngữ chính trong Domain-Driven Design` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `DDD`, `Entity`, `Value Object`, `Aggregate`, `Aggregate Root`.

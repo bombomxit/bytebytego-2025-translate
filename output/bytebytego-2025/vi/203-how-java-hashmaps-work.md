@@ -54,3 +54,16 @@ Trong Java hiện đại, khi collision chain trong một bucket đủ dài và 
 - `Linked list`: danh sách liên kết dùng để chain entry.
 - `Treeify`: chuyển bucket chain thành tree khi collision nhiều.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** How Java HashMaps Work?
+
+**Trả lời:** Nên trả lời theo flow end-to-end: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `Java HashMap hoạt động như thế nào?`, ý chính là: HashMap nhanh vì nó không tìm tuần tự toàn bộ list. Nó hash key để nhảy gần như trực tiếp tới bucket cần tìm. Nếu hash phân bố tốt, lookup gần O(1). Nếu nhiều collision trong cùng bucket, lookup chậm hơn vì phải duyệt chain hoặc tree trong bucket đó.
+
+**Thinking học tập + liên hệ:** Luồng trong `Java HashMap hoạt động như thế nào?` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là loại dữ liệu, kích thước input, latency mục tiêu, memory budget và sai số/lỗi có thể chấp nhận. Trong project thật, thuật toán thường ẩn sau search, cache, ranking, routing, queue hoặc storage; hiểu nó giúp dự đoán bottleneck trước khi hệ thống lớn lên. Khi ghi chú lại, hãy giải thích được các keyword: `HashMap`, `Key-value pair`, `Hash function`, `Bucket`, `Collision`.

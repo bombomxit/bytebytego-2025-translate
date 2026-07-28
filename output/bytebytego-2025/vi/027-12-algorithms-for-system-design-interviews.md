@@ -71,3 +71,17 @@ Một search engine lớn có thể dùng HyperLogLog để ước lượng số
 - `Heavy hitter`: item xuất hiện với tần suất rất cao.
 - `Rate limiting`: giới hạn tốc độ request.
 - `Collaborative editing`: nhiều người cùng sửa tài liệu realtime.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm thuật toán nào khác vào danh sách?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là `A* Search` cho tìm đường có heuristic trong bản đồ/game; `BFS/DFS` cho crawler, dependency graph và duyệt quan hệ; `Consistent Hashing` để phân phối key ổn định trong cache/database cluster; và `Bloom Filter` để kiểm tra membership nhanh với bộ nhớ thấp. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Các thuật toán này xuất hiện nhiều trong system design vì chúng giải quyết những bài toán hạ tầng rất thực tế: kiểm tra membership nhanh, tìm kiếm theo vị trí, đếm unique ở quy mô lớn, phân phối dữ liệu qua cluster, đồng bộ replica, consensus, rate limiting và collaborative editing.
+
+**Thinking học tập + liên hệ:** Danh sách trong `12 thuật toán cho phỏng vấn System Design` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là loại dữ liệu, kích thước input, latency mục tiêu, memory budget và sai số/lỗi có thể chấp nhận. Trong project thật, thuật toán thường ẩn sau search, cache, ranking, routing, queue hoặc storage; hiểu nó giúp dự đoán bottleneck trước khi hệ thống lớn lên. Khi ghi chú lại, hãy giải thích được các keyword: `False positive`, `Consensus`, `Replica`, `Heavy hitter`, `Rate limiting`.

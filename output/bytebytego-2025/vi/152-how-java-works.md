@@ -48,3 +48,16 @@ Một Java service mới start có thể chưa đạt tốc độ tối đa ngay
 - `JIT`: Just-In-Time compiler.
 - `JAR`: Java archive.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Java hoạt động như thế nào?
+
+**Trả lời:** Luồng tốt nhất là lần theo input tới output: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `Java hoạt động như thế nào?`, ý chính là: Java chạy theo mô hình “compile once, run on JVM”. Source code được compile thành bytecode độc lập nền tảng. JVM load, verify và execute bytecode. Ban đầu interpreter chạy code; khi phát hiện đoạn chạy nhiều, JIT compile thành native machine code để tối ưu performance.
+
+**Thinking học tập + liên hệ:** Luồng trong `Java hoạt động như thế nào?` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `JVM`, `javac`, `Bytecode`, `Class Loader`, `Verifier`.

@@ -48,3 +48,16 @@ Google Drive-like app có thể dùng RBAC cho admin/editor/viewer, ACL cho từ
 - `Attribute`: thuộc tính user/resource/environment.
 - `Policy engine`: thành phần đánh giá rule truy cập.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Access Control Clearly Explained”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: RBAC dễ hiểu vì quyền đi theo vai trò. ABAC mạnh hơn vì quyết định dựa trên nhiều điều kiện động. ACL rõ ràng cho từng resource nhưng khi user/resource nhiều thì quản lý rất nặng. Trong hệ thống thực tế, các mô hình thường được kết hợp: role cho quyền cơ bản, attribute cho rule ngữ cảnh, ACL cho sharing tài nguyên cụ thể. Khi áp dụng vào hệ thống thật, hãy kiểm thêm quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination.
+
+**Thinking học tập + liên hệ:** Ôn tập `Giải thích rõ Access Control` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Access control`, `RBAC`, `ABAC`, `ACL`, `Role`.

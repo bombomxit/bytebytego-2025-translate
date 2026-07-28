@@ -60,3 +60,17 @@ Bạn có thể tạo một repo Git local bằng `git init`, commit code nhiề
 - `Branch`: nhánh phát triển độc lập.
 - `Remote`: repository ở nơi khác, ví dụ GitHub.
 - `Pull request`: yêu cầu review và merge code trên nền tảng như GitHub.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm điểm nào khác để phân biệt Git và GitHub?
+
+**Trả lời:** Nên bổ sung pre-commit hook/lint để chặn lỗi sớm; trunk-based development khi team cần release nhanh; branch protection và required checks; và reflog/revert strategy để cứu lỗi Git. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Git là engine version control. Nó chạy trên máy bạn, quản lý lịch sử commit, branch, merge, diff và revert. GitHub là nền tảng cloud dùng Git làm nền, thêm các tính năng cộng tác như pull request, issue, review, Actions, release, project board và permission. Trong workflow thực tế, developer dùng Git để commit local và quản lý branch. Khi cần chia sẻ code, review hoặc CI/CD, họ push repository lên GitHub. GitHub không thay thế Git; nó cung cấp remote hosting và collaboration layer trên Git.
+
+**Thinking học tập + liên hệ:** Danh sách trong `Git vs GitHub` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team. Khi áp dụng vào team thật, hãy nhìn developer workflow như một hệ thống: commit, review, test, deploy và rollback đều phải giảm rủi ro production. Khi ghi chú lại, hãy giải thích được các keyword: `Version control`, `Repository`, `Commit`, `Branch`, `Remote`.

@@ -48,3 +48,16 @@ Nếu API có 200 QPS và average RT là 500ms, concurrency xấp xỉ 100 reque
 - `Peak QPS`: QPS đỉnh trong một khoảng ngắn.
 - `Connection pool`: pool kết nối tới DB/service.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “System Performance Metrics Every Engineer Should Know”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: QPS đo request vào, TPS đo công việc hoàn tất, concurrency đo số request đang xử lý cùng lúc, RT đo độ trễ từng request. Các metric này liên quan trực tiếp: nếu RT tăng mà QPS giữ nguyên, concurrency cũng tăng, kéo theo nhu cầu connection/thread/memory cao hơn. Khi áp dụng vào hệ thống thật, hãy kiểm thêm requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team.
+
+**Thinking học tập + liên hệ:** Ôn tập `Các metric hiệu năng hệ thống mọi engineer nên biết` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `QPS`, `TPS`, `Concurrency`, `Response Time`, `Throughput`.

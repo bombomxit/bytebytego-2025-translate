@@ -64,3 +64,16 @@ Một lộ trình thực hành tốt: viết Dockerfile cho API nhỏ, tạo Dep
 - `Helm`: package manager cho Kubernetes manifest.
 - `GitOps`: dùng Git làm nguồn sự thật cho deployment.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác vào danh sách học Kubernetes?
+
+**Trả lời:** Có thể thêm SLO/error budget để biết hệ thống đủ tốt hay chưa; blue-green/canary deployment để giảm rủi ro release; secret management và least privilege IAM; và cost monitoring/tagging cho cloud bill. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Học Kubernetes nên đi theo thứ tự từ mental model tới vận hành. Trước hết cần hiểu cluster gồm control plane và worker node, pod là đơn vị chạy workload, deployment quản lý rollout, service/ingress đưa traffic vào app, volume/config/secret quản lý state và cấu hình.
+
+**Thinking học tập + liên hệ:** Danh sách trong `Học Kubernetes như thế nào?` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `Cluster`, `Control Plane`, `Pod`, `Deployment`, `Service`.

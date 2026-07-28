@@ -53,3 +53,17 @@ Trong backend, `Adapter` có thể bọc nhiều payment provider như Stripe, P
 - `Behavioral pattern`: pattern tổ chức hành vi và giao tiếp.
 - `Interface`: hợp đồng phương thức giữa các thành phần.
 - `Composition`: ghép object nhỏ thành object lớn hơn.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “18 Key Design Patterns Every Developer Should Know”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: Design pattern là ngôn ngữ chung để mô tả giải pháp thiết kế. Khi nói “dùng Adapter”, team hiểu ta đang bọc interface không tương thích. Khi nói “Observer”, team hiểu một object phát event và nhiều subscriber được notify. Pattern giúp giao tiếp nhanh hơn và tránh phát minh lại giải pháp đã quen thuộc. Khi áp dụng vào hệ thống thật, hãy kiểm thêm requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team.
+
+**Thinking học tập + liên hệ:** Ôn tập `18 design pattern quan trọng mọi developer nên biết` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Design pattern`, `Creational pattern`, `Structural pattern`, `Behavioral pattern`, `Interface`.

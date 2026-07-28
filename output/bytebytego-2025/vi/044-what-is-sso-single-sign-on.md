@@ -60,3 +60,37 @@ Một doanh nghiệp có HR, CRM, E-Office và BI dashboard. Nếu không có SS
 - `Global session`: phiên đăng nhập trung tâm ở SSO server.
 - `Token`: bằng chứng đăng nhập/quyền truy cập.
 - `MFA`: Multi-Factor Authentication, xác thực đa yếu tố.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã implement SSO trong project chưa?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: SSO cho phép user đăng nhập một lần rồi truy cập nhiều hệ thống liên quan. Thay vì mỗi app tự quản lý username/password riêng, các app tin tưởng một identity provider hoặc authentication server trung tâm. Điều này giúp UX tốt hơn, quản lý user tập trung hơn và dễ áp dụng policy như MFA, password policy, revoke access. Khi áp dụng vào hệ thống thật, hãy kiểm thêm actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke.
+
+**Thinking học tập + liên hệ:** Ôn tập `SSO (Single Sign-On) là gì?` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `SSO`, `Identity Provider`, `Service Provider`, `Global session`, `Token`.
+
+### Câu hỏi 2
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Phần khó nhất là gì?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: SSO cho phép user đăng nhập một lần rồi truy cập nhiều hệ thống liên quan. Thay vì mỗi app tự quản lý username/password riêng, các app tin tưởng một identity provider hoặc authentication server trung tâm. Điều này giúp UX tốt hơn, quản lý user tập trung hơn và dễ áp dụng policy như MFA, password policy, revoke access. Khi áp dụng vào hệ thống thật, hãy kiểm thêm actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke.
+
+**Thinking học tập + liên hệ:** Khi học `SSO (Single Sign-On) là gì?`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `SSO`, `Identity Provider`, `Service Provider`, `Global session`, `Token`.
+
+### Câu hỏi 3
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Phương thức sign-in yêu thích của bạn là gì và tại sao?
+
+**Trả lời:** Trong project thật, `SSO (Single Sign-On) là gì?` đáng dùng/thử khi bài toán khớp với nhu cầu cụ thể và team đo được kết quả. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: SSO cho phép user đăng nhập một lần rồi truy cập nhiều hệ thống liên quan. Thay vì mỗi app tự quản lý username/password riêng, các app tin tưởng một identity provider hoặc authentication server trung tâm. Điều này giúp UX tốt hơn, quản lý user tập trung hơn và dễ áp dụng policy như MFA, password policy, revoke access.
+
+**Thinking học tập + liên hệ:** Câu hỏi trải nghiệm trong `SSO (Single Sign-On) là gì?` nên quy về adoption: dùng cho workload nào, đo thành công bằng metric nào và có đáng giữ lâu dài trong stack không. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `SSO`, `Identity Provider`, `Service Provider`, `Global session`, `Token`.

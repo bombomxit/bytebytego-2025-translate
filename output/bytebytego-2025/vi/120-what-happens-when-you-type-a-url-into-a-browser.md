@@ -53,3 +53,16 @@ Nếu website load chậm, bottleneck có thể nằm ở DNS lookup lâu, TCP/T
 
 Phần HTTPS trong bài là phiên bản giải thích đơn giản. TLS hiện đại thường dùng key exchange như ECDHE thay vì đơn giản là client tạo session key rồi mã hóa trực tiếp bằng public key từ certificate. Ý chính vẫn là thiết lập kênh an toàn rồi dùng symmetric encryption cho dữ liệu truyền tải.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** What happens when you type a URL into a browser?
+
+**Trả lời:** Bài này muốn người đọc nắm: Khi gõ URL, browser không “đi thẳng” tới website ngay. Nó phải resolve domain thành IP, thiết lập kết nối TCP, thiết lập HTTPS/TLS nếu dùng secure connection, gửi HTTP request, nhận response, rồi render HTML/CSS/JS thành giao diện. Đây là một luồng rất hay để học system design vì nó chạm tới DNS, cache, TCP, TLS, HTTP, backend server và browser rendering engine. Khi áp dụng vào hệ thống thật, hãy kiểm thêm DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer.
+
+**Thinking học tập + liên hệ:** Liên hệ `Điều gì xảy ra khi bạn gõ URL vào trình duyệt?` bằng một scenario thật sẽ giúp thấy trade-off rõ hơn so với chỉ đọc định nghĩa. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `DNS`, `Recursive lookup`, `TCP 3-way handshake`, `TLS`, `DOM`.

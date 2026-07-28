@@ -59,3 +59,16 @@ Rule-based chatbot cũ có thể là AI nhưng không phải ML. Model dự đo�
 
 Bản gốc nói Generative AI “rely on Transformer Architecture”. Câu này đúng với nhiều text/code LLM, nhưng chưa bao quát toàn bộ Generative AI; nhiều image/video generation system dựa trên diffusion hoặc kiến trúc khác.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác để hiểu các khái niệm này tốt hơn?
+
+**Trả lời:** Nên bổ sung evaluation harness để đo chất lượng thay vì cảm tính; guardrails/policy để giảm prompt injection và output nguy hiểm; observability cho prompt, context, latency, cost và hallucination; và model routing theo độ khó/cost của request. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: AI là ô lớn nhất: làm máy có hành vi thông minh. Machine Learning là một cách làm AI bằng cách học từ dữ liệu. Deep Learning là một nhánh của ML dùng neural network nhiều tầng. Generative AI là nhóm hệ thống tạo nội dung mới như text, ảnh, nhạc hoặc code. Quan hệ dễ nhớ: không phải AI nào cũng là ML, không phải ML nào cũng là deep learning, và không phải deep learning nào cũng là generative AI. Nhưng nhiều generative AI hiện đại dùng deep learning, đặc biệt là transformer hoặc diffusion model.
+
+**Thinking học tập + liên hệ:** Danh sách trong `AI vs Machine Learning vs Deep Learning vs Generative AI` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `AI`, `ML`, `Deep Learning`, `Neural network`, `Generative AI`.

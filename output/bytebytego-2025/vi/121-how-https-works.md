@@ -52,3 +52,16 @@ Khi browser gọi `https://bank.example`, certificate giúp browser biết serve
 
 Mô tả key exchange trong bài là cách giải thích đơn giản. TLS hiện đại thường dùng ephemeral key exchange như ECDHE để có forward secrecy, nhưng ý chính về certificate validation và symmetric encryption cho data transmission vẫn đúng.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì nữa để giải thích HTTPS process?
+
+**Trả lời:** Có thể thêm DNS caching/TTL và negative caching; TLS handshake/session resumption; CDN edge caching và origin shielding; và QUIC/HTTP/3 khi cần giảm latency. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: HTTPS là HTTP chạy trên TLS. Nó giải quyết hai việc: xác thực server đúng là server bạn muốn kết nối, và mã hóa dữ liệu để người nghe lén không đọc được nội dung. Ban đầu dùng cơ chế bất đối xứng để thiết lập bí mật chung, sau đó dùng mã hóa đối xứng vì nhanh hơn cho dữ liệu thật.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `HTTPS hoạt động như thế nào?`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `HTTPS`, `TLS handshake`, `Certificate Authority`, `Public key`, `Private key`.

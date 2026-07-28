@@ -66,3 +66,17 @@ Khi dùng MCP trong production, cần giới hạn quyền tool. Một server ch
 - `Resource`: dữ liệu mà AI có thể tham chiếu.
 - `Tool`: function mà AI có thể gọi để thực hiện hành động.
 - `Primitive`: building block cơ bản trong MCP.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã khám phá Model Context Protocol của Anthropic chưa?
+
+**Trả lời:** Nếu đưa `MCP là gì?` vào stack, nên bắt đầu từ một use case hẹp, dễ rollback và có metric rõ. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: MCP có thể hiểu như “USB-C cho AI tool integration”. Thay vì mỗi AI app phải viết integration riêng cho PostgreSQL, Google Drive, GitHub, Slack hay file system, MCP chuẩn hóa cách host, client và server giao tiếp. Một MCP server expose resource/tool theo chuẩn; AI host có MCP client có thể dùng chúng.
+
+**Thinking học tập + liên hệ:** Với `MCP là gì?`, trải nghiệm thật nên được đo bằng latency, độ ổn định, chi phí, khả năng debug và mức dễ rollback. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `MCP`, `Host`, `MCP Client`, `MCP Server`, `Resource`.

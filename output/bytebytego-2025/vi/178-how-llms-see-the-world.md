@@ -51,3 +51,16 @@ Một câu tiếng Việt như “thiết kế hệ thống” có thể bị to
 - `Embedding vector`: vector số biểu diễn token trong không gian model.
 - `Vocabulary`: tập token mà tokenizer biết.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** LLM nhìn thế giới như thế nào?
+
+**Trả lời:** Luồng tốt nhất là lần theo input tới output: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `LLM nhìn thế giới như thế nào?`, ý chính là: LLM không hiểu trực tiếp chữ cái theo kiểu con người. Pipeline cơ bản là text -> normalize -> token -> token ID -> embedding vector -> neural network xử lý. Tokenization ảnh hưởng mạnh đến chi phí, độ dài context và cách model xử lý ngôn ngữ hiếm, code, emoji hoặc tiếng Việt có dấu.
+
+**Thinking học tập + liên hệ:** Luồng trong `LLM nhìn thế giới như thế nào?` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `LLM`, `Preprocessing`, `Tokenization`, `Token`, `Token ID`.

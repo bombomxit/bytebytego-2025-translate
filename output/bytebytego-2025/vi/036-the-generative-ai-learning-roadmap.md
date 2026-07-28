@@ -62,3 +62,17 @@ Một roadmap thực dụng cho developer là: học API LLM trước, xây RAG 
 - `Fine-tuning`: huấn luyện thêm model trên dữ liệu/task cụ thể.
 - `Evaluation`: đánh giá chất lượng output của model.
 - `Guardrails`: rào chắn kiểm soát hành vi/rủi ro của AI system.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác vào GenAI learning roadmap?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là evaluation harness để đo chất lượng thay vì cảm tính; guardrails/policy để giảm prompt injection và output nguy hiểm; observability cho prompt, context, latency, cost và hallucination; và model routing theo độ khó/cost của request. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Roadmap này bắt đầu từ nền tảng toán và ML, rồi đi lên foundation model, development stack, fine-tuning, AI agents, computer vision và tài nguyên học tập. Với developer ứng dụng, không nhất thiết phải train foundation model từ đầu, nhưng cần hiểu các khái niệm để dùng API, RAG, embedding, vector database và agent đúng cách.
+
+**Thinking học tập + liên hệ:** Danh sách trong `Lộ trình học Generative AI` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Generative AI`, `Foundation model`, `Prompt engineering`, `VectorDB`, `Fine-tuning`.

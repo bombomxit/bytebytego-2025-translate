@@ -72,3 +72,17 @@ Khi bạn hỏi LLM “Tóm tắt đoạn code này”, model biến code thành
 - `Encoder`: phần đọc và biểu diễn input.
 - `Decoder`: phần sinh output.
 - `Softmax`: hàm chuyển score thành xác suất.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác để hiểu Transformer Architecture?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là evaluation harness để đo chất lượng thay vì cảm tính; guardrails/policy để giảm prompt injection và output nguy hiểm; observability cho prompt, context, latency, cost và hallucination; và model routing theo độ khó/cost của request. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Transformer mạnh nhờ attention. Thay vì xử lý từng word theo thứ tự cứng như nhiều mô hình cũ, attention cho model xem quan hệ giữa các token trong toàn câu/context. Multi-head attention dùng nhiều “góc nhìn” song song để học các loại quan hệ khác nhau. Encoder-decoder là kiến trúc đầy đủ ban đầu. Nhiều LLM hiện đại dùng biến thể decoder-only cho text generation, nhưng các khái niệm embedding, positional encoding, attention, feed-forward, linear và softmax vẫn là nền tảng.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `Ai cũng nói về Transformers: kiến trúc Transformer hoạt động như thế nào?`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Transformer`, `Token`, `Embedding`, `Attention`, `Encoder`.

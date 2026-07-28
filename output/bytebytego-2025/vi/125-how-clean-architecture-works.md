@@ -52,3 +52,16 @@ Use case `CreateOrder` nhận input DTO, validate rule, gọi interface `OrderRe
 - `Dependency rule`: dependency hướng vào trong.
 - `Loose coupling`: giảm phụ thuộc giữa layer.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì để hiểu cách Clean Architecture hoạt động?
+
+**Trả lời:** Có thể thêm capacity estimation trước khi chọn kiến trúc; SLO/NFR rõ cho latency, availability và durability; graceful degradation khi dependency hỏng; và data ownership và service boundary. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Clean Architecture bảo vệ business logic khỏi framework, database và UI. Domain/use case không nên biết request HTTP đến từ đâu, database là MySQL hay PostgreSQL, UI là web hay mobile. Outer layer adapt dữ liệu vào/ra cho inner layer. Điểm cốt lõi là dependency direction: code bên trong không import code bên ngoài. Điều này giúp test use case dễ hơn và đổi framework ít ảnh hưởng business logic.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `Clean Architecture hoạt động như thế nào?`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Entity`, `Use case`, `Controller`, `Presenter`, `Gateway`.

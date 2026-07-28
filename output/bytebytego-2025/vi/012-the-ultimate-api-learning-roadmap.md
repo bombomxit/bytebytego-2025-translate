@@ -90,3 +90,17 @@ Nếu tích hợp với cổng thanh toán, webhook thường tốt hơn polling
 - `HATEOAS`: API trả link/hành động liên quan để client khám phá luồng.
 - `Content negotiation`: client/server thỏa thuận format dữ liệu như JSON hoặc XML.
 - `Webhook`: server gọi ngược về URL của client khi có event.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác vào API learning roadmap?
+
+**Trả lời:** Nên bổ sung idempotency key cho API ghi dữ liệu hoặc payment; OpenAPI/contract validation để giảm sai lệch client-server; correlation id/distributed tracing để debug production; và threat modeling theo OWASP API Top 10. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Bài này đưa ra roadmap học API theo thứ tự từ nền tảng đến production. Trước hết cần hiểu API là gì, các loại API và thuật ngữ HTTP. Sau đó học các style như REST, GraphQL, gRPC, SOAP và WebSocket để biết mỗi kiểu phù hợp với bài toán nào. Khi đi sâu hơn, developer cần nắm authentication, documentation, feature thiết kế API và performance. Một API production không chỉ cần endpoint chạy được; nó cần versioning, idempotency, pagination, validation, documentation, rate limiting, observability và gateway phù hợp.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `Lộ trình học API đầy đủ`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `REST`, `GraphQL`, `WebSocket`, `Idempotency`, `HATEOAS`.

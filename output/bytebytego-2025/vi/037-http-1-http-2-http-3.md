@@ -54,3 +54,17 @@ Khi tối ưu production, bạn không chỉ bật HTTP/2/3 là xong. Vẫn cầ
 - `HPACK`: cơ chế nén header của HTTP/2.
 - `QUIC`: transport protocol chạy trên UDP, nền tảng của HTTP/3.
 - `Head-of-line blocking`: một request/packet bị chậm làm các request phía sau bị chặn.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì để hiểu rõ hơn sự tiến hóa của HTTP qua các năm?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là DNS caching/TTL và negative caching; TLS handshake/session resumption; CDN edge caching và origin shielding; và QUIC/HTTP/3 khi cần giảm latency. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: HTTP tiến hóa để giải quyết các bottleneck khi web ngày càng phức tạp. HTTP/1.1 cải thiện HTTP/1 bằng persistent connection, giúp không phải mở connection mới cho từng request. HTTP/2 thêm multiplexing để nhiều request đi song song trên một TCP connection và dùng HPACK để nén header. HTTP/3 chuyển sang QUIC trên UDP để cải thiện latency, connection migration và giảm một số vấn đề của TCP.
+
+**Thinking học tập + liên hệ:** Danh sách trong `HTTP/1 -> HTTP/2 -> HTTP/3` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `Persistent connection`, `Pipelining`, `Multiplexing`, `HPACK`, `QUIC`.

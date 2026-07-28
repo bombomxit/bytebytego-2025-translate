@@ -55,3 +55,16 @@ Database SQL thường dùng B+ tree cho index `created_at` để query theo kho
 - `Point query`: query chính xác một key.
 - `Range query`: query theo khoảng.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “5 Data Structures That Make DB Queries Super Fast”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Bài này muốn người đọc nắm: Mỗi index data structure tối ưu cho pattern khác nhau. B/B+ tree tốt cho range và ordered query. Hash index tốt cho lookup chính xác. Bitmap index tốt cho column ít giá trị phân biệt như status/gender/flag. Inverted index tốt cho full-text search. Chọn index phải dựa trên query pattern. Dùng sai index có thể tốn storage và làm write chậm nhưng không giúp query nhanh hơn. Khi áp dụng vào hệ thống thật, hãy kiểm thêm read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement.
+
+**Thinking học tập + liên hệ:** Ôn tập `5 data structure giúp DB query cực nhanh` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `B-Tree`, `B+ Tree`, `Hash index`, `Bitmap index`, `Inverted index`.

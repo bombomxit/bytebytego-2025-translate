@@ -42,3 +42,16 @@ HTTP/1.1 và HTTP/2 chạy trên TCP vì web/API cần dữ liệu đúng. DNS t
 - `Congestion control`: tránh làm nghẽn mạng.
 - `Retransmission`: gửi lại packet bị mất.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “TCP vs UDP”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Điểm khác nhau nên nhìn từ boundary và trách nhiệm chính. Với `TCP vs UDP`, hãy tách rõ mỗi bên giải quyết vấn đề gì, dữ liệu đi qua đâu, ai sở hữu state và lỗi sẽ lan như thế nào. Ý chính để giữ lại là: TCP ưu tiên đúng và đủ: dữ liệu đến theo thứ tự, mất gói thì gửi lại, có kiểm soát tốc độ. UDP ưu tiên nhanh và nhẹ: gửi gói đi ngay, app tự xử lý mất gói nếu cần. Chọn TCP hay UDP phụ thuộc yêu cầu: file/API cần đúng dữ liệu, video/game/voice cần realtime hơn.
+
+**Thinking học tập + liên hệ:** Khi so sánh trong `TCP vs UDP`, hãy tách responsibility, boundary, state, failure mode và cost vận hành thay vì chỉ so tên công nghệ. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `TCP`, `UDP`, `Connection-oriented`, `Connectionless`, `Flow control`.

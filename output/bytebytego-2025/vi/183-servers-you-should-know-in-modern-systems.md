@@ -41,3 +41,16 @@ Một request mở trang sản phẩm có thể đi qua DNS -> load balancer -> 
 - `Cache Server`: server lưu dữ liệu tạm để truy cập nhanh.
 - `File Server`: server cung cấp truy cập file dùng chung.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Servers You Should Know in Modern Systems”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Nếu rút thành checklist thiết kế thì ý chính là: Các server trong hình đại diện cho từng trách nhiệm riêng: DNS tìm địa chỉ, web server phục vụ HTTP/static content, application server chạy business logic, load balancer chia tải, database lưu dữ liệu bền vững, cache tăng tốc truy cập, file server chia sẻ file. Tách trách nhiệm giúp hệ thống dễ scale và debug hơn. Khi áp dụng vào hệ thống thật, hãy kiểm thêm DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer.
+
+**Thinking học tập + liên hệ:** Ôn tập `Những loại server bạn nên biết trong hệ thống hiện đại` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `DNS Server`, `Web Server`, `Application Server`, `Load Balancer`, `Reverse Proxy`.

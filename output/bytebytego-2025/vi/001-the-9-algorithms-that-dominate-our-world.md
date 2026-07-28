@@ -99,3 +99,17 @@ Một ứng dụng bản đồ có thể dùng thuật toán đường đi ngắ
 - `Hash`: giá trị băm, thường dùng để kiểm tra toàn vẹn dữ liệu, lưu mật khẩu an toàn hoặc định danh nội dung.
 - `Compression`: nén dữ liệu để giảm dung lượng lưu trữ hoặc băng thông truyền tải.
 - `LLM`: Large Language Model, mô hình ngôn ngữ lớn như GPT, Claude hoặc Llama.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Có thuật toán phổ biến nào khác mà chúng tôi đã bỏ sót không?
+
+**Trả lời:** Có. Nếu mở rộng danh sách, các thuật toán/pattern rất đáng thêm là `A* Search` cho tìm đường có heuristic, `BFS/DFS` cho duyệt graph, `Consistent Hashing` cho cache/database cluster, `Bloom Filter` cho kiểm tra membership nhanh, `Raft/Paxos` cho consensus, `LRU/LFU` cho cache eviction, `MapReduce` cho xử lý dữ liệu lớn và `Gradient Descent/Backpropagation` cho ML. Những mục này bổ sung các mảng mà bài gốc mới chạm một phần: distributed systems, cache, big data và machine learning training.
+
+**Thinking học tập + liên hệ:** Cách nghĩ đúng là phân nhóm thuật toán theo vấn đề hệ thống: graph/search, ranking, cryptography, compression, distributed coordination, cache và ML optimization. Khi nhìn một sản phẩm thật như map, search engine, CDN hay LLM app, hãy thử chỉ ra thuật toán nào đang quyết định latency, memory và độ chính xác. Các keyword cần tự giải thích lại: `Algorithm`, `Graph`, `Cryptography`, `Hash`, `Compression`.

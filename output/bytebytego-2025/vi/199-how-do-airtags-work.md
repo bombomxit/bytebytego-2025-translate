@@ -47,3 +47,16 @@ Nếu bạn để quên balo ở quán cà phê đông người dùng iPhone, Ai
 - `Beacon`: tín hiệu định kỳ phát ra để được phát hiện.
 - `Approximate location`: vị trí ước lượng.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** How do AirTags work?
+
+**Trả lời:** Luồng tốt nhất là lần theo input tới output: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `AirTags hoạt động như thế nào?`, ý chính là: AirTag không tự có GPS/cellular để gửi vị trí liên tục. Nó phát Bluetooth beacon, còn các Apple device xung quanh đóng vai trò relay ẩn danh lên iCloud. Vì vậy độ chính xác và tần suất cập nhật phụ thuộc vào mật độ iPhone/iPad/Mac gần AirTag.
+
+**Thinking học tập + liên hệ:** Luồng trong `AirTags hoạt động như thế nào?` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `AirTag`, `Bluetooth`, `Find My network`, `iCloud`, `Pairing`.

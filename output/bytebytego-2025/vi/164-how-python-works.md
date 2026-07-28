@@ -44,3 +44,16 @@ Khi import một module lần đầu, Python có thể tạo file `.pyc` trong `
 - `stdlib`: standard library.
 - `site-packages`: nơi package Python được cài.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Python hoạt động như thế nào?
+
+**Trả lời:** Hãy tách flow thành các bước có state rõ ràng: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `Python hoạt động như thế nào?`, ý chính là: Python CPython không chạy text `.py` trực tiếp. Nó compile source thành bytecode, load module qua import system, rồi PVM interpret bytecode. Cách này giúp Python linh hoạt và dễ phát triển, nhưng thường chậm hơn language có JIT/native compilation mạnh.
+
+**Thinking học tập + liên hệ:** Luồng trong `Python hoạt động như thế nào?` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `CPython`, `Bytecode`, `.pyc`, `Import System`, `PVM`.

@@ -62,3 +62,16 @@ Access token public giữa auth service và nhiều microservice có thể dùng
 - `Local token`: token encrypted bằng symmetric key.
 - `Secure defaults`: mặc định an toàn, ít cấu hình nguy hiểm.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng JWT hoặc PASETO trong application chưa?
+
+**Trả lời:** Trong project thật, `JWT vs PASETO: hai người chơi của token-based authentication` đáng dùng/thử khi bài toán khớp với nhu cầu cụ thể và team đo được kết quả. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: JWT linh hoạt và phổ biến nhưng vì quá linh hoạt nên dễ cấu hình sai thuật toán hoặc xử lý signature không đúng. PASETO cố tình giảm lựa chọn nguy hiểm bằng secure defaults: token local là encrypted, token public là signed. Nếu hệ sinh thái/framework của bạn đã hỗ trợ JWT tốt, JWT vẫn rất thực tế. Nếu muốn API token có default an toàn hơn và ít footgun crypto hơn, PASETO đáng cân nhắc.
+
+**Thinking học tập + liên hệ:** Câu hỏi trải nghiệm trong `JWT vs PASETO: hai người chơi của token-based authentication` nên quy về adoption: dùng cho workload nào, đo thành công bằng metric nào và có đáng giữ lâu dài trong stack không. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `JWT`, `PASETO`, `Signature`, `Encryption`, `Public token`.

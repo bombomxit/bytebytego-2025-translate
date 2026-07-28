@@ -59,3 +59,17 @@ Với GitOps, khi muốn tăng replica của service từ 3 lên 5, developer s�
 - `Terraform`: công cụ IaC phổ biến, mạnh về provisioning cloud resource.
 - `CloudFormation`: dịch vụ IaC của AWS.
 - `Ansible`: công cụ automation/configuration management, thường dùng qua SSH.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng Infrastructure as Code trong project của mình chưa?
+
+**Trả lời:** Nếu đưa `Cheatsheet về bức tranh Infrastructure as Code` vào stack, nên bắt đầu từ một use case hẹp, dễ rollback và có metric rõ. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: Infrastructure as Code, thường viết là IaC, giúp biến hạ tầng thành thứ có thể quản lý giống code: có file, có version control, có review, có CI/CD, có khả năng tái tạo. Thay vì click tay trên cloud console, team mô tả server, network, database, permission và config bằng code.
+
+**Thinking học tập + liên hệ:** Với `Cheatsheet về bức tranh Infrastructure as Code`, trải nghiệm thật nên được đo bằng latency, độ ổn định, chi phí, khả năng debug và mức dễ rollback. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `Provisioning`, `IaC`, `GitOps`, `Terraform`, `CloudFormation`.

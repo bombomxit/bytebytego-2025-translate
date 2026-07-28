@@ -69,3 +69,17 @@ Một package `auth-client` đang ở `1.4.2`. Nếu sửa bug refresh token, re
 - `Backward-compatible`: tương thích ngược với consumer cũ.
 - `Pre-release`: bản alpha/beta/rc trước release chính thức.
 - `Build metadata`: metadata build sau dấu `+`, không đổi ý nghĩa version chính.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** What do version numbers mean?
+
+**Trả lời:** Bài này muốn người đọc nắm: SemVer giúp người dùng package hiểu mức độ rủi ro khi upgrade. Nếu chỉ tăng patch, thường là bug fix an toàn. Nếu tăng minor, có feature mới nhưng API cũ vẫn chạy. Nếu tăng major, có thể có breaking change và consumer cần sửa code. Trong hệ sinh thái package như npm, Composer, Maven hoặc Cargo, version number ảnh hưởng trực tiếp tới dependency resolution. Một thư viện tăng major từ `1.x` lên `2.x` có thể làm app build fail nếu API thay đổi. Khi áp dụng vào hệ thống thật, hãy kiểm thêm actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke.
+
+**Thinking học tập + liên hệ:** Liên hệ `Version number có ý nghĩa gì?` bằng một scenario thật sẽ giúp thấy trade-off rõ hơn so với chỉ đọc định nghĩa. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `SemVer`, `Breaking change`, `Backward-compatible`, `Pre-release`, `Build metadata`.

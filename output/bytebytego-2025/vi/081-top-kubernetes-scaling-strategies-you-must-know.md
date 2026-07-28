@@ -51,3 +51,16 @@ Một API có traffic tăng vào 9 giờ sáng có thể dùng HPA theo RPS ho�
 - `Resource request/limit`: CPU/memory yêu cầu và giới hạn.
 - `Pending pod`: pod chưa schedule được lên node.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm Kubernetes Scaling Strategy nào khác vào danh sách?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là SLO/error budget để biết hệ thống đủ tốt hay chưa; blue-green/canary deployment để giảm rủi ro release; secret management và least privilege IAM; và cost monitoring/tagging cho cloud bill. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Kubernetes có nhiều tầng scale. HPA scale ngang bằng cách tăng/giảm số pod. VPA scale dọc bằng cách thay đổi CPU/memory cho pod. Cluster Autoscaler scale hạ tầng bằng cách thêm/bớt node. Predictive autoscaling cố gắng scale trước dựa trên pattern tương lai thay vì chỉ phản ứng với metric hiện tại.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `Các chiến lược scale Kubernetes quan trọng cần biết`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `HPA`, `VPA`, `Cluster Autoscaler`, `Metrics Server`, `Replica`.

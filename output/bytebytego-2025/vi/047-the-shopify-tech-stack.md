@@ -54,3 +54,17 @@ Một SaaS thương mại điện tử nhỏ không cần bắt đầu bằng Ku
 - `GKE`: Google Kubernetes Engine.
 - `Buildkite`: CI/CD platform.
 - `ShipIt`: tool deployment/release được Shopify open-source.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “The Shopify Tech Stack”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Nếu rút thành checklist thiết kế thì ý chính là: Shopify là ví dụ cho thấy hệ thống rất lớn vẫn có thể dựa trên các công nghệ quen thuộc nếu được vận hành và tối ưu tốt. Ruby on Rails xử lý nhiều business logic commerce, MySQL lưu dữ liệu quan trọng, Redis/Memcached hỗ trợ cache, Nginx/OpenResty đứng ở lớp server/proxy, GraphQL hỗ trợ API query linh hoạt, Kubernetes/GKE giúp orchestration. Khi áp dụng vào hệ thống thật, hãy kiểm thêm read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement.
+
+**Thinking học tập + liên hệ:** Ôn tập `Tech stack của Shopify` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Multi-channel commerce`, `Merchant`, `OpenResty`, `GraphQL`, `GKE`.

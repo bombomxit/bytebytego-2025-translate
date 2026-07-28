@@ -62,3 +62,16 @@ Sơ đồ minh họa TLS 1.2 theo kiểu đơn giản hóa. TLS 1.3 hiện đạ
 - `Session key`: khóa đối xứng dùng để mã hóa phiên.
 - `Plain text`: dữ liệu không mã hóa.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “HTTP vs. HTTPS”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: HTTP chỉ là request/response không mã hóa. HTTPS thêm TLS để xác minh server thật và mã hóa dữ liệu. Điểm quan trọng: asymmetric encryption thường dùng để thiết lập key an toàn, còn data thực tế được truyền bằng symmetric encryption vì nhanh hơn. Khi áp dụng vào hệ thống thật, hãy kiểm thêm DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer.
+
+**Thinking học tập + liên hệ:** Liên hệ `HTTP vs HTTPS` bằng một scenario thật sẽ giúp thấy trade-off rõ hơn so với chỉ đọc định nghĩa. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `HTTP`, `HTTPS`, `TLS`, `SSL`, `Certificate Authority`.

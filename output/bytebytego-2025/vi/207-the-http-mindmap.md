@@ -57,3 +57,16 @@ Một request `https://api.example.com/users` có thể đi qua DNS, TCP/TLS ho�
 - `WebSocket`: connection full-duplex realtime.
 - `OpenTelemetry`: chuẩn instrumentation/observability.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “The HTTP Mindmap”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Bài này muốn người đọc nắm: HTTP không đứng một mình. Nó nằm trên transport, gắn với DNS, TLS, proxy, CDN, web server, browser, API style, observability và nhiều protocol mạng khác. Khi debug web/API production, cần nhìn cả hệ sinh thái: DNS có đúng không, TLS có lỗi không, proxy/CDN có cache/routing sai không, server có trả status/header đúng không. Khi áp dụng vào hệ thống thật, hãy kiểm thêm DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer.
+
+**Thinking học tập + liên hệ:** Khi học `Mindmap HTTP`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `HTTP`, `HTTP/2`, `HTTP/3`, `HTTPS`, `CDN`.

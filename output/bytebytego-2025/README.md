@@ -8,6 +8,7 @@ Bộ ghi chú này tách PDF thành từng bài. Mỗi bài có bản gốc ti�
 - `vi/`: bản dịch sát theo tư duy lập trình/system design.
 - `assets/`: ảnh/diagram được tách từ PDF và nhúng vào Markdown.
 - Các ví dụ do người dịch thêm sẽ được ghi rõ: `Ví dụ thực tế - không nằm trong tài liệu gốc`.
+- Cuối mỗi bài dịch có `Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ` để người đọc tự kiểm tra hiểu bài và nối với project thật.
 - Mục lục tóm tắt tiếng Việt: [`vi/000-muc-luc-tom-tat.md`](vi/000-muc-luc-tom-tat.md).
 
 ## Mục lục tiến độ

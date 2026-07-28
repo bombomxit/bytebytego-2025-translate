@@ -40,3 +40,16 @@ Một API thanh toán cần latency thấp vì user đang chờ kết quả từ
 - `Last-mile`: đoạn mạng cuối tới thiết bị của user.
 - `Responsiveness`: cảm giác phản hồi nhanh/chậm của hệ thống.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Latency vs. Throughput”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Nếu rút thành checklist thiết kế thì ý chính là: Latency trả lời câu hỏi “một request mất bao lâu?”. Throughput trả lời câu hỏi “mỗi giây xử lý được bao nhiêu?”. Một hệ thống có throughput cao vẫn có thể khiến user thấy chậm nếu latency cao. Ngược lại, latency thấp nhưng throughput thấp thì khi traffic tăng, hệ thống dễ nghẽn. Khi áp dụng vào hệ thống thật, hãy kiểm thêm requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team.
+
+**Thinking học tập + liên hệ:** Ôn tập `Latency vs Throughput` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Latency`, `Throughput`, `Bandwidth`, `Queuing delay`, `Last-mile`.

@@ -66,3 +66,17 @@ Nếu yêu cầu bảo mật cao, chạy model và vector database trong hạ t�
 - `Model access`: cách ứng dụng gọi model, qua API cloud hoặc chạy local/self-host.
 - `LLM`: Large Language Model, mô hình ngôn ngữ lớn.
 - `Open-source model`: model có trọng số hoặc mã nguồn/cách dùng mở hơn proprietary model.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm công cụ nào khác vào Open Source AI Stack?
+
+**Trả lời:** Danh sách sẽ đầy đủ hơn nếu thêm evaluation harness để đo chất lượng thay vì cảm tính; guardrails/policy để giảm prompt injection và output nguy hiểm; observability cho prompt, context, latency, cost và hallucination; và model routing theo độ khó/cost của request. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Một ứng dụng AI hiện đại thường không chỉ gồm một LLM. Nó cần frontend để người dùng tương tác, backend để điều phối logic, model access để gọi hoặc chạy model, embedding/RAG để tìm ngữ cảnh, data layer để lưu và truy xuất dữ liệu, và LLM để sinh câu trả lời. RAG là phần rất quan trọng trong nhiều AI app production. Thay vì chỉ hỏi LLM bằng kiến thức sẵn có của model, hệ thống tìm tài liệu liên quan trong database/vector store, đưa chúng vào prompt, rồi yêu cầu model trả lời dựa trên ngữ cảnh đó. Vì vậy stack AI...
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `Open Source AI Stack`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Embedding`, `RAG`, `Vector database`, `Model access`, `LLM`.

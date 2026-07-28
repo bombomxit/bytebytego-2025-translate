@@ -66,3 +66,16 @@ Với query `SELECT name FROM users WHERE city = 'San Francisco'`, nếu có ind
 - `Storage engine`: lớp đọc/ghi dữ liệu vật lý.
 - `Buffer manager`: quản lý page trong memory.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác để hiểu execution của SQL Query?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là query plan/EXPLAIN để biết bottleneck thật; transaction isolation để tránh race condition và dirty read; connection pooling/backpressure để database không bị quá tải; và cache invalidation strategy rõ ràng. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Một SQL query không chạy trực tiếp theo chuỗi text bạn viết. Database phải nhận request qua connection layer, parse cú pháp, kiểm tra ý nghĩa, optimize thành execution plan, rồi execution engine phối hợp storage engine để đọc/ghi page dữ liệu, lock, transaction và recovery.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `SQL query được execute trong database như thế nào?`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Transport subsystem`, `Query parser`, `Parse tree`, `Query optimizer`, `Execution plan`.

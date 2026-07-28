@@ -64,3 +64,16 @@ Một team có thể dùng GitHub Actions thay Jenkins, Docker image push lên r
 - `UAT`: user acceptance testing.
 - `SRE`: Site Reliability Engineering.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm bước nào khác vào process?
+
+**Trả lời:** Danh sách sẽ đầy đủ hơn nếu thêm pre-commit hook/lint để chặn lỗi sớm; trunk-based development khi team cần release nhanh; branch protection và required checks; và reflog/revert strategy để cứu lỗi Git. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Ship code lên production là một pipeline kiểm soát rủi ro. Ý tưởng chính là biến yêu cầu thành story, code thành artifact, artifact đi qua test/quality gate, sau đó release theo lịch hoặc rollout strategy. Mỗi stage giảm một loại rủi ro: sai requirement, lỗi code, regression, performance issue hoặc production incident.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `Các công ty ship code lên production như thế nào?`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team. Khi áp dụng vào team thật, hãy nhìn developer workflow như một hệ thống: commit, review, test, deploy và rollback đều phải giảm rủi ro production. Khi ghi chú lại, hãy giải thích được các keyword: `User story`, `Sprint planning`, `Artifact`, `Artifactory`, `QA`.

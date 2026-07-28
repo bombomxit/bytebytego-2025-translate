@@ -58,3 +58,16 @@ Một chatbot hỏi đáp tài liệu nội bộ có thể upload PDF lên S3, L
 - `API Gateway`: cổng API nhận request từ frontend.
 - `Lambda`: serverless function của AWS.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** How to Build a Basic RAG Application on AWS?
+
+**Trả lời:** Luồng tốt nhất là lần theo input tới output: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `Cách xây dựng một RAG application cơ bản trên AWS`, ý chính là: RAG có hai pipeline tách biệt. Ingestion chuẩn bị knowledge base: lưu tài liệu, chunk, tạo embedding và index vào vector DB. Querying xử lý câu hỏi: embed query, search chunk liên quan, đưa chunk vào prompt cho LLM, rồi trả lời. Tách hai stage giúp cập nhật tài liệu độc lập với request của user.
+
+**Thinking học tập + liên hệ:** Luồng trong `Cách xây dựng một RAG application cơ bản trên AWS` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `RAG`, `Ingestion`, `Chunk`, `Embedding`, `Vector DB`.

@@ -62,3 +62,16 @@ Một bài tập tốt: thiết kế schema cho e-commerce, viết query order h
 - `ORM`: object-relational mapping.
 - `Failover`: chuyển sang node dự phòng khi lỗi.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác vào danh sách học database?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là query plan/EXPLAIN để biết bottleneck thật; transaction isolation để tránh race condition và dirty read; connection pooling/backpressure để database không bị quá tải; và cache invalidation strategy rõ ràng. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Học database nên đi từ nguyên lý tới thực hành. Trước hết hiểu relational vs NoSQL, transaction, isolation và query. Sau đó học index/execution plan để tối ưu. Tiếp theo là security, backup, replication, scaling và tooling. Database là trái tim của nhiều hệ thống, nên developer nên biết ít nhất cách thiết kế schema, viết query đúng, đọc execution plan, tạo index hợp lý và backup/restore cơ bản.
+
+**Thinking học tập + liên hệ:** Danh sách trong `Học Database như thế nào?` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `RDBMS`, `ACID`, `BASE`, `OLTP`, `OLAP`.

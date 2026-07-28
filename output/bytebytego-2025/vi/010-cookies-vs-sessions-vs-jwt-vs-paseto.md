@@ -82,3 +82,17 @@ Nếu dùng JWT, không nên lưu secret yếu, không nên để token sống q
 - `PASETO`: token bảo mật với mặc định crypto an toàn hơn JWT.
 - `Stateless`: server không cần lưu session state cho mỗi request.
 - `Token expiration`: thời điểm token hết hiệu lực.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng cách authentication nào?
+
+**Trả lời:** Trong project thật, `Cookies vs Sessions vs JWT vs PASETO` đáng dùng/thử khi bài toán khớp với nhu cầu cụ thể và team đo được kết quả. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: Cookie là cơ chế browser lưu và gửi dữ liệu nhỏ theo request. Session thường dùng cookie để lưu session id ở client, còn dữ liệu session thật nằm ở server. Cách này dễ kiểm soát và revoke, nhưng khi hệ thống phân tán, nhiều server phải cùng truy cập session store hoặc dùng sticky session.
+
+**Thinking học tập + liên hệ:** Câu hỏi trải nghiệm trong `Cookies vs Sessions vs JWT vs PASETO` nên quy về adoption: dùng cho workload nào, đo thành công bằng metric nào và có đáng giữ lâu dài trong stack không. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `Authentication`, `Cookie`, `Session`, `JWT`, `PASETO`.

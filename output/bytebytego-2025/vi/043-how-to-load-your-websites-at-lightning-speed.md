@@ -76,3 +76,17 @@ Một dashboard có bảng 50.000 dòng không nên render toàn bộ DOM. Dùng
 - `Lazy loading`: tải tài nguyên khi cần.
 - `Windowing`: chỉ render phần visible của danh sách lớn.
 - `Core Web Vitals`: nhóm chỉ số trải nghiệm web như LCP, INP, CLS.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm tip frontend performance nào khác vào cheat sheet này?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là Core Web Vitals để đo trải nghiệm thật; bundle splitting và lazy loading; design system/component contract; và monorepo task caching. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Frontend performance chủ yếu xoay quanh việc gửi ít dữ liệu hơn, tải đúng thứ đúng thời điểm và render ít hơn. Compression giảm kích thước file. Code splitting và dynamic import giảm initial bundle. Selective rendering/windowing tránh render danh sách khổng lồ. Priority loading, preload và prefetch giúp tài nguyên quan trọng đến sớm hơn.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `Cách tải website nhanh như chớp`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là UX, bundle size, build time, maintainability, accessibility và tốc độ release. Khi làm frontend production, hãy nối code với người dùng thật: load có nhanh không, lỗi có thấy được không, component có tái dùng được không và build có scale với team không. Khi ghi chú lại, hãy giải thích được các keyword: `Above the fold`, `Bundle`, `Code splitting`, `Tree shaking`, `Lazy loading`.

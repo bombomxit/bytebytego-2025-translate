@@ -154,6 +154,20 @@ Nên dùng cấu trúc ổn định:
 
 | Thuật ngữ | Nghĩa trong bài |
 |---|---|
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** <question>
+
+**Trả lời:** <trả lời trực tiếp câu hỏi>
+
+**Thinking học tập + liên hệ:** <khung suy nghĩ công khai giúp người đọc biết cách trả lời và liên hệ project thật>
 ```
 
 Quy tắc dịch:
@@ -162,6 +176,9 @@ Quy tắc dịch:
 - Khi dịch thuật ngữ lần đầu, có thể viết `bộ cân bằng tải (load balancer)`.
 - Không thêm claim mới vào mục `Dịch sát` nếu PDF không nói.
 - Nếu cần giải thích thêm, đặt vào `Tóm tắt` hoặc `Ví dụ thực tế - không nằm trong tài liệu gốc`.
+- Ở cuối mỗi file dịch, thêm `Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ` để biến câu hỏi trong tài liệu gốc thành câu trả lời tham khảo.
+- Dùng đúng nhãn `Trả lời`; câu trả lời phải trả lời trực tiếp câu hỏi đã đặt ra.
+- `Thinking học tập + liên hệ` nên là cách suy nghĩ công khai: problem statement, luồng chính, trade-off, khi nào dùng/không dùng, scale, failure mode, observability và liên hệ với project thật.
 - Nếu ảnh có chữ quan trọng, dịch ý chính của chữ trong ảnh ở gần hình hoặc trong phần tóm tắt.
 
 ### 7. Tạo mục lục và README tiến độ
@@ -189,6 +206,7 @@ Audit tối thiểu:
 - Số bài trong manifest = số file `original` = số file `vi`.
 - Tất cả image link trong Markdown trỏ tới file tồn tại.
 - Mỗi bài tiếng Việt có đủ section bắt buộc.
+- Mỗi bài tiếng Việt có phần `Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ` ở cuối file.
 - Bảng mục lục có đủ số dòng.
 - Không còn placeholder như `TODO`, `TBD`, `dịch sau`.
 
@@ -229,4 +247,3 @@ Với PDF dài, không nên dịch một lần toàn bộ bằng tay.
 - Nếu repo chứa full text, bản dịch đầy đủ hoặc ảnh trích từ sách có bản quyền, nên để repo `private` hoặc dùng nội bộ.
 - Nếu muốn public repo, chỉ nên public workflow, script, prompt và ghi chú tự viết; không public toàn bộ nội dung gốc/ảnh/dịch nếu chưa có quyền phân phối.
 - README cần nói rõ nguồn tài liệu và phạm vi sử dụng.
-

@@ -61,3 +61,16 @@ Một lộ trình 4 tuần: tuần 1 học IAM, billing, VPC; tuần 2 deploy ap
 - `CloudWatch`: monitoring/logging service.
 - `IaC`: Infrastructure as Code.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** How to Learn AWS?
+
+**Trả lời:** Hãy tách flow thành các bước có state rõ ràng: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `Học AWS như thế nào?`, ý chính là: Học AWS nên đi từ nền tảng account/IAM/billing, sau đó học compute-storage-networking, rồi database, security/compliance, DevOps/monitoring và cuối cùng là certification. Đừng học service rời rạc; hãy học theo kiến trúc thực tế: một web app cần VPC, EC2/ECS/Lambda, S3, RDS/DynamoDB, IAM, CloudWatch và CI/CD.
+
+**Thinking học tập + liên hệ:** Luồng trong `Học AWS như thế nào?` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `AWS`, `IAM`, `VPC`, `EC2`, `Lambda`.

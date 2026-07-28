@@ -74,3 +74,17 @@ Một assistant phân tích thị trường có thể nhận câu hỏi bằng t
 - `Transformer`: kiến trúc neural network nền tảng của nhiều LLM.
 - `Self-correction`: vòng tự kiểm tra/sửa để tăng độ chính xác.
 - `Real-time retrieval`: truy xuất thông tin mới tại thời điểm trả lời.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng Grok 3 của xAI chưa?
+
+**Trả lời:** Nếu đưa `Grok-3 của xAI trong một trang` vào stack, nên bắt đầu từ một use case hẹp, dễ rollback và có metric rõ. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: Bài này mô tả Grok 3 như một model AI mạnh tập trung vào reasoning, multimodal input và khả năng truy xuất dữ liệu real-time qua DeepSearch. Điểm kiến trúc đáng chú ý là không chỉ có transformer core, mà còn có các module hỗ trợ như search, self-correction và mode reasoning chuyên sâu.
+
+**Thinking học tập + liên hệ:** Với `Grok-3 của xAI trong một trang`, trải nghiệm thật nên được đo bằng latency, độ ổn định, chi phí, khả năng debug và mức dễ rollback. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `GPU hour`, `Multimodal`, `Synthetic data`, `Transformer`, `Self-correction`.

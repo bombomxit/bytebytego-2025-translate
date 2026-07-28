@@ -53,3 +53,16 @@ Một công ty có thể dùng forward proxy để nhân viên chỉ truy cập 
 - `Outbound traffic`: traffic đi ra ngoài network.
 - `Inbound traffic`: traffic đi vào hệ thống.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Forward Proxy versus Reverse Proxy”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Điểm khác nhau nên nhìn từ boundary và trách nhiệm chính. Với `Forward Proxy vs Reverse Proxy`, hãy tách rõ mỗi bên giải quyết vấn đề gì, dữ liệu đi qua đâu, ai sở hữu state và lỗi sẽ lan như thế nào. Ý chính để giữ lại là: Forward proxy đại diện cho client; reverse proxy đại diện cho server. Forward proxy thường dùng ở phía người dùng hoặc công ty để kiểm soát outbound traffic. Reverse proxy thường dùng ở phía hệ thống backend để load balancing, TLS termination, caching, routing và bảo vệ origin server.
+
+**Thinking học tập + liên hệ:** Khi so sánh trong `Forward Proxy vs Reverse Proxy`, hãy tách responsibility, boundary, state, failure mode và cost vận hành thay vì chỉ so tên công nghệ. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `Forward proxy`, `Reverse proxy`, `TLS termination`, `DDoS`, `Origin server`.

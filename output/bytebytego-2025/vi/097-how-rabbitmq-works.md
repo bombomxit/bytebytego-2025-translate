@@ -60,3 +60,16 @@ Trong e-commerce, Order Service publish event `order.created`. Inventory Service
 - `Binding key`: rule nối exchange với queue.
 - `Routing key`: key dùng để route message.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác vào RabbitMQ process flow?
+
+**Trả lời:** Có thể thêm capacity estimation trước khi chọn kiến trúc; SLO/NFR rõ cho latency, availability và durability; graceful degradation khi dependency hỏng; và data ownership và service boundary. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: RabbitMQ đứng giữa producer và consumer để hai bên không cần gọi trực tiếp nhau. Producer chỉ cần publish message, còn consumer xử lý khi sẵn sàng. Exchange quyết định route message vào queue nào, còn queue giữ message cho tới khi consumer lấy ra. Điểm quan trọng khi thiết kế là chọn đúng exchange type. Direct phù hợp routing chính xác, topic phù hợp event theo pattern như `order.created`, fanout phù hợp broadcast notification tới nhiều consumer.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `RabbitMQ hoạt động như thế nào?`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Message broker`, `Producer`, `Consumer`, `Exchange`, `Queue`.

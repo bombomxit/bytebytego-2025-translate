@@ -56,3 +56,16 @@ Một e-commerce có thể đẩy clickstream, order, payment log, ảnh sản p
 - `Streaming`: xử lý dữ liệu gần real-time.
 - `Data governance`: quản trị chất lượng, quyền truy cập và lineage dữ liệu.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác để hiểu Data Lake Architecture tốt hơn?
+
+**Trả lời:** Danh sách sẽ đầy đủ hơn nếu thêm query plan/EXPLAIN để biết bottleneck thật; transaction isolation để tránh race condition và dirty read; connection pooling/backpressure để database không bị quá tải; và cache invalidation strategy rõ ràng. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Data lake là nơi gom dữ liệu thô từ nhiều nguồn trước khi biết chính xác sẽ dùng thế nào. Khác với data warehouse thường yêu cầu schema rõ trước khi load, data lake ưu tiên lưu trữ linh hoạt và xử lý sau. Vì vậy data lake rất hợp cho analytics, machine learning, log processing và lưu dữ liệu phi cấu trúc.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `Data Lake Architecture hoạt động như thế nào?`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Data lake`, `Structured data`, `Semi-structured data`, `Unstructured data`, `Ingestion`.

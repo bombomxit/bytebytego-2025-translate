@@ -50,3 +50,16 @@ Muốn tạo model dự đoán churn, trước hết define KPI như AUC/precisi
 - `Bias testing`: kiểm tra thiên lệch.
 - `Model deployment`: đưa model vào production.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “6 Steps to Create a New AI Model”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: Tạo AI model không bắt đầu từ thuật toán mà bắt đầu từ mục tiêu và dữ liệu. Nếu use case mơ hồ hoặc data bẩn, model khó tốt. Sau training, cần evaluate bằng dữ liệu chưa thấy, kiểm tra bias, rồi deploy như một software system có API, monitoring và rollback. Khi áp dụng vào hệ thống thật, hãy kiểm thêm quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination.
+
+**Thinking học tập + liên hệ:** Ôn tập `6 bước để tạo một AI model mới` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `KPI`, `Feature engineering`, `Training set`, `Validation set`, `Test set`.

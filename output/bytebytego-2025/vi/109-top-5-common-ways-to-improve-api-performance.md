@@ -55,3 +55,16 @@ API `GET /orders` nên dùng `limit`/`cursor`, cache danh mục sản phẩm tro
 - `I/O overhead`: chi phí đọc/ghi thiết bị hoặc network.
 - `Latency`: độ trễ phản hồi.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn dùng cách nào khác để cải thiện API performance?
+
+**Trả lời:** Nên bổ sung idempotency key cho API ghi dữ liệu hoặc payment; OpenAPI/contract validation để giảm sai lệch client-server; correlation id/distributed tracing để debug production; và threat modeling theo OWASP API Top 10. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: API chậm thường do payload quá lớn, DB bị gọi quá nhiều, I/O log blocking, mỗi request mở connection mới hoặc trả quá nhiều dữ liệu. Năm cách trong bài tập trung giảm work per request: chia nhỏ kết quả, ghi log bất đồng bộ, cache dữ liệu nóng, nén payload và tái sử dụng connection.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `5 cách phổ biến để cải thiện API performance`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `Pagination`, `Asynchronous logging`, `Cache`, `Payload compression`, `Connection pool`.

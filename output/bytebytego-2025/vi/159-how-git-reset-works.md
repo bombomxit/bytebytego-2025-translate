@@ -47,3 +47,16 @@ Nếu commit nhầm nhưng muốn giữ thay đổi để commit lại: `git res
 - `--mixed`: reset HEAD và index.
 - `--hard`: reset HEAD, index và working tree.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** How Git Reset Works?
+
+**Trả lời:** Hãy tách flow thành các bước có state rõ ràng: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `Git Reset hoạt động như thế nào?`, ý chính là: `git reset` tác động lên ba vùng: HEAD/branch pointer, staging area/index và working directory. `--soft` chỉ đổi commit pointer, giữ thay đổi staged. `--mixed` bỏ staged nhưng giữ file thay đổi. `--hard` nguy hiểm nhất vì xóa thay đổi trong working directory để khớp commit.
+
+**Thinking học tập + liên hệ:** Luồng trong `Git Reset hoạt động như thế nào?` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team. Khi áp dụng vào team thật, hãy nhìn developer workflow như một hệ thống: commit, review, test, deploy và rollback đều phải giảm rủi ro production. Khi ghi chú lại, hãy giải thích được các keyword: `HEAD`, `Index`, `Working directory`, `Commit`, `--soft`.

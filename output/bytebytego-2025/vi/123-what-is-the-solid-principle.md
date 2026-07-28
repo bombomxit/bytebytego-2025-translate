@@ -60,3 +60,16 @@ Payment service nên depend vào interface `PaymentGateway`, không depend trự
 - `Abstraction`: interface/contract che giấu implementation.
 - `Coupling`: độ phụ thuộc giữa module.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** SOLID principle nào bạn thấy hữu ích nhất hoặc khó nhất trong công việc development hằng ngày?
+
+**Trả lời:** Trong thực tế, `Single Responsibility Principle` thường hữu ích nhất vì nó buộc ta tách lý do thay đổi của một class/module. Nguyên tắc khó nhất thường là `Dependency Inversion`, vì muốn làm tốt phải biết đặt boundary, interface và dependency direction đúng. Nếu áp dụng máy móc, SOLID dễ biến thành quá nhiều abstraction; nếu áp dụng đúng, code dễ test và dễ thay đổi hơn.
+
+**Thinking học tập + liên hệ:** Khi học `SOLID Principle là gì?`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `SRP`, `OCP`, `LSP`, `ISP`, `DIP`.

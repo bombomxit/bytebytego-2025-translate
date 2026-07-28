@@ -47,3 +47,16 @@ Chatbot hỏi chính sách công ty nên dùng RAG vì policy đổi thường x
 - `External knowledge`: tri thức ngoài model.
 - `Context`: thông tin đưa vào prompt.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Full Fine-Tuning vs LoRA vs RAG”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Điểm khác nhau nên nhìn từ boundary và trách nhiệm chính. Với `Full Fine-Tuning vs LoRA vs RAG`, hãy tách rõ mỗi bên giải quyết vấn đề gì, dữ liệu đi qua đâu, ai sở hữu state và lỗi sẽ lan như thế nào. Ý chính để giữ lại là: Full fine-tuning thay đổi toàn bộ model, mạnh nhưng tốn kém và rủi ro quên kiến thức cũ. LoRA train thêm adapter nhỏ, tiết kiệm hơn và dễ quản lý nhiều domain/task. RAG không train model mà đưa knowledge bên ngoài vào context, phù hợp khi cần cập nhật dữ liệu thường xuyên.
+
+**Thinking học tập + liên hệ:** Khi so sánh trong `Full Fine-Tuning vs LoRA vs RAG`, hãy tách responsibility, boundary, state, failure mode và cost vận hành thay vì chỉ so tên công nghệ. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Fine-tuning`, `LoRA`, `Frozen weights`, `Adapter`, `RAG`.

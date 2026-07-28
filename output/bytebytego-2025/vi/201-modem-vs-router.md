@@ -49,3 +49,16 @@ Nếu tất cả thiết bị trong nhà vẫn kết nối Wi-Fi nhưng không v
 - `DHCP`: tự động cấp IP cho device.
 - `WAN/LAN`: mạng diện rộng/mạng cục bộ.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Modem vs. Router”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: Modem kết nối nhà bạn với ISP. Router chia sẻ kết nối đó cho nhiều thiết bị nội bộ. Modem xử lý “đường ra Internet”, router xử lý “mạng trong nhà”: Wi-Fi, NAT, DHCP, route response về đúng device. Khi áp dụng vào hệ thống thật, hãy kiểm thêm DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer.
+
+**Thinking học tập + liên hệ:** Ôn tập `Modem vs Router` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `Modem`, `Router`, `ISP`, `Public IP`, `Private IP`.

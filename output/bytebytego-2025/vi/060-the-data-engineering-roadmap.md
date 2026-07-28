@@ -143,3 +143,37 @@ Trên Linux, có thể xem process bằng `ps aux`, `top`, `htop` hoặc `pgrep`
 - `Thread`: đơn vị execution bên trong process.
 - `Context switch`: chuyển CPU từ execution context này sang context khác.
 - `Coroutine`: đơn vị concurrency hợp tác, thường nhẹ hơn thread và được scheduler ở user/runtime level.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác vào Data Engineering Roadmap?
+
+**Trả lời:** Có thể thêm query plan/EXPLAIN để biết bottleneck thật; transaction isolation để tránh race condition và dirty read; connection pooling/backpressure để database không bị quá tải; và cache invalidation strategy rõ ràng. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Data engineering là công việc xây nền móng để dữ liệu có thể được thu thập, xử lý, lưu trữ, phân tích và hiển thị đáng tin cậy. Data engineer cần biết SQL, programming, batch/stream processing, database, messaging, storage, data warehouse/lake, orchestration, cloud, automation và dashboarding.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `Lộ trình Data Engineering`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Data engineering`, `Batch processing`, `Stream processing`, `Data lake`, `Data warehouse`.
+
+### Câu hỏi 2
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Một số programming language hỗ trợ coroutine. Coroutine và thread khác nhau ở điểm nào?
+
+**Trả lời:** Điểm khác nhau nên nhìn từ boundary và trách nhiệm chính. Với `Lộ trình Data Engineering`, hãy tách rõ mỗi bên giải quyết vấn đề gì, dữ liệu đi qua đâu, ai sở hữu state và lỗi sẽ lan như thế nào. Ý chính để giữ lại là: Data engineering là công việc xây nền móng để dữ liệu có thể được thu thập, xử lý, lưu trữ, phân tích và hiển thị đáng tin cậy. Data engineer cần biết SQL, programming, batch/stream processing, database, messaging, storage, data warehouse/lake, orchestration, cloud, automation và dashboarding.
+
+**Thinking học tập + liên hệ:** Khi so sánh trong `Lộ trình Data Engineering`, hãy tách responsibility, boundary, state, failure mode và cost vận hành thay vì chỉ so tên công nghệ. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Data engineering`, `Batch processing`, `Stream processing`, `Data lake`, `Data warehouse`.
+
+### Câu hỏi 3
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Làm sao liệt kê running process trong Linux?
+
+**Trả lời:** Nên trả lời theo flow end-to-end: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `Lộ trình Data Engineering`, ý chính là: Data engineering là công việc xây nền móng để dữ liệu có thể được thu thập, xử lý, lưu trữ, phân tích và hiển thị đáng tin cậy. Data engineer cần biết SQL, programming, batch/stream processing, database, messaging, storage, data warehouse/lake, orchestration, cloud, automation và dashboarding.
+
+**Thinking học tập + liên hệ:** Luồng trong `Lộ trình Data Engineering` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Data engineering`, `Batch processing`, `Stream processing`, `Data lake`, `Data warehouse`.

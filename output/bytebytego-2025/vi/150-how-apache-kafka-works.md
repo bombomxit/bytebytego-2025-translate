@@ -56,3 +56,16 @@ Payment Service publish event `payment_succeeded` vào Kafka. Email Service gử
 - `Consumer group`: nhóm consumer chia nhau partition.
 - `Replication`: sao chép dữ liệu để an toàn.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** How Apache Kafka Works?
+
+**Trả lời:** Hãy tách flow thành các bước có state rõ ràng: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `Apache Kafka hoạt động như thế nào?`, ý chính là: Kafka lưu event theo topic/partition. Producer ghi event vào topic, partitioner chọn partition, broker lưu và replicate event, consumer group đọc event theo partition. Partition là đơn vị song song hóa và ordering: Kafka bảo đảm order trong một partition, không nhất thiết trên toàn topic.
+
+**Thinking học tập + liên hệ:** Luồng trong `Apache Kafka hoạt động như thế nào?` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Kafka`, `Producer`, `Consumer`, `Topic`, `Partition`.

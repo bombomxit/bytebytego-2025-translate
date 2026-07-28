@@ -50,3 +50,16 @@ Một trang web có 100 asset nhỏ sẽ chậm nếu mỗi asset phải mở TC
 - `Status code`: mã trạng thái như 200, 404, 500.
 - `Multiplexing`: nhiều stream trên một connection.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Evolution of HTTP”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: HTTP tiến hóa chủ yếu để giảm overhead connection và tăng performance. HTTP/1.0 mở connection mới liên tục. HTTP/1.1 giữ connection lâu hơn. HTTP/2 multiplex nhiều stream trên một TCP connection. HTTP/3 chuyển sang QUIC/UDP để cải thiện latency và tránh một số head-of-line blocking. Khi áp dụng vào hệ thống thật, hãy kiểm thêm DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer.
+
+**Thinking học tập + liên hệ:** Liên hệ `Sự tiến hóa của HTTP` bằng một scenario thật sẽ giúp thấy trade-off rõ hơn so với chỉ đọc định nghĩa. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `HTTP/0.9`, `HTTP/1.1`, `HTTP/2`, `HTTP/3`, `Header`.

@@ -46,3 +46,16 @@ Developer chạy `docker build -t api .` để tạo image, `docker push` lên r
 - `Network`: mạng kết nối container.
 - `Docker Hub`: public registry phổ biến.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** How does Docker Work?
+
+**Trả lời:** Luồng tốt nhất là lần theo input tới output: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `Docker hoạt động như thế nào?`, ý chính là: Docker giúp đóng gói application cùng dependency thành image, rồi chạy image đó thành container. Docker client chỉ là công cụ gửi lệnh. Docker daemon trên host làm việc thật: build image, pull image, tạo container, nối network, mount volume. Registry là kho chia sẻ image.
+
+**Thinking học tập + liên hệ:** Luồng trong `Docker hoạt động như thế nào?` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `Docker image`, `Container`, `Docker daemon`, `Docker registry`, `Volume`.

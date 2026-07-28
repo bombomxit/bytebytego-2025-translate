@@ -61,3 +61,17 @@ Khi đọc tech blog, đừng chỉ copy kiến trúc của công ty lớn. Hãy
 - `Case study`: phân tích một hệ thống/tình huống thực tế.
 - `Trade-off`: đánh đổi giữa nhiều mục tiêu như latency, cost, consistency, complexity.
 - `Architect`: người định hướng cấu trúc kỹ thuật và quyết định thiết kế quan trọng.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm tài nguyên nào khác vào danh sách?
+
+**Trả lời:** Nên bổ sung capacity estimation trước khi chọn kiến trúc; SLO/NFR rõ cho latency, availability và durability; graceful degradation khi dependency hỏng; và data ownership và service boundary. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Học software architecture cần kết hợp nhiều nguồn. Sách giúp xây nền tảng dài hạn. Tech blog giúp thấy bài toán thật ở quy mô lớn. YouTube và architecture center giúp hình dung pattern và dịch vụ cloud. Whitepaper giúp hiểu sâu các hệ thống kinh điển. Sách career giúp architect không chỉ giỏi kỹ thuật mà còn biết giao tiếp, ra quyết định và dẫn dắt trade-off.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `24 tài nguyên tốt để học Software Architecture trong năm 2025`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Software architecture`, `Whitepaper`, `Case study`, `Trade-off`, `Architect`.

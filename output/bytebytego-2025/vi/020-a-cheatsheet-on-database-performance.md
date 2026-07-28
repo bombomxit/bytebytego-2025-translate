@@ -79,3 +79,17 @@ Một hệ thống báo cáo đọc nhiều có thể dùng read replica hoặc 
 - `Replication lag`: độ trễ giữa primary và replica.
 - `Resource contention`: nhiều transaction tranh cùng tài nguyên.
 - `HA`: High Availability, khả năng hệ thống vẫn hoạt động khi có lỗi.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm chiến lược database performance nào khác vào danh sách?
+
+**Trả lời:** Có thể thêm query plan/EXPLAIN để biết bottleneck thật; transaction isolation để tránh race condition và dirty read; connection pooling/backpressure để database không bị quá tải; và cache invalidation strategy rõ ràng. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Database performance là một trong những điểm dễ thành bottleneck nhất trong system design. Muốn tối ưu đúng, trước hết phải biết workload là read-heavy, write-heavy hay mixed; dữ liệu lớn cỡ nào; yêu cầu consistency ra sao; traffic tập trung một vùng hay phân tán toàn cầu.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `Cheatsheet về hiệu năng database`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Query execution time`, `Throughput`, `Latency`, `Index`, `Replication lag`.

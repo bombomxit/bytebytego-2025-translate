@@ -51,3 +51,16 @@ Basic Authentication truyền credential dạng Base64, không phải encryption
 - `OpenID Connect`: identity layer trên OAuth2.
 - `API Key`: khóa định danh client/service.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “5 REST API Authentication Methods”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: Authentication API có nhiều mức độ. Basic đơn giản nhưng yếu. Session phù hợp web app truyền thống. Token/JWT phù hợp SPA/mobile/API stateless. OAuth/OIDC phù hợp delegated access và social login. API key phù hợp machine-to-machine nhưng không nên dùng thay user authentication chi tiết. Khi áp dụng vào hệ thống thật, hãy kiểm thêm actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke.
+
+**Thinking học tập + liên hệ:** Ôn tập `5 phương thức Authentication cho REST API` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `Authentication`, `Authorization`, `Basic Auth`, `Session`, `JWT`.

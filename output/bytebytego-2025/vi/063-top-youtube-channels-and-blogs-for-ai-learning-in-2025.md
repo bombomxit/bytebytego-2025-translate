@@ -58,3 +58,17 @@ Nếu bạn là backend developer muốn học AI ứng dụng, có thể bắt 
 - `Research blog`: blog giải thích kết quả nghiên cứu hoặc model mới.
 - `Applied AI`: AI ứng dụng vào sản phẩm thực tế.
 - `Foundation knowledge`: kiến thức nền như toán, ML, neural networks.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm channel và blog nào khác vào danh sách?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là evaluation harness để đo chất lượng thay vì cảm tính; guardrails/policy để giảm prompt injection và output nguy hiểm; observability cho prompt, context, latency, cost và hallucination; và model routing theo độ khó/cost của request. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Bài này là danh sách nguồn học AI theo hai nhóm: video và blog. Video phù hợp để nắm intuition, demo và bài giảng trực quan. Blog phù hợp để đọc cập nhật, release note, research insight và case study kỹ thuật. Khi học AI, nên kết hợp nguồn nền tảng và nguồn cập nhật. 3Blue1Brown giúp hiểu trực giác toán học. DeepLearning AI giúp học structured course. Blog của OpenAI/DeepMind/Anthropic/HuggingFace giúp theo dõi hướng phát triển model, tooling và safety.
+
+**Thinking học tập + liên hệ:** Danh sách trong `Các kênh YouTube và blog hàng đầu để học AI trong năm 2025` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `AI learning resource`, `Research blog`, `Applied AI`, `Foundation knowledge`.

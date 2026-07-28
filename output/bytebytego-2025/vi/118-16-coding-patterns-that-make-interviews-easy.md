@@ -67,3 +67,16 @@ Problem “two sum” dùng hashmap. “Longest substring without repeating char
 - `Dynamic programming`: tối ưu bằng subproblem.
 - `Greedy`: chọn tối ưu cục bộ.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm coding pattern nào khác vào danh sách?
+
+**Trả lời:** Nên bổ sung `A* Search` cho tìm đường có heuristic trong bản đồ/game; `BFS/DFS` cho crawler, dependency graph và duyệt quan hệ; `Consistent Hashing` để phân phối key ổn định trong cache/database cluster; và `Bloom Filter` để kiểm tra membership nhanh với bộ nhớ thấp. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Coding interview thường không kiểm tra thuộc lòng thuật toán rời rạc mà kiểm tra khả năng nhận dạng pattern. Nếu thấy array đã sort, nghĩ tới two pointers hoặc binary search. Nếu cần frequency/lookup nhanh, nghĩ tới hashmap. Nếu cần subarray/window, nghĩ tới sliding window/prefix sum. Nếu có state tối ưu chồng lắp, nghĩ tới dynamic programming.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `16 coding pattern giúp phỏng vấn dễ hơn`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là loại dữ liệu, kích thước input, latency mục tiêu, memory budget và sai số/lỗi có thể chấp nhận. Trong project thật, thuật toán thường ẩn sau search, cache, ranking, routing, queue hoặc storage; hiểu nó giúp dự đoán bottleneck trước khi hệ thống lớn lên. Khi ghi chú lại, hãy giải thích được các keyword: `Two pointers`, `Sliding window`, `Prefix sum`, `Heap`, `Trie`.

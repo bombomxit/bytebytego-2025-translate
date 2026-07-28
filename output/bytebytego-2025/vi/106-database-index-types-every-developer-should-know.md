@@ -50,3 +50,16 @@ Nếu bảng `orders` thường query theo `user_id` và `created_at`, index `(u
 - `Secondary index`: index phụ không quyết định thứ tự lưu.
 - `Range query`: query theo khoảng giá trị.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm index type nào khác vào danh sách?
+
+**Trả lời:** Danh sách sẽ đầy đủ hơn nếu thêm query plan/EXPLAIN để biết bottleneck thật; transaction isolation để tránh race condition và dirty read; connection pooling/backpressure để database không bị quá tải; và cache invalidation strategy rõ ràng. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Index giúp database tìm row nhanh hơn bằng cách lưu cấu trúc tra cứu phụ. Primary index thường gắn với khóa chính. Clustered index ảnh hưởng tới thứ tự lưu vật lý nên chỉ có một. Secondary/non-clustered index là cấu trúc riêng, giúp query theo column khác nhưng cần thêm bước lookup về row thật.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `Các loại database index mọi developer nên biết`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Index`, `Primary index`, `Dense index`, `Sparse index`, `Clustered index`.

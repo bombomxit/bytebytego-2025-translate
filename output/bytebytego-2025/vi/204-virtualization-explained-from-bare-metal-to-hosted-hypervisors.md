@@ -48,3 +48,16 @@ AWS EC2, VMware vSphere hoặc KVM cluster trong data center dùng mô hình Typ
 - `Guest OS`: OS bên trong VM.
 - `Host OS`: OS bên dưới Type 2 hypervisor.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Virtualization Explained: From Bare Metal to Hosted Hypervisors”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: Type 1 hypervisor chạy trực tiếp trên phần cứng nên hiệu năng và isolation tốt, phù hợp data center/cloud. Type 2 hypervisor chạy trên OS có sẵn nên tiện cho developer laptop, demo, lab và testing, nhưng thêm overhead. Cả hai đều cho phép nhiều VM chạy trên cùng hardware. Khi áp dụng vào hệ thống thật, hãy kiểm thêm độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng.
+
+**Thinking học tập + liên hệ:** Khi học `Giải thích Virtualization: từ Bare Metal tới Hosted Hypervisor`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `Hypervisor`, `Type 1 hypervisor`, `Type 2 hypervisor`, `Bare metal`, `Hosted hypervisor`.

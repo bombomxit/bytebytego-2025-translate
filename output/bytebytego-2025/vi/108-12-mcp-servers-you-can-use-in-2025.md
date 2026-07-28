@@ -74,3 +74,16 @@ Một agent phân tích incident có thể dùng GitHub MCP để đọc code li
 - `Real-time search`: tìm kiếm thông tin cập nhật theo thời gian thực.
 - `External data source`: nguồn dữ liệu ngoài model.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm MCP Server nào khác vào danh sách?
+
+**Trả lời:** Nên bổ sung evaluation harness để đo chất lượng thay vì cảm tính; guardrails/policy để giảm prompt injection và output nguy hiểm; observability cho prompt, context, latency, cost và hallucination; và model routing theo độ khó/cost của request. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: MCP giúp chuẩn hóa cách AI app kết nối tool bên ngoài. Thay vì hard-code integration riêng cho từng tool, một MCP server cung cấp interface rõ ràng để LLM/agent gọi tool, đọc resource hoặc lấy context. Đây là lớp rất quan trọng khi xây agent production vì nó giúp kiểm soát quyền, logging và phạm vi hành động.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `12 MCP Server bạn có thể dùng trong năm 2025`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `MCP`, `MCP Server`, `Tool`, `Read-only`, `Permission`.

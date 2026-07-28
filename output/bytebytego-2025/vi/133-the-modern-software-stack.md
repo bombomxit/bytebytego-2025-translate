@@ -64,3 +64,16 @@ Một SaaS dashboard có thể dùng React/Tailwind ở UI, CloudFront ở edge,
 - `Data access`: lớp truy cập dữ liệu.
 - `Infrastructure`: hạ tầng chạy ứng dụng.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Layer nào bạn nghĩ bị đánh giá thấp nhất trong modern software development?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: Modern app thường là một stack nhiều lớp: UI cho người dùng, edge/CDN để delivery nhanh, API để tích hợp, message queue để xử lý bất đồng bộ, business logic cho nghiệp vụ, data access/storage cho dữ liệu, analytics/ML cho insight và infrastructure để chạy/scale. Khi áp dụng vào hệ thống thật, hãy kiểm thêm read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement.
+
+**Thinking học tập + liên hệ:** Khi học `Modern Software Stack`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Software stack`, `Presentation layer`, `Edge/CDN`, `Integration layer`, `Async processing`.

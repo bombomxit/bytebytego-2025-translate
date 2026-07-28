@@ -55,3 +55,16 @@ Khi user không vào được app nội bộ, bạn có thể kiểm tra theo ch
 - `PKI`: hạ tầng khóa công khai và certificate.
 - `NFV`: ảo hóa network function bằng software.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “The Building Blocks of Modern Networking”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: Networking production không chỉ có router và switch. Một hệ thống hiện đại cần lớp core connectivity, security, traffic delivery, identity/trust, operations monitoring, edge access và virtualized infrastructure. Hiểu từng building block giúp debug sự cố theo lớp: DNS sai, DHCP lỗi, firewall chặn, load balancer route sai, hoặc certificate/PKI hết hạn. Khi áp dụng vào hệ thống thật, hãy kiểm thêm DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer.
+
+**Thinking học tập + liên hệ:** Ôn tập `Các building block của modern networking` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `Switch`, `Router`, `SD-WAN`, `Firewall`, `VPN`.

@@ -76,3 +76,17 @@ Một hệ thống upload video có thể lưu file gốc vào S3, metadata vide
 - `Erasure coding`: kỹ thuật chia/mã hóa dữ liệu để phục hồi khi mất một phần.
 - `Checksum`: giá trị kiểm tra toàn vẹn dữ liệu.
 - `Object Lock`: cơ chế khóa object để chống sửa/xóa trong thời gian nhất định.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng Amazon S3 chưa?
+
+**Trả lời:** Với `Amazon S3 hoạt động như thế nào?`, cách liên hệ tốt nhất là chọn một workload nhỏ rồi kiểm chứng bằng số liệu thay vì chọn theo cảm tính. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: S3 không chỉ là “một folder trên cloud”. Nó là distributed object storage cực lớn, chia thành nhiều lớp service: lớp nhận request, lớp metadata/index, lớp đặt dữ liệu vào storage node, lớp durability/recovery và lớp security/compliance. Khi bạn `PUT` một object, request đi qua authentication/authorization, metadata được ghi để biết object nằm ở đâu, dữ liệu được phân phối qua nhiều node/AZ, checksum được dùng để kiểm tra toàn vẹn, và replication/erasure coding giúp tăng durability. Khi bạn `GET`, metadata/index...
+
+**Thinking học tập + liên hệ:** Khi tự liên hệ `Amazon S3 hoạt động như thế nào?`, hãy viết ra một project cụ thể, lý do chọn công nghệ và lỗi vận hành có thể xảy ra. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Object storage`, `Bucket`, `Durability`, `Availability Zone`, `Erasure coding`.

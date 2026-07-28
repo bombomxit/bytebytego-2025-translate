@@ -42,3 +42,16 @@ User clickstream nên dùng Kafka vì data cần được nhiều team đọc l�
 - `Ack`: acknowledgment báo message xử lý xong.
 - `Consumer group`: nhóm consumer cùng xử lý workload.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Apache Kafka vs. RabbitMQ”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Nếu rút thành checklist thiết kế thì ý chính là: Kafka phù hợp cho event stream, replay, audit log, CDC và nhiều consumer độc lập đọc cùng dữ liệu. RabbitMQ phù hợp cho job queue, task dispatch, routing linh hoạt và workflow cần acknowledgement/xóa message sau xử lý. Chọn sai sẽ làm hệ thống khó vận hành. Khi áp dụng vào hệ thống thật, hãy kiểm thêm requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team.
+
+**Thinking học tập + liên hệ:** Liên hệ `Apache Kafka vs RabbitMQ` bằng một scenario thật sẽ giúp thấy trade-off rõ hơn so với chỉ đọc định nghĩa. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Distributed log`, `Partition`, `Offset`, `Retention policy`, `Exchange`.

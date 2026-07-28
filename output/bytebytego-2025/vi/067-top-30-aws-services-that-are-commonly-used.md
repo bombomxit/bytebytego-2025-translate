@@ -85,3 +85,17 @@ Một API upload hóa đơn có thể dùng API Gateway/Lambda hoặc ECS cho ba
 - `VPC`: mạng riêng ảo trên AWS.
 - `WAF`: Web Application Firewall.
 - `CloudFormation`: IaC service của AWS.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm AWS service nào khác vào danh sách?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là SLO/error budget để biết hệ thống đủ tốt hay chưa; blue-green/canary deployment để giảm rủi ro release; secret management và least privilege IAM; và cost monitoring/tagging cho cloud bill. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: AWS có rất nhiều service, nhưng developer nên học theo nhóm năng lực. Compute chạy workload. Storage lưu object/block/file. Database lưu dữ liệu có cấu trúc hoặc NoSQL. Networking/security quản lý traffic và bảo vệ hệ thống. AI/ML hỗ trợ model và phân tích. Monitoring/DevOps giúp quan sát và deploy.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `Top 30 AWS service thường được sử dụng`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `EC2`, `Lambda`, `S3`, `RDS`, `VPC`.

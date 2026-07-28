@@ -59,3 +59,16 @@ Khi bạn mở một website, browser có thể hỏi DNS trước, kết nối 
 - `Origin server`: server chứa content gốc.
 - `Edge server`: server gần user, thường dùng cho cache/CDN.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Loại server nào bạn thấy quan trọng nhất trong trải nghiệm online của mình?
+
+**Trả lời:** Nếu rút thành checklist thiết kế thì ý chính là: Các server khác nhau tồn tại vì mỗi loại giải quyết một bài toán hạ tầng riêng. Web server phục vụ HTTP content. Mail server xử lý email. DNS server biến tên miền thành IP. Proxy server đứng giữa để cache, bảo vệ hoặc ẩn danh. FTP server truyền file. Origin server là nơi giữ nội dung gốc để CDN/edge cache phân phối nhanh hơn. Khi áp dụng vào hệ thống thật, hãy kiểm thêm DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer.
+
+**Thinking học tập + liên hệ:** Khi học `6 loại server được dùng phổ biến nhất`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `Web server`, `Mail server`, `DNS server`, `Proxy server`, `FTP`.

@@ -44,3 +44,16 @@ Trong một trang comment, nếu backend lưu nội dung comment và frontend re
 - `Escape output`: mã hóa ký tự đặc biệt khi render ra HTML/JS/CSS/URL.
 - `CSP`: Content Security Policy, chính sách giảm rủi ro chạy script trái phép.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Cross-Site Scripting (XSS) Attacks”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: XSS là lỗi xảy ra khi dữ liệu không đáng tin cậy bị đưa vào HTML/JavaScript mà không escape hoặc sanitize đúng cách. Reflected XSS thường cần user bấm link, Stored XSS nguy hiểm hơn vì payload nằm sẵn trong hệ thống, còn DOM-based XSS nằm nhiều ở logic frontend khi đọc URL, fragment, query string hoặc local state rồi ghi thẳng vào DOM. Khi áp dụng vào hệ thống thật, hãy kiểm thêm UX, bundle size, build time, maintainability, accessibility và tốc độ release.
+
+**Thinking học tập + liên hệ:** Ôn tập `Tấn công Cross-Site Scripting (XSS)` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là UX, bundle size, build time, maintainability, accessibility và tốc độ release. Khi làm frontend production, hãy nối code với người dùng thật: load có nhanh không, lỗi có thấy được không, component có tái dùng được không và build có scale với team không. Khi ghi chú lại, hãy giải thích được các keyword: `XSS`, `Payload`, `Reflected XSS`, `Stored XSS`, `DOM-based XSS`.

@@ -57,3 +57,16 @@ Nguồn nói `PATCH` không idempotent. Đây là cách hiểu thực dụng ph�
 - `JWT`: JSON Web Token gồm header, payload, signature.
 - `Pagination`: chia list lớn thành nhiều page.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “How to Design Good APIs”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Nên trả lời theo flow end-to-end: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `Cách thiết kế API tốt`, ý chính là: API tốt cần predictable: tên resource rõ, method đúng nghĩa, versioning rõ ràng, pagination cho list lớn, security mặc định bật, và retry không tạo side effect nhờ idempotency key. Những nguyên tắc này làm client dễ dùng hơn và backend dễ vận hành hơn khi scale.
+
+**Thinking học tập + liên hệ:** Luồng trong `Cách thiết kế API tốt` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `Idempotency`, `Idempotency key`, `Versioning`, `Resource`, `Bearer token`.

@@ -55,3 +55,17 @@ Khi phỏng vấn system design, bạn có thể mô tả ở mức generic như
 - `Managed database`: database do cloud provider vận hành.
 - `Message queue`: hàng đợi giúp xử lý bất đồng bộ.
 - `IAM`: Identity and Access Management, quản lý danh tính và quyền.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** công ty nào đặt tên tốt nhất?
+
+**Trả lời:** Nếu xét độ dễ hiểu cho người mới, Google Cloud và Cloudflare thường đặt tên trực quan hơn vì nhiều dịch vụ mô tả khá sát chức năng. AWS phổ biến và giàu dịch vụ nhất, nhưng tên như `S3`, `EC2`, `IAM`, `EKS` cần thời gian học acronym. Trong team production, tên hay không quan trọng bằng việc mapping đúng service tương đương và hiểu pricing/limit của từng cloud.
+
+**Thinking học tập + liên hệ:** Liên hệ `Cheatsheet tiện dụng cho các cloud service phổ biến nhất` bằng một scenario thật sẽ giúp thấy trade-off rõ hơn so với chỉ đọc định nghĩa. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `Cloud provider`, `Compute`, `Object storage`, `Managed database`, `Message queue`.

@@ -61,3 +61,16 @@ Nếu bạn đổi DNS record của `api.example.com`, user có thể vẫn th�
 - `TTL`: thời gian DNS record được cache.
 - `Cache miss`: không tìm thấy dữ liệu trong cache.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** DNS hoạt động như thế nào?
+
+**Trả lời:** Nên trả lời theo flow end-to-end: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `DNS hoạt động như thế nào?`, ý chính là: DNS lookup là quá trình phân giải domain sang IP qua nhiều lớp cache và server phân cấp: browser/OS cache -> resolver cache -> root -> TLD -> authoritative. Cache giúp hầu hết request không phải đi hết chuỗi này mỗi lần.
+
+**Thinking học tập + liên hệ:** Luồng trong `DNS hoạt động như thế nào?` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `DNS`, `Resolver`, `Root server`, `TLD`, `Authoritative name server`.

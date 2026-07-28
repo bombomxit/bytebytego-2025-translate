@@ -54,3 +54,17 @@ Upload ảnh đại diện: API nhận file, ghi metadata, đẩy job vào SQS, 
 - `Fan-out`: gửi một message tới nhiều đích.
 - `Streaming`: xử lý dòng dữ liệu liên tục.
 - `Decoupling`: giảm phụ thuộc trực tiếp giữa component.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng SQS, SNS, EventBridge hoặc Kinesis chưa?
+
+**Trả lời:** Với `SQS vs SNS vs EventBridge vs Kinesis`, cách liên hệ tốt nhất là chọn một workload nhỏ rồi kiểm chứng bằng số liệu thay vì chọn theo cảm tính. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: Bốn service này đều liên quan đến message/event nhưng phục vụ bài toán khác nhau. SQS là queue: producer gửi message, consumer lấy ra xử lý, phù hợp decouple và xử lý async. SNS là pub/sub topic: một message được broadcast tới nhiều subscriber. EventBridge là event bus có routing rule/filter mạnh hơn, phù hợp event-driven integration giữa nhiều service. Kinesis là data stream cho throughput lớn, thứ tự theo shard và xử lý gần real-time.
+
+**Thinking học tập + liên hệ:** Khi tự liên hệ `SQS vs SNS vs EventBridge vs Kinesis`, hãy viết ra một project cụ thể, lý do chọn công nghệ và lỗi vận hành có thể xảy ra. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Queue`, `Pub/Sub`, `Event bus`, `Fan-out`, `Streaming`.

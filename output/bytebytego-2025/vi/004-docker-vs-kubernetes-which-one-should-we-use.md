@@ -62,3 +62,17 @@ Nếu chưa có nhu cầu cluster thật sự, dùng Kubernetes quá sớm có t
 - `Orchestration`: điều phối deployment, scaling, networking và lifecycle của container.
 - `Cluster`: tập hợp nhiều node/máy cùng chạy workload.
 - `Desired state`: trạng thái mong muốn mà hệ thống orchestration cố duy trì.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Những thách thức nào đã khiến bạn chuyển từ Docker sang Kubernetes để quản lý các ứng dụng containerized?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: Docker giải quyết bài toán “đóng gói và chạy ứng dụng nhất quán”. Thay vì cài dependency thủ công trên từng máy, bạn đóng gói app vào image rồi chạy thành container. Điều này giúp môi trường dev, staging và production giống nhau hơn. Kubernetes giải quyết bài toán “vận hành nhiều container ở quy mô lớn”. Khi hệ thống có nhiều service, nhiều instance, nhiều node, cần auto-healing, rolling update, service discovery, load balancing và autoscaling, Kubernetes trở nên phù hợp hơn. Khi áp dụng vào hệ thống thật, hãy kiểm thêm độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng.
+
+**Thinking học tập + liên hệ:** Khi học `Docker vs. Kubernetes: nên dùng cái nào?`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `Container`, `Image`, `Containerization`, `Orchestration`, `Cluster`.

@@ -54,3 +54,16 @@ Node.js xử lý nhiều HTTP request bằng event loop là concurrency mạnh c
 - `Thread`: luồng thực thi.
 - `Core`: lõi CPU.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn từng gặp challenge nào với concurrency hoặc parallelism chưa?
+
+**Trả lời:** Nếu đưa `Concurrency không phải Parallelism` vào stack, nên bắt đầu từ một use case hẹp, dễ rollback và có metric rõ. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: Concurrency là cấu trúc chương trình để xử lý nhiều việc đang diễn ra cùng lúc. Parallelism là chạy nhiều việc thật sự cùng lúc trên nhiều core. Một server async có thể concurrent trên một core khi chờ I/O; một job xử lý ảnh có thể parallel bằng cách chia ảnh cho nhiều core xử lý.
+
+**Thinking học tập + liên hệ:** Với `Concurrency không phải Parallelism`, trải nghiệm thật nên được đo bằng latency, độ ổn định, chi phí, khả năng debug và mức dễ rollback. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `Concurrency`, `Parallelism`, `Context switching`, `I/O-bound`, `CPU-bound`.

@@ -62,3 +62,16 @@ Một app video nhỏ có thể dùng S3 + CloudFront cho frontend/media, API Ga
 - `CloudWatch`: monitoring/logging.
 - `Route 53`: DNS service.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm service nào khác vào danh sách?
+
+**Trả lời:** Nên bổ sung SLO/error budget để biết hệ thống đủ tốt hay chưa; blue-green/canary deployment để giảm rủi ro release; secret management và least privilege IAM; và cost monitoring/tagging cho cloud bill. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: AWS stack có thể nhìn như các lớp của một production app: frontend/CDN, API gateway, compute/business logic, media handling, data, security, observability, CI/CD và networking multi-region. Khi thiết kế, nên bắt đầu từ requirement rồi chọn service, không chọn service vì danh sách dài.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `AWS Tech Stack`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `S3`, `CloudFront`, `API Gateway`, `Lambda`, `EKS`.

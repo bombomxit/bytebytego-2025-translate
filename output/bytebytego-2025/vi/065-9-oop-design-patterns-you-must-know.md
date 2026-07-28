@@ -96,3 +96,27 @@ Trong hệ thống thanh toán, `PaymentGatewayFactory` chọn Stripe/PayPal/VNP
 - `Observer`: pattern publish/notify khi state thay đổi.
 - `Encapsulation`: đóng gói data và behavior.
 - `Polymorphism`: đa hình, cùng interface nhiều implementation.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng pattern nào trong số này?
+
+**Trả lời:** Trong project thật, `9 OOP Design Pattern bạn phải biết` đáng dùng/thử khi bài toán khớp với nhu cầu cụ thể và team đo được kết quả. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: OOP pattern giúp tổ chức object và dependency rõ hơn. Creational pattern kiểm soát cách tạo object. Structural pattern giúp các object/class ghép lại với nhau linh hoạt. Behavioral pattern điều phối cách object giao tiếp và chọn behavior. Bốn trụ cột OOP là nền tảng để hiểu pattern. Abstraction giúp ẩn chi tiết. Encapsulation bảo vệ state. Inheritance tái sử dụng behavior qua quan hệ cha-con. Polymorphism giúp code xử lý nhiều implementation qua cùng một interface.
+
+**Thinking học tập + liên hệ:** Câu hỏi trải nghiệm trong `9 OOP Design Pattern bạn phải biết` nên quy về adoption: dùng cho workload nào, đo thành công bằng metric nào và có đáng giữ lâu dài trong stack không. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Concrete class`, `Factory`, `Strategy`, `Observer`, `Encapsulation`.
+
+### Câu hỏi 2
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn có dùng object-oriented programming không?
+
+**Trả lời:** Nếu đưa `9 OOP Design Pattern bạn phải biết` vào stack, nên bắt đầu từ một use case hẹp, dễ rollback và có metric rõ. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: OOP pattern giúp tổ chức object và dependency rõ hơn. Creational pattern kiểm soát cách tạo object. Structural pattern giúp các object/class ghép lại với nhau linh hoạt. Behavioral pattern điều phối cách object giao tiếp và chọn behavior. Bốn trụ cột OOP là nền tảng để hiểu pattern. Abstraction giúp ẩn chi tiết. Encapsulation bảo vệ state. Inheritance tái sử dụng behavior qua quan hệ cha-con. Polymorphism giúp code xử lý nhiều implementation qua cùng một interface.
+
+**Thinking học tập + liên hệ:** Với `9 OOP Design Pattern bạn phải biết`, trải nghiệm thật nên được đo bằng latency, độ ổn định, chi phí, khả năng debug và mức dễ rollback. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Concrete class`, `Factory`, `Strategy`, `Observer`, `Encapsulation`.

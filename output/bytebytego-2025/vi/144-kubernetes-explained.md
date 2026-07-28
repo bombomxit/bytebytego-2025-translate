@@ -61,3 +61,16 @@ Khi bạn apply Deployment 3 replica, API Server nhận manifest, lưu state và
 - `kubelet`: agent chạy trên worker node.
 - `kube-proxy`: thành phần networking trên node.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Kubernetes Explained”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Bài này muốn người đọc nắm: Kubernetes quản lý desired state của ứng dụng container. Control plane ra quyết định và lưu state; worker node chạy workload thật. Bạn khai báo muốn chạy gì, bao nhiêu replica, expose ra sao; Kubernetes cố gắng giữ cluster đúng với khai báo đó. Nếu Docker giúp chạy một container, Kubernetes giúp vận hành nhiều container trên nhiều node với scheduling, scaling, networking và self-healing. Khi áp dụng vào hệ thống thật, hãy kiểm thêm độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng.
+
+**Thinking học tập + liên hệ:** Khi học `Kubernetes được giải thích`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `Container orchestration`, `Control Plane`, `API Server`, `Scheduler`, `etcd`.

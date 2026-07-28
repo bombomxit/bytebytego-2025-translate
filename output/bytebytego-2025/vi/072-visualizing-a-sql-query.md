@@ -52,3 +52,17 @@ Khi query chậm, dùng `EXPLAIN` hoặc `EXPLAIN ANALYZE` để xem database c�
 - `Predicate`: điều kiện lọc/join.
 - `Aggregation`: tính toán theo nhóm như COUNT, SUM, AVG.
 - `EXPLAIN`: lệnh xem query plan.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Visualizing a SQL query”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: SQL được viết theo thứ tự `SELECT ... FROM ... WHERE ...`, nhưng database xử lý logic theo thứ tự khác. Thường nó xác định source từ `FROM/JOIN`, áp điều kiện join `ON`, lọc `WHERE`, gom `GROUP BY`, lọc group bằng `HAVING`, rồi mới chọn output `SELECT`, sắp xếp `ORDER BY` và giới hạn `LIMIT`. Khi áp dụng vào hệ thống thật, hãy kiểm thêm read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement.
+
+**Thinking học tập + liên hệ:** Liên hệ `Trực quan hóa một SQL query` bằng một scenario thật sẽ giúp thấy trade-off rõ hơn so với chỉ đọc định nghĩa. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Parsing`, `Relational algebra`, `Optimizer`, `Execution plan`, `Predicate`.

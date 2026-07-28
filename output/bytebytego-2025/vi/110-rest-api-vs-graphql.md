@@ -55,3 +55,16 @@ Mobile home screen cần user profile, cart count, recommendation và notificati
 - `Under-fetching`: phải gọi thêm API vì thiếu dữ liệu.
 - `Query complexity`: độ phức tạp/tốn tài nguyên của query.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “REST API Vs. GraphQL”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: REST giống nhiều cửa rõ ràng, mỗi endpoint đại diện một resource. GraphQL giống một cửa linh hoạt, client mô tả chính xác dữ liệu cần lấy. REST dễ cache, debug và enforce contract. GraphQL giảm over-fetching/under-fetching nhưng cần kiểm soát query depth, complexity, auth field-level và caching. Khi áp dụng vào hệ thống thật, hãy kiểm thêm actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke.
+
+**Thinking học tập + liên hệ:** Khi học `REST API vs GraphQL`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `REST`, `GraphQL`, `Mutation`, `Subscription`, `Over-fetching`.

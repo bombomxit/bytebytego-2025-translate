@@ -69,3 +69,17 @@ Nếu cần revoke ngay lập tức, có thể dùng token version trong databas
 - `Symmetric key`: cùng một key để ký và verify.
 - `Asymmetric key`: private key ký, public key verify.
 - `Bearer token`: token mà ai sở hữu thì có thể dùng để truy cập nếu token hợp lệ.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn có dùng JWT cho authentication không?
+
+**Trả lời:** Nếu đưa `JWT 101: chìa khóa cho Stateless Authentication` vào stack, nên bắt đầu từ một use case hẹp, dễ rollback và có metric rõ. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: JWT là format token gồm header, payload và signature. Header nói token dùng thuật toán gì. Payload chứa claim như user id, role, issuer hoặc expiration. Signature giúp server kiểm tra token có bị sửa hay không. JWT thường được gọi là stateless vì server không nhất thiết phải lưu session cho mỗi user. Khi request đến, server verify chữ ký và đọc claim trong token. Điều này giúp scale ngang dễ hơn, nhưng cũng tạo trách nhiệm bảo vệ token rất nghiêm túc.
+
+**Thinking học tập + liên hệ:** Với `JWT 101: chìa khóa cho Stateless Authentication`, trải nghiệm thật nên được đo bằng latency, độ ổn định, chi phí, khả năng debug và mức dễ rollback. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `Claim`, `Registered claim`, `Signature`, `Symmetric key`, `Asymmetric key`.

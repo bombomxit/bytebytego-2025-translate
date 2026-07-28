@@ -72,3 +72,17 @@ Nếu bỏ qua signature verification cho webhook thanh toán, attacker có th�
 - `Integrity`: đảm bảo dữ liệu không bị sửa.
 - `Authenticity`: đảm bảo dữ liệu đến từ đúng chủ thể.
 - `Non-repudiation`: người ký khó phủ nhận hành động ký.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng digital signature chưa?
+
+**Trả lời:** Digital signature rất nên dùng khi cần chứng minh dữ liệu đến từ đúng nguồn và không bị sửa: ký JWT/JWS, ký webhook payload, ký release artifact, ký tài liệu pháp lý hoặc ký request giữa service. Nó khác encryption ở chỗ mục tiêu chính không phải giấu nội dung, mà là xác minh tính toàn vẹn và nguồn gốc bằng public key.
+
+**Thinking học tập + liên hệ:** Với `Digital Signature hoạt động như thế nào?`, trải nghiệm thật nên được đo bằng latency, độ ổn định, chi phí, khả năng debug và mức dễ rollback. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `Digital signature`, `Hash function`, `Private key`, `Public key`, `Integrity`.

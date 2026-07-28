@@ -56,3 +56,17 @@ Nếu muốn lấy tất cả user và số đơn hàng của họ, kể cả us
 - `Foreign key`: khóa tham chiếu sang table khác.
 - `Cardinality`: số lượng/độ phân bố row matching.
 - `Query plan`: kế hoạch database dùng để thực thi query.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn dùng SQL Join nào nhiều nhất?
+
+**Trả lời:** Bài này muốn người đọc nắm: Join là cách kết hợp dữ liệu giữa các table quan hệ. Inner join phù hợp khi chỉ cần record có đủ dữ liệu ở cả hai bên. Left join phù hợp khi muốn giữ toàn bộ dữ liệu gốc bên trái, ví dụ danh sách user dù user chưa có order. Right join tương tự nhưng giữ toàn bộ bảng bên phải. Full outer join dùng khi muốn thấy tất cả record từ cả hai phía, kể cả không match. Khi áp dụng vào hệ thống thật, hãy kiểm thêm read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement.
+
+**Thinking học tập + liên hệ:** Khi học `4 loại SQL Join`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Join`, `NULL`, `Primary key`, `Foreign key`, `Cardinality`.

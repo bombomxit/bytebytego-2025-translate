@@ -59,3 +59,16 @@ Tạo payment nên dùng `POST /v1/payments` với `Idempotency-Key`. Danh sách
 - `Versioning`: quản lý phiên bản API.
 - `Backward compatibility`: tương thích với client cũ.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Chúng ta có bỏ sót điều gì quan trọng không?
+
+**Trả lời:** Danh sách sẽ đầy đủ hơn nếu thêm idempotency key cho API ghi dữ liệu hoặc payment; OpenAPI/contract validation để giảm sai lệch client-server; correlation id/distributed tracing để debug production; và threat modeling theo OWASP API Top 10. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: API tốt phải dễ đoán, dễ dùng và dễ tiến hóa. Naming rõ ràng giúp client hiểu resource. Idempotency giúp retry không tạo side effect trùng. Pagination/filter/sort kiểm soát payload. Rate limit bảo vệ hệ thống. Versioning và security giúp API sống lâu trong production.
+
+**Thinking học tập + liên hệ:** Danh sách trong `Best practice trong API Design` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `Idempotency`, `Pagination`, `Filtering`, `Sorting`, `Rate limiting`.

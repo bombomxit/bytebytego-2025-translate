@@ -48,3 +48,16 @@ Khi chạy Kubernetes trên EKS/AKS/GKE, bạn deploy Pod/container, nhưng node
 - `Guest OS`: OS chạy bên trong VM.
 - `Host OS`: OS của máy chủ/container host.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Types of Virtualization”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Nếu rút thành checklist thiết kế thì ý chính là: Bare metal đơn giản nhưng isolation kém. VM isolation mạnh vì mỗi workload có OS riêng, nhưng nặng. Container nhẹ và start nhanh vì chia sẻ kernel, nhưng isolation thấp hơn VM. Cloud production thường kết hợp container trên VM để vừa có isolation cấp hạ tầng vừa có tốc độ và mật độ triển khai của container. Khi áp dụng vào hệ thống thật, hãy kiểm thêm độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng.
+
+**Thinking học tập + liên hệ:** Liên hệ `Các loại Virtualization` bằng một scenario thật sẽ giúp thấy trade-off rõ hơn so với chỉ đọc định nghĩa. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `Virtualization`, `Bare metal`, `VM`, `Hypervisor`, `Container`.

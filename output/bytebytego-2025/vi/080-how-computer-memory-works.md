@@ -55,3 +55,16 @@ Khi database query dùng index tốt, nó giảm số page phải đọc từ di
 - `Cache locality`: khả năng dữ liệu gần nhau được truy cập gần thời điểm nhau.
 - `I/O`: input/output giữa chương trình và thiết bị/lưu trữ.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác để cải thiện việc hiểu cách computer memory hoạt động?
+
+**Trả lời:** Nên bổ sung query plan/EXPLAIN để biết bottleneck thật; transaction isolation để tránh race condition và dirty read; connection pooling/backpressure để database không bị quá tải; và cache invalidation strategy rõ ràng. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Máy tính có nhiều tầng bộ nhớ vì không có một loại storage nào vừa cực nhanh, vừa cực lớn, vừa rẻ. CPU register rất nhanh nhưng nhỏ. Cache nhanh hơn RAM nhưng đắt và nhỏ. RAM nhanh hơn disk nhưng mất dữ liệu khi tắt máy. Disk/network storage lớn hơn nhưng chậm hơn nhiều.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `Bộ nhớ máy tính hoạt động như thế nào?`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Register`, `CPU cache`, `RAM`, `Virtual memory`, `Permanent storage`.

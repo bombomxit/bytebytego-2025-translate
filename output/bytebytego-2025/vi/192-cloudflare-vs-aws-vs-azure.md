@@ -83,3 +83,16 @@ Một số mô tả trong hình có dấu hiệu bị copy nhầm hoặc rút g�
 - `Egress fee`: phí dữ liệu đi ra khỏi cloud.
 - `Load balancing`: phân phối traffic qua nhiều endpoint/server.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Cloudflare vs. AWS vs. Azure”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: Cloudflare đang đi theo hướng edge-native: compute, storage, workflow, vector search và agent chạy gần user. AWS và Azure là cloud platform rộng hơn, có ecosystem mature cho compute, database, networking, enterprise integration và AI platform. Khi chọn, cần nhìn workload: nếu cần edge latency thấp và đơn giản hóa egress/CDN, Cloudflare hấp dẫn; nếu cần hệ sinh thái cloud đầy đủ, AWS/Azure thường mạnh hơn. Khi áp dụng vào hệ thống thật, hãy kiểm thêm độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng.
+
+**Thinking học tập + liên hệ:** Ôn tập `Cloudflare vs AWS vs Azure` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `CDN`, `DDoS protection`, `Edge compute`, `Serverless`, `Object storage`.

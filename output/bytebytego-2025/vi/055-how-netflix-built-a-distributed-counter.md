@@ -65,3 +65,17 @@ Một nền tảng video cần đếm view/like theo video realtime. Nếu mỗi
 - `Eventual consistency`: dữ liệu sẽ nhất quán sau một độ trễ nhất định.
 - `Contention`: nhiều request tranh cùng tài nguyên gây nghẽn.
 - `EVCache`: caching solution của Netflix dựa trên Memcached.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** How Netflix Built a Distributed Counter?
+
+**Trả lời:** Luồng tốt nhất là lần theo input tới output: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `Netflix xây dựng Distributed Counter như thế nào?`, ý chính là: Đếm ở quy mô lớn không đơn giản như `count = count + 1` trong một row database. Nếu hàng chục nghìn request mỗi giây cùng update một key, database sẽ bị contention. Netflix tách counter thành event log/time bucket, rollup pipeline và cache đọc nhanh. Thiết kế này ưu tiên throughput và eventual consistency. Write path ghi event idempotent vào storage phân tán. Aggregation tính toán theo time window bất biến. Read path đọc counter đã aggregate từ cache. Nếu cache stale, background job refresh lại thay vì block...
+
+**Thinking học tập + liên hệ:** Luồng trong `Netflix xây dựng Distributed Counter như thế nào?` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Distributed Counter`, `Idempotency`, `Time bucket`, `Rollup`, `Eventual consistency`.

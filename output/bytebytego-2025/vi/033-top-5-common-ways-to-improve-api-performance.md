@@ -60,3 +60,17 @@ API `GET /orders` không nên trả 100.000 đơn trong một response. Nó nên
 - `Cache miss`: cache không có dữ liệu cần đọc.
 - `Compression`: nén dữ liệu để giảm kích thước truyền tải.
 - `Connection pool`: nhóm connection mở sẵn để tái sử dụng.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn dùng cách nào khác để cải thiện API performance?
+
+**Trả lời:** Có thể thêm query plan/EXPLAIN để biết bottleneck thật; transaction isolation để tránh race condition và dirty read; connection pooling/backpressure để database không bị quá tải; và cache invalidation strategy rõ ràng. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: API performance thường bị ảnh hưởng bởi dữ liệu trả về quá lớn, I/O log đồng bộ, database bị đọc lặp lại, payload quá nặng và connection database tạo mới liên tục. Năm kỹ thuật trong bài xử lý đúng các điểm nghẽn đó. Pagination giảm lượng dữ liệu mỗi response. Async logging tránh request path bị chặn bởi disk I/O. Cache giảm tải database và latency. Compression giảm băng thông cho payload lớn. Connection pooling giảm chi phí thiết lập kết nối database.
+
+**Thinking học tập + liên hệ:** Danh sách trong `5 cách phổ biến để cải thiện hiệu năng API` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Pagination`, `Cursor pagination`, `Lock-free buffer`, `Cache miss`, `Compression`.

@@ -67,3 +67,17 @@ Nếu database quá lớn, có thể sharding theo `tenant_id` hoặc `user_id`.
 - `Loose coupling`: các component phụ thuộc lỏng lẻo, thay đổi/scale độc lập hơn.
 - `Asynchronous processing`: xử lý bất đồng bộ, thường qua queue/event.
 - `Sharding`: chia dữ liệu thành nhiều phần nhỏ để scale ngang.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn cải thiện scalability của một hệ thống như thế nào?
+
+**Trả lời:** Nên trả lời theo flow end-to-end: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `Khóa học cấp tốc về khả năng mở rộng kiến trúc`, ý chính là: Scalability không chỉ là “thêm server”. Một kiến trúc scalable phải có chiến lược tăng tải lặp lại được và vẫn hợp lý về chi phí. Nếu mỗi lần tăng traffic lại phải tăng chi phí gấp nhiều lần, hệ thống đó chưa thật sự scale tốt. Ba thứ thường làm hệ thống khó scale là thành phần tập trung, operation latency cao và coupling quá chặt. Thành phần tập trung dễ thành single point of failure. Operation chậm làm queue request bị dồn. Coupling chặt khiến muốn scale một phần nhưng phải scale cả cụm.
+
+**Thinking học tập + liên hệ:** Luồng trong `Khóa học cấp tốc về khả năng mở rộng kiến trúc` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Scalability`, `Bottleneck`, `Stateless`, `Loose coupling`, `Asynchronous processing`.

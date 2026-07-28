@@ -77,3 +77,16 @@ Nếu API không truy cập được, bạn có thể chạy: `dig api.example.c
 - `Packet capture`: bắt gói tin thật.
 - `Throughput`: băng thông thực đo được.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Network Debugging Commands Every Engineer Should Know”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: Debug network nên đi theo lớp: reachability (`ping`), route (`traceroute/mtr`), local config (`ip addr`, `ip route`), DNS (`dig`), port/listener (`ss`, `nmap`), HTTP header (`curl -I`), packet capture (`tcpdump`), throughput (`iperf3`). Như vậy bạn tránh đoán mò “network issue” chung chung. Khi áp dụng vào hệ thống thật, hãy kiểm thêm DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer.
+
+**Thinking học tập + liên hệ:** Khi học `Các lệnh debug network mọi engineer nên biết`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `RTT`, `Hop`, `ARP`, `Socket`, `DNS lookup`.

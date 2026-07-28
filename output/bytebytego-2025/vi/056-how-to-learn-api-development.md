@@ -66,3 +66,17 @@ API tạo payment nên có OpenAPI spec, authentication bằng OAuth2/JWT, idemp
 - `CORS`: cơ chế browser kiểm soát cross-origin request.
 - `Load testing`: kiểm thử API dưới tải cao.
 - `API Gateway`: lớp quản lý/route/bảo vệ API tập trung.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác vào danh sách học API development?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là idempotency key cho API ghi dữ liệu hoặc payment; OpenAPI/contract validation để giảm sai lệch client-server; correlation id/distributed tracing để debug production; và threat modeling theo OWASP API Top 10. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: API development là kỹ năng giao tiếp hệ thống. Bạn cần hiểu HTTP foundation, thiết kế endpoint/resource, request/response, authentication, security, documentation, testing, deployment và integration. Một API tốt không chỉ chạy đúng mà còn dễ hiểu, version rõ, error nhất quán, có rate limit, có document và có test.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `Học API Development như thế nào?`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `SDK`, `HTTP method`, `Status code`, `OpenAPI`, `CORS`.

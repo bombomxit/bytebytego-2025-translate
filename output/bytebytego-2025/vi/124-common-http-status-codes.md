@@ -50,3 +50,16 @@ Nếu user chưa login, API nên trả `401`. Nếu login rồi nhưng không đ
 - `Retry`: thử lại request.
 - `Redirect`: chuyển client tới URL khác.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Category nào làm bạn dễ nhầm nhất, và vì sao?
+
+**Trả lời:** Bài này muốn người đọc nắm: HTTP status code là contract giao tiếp giữa server và client. Client dùng code để quyết định retry, login lại, redirect, show error hay cache. API tốt nên dùng status code nhất quán, không trả `200 OK` cho mọi lỗi rồi nhét error trong body. Khi áp dụng vào hệ thống thật, hãy kiểm thêm DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer.
+
+**Thinking học tập + liên hệ:** Khi học `Các HTTP status code phổ biến`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `HTTP status code`, `2xx`, `3xx`, `4xx`, `5xx`.

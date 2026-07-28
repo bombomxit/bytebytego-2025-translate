@@ -64,3 +64,16 @@ Nếu video call hoạt động kém nhưng web browsing bình thường, vấn 
 - `OAuth/OpenID`: authorization và identity.
 - `WireGuard/IPsec`: VPN.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Common Network Protocols Every Engineer Should Know”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: Protocol là contract để hệ thống giao tiếp. Có protocol cho transport, web, bảo mật, DNS, file, remote shell, realtime, identity, directory, time sync, VPN và email. Khi hiểu protocol và port phổ biến, bạn debug firewall, latency, connection failure và authentication flow nhanh hơn. Khi áp dụng vào hệ thống thật, hãy kiểm thêm DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer.
+
+**Thinking học tập + liên hệ:** Khi học `Các network protocol phổ biến mọi engineer nên biết`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `Protocol`, `TCP/UDP/QUIC`, `TLS`, `DNS/DoH`, `SSH/SFTP/SMB`.

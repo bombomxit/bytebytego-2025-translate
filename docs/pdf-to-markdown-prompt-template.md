@@ -40,6 +40,7 @@ Nếu tôi nói “làm đi” khi đã đủ thông tin, hãy tự chạy theo 
    - Tóm tắt
    - Ví dụ thực tế - không nằm trong tài liệu gốc
    - Thuật ngữ chính
+   - Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
 6. Tạo `output/<slug>/vi/000-muc-luc-tom-tat.md`.
 7. Tạo `output/<slug>/README.md`.
 8. Tạo hoặc cập nhật README gốc của repo.
@@ -47,12 +48,16 @@ Nếu tôi nói “làm đi” khi đã đủ thông tin, hãy tự chạy theo 
    - số bài manifest/original/vi khớp nhau;
    - không thiếu image link;
    - mỗi bài dịch có đủ section;
+   - mỗi bài dịch có câu hỏi ôn tập, trả lời trực tiếp và thinking học tập + liên hệ ở cuối file;
    - không còn placeholder `TODO`, `TBD`, `dịch sau`.
 
 Quy tắc dịch:
 - Dịch sát ý gốc, không bịa thêm trong phần `Dịch sát`.
 - Giữ thuật ngữ English quen thuộc khi cần: API Gateway, cache, JWT, RAG, load balancer, sharding, rate limiting.
 - Nếu thêm ví dụ ngoài tài liệu, bắt buộc đặt trong mục `Ví dụ thực tế - không nằm trong tài liệu gốc`.
+- Nếu tài liệu gốc có “question for you” hoặc câu hỏi cuối mục, đưa câu hỏi đó xuống cuối file và thêm `Trả lời` + `Thinking học tập + liên hệ`.
+- Phần `Trả lời` phải trả lời luôn câu hỏi, không chỉ gợi ý cách trả lời.
+- Nếu bài không có câu hỏi riêng, tạo câu hỏi tự kiểm tra từ tiêu đề/nội dung chính và ghi rõ nguồn là suy ra từ tiêu đề/nội dung.
 - Ưu tiên giải thích theo tư duy lập trình và system design.
 - Viết tiếng Việt rõ, tự nhiên, dễ hiểu; tránh dịch máy thô.
 
@@ -77,6 +82,7 @@ Phong cách: dịch sát tiếng Việt, giữ thuật ngữ kỹ thuật Englis
 Ảnh: tách riêng vào `assets/` và nhúng lại vào từng file MD.
 Output: giữ cả `original/` và `vi/`, có manifest, README, mục lục tóm tắt.
 Ví dụ thêm: <không/có, domain ví dụ>.
+Câu hỏi cuối bài: có `Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ` ở cuối mỗi file dịch.
 
 Làm tuần tự, audit link ảnh và số lượng file trước khi báo xong.
 ```
@@ -106,4 +112,3 @@ Làm tuần tự, audit link ảnh và số lượng file trước khi báo xong
 - Có cần executive summary trước từng chương không?
 - Có cần chuyển số liệu thành bảng dễ đọc không?
 - Có cần phân biệt rõ “fact từ report” và “nhận xét thêm” không?
-

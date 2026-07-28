@@ -40,3 +40,16 @@ Một flow phổ biến: developer push lên GitHub, CI chạy lint/unit test/bu
 - `Canary`: rollout từng phần.
 - `Rollback`: quay lại version trước.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “CI/CD Pipeline Explained”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: CI/CD biến việc release phần mềm thành pipeline có kiểm soát. CI tập trung merge code thường xuyên, build và test tự động. CD tập trung đưa artifact đã kiểm tra qua environment và deploy an toàn. Pipeline tốt giúp phát hiện lỗi sớm, release nhỏ hơn và rollback dễ hơn. Khi áp dụng vào hệ thống thật, hãy kiểm thêm độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng.
+
+**Thinking học tập + liên hệ:** Liên hệ `Giải thích CI/CD Pipeline` bằng một scenario thật sẽ giúp thấy trade-off rõ hơn so với chỉ đọc định nghĩa. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `CI`, `CD`, `Pipeline`, `Artifact`, `Smoke test`.

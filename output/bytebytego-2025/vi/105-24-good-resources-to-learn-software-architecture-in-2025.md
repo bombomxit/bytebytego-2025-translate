@@ -55,3 +55,16 @@ Một lộ trình học tốt: đọc DDIA để hiểu data system, Clean Archi
 - `System design`: thiết kế hệ thống đáp ứng requirement.
 - `Trade-off`: đánh đổi giữa nhiều mục tiêu.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm resource nào khác vào danh sách?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là capacity estimation trước khi chọn kiến trúc; SLO/NFR rõ cho latency, availability và durability; graceful degradation khi dependency hỏng; và data ownership và service boundary. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Học software architecture nên kết hợp ba nguồn: sách để có nền tảng, engineering blog/whitepaper để học quyết định thực tế ở scale lớn, và video/newsletter để cập nhật dễ hơn. Architecture không chỉ là pattern; nó còn là trade-off, teamwork, communication và khả năng đưa hệ thống tiến hóa theo thời gian.
+
+**Thinking học tập + liên hệ:** Danh sách trong `24 nguồn tốt để học Software Architecture trong năm 2025` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Software architecture`, `DDIA`, `Whitepaper`, `Domain-Driven Design`, `Clean Architecture`.

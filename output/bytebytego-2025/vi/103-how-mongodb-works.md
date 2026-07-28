@@ -56,3 +56,16 @@ Một app log event có thể shard theo `tenant_id` hoặc `user_id` nếu quer
 - `Replica set`: nhóm node sao chép dữ liệu.
 - `Primary/Secondary`: node ghi chính và node replica.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì để hiểu cách MongoDB hoạt động tốt hơn?
+
+**Trả lời:** Có thể thêm query plan/EXPLAIN để biết bottleneck thật; transaction isolation để tránh race condition và dirty read; connection pooling/backpressure để database không bị quá tải; và cache invalidation strategy rõ ràng. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: MongoDB lưu document BSON linh hoạt hơn table row truyền thống. Để scale ngang, MongoDB chia data theo shard key. Query router dùng metadata từ config server để biết query nên đi tới shard nào. Mỗi shard lại là replica set để tăng availability. Thiết kế shard key rất quan trọng. Shard key xấu có thể tạo hot shard, query fan-out nhiều shard hoặc khó scale khi data tăng.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `MongoDB hoạt động như thế nào?`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `BSON`, `Shard`, `Shard key`, `mongos`, `Config server`.

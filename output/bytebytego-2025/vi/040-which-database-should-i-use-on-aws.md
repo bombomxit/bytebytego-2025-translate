@@ -63,3 +63,17 @@ Một app e-commerce có thể dùng Aurora PostgreSQL cho order/payment transac
 - `Keyspaces`: managed Cassandra-compatible service.
 - `ElastiCache`: managed Redis/Memcached cho cache in-memory.
 - `Access pattern`: cách ứng dụng đọc/ghi/query dữ liệu.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng AWS Database nào?
+
+**Trả lời:** Với `Nên dùng database nào trên AWS?`, cách liên hệ tốt nhất là chọn một workload nhỏ rồi kiểm chứng bằng số liệu thay vì chọn theo cảm tính. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: Chọn database trên AWS nên bắt đầu từ data model và access pattern. Nếu dữ liệu có quan hệ rõ, cần SQL, transaction và join, hãy nghĩ tới RDS hoặc Aurora. Nếu cần key-value cực nhanh và scale lớn, DynamoDB là lựa chọn mạnh. Nếu dữ liệu dạng document và team quen MongoDB, DocumentDB có thể phù hợp. Nếu workload wide-column kiểu Cassandra, cân nhắc Keyspaces. Nếu cần cache/session/rate-limit latency cực thấp, dùng ElastiCache.
+
+**Thinking học tập + liên hệ:** Khi tự liên hệ `Nên dùng database nào trên AWS?`, hãy viết ra một project cụ thể, lý do chọn công nghệ và lỗi vận hành có thể xảy ra. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `RDS`, `Aurora`, `DynamoDB`, `DocumentDB`, `Keyspaces`.

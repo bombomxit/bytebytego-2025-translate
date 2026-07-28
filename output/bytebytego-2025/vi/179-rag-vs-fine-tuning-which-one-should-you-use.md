@@ -70,3 +70,16 @@ Phần extract của bài này ghép thêm nội dung “10 Key Data Structures�
 - `Embedding`: vector biểu diễn semantic meaning của text/data.
 - `Data structure`: cấu trúc dữ liệu phục vụ lưu trữ và truy cập hiệu quả.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** RAG vs Fine-tuning: Which one should you use?
+
+**Trả lời:** Điểm khác nhau nên nhìn từ boundary và trách nhiệm chính. Với `RAG vs Fine-tuning: nên dùng cái nào?`, hãy tách rõ mỗi bên giải quyết vấn đề gì, dữ liệu đi qua đâu, ai sở hữu state và lỗi sẽ lan như thế nào. Ý chính để giữ lại là: RAG phù hợp khi tri thức thay đổi thường xuyên, cần trích dẫn nguồn, hoặc muốn model đọc tài liệu nội bộ mà không train lại. Fine-tuning phù hợp khi muốn model thay đổi style, format output, kỹ năng chuyên biệt hoặc hành vi lặp lại ổn định. Nhiều hệ thống production dùng cả hai: fine-tune để model trả lời đúng format, rồi dùng RAG để lấy knowledge mới nhất.
+
+**Thinking học tập + liên hệ:** Khi so sánh trong `RAG vs Fine-tuning: nên dùng cái nào?`, hãy tách responsibility, boundary, state, failure mode và cost vận hành thay vì chỉ so tên công nghệ. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `RAG`, `Fine-tuning`, `Model weights`, `Runtime retrieval`, `Vector DB`.

@@ -53,3 +53,16 @@ Một kế hoạch học 8 tuần có thể là: đọc DDIA các chương stora
 - `Holistic skills`: kỹ năng toàn diện gồm giao tiếp, trade-off, lãnh đạo kỹ thuật.
 - `Design doc`: tài liệu thiết kế kỹ thuật.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “24 Good Resources to Learn Software Architecture in 2025”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: Bài này lặp lại chủ đề nguồn học architecture đã xuất hiện ở bài 105, nhưng vẫn được dịch thành file riêng theo archive. Các nguồn nên kết hợp: sách cho nền tảng, blog/whitepaper cho bài học production, video/resource center cho ví dụ trực quan và sách career để phát triển kỹ năng architect ngoài code. Khi áp dụng vào hệ thống thật, hãy kiểm thêm requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team.
+
+**Thinking học tập + liên hệ:** Khi học `24 nguồn tốt để học Software Architecture trong năm 2025`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Software Architecture`, `DDIA`, `Whitepaper`, `Tech blog`, `System design`.

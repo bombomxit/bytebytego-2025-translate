@@ -74,3 +74,17 @@ Nếu cần cache session và counter realtime, Redis rất phù hợp. Nếu c�
 - `MVCC`: Multi-Version Concurrency Control.
 - `Consistent hashing`: phân phối key qua node sao cho ít remap khi thêm/bớt node.
 - `Range partitioning`: chia dữ liệu theo khoảng giá trị key.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm database nào khác vào danh sách?
+
+**Trả lời:** Nên bổ sung `A* Search` cho tìm đường có heuristic trong bản đồ/game; `BFS/DFS` cho crawler, dependency graph và duyệt quan hệ; `Consistent Hashing` để phân phối key ổn định trong cache/database cluster; và `Bloom Filter` để kiểm tra membership nhanh với bộ nhớ thấp. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Key-value store là mô hình database đơn giản về mặt API: đưa vào key, lấy ra value. Nhưng bên dưới, mỗi hệ thống có thiết kế phân tán rất khác nhau. Một số dùng leader, một số leaderless. Một số ưu tiên strong consistency, một số ưu tiên eventual consistency. Một số partition theo hash, một số theo range.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `Cheatsheet so sánh các Key-Value Store`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là loại dữ liệu, kích thước input, latency mục tiêu, memory budget và sai số/lỗi có thể chấp nhận. Trong project thật, thuật toán thường ẩn sau search, cache, ranking, routing, queue hoặc storage; hiểu nó giúp dự đoán bottleneck trước khi hệ thống lớn lên. Khi ghi chú lại, hãy giải thích được các keyword: `Key-value store`, `Leaderless`, `Quorum`, `MVCC`, `Consistent hashing`.

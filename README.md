@@ -33,6 +33,7 @@ Mỗi bài được tách riêng thành 2 bản:
 │       ├── vi/            # Markdown dịch tiếng Việt
 │       └── README.md      # mục lục tiến độ từng bài
 └── scripts/
+    ├── add_study_questions.py
     └── bytebytego_pipeline.py
 ```
 
@@ -47,7 +48,8 @@ Mỗi bài được tách riêng thành 2 bản:
 - Dịch sát ý gốc, không tự thêm nội dung vào phần dịch chính.
 - Giữ thuật ngữ tiếng Anh khi đó là thuật ngữ kỹ thuật quen dùng: `API Gateway`, `cache`, `JWT`, `RAG`, `load balancer`, `rate limiting`.
 - Ví dụ tự thêm luôn nằm trong mục `Ví dụ thực tế - không nằm trong tài liệu gốc`.
-- Mỗi bài tiếng Việt ưu tiên cấu trúc: hình minh họa, dịch sát, tóm tắt, ví dụ thực tế, thuật ngữ chính.
+- Mỗi bài tiếng Việt ưu tiên cấu trúc: hình minh họa, dịch sát, tóm tắt, ví dụ thực tế, thuật ngữ chính, câu hỏi ôn tập + trả lời + thinking học tập + liên hệ.
+- `Thinking học tập + liên hệ` là khung suy nghĩ công khai để người đọc biết cách trả lời và nối kiến thức với project thật, không phải phần suy luận ẩn của AI.
 
 ## Tái sử dụng cho PDF khác
 
@@ -74,6 +76,12 @@ python3 scripts/bytebytego_pipeline.py originals --force
 python3 scripts/bytebytego_pipeline.py readme
 ```
 
+Bổ sung hoặc sinh lại phần câu hỏi cuối mỗi bài dịch:
+
+```zsh
+python3 scripts/add_study_questions.py
+```
+
 ## Audit nhanh
 
 ```zsh
@@ -86,12 +94,18 @@ root = Path('output/bytebytego-2025')
 manifest = json.loads((root / 'manifest/articles.json').read_text())
 vi_articles = sorted(p for p in (root / 'vi').glob('*.md') if not p.name.startswith('000-'))
 missing = []
+missing_study_questions = []
 
 for md in sorted(list((root / 'original').glob('*.md')) + list((root / 'vi').glob('*.md'))):
     text = md.read_text()
     for match in re.finditer(r'!\[[^\]]*\]\(([^)]+)\)', text):
         if not (md.parent / match.group(1)).resolve().exists():
             missing.append((str(md), match.group(1)))
+
+for md in vi_articles:
+    text = md.read_text()
+    if '## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ' not in text:
+        missing_study_questions.append(md.name)
 
 summary = (root / 'vi/000-muc-luc-tom-tat.md').read_text()
 readme = (root / 'README.md').read_text()
@@ -102,6 +116,7 @@ print('vi_articles', len(vi_articles))
 print('summary_rows', len(re.findall(r'^\| \d{3} \|', summary, flags=re.M)))
 print('readme_done_rows', sum('Đã dịch' in line for line in readme.splitlines()))
 print('missing_image_links', len(missing))
+print('missing_study_questions', len(missing_study_questions))
 PY
 ```
 
@@ -114,5 +129,5 @@ vi_articles 217
 summary_rows 217
 readme_done_rows 217
 missing_image_links 0
+missing_study_questions 0
 ```
-

@@ -50,3 +50,16 @@ Nếu Redis dùng cho session quan trọng, bật AOF với fsync phù hợp đ�
 - `Replay`: chạy lại log command để rebuild data.
 - `Durability`: độ bền dữ liệu sau crash.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “The Life of a Redis Query”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: Redis nhanh vì chạy in-memory, nhưng cần persistence để giảm mất dữ liệu. AOF giống nhật ký lệnh, replay được nhiều operation chi tiết hơn. RDB giống snapshot định kỳ, load nhanh và file gọn hơn. Production thường kết hợp cả hai để cân bằng durability và recovery speed. Khi áp dụng vào hệ thống thật, hãy kiểm thêm read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement.
+
+**Thinking học tập + liên hệ:** Khi học `Vòng đời của một Redis query`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Redis`, `AOF`, `RDB`, `bgsave`, `Copy-on-write`.

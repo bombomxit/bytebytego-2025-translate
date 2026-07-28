@@ -90,3 +90,17 @@ Nếu server SSH không vào được, kiểm tra port `22` hoặc port SSH cust
 - `UDP`: protocol không kết nối, nhẹ hơn, thường dùng cho DNS, DHCP, NTP.
 - `Firewall`: lớp rule cho phép hoặc chặn traffic theo IP/port/protocol.
 - `Security group`: firewall ở mức cloud resource.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “18 Common Ports Worth Knowing”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: Port là số định danh service ở tầng transport. Khi client kết nối tới một IP, port giúp hệ điều hành biết request nên đi tới service nào. Ví dụ web server thường nghe port 80 cho HTTP và 443 cho HTTPS; PostgreSQL thường nghe 5432; MySQL thường nghe 3306. Trong vận hành hệ thống, biết port phổ biến giúp debug network nhanh hơn: kiểm tra firewall, security group, service binding, container port mapping, load balancer target group và connection string. Tuy nhiên, port mặc định có thể thay đổi theo cấu hình, nên... Khi áp dụng vào hệ thống thật, hãy kiểm thêm DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer.
+
+**Thinking học tập + liên hệ:** Liên hệ `18 port phổ biến nên biết` bằng một scenario thật sẽ giúp thấy trade-off rõ hơn so với chỉ đọc định nghĩa. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `Port`, `TCP`, `UDP`, `Firewall`, `Security group`.

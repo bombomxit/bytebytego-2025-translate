@@ -77,3 +77,16 @@ Một support agent có thể nhận ticket, đọc knowledge base, hỏi thêm 
 - `Orchestration`: điều phối nhiều bước/tool/agent.
 - `Evaluation`: đánh giá chất lượng hành vi/kết quả.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm khái niệm AI agent nào khác vào danh sách?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là evaluation harness để đo chất lượng thay vì cảm tính; guardrails/policy để giảm prompt injection và output nguy hiểm; observability cho prompt, context, latency, cost và hallucination; và model routing theo độ khó/cost của request. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: AI agent là hệ thống không chỉ trả lời text, mà còn có thể quan sát context, lập kế hoạch, gọi tool, hành động, ghi nhớ và tự cải thiện qua feedback. LLM thường là “bộ não ngôn ngữ”, nhưng agent hoàn chỉnh còn cần environment, state, tools, orchestration, evaluation và guardrails.
+
+**Thinking học tập + liên hệ:** Danh sách trong `20 khái niệm AI Agent bạn nên biết` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Agent`, `Environment`, `State`, `Memory`, `Tool use`.

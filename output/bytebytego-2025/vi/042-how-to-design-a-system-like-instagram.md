@@ -66,3 +66,17 @@ Khi user A upload ảnh, backend lưu file vào S3/object storage, ghi metadata 
 - `Fan-out`: phân phối post/event tới nhiều follower/service.
 - `Eventually consistent`: dữ liệu cuối cùng sẽ nhất quán, nhưng có thể trễ tạm thời.
 - `Background worker`: process xử lý task nền ngoài request path.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác để xây dựng một hệ thống giống Instagram?
+
+**Trả lời:** Có thể thêm query plan/EXPLAIN để biết bottleneck thật; transaction isolation để tránh race condition và dirty read; connection pooling/backpressure để database không bị quá tải; và cache invalidation strategy rõ ràng. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Một hệ thống giống Instagram cần tách rõ media storage, metadata, social graph, feed, cache và background processing. Ảnh/video không nên lưu trực tiếp trong relational database; nên lưu ở object storage, còn DB lưu URL, owner, caption, timestamp và permission metadata.
+
+**Thinking học tập + liên hệ:** Danh sách trong `Cách thiết kế một hệ thống giống Instagram` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Object storage`, `Metadata`, `Social graph`, `Feed`, `Fan-out`.

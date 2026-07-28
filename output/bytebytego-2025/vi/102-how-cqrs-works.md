@@ -54,3 +54,16 @@ Trong hệ thống order, command `PlaceOrder` kiểm tra inventory, payment và
 - `Projection`: read model được build từ dữ liệu/event.
 - `Event Store`: kho lưu event.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì để hiểu CQRS?
+
+**Trả lời:** Có thể thêm query plan/EXPLAIN để biết bottleneck thật; transaction isolation để tránh race condition và dirty read; connection pooling/backpressure để database không bị quá tải; và cache invalidation strategy rõ ràng. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: CQRS tách đường ghi và đường đọc. Đường ghi tập trung vào business rule, validation và consistency. Đường đọc tập trung vào query nhanh, có thể dùng schema/projection tối ưu cho UI/report. Vì read model cập nhật async, dữ liệu đọc có thể trễ một chút so với write model.
+
+**Thinking học tập + liên hệ:** Danh sách trong `CQRS hoạt động như thế nào?` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `CQRS`, `Command`, `Query`, `Command Handler`, `Query Handler`.

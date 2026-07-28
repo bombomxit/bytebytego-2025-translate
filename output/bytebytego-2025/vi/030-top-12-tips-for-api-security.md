@@ -57,3 +57,17 @@ Một API admin `DELETE /v1/users/{id}` nên yêu cầu HTTPS, token hợp lệ,
 - `Rate limiting`: giới hạn tần suất request.
 - `OWASP API Security`: danh sách rủi ro bảo mật API phổ biến.
 - `Input validation`: kiểm tra input trước khi xử lý nghiệp vụ.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Top 12 Tips for API Security”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Nếu rút thành checklist thiết kế thì ý chính là: Bài này trùng chủ đề với bài 005 và nhắc lại các lớp bảo vệ quan trọng cho API production. API security nên được thiết kế theo nhiều lớp: bảo vệ transport bằng HTTPS, xác thực bằng OAuth2/WebAuthn/API key, phân quyền bằng authorization, chống abuse bằng rate limiting, giảm surface lỗi bằng input validation và tránh lộ nội bộ qua error handling. Khi áp dụng vào hệ thống thật, hãy kiểm thêm actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke.
+
+**Thinking học tập + liên hệ:** Khi học `12 mẹo quan trọng để bảo mật API`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `HTTPS`, `OAuth2`, `WebAuthn`, `API key`, `Rate limiting`.

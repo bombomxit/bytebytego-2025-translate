@@ -50,3 +50,16 @@ Một server database production có thể bị network firewall chặn toàn b�
 - `Packet`: đơn vị dữ liệu truyền qua network.
 - `Allow/Deny rule`: rule cho phép/chặn traffic.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** What is a Firewall?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: Firewall là lớp kiểm soát traffic. Network firewall bảo vệ cả mạng ở biên, thường dựa trên IP/port/protocol. Host firewall bảo vệ từng máy riêng, có thể inspect sâu hơn theo app/process. Dùng cả hai tạo defense-in-depth: nếu một lớp fail, lớp sau vẫn còn. Khi áp dụng vào hệ thống thật, hãy kiểm thêm DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer.
+
+**Thinking học tập + liên hệ:** Khi học `Firewall là gì?`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `Firewall`, `Inbound/outbound traffic`, `Layer 3-4`, `Layer 7`, `Defense-in-depth`.

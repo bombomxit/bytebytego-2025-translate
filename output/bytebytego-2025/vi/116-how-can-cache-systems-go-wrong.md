@@ -59,3 +59,16 @@ Nếu toàn bộ product cache set TTL đúng 00:00, đến nửa đêm hàng tr
 - `Circuit breaker`: ngắt luồng gọi khi downstream lỗi.
 - `Singleflight`: gom nhiều request trùng thành một request rebuild.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã gặp issue nào trong số này ở production chưa?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: Cache làm hệ thống nhanh hơn nhưng cũng tạo failure mode riêng. Khi cache miss hàng loạt, database có thể bị đánh sập. Khi cache chứa null sai hoặc stale data, user có thể thấy dữ liệu không đúng. Vì vậy cache cần TTL strategy, jitter, protection cho hot key, Bloom Filter, circuit breaker và cluster/replication. Khi áp dụng vào hệ thống thật, hãy kiểm thêm read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement.
+
+**Thinking học tập + liên hệ:** Liên hệ `Cache system có thể lỗi như thế nào?` bằng một scenario thật sẽ giúp thấy trade-off rõ hơn so với chỉ đọc định nghĩa. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Cache miss`, `TTL`, `Jitter`, `Hot key`, `Bloom Filter`.

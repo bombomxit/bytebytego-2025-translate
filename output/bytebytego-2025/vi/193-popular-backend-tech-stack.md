@@ -43,3 +43,16 @@ Một stack thực tế có thể là `TypeScript/Node.js + PostgreSQL + Redis +
 - `Architectural pattern`: mẫu kiến trúc như monolith, microservice, serverless.
 - `API`: interface để client/service giao tiếp với backend.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Popular Backend Tech Stack”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Nếu rút thành checklist thiết kế thì ý chính là: Backend stack không chỉ là ngôn ngữ lập trình. Một hệ thống production thường cần database, framework, cache, deployment/runtime, CI/CD, API style, kiến trúc triển khai và đôi khi AI integration. Khi học backend, nên hiểu từng tầng giải quyết vấn đề gì thay vì chỉ học một framework. Khi áp dụng vào hệ thống thật, hãy kiểm thêm read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement.
+
+**Thinking học tập + liên hệ:** Khi học `Backend tech stack phổ biến`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Backend`, `Framework`, `Database`, `Caching`, `CI/CD`.

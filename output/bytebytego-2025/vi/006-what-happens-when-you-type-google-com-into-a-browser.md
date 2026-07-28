@@ -68,3 +68,17 @@ Với production web app, ta thường tối ưu bằng CDN, DNS ổn định, H
 - `DOM`: cây biểu diễn cấu trúc HTML của trang.
 - `CSSOM`: cây biểu diễn CSS sau khi browser parse stylesheet.
 - `Render tree`: cây dùng để tính layout và vẽ nội dung lên màn hình.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm bước nào khác vào toàn bộ quá trình này?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là DNS caching/TTL và negative caching; TLS handshake/session resumption; CDN edge caching và origin shielding; và QUIC/HTTP/3 khi cần giảm latency. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Khi bạn gõ một URL vào browser, hệ thống phải đi qua nhiều tầng: browser cache, DNS, network connection, HTTP request, server response và browser rendering. Đây là một câu hỏi kinh điển vì nó nối nhiều mảng kiến thức: networking, DNS, TCP, HTTP, backend, frontend và browser internals.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `Điều gì xảy ra khi bạn gõ google.com vào trình duyệt?`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `DNS`, `Cache hit/cache miss`, `TCP handshake`, `HTTP request/response`, `DOM`.

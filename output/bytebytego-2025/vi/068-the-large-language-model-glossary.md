@@ -51,3 +51,17 @@ Khi chatbot trả lời sai chính sách công ty, có thể vấn đề không 
 - `LoRA/QLoRA`: kỹ thuật fine-tune tiết kiệm tài nguyên.
 - `Hallucination`: model bịa hoặc trả sai nhưng nghe có vẻ đúng.
 - `RAG`: retrieval-augmented generation.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác vào LLM glossary?
+
+**Trả lời:** Danh sách sẽ đầy đủ hơn nếu thêm evaluation harness để đo chất lượng thay vì cảm tính; guardrails/policy để giảm prompt injection và output nguy hiểm; observability cho prompt, context, latency, cost và hallucination; và model routing theo độ khó/cost của request. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: LLM ecosystem có nhiều thuật ngữ, nhưng có thể gom theo vòng đời: model là gì, model được train/fine-tune thế nào, prompt điều khiển model ra sao, inference sinh output thế nào và RAG bổ sung tri thức bên ngoài như thế nào. Đối với developer xây sản phẩm AI, các khái niệm inference và RAG thường gặp hằng ngày nhất. Temperature ảnh hưởng độ sáng tạo, max tokens ảnh hưởng độ dài và chi phí, latency ảnh hưởng UX, hallucination ảnh hưởng độ tin cậy. RAG giúp model trả lời dựa trên dữ liệu riêng hoặc dữ liệu mới.
+
+**Thinking học tập + liên hệ:** Danh sách trong `Glossary về Large Language Model` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Foundation model`, `SFT`, `RLHF`, `DPO`, `LoRA/QLoRA`.

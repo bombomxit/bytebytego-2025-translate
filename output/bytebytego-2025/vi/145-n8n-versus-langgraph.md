@@ -57,3 +57,16 @@ Nếu muốn tự động lấy form submission, gọi LLM tóm tắt rồi gử
 - `Branching`: rẽ nhánh.
 - `Looping`: lặp lại bước.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng N8N hoặc LangGraph chưa?
+
+**Trả lời:** Với `N8N so với LangGraph`, cách liên hệ tốt nhất là chọn một workload nhỏ rồi kiểm chứng bằng số liệu thay vì chọn theo cảm tính. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: N8N phù hợp khi bạn muốn kéo-thả workflow automation và nối nhanh nhiều tool/SaaS/API. LangGraph phù hợp khi bạn cần viết agent workflow bằng code Python, kiểm soát state, branching, loop, retry và multi-agent phức tạp hơn. Nói ngắn gọn: N8N thiên về no-code/low-code automation; LangGraph thiên về code-first agent orchestration.
+
+**Thinking học tập + liên hệ:** Khi tự liên hệ `N8N so với LangGraph`, hãy viết ra một project cụ thể, lý do chọn công nghệ và lỗi vận hành có thể xảy ra. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Workflow`, `AI Agent`, `Tool Call`, `State`, `Conditional node`.

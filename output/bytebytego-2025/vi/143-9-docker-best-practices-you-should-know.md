@@ -69,3 +69,16 @@ Với Node.js app, copy `package*.json` và install dependency trước, rồi m
 - `Layer cache`: cache từng layer Docker build.
 - `Image scanning`: quét lỗ hổng image.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm Docker best practice nào khác vào danh sách?
+
+**Trả lời:** Danh sách sẽ đầy đủ hơn nếu thêm SLO/error budget để biết hệ thống đủ tốt hay chưa; blue-green/canary deployment để giảm rủi ro release; secret management và least privilege IAM; và cost monitoring/tagging cho cloud bill. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Docker image production nên nhỏ, reproducible, bảo mật và dễ quản lý. Pin version giúp tránh build hôm nay khác build ngày mai. Multi-stage và `.dockerignore` giảm size. Non-root user giảm blast radius. Layer order tốt giúp build nhanh. Scan image giúp phát hiện CVE sớm.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `9 Docker best practice bạn nên biết`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `Official image`, `latest tag`, `Multi-stage build`, `.dockerignore`, `Least privilege`.

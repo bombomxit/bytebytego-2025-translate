@@ -50,3 +50,16 @@ Một job backup có thể chạy lúc 2 giờ sáng mỗi ngày bằng cron, gh
 - `Distributed lock`: khóa phân tán tránh chạy trùng job.
 - `Scheduler`: bộ lập lịch.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng Cron chưa?
+
+**Trả lời:** Trong project thật, `Cheatsheet Linux Cron` đáng dùng/thử khi bài toán khớp với nhu cầu cụ thể và team đo được kết quả. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: Cron là công cụ chạy việc định kỳ trên Linux/Unix. Nó rất phù hợp cho backup, dọn log, gửi report, sync dữ liệu hoặc chạy batch job nhỏ. Tuy nhiên cron không tự giải quyết retry phức tạp, dependency giữa job, distributed lock hoặc observability tốt.
+
+**Thinking học tập + liên hệ:** Câu hỏi trải nghiệm trong `Cheatsheet Linux Cron` nên quy về adoption: dùng cho workload nào, đo thành công bằng metric nào và có đáng giữ lâu dài trong stack không. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `Cron`, `Cron expression`, `crontab`, `Log rotation`, `Exit code`.

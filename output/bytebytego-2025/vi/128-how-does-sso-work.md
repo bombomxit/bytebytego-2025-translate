@@ -66,3 +66,16 @@ Công ty dùng Okta cho Gmail, Slack, Jira và AWS Console. Khi nhân viên ngh�
 - `SAML`: protocol SSO phổ biến trong enterprise.
 - `OIDC`: OpenID Connect, SSO dựa trên OAuth2.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn có muốn xem flow ví dụ cho application khác không?
+
+**Trả lời:** Hãy tách flow thành các bước có state rõ ràng: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `SSO hoạt động như thế nào?`, ý chính là: SSO tách trách nhiệm login khỏi từng app. App như Gmail/Slack tin tưởng IdP để xác thực user. User login một lần ở IdP, sau đó các app khác có thể nhận token/assertion từ IdP mà không bắt user nhập lại mật khẩu. SSO cải thiện trải nghiệm và quản trị bảo mật, nhưng IdP trở thành thành phần cực kỳ quan trọng. Nếu IdP lỗi hoặc bị compromise, nhiều app bị ảnh hưởng.
+
+**Thinking học tập + liên hệ:** Luồng trong `SSO hoạt động như thế nào?` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `SSO`, `SP`, `IdP`, `Token`, `Session`.

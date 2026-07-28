@@ -66,3 +66,17 @@ Một workflow hằng ngày: tạo branch `feature/payment`, sửa code, chạy 
 - `Remote`: repository ở server như GitHub/GitLab.
 - `Fetch`: lấy dữ liệu remote về local mà chưa hợp nhất.
 - `Merge`: hợp nhất lịch sử/thay đổi từ branch khác.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn còn theo bước nào khác trong Git workflow của mình?
+
+**Trả lời:** Danh sách sẽ đầy đủ hơn nếu thêm pre-commit hook/lint để chặn lỗi sớm; trunk-based development khi team cần release nhanh; branch protection và required checks; và reflog/revert strategy để cứu lỗi Git. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Git workflow cơ bản có bốn vùng chính: working directory, staging area, local repository và remote repository. Bạn sửa file trong working directory, dùng `git add` để chọn phần muốn commit, dùng `git commit` để lưu snapshot vào local repo, rồi `git push` để chia sẻ lên remote.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `Git workflow đơn giản hóa`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team. Khi áp dụng vào team thật, hãy nhìn developer workflow như một hệ thống: commit, review, test, deploy và rollback đều phải giảm rủi ro production. Khi ghi chú lại, hãy giải thích được các keyword: `Working directory`, `Staging area`, `HEAD`, `Remote`, `Fetch`.

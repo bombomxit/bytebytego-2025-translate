@@ -56,3 +56,26 @@ Hệ thống ngân hàng hoặc ví điện tử thường cần biết toàn b�
 - `Determinism`: cùng input/event sẽ tạo cùng state.
 - `Eventual consistency`: dữ liệu cuối cùng sẽ đồng bộ sau một độ trễ.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Loại system nào phù hợp với event sourcing design?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: CRUD lưu trạng thái hiện tại. Event sourcing lưu lịch sử các sự kiện đã xảy ra. Với CRUD, nếu order quantity từ 5 thành 6, database thường chỉ còn state mới. Với event sourcing, hệ thống lưu cả event “tạo order quantity 5” và event “sửa quantity thành 6”, rồi tính state hiện tại từ chuỗi event. Khi áp dụng vào hệ thống thật, hãy kiểm thêm read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement.
+
+**Thinking học tập + liên hệ:** Ôn tập `Event Sourcing là gì? Khác gì với CRUD design thông thường?` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Event sourcing`, `Event store`, `Append-only log`, `Projection`, `Source of truth`.
+
+### Câu hỏi 2
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng paradigm này trong công việc chưa?
+
+**Trả lời:** Trong project thật, `Event Sourcing là gì? Khác gì với CRUD design thông thường?` đáng dùng/thử khi bài toán khớp với nhu cầu cụ thể và team đo được kết quả. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: CRUD lưu trạng thái hiện tại. Event sourcing lưu lịch sử các sự kiện đã xảy ra. Với CRUD, nếu order quantity từ 5 thành 6, database thường chỉ còn state mới. Với event sourcing, hệ thống lưu cả event “tạo order quantity 5” và event “sửa quantity thành 6”, rồi tính state hiện tại từ chuỗi event.
+
+**Thinking học tập + liên hệ:** Câu hỏi trải nghiệm trong `Event Sourcing là gì? Khác gì với CRUD design thông thường?` nên quy về adoption: dùng cho workload nào, đo thành công bằng metric nào và có đáng giữ lâu dài trong stack không. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Event sourcing`, `Event store`, `Append-only log`, `Projection`, `Source of truth`.

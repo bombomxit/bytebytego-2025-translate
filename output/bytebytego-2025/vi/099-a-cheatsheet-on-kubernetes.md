@@ -61,3 +61,16 @@ Bạn muốn chạy API với 3 instance. Thay vì tự SSH vào 3 máy, bạn t
 - `Service`: endpoint ổn định tới Pod.
 - `HPA`: Horizontal Pod Autoscaler.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng Kubernetes trong project của mình chưa?
+
+**Trả lời:** Với `Cheatsheet về Kubernetes`, cách liên hệ tốt nhất là chọn một workload nhỏ rồi kiểm chứng bằng số liệu thay vì chọn theo cảm tính. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: Kubernetes là control system cho container. Bạn khai báo desired state bằng YAML manifest, Kubernetes liên tục cố gắng đưa cluster về đúng trạng thái đó. Control plane ra quyết định; worker node chạy pod thật. Điểm quan trọng khi học Kubernetes là hiểu các abstraction: Pod chạy container, Deployment quản lý rollout/replica, Service cung cấp địa chỉ ổn định, Volume giữ state, HPA tự động scale theo metric.
+
+**Thinking học tập + liên hệ:** Khi tự liên hệ `Cheatsheet về Kubernetes`, hãy viết ra một project cụ thể, lý do chọn công nghệ và lỗi vận hành có thể xảy ra. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `K8S`, `Manifest`, `Control plane`, `Node`, `Pod`.

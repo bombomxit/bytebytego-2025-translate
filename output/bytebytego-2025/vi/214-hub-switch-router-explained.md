@@ -45,3 +45,16 @@ Trong văn phòng, máy tính nên cắm vào switch để giao tiếp LAN hiệ
 - `Collision domain`: vùng mà packet có thể va chạm khi truyền.
 - `Broadcast domain`: vùng nhận broadcast frame/packet.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Hub, Switch, & Router Explained”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: Hub chỉ phát lại tín hiệu cho mọi port nên lãng phí và dễ collision. Switch thông minh hơn vì học MAC và gửi frame đúng port. Router kết nối các network khác nhau và quyết định đường đi bằng IP. Trong mạng hiện đại, hub hầu như không còn được dùng cho production. Khi áp dụng vào hệ thống thật, hãy kiểm thêm DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer.
+
+**Thinking học tập + liên hệ:** Khi học `Giải thích Hub, Switch và Router`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `Hub`, `Switch`, `Router`, `MAC address`, `IP address`.

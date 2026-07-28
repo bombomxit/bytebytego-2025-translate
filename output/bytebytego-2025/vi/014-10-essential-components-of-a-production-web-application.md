@@ -71,3 +71,17 @@ Nếu thiếu monitoring và alerting, hệ thống vẫn có thể chạy nhưn
 - `Job queue`: hàng đợi tác vụ nền.
 - `Full-text search`: tìm kiếm theo nội dung văn bản.
 - `Monitoring`: quan sát metric, log, trace và trạng thái hệ thống.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm thành phần nào khác vào kiến trúc của một production web app?
+
+**Trả lời:** Có thể thêm DNS caching/TTL và negative caching; TLS handshake/session resumption; CDN edge caching và origin shielding; và QUIC/HTTP/3 khi cần giảm latency. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Một web app production không chỉ là vài API endpoint. Nó là một hệ sinh thái gồm deploy pipeline, DNS, CDN, load balancer, web server, backend service, database, cache, queue/worker, search, monitoring và alerting. Luồng cơ bản là developer merge code, CI/CD deploy lên server. User truy cập qua browser, DNS phân giải domain, CDN có thể trả static asset hoặc cache, load balancer phân phối request tới app server, backend gọi database/cache/search hoặc đẩy task dài vào queue. Monitoring và alerting giúp team biết...
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `10 thành phần thiết yếu của một web application production`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `CI/CD`, `Reverse proxy`, `CDN`, `Distributed cache`, `Job queue`.

@@ -64,3 +64,17 @@ Tuy nhiên, vẫn cần cấu hình connection pool/database pool hợp lý. Vir
 - `I/O-bound`: workload chủ yếu chờ I/O.
 - `CPU-bound`: workload chủ yếu dùng CPU.
 - `Scheduler`: thành phần quyết định thread/task nào được chạy.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng Virtual Threads chưa?
+
+**Trả lời:** Trong project thật, `Java Virtual Threads hoạt động như thế nào?` đáng dùng/thử khi bài toán khớp với nhu cầu cụ thể và team đo được kết quả. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: Virtual Threads giúp Java xử lý concurrency kiểu “một request một thread” với chi phí thấp hơn nhiều so với platform thread truyền thống. Chúng đặc biệt hữu ích cho workload I/O-bound như gọi database, HTTP API, file I/O hoặc sleep, vì khi bị block, virtual thread có thể unmount khỏi platform thread để platform thread xử lý task khác.
+
+**Thinking học tập + liên hệ:** Câu hỏi trải nghiệm trong `Java Virtual Threads hoạt động như thế nào?` nên quy về adoption: dùng cho workload nào, đo thành công bằng metric nào và có đáng giữ lâu dài trong stack không. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Virtual Thread`, `Platform Thread`, `Carrier Thread`, `Mount/Unmount`, `I/O-bound`.

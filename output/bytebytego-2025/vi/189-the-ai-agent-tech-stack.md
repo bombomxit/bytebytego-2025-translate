@@ -48,3 +48,16 @@ Một coding agent có thể dùng GPT/Claude làm foundation model, Chroma ho�
 - `Tool execution`: lớp gọi tool/API/browser/external system.
 - `Memory management`: quản lý memory ngắn hạn/dài hạn của agent.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “The AI Agent Tech Stack”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Bài này muốn người đọc nắm: Một AI agent production thường cần nhiều lớp: model để suy luận, storage để tìm/lưu context, framework để điều phối workflow, observability để debug, tool execution để hành động, và memory để giữ ngữ cảnh dài hạn/ngắn hạn. Thiếu observability hoặc memory management, agent rất dễ trả lời không ổn định và khó debug. Khi áp dụng vào hệ thống thật, hãy kiểm thêm quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination.
+
+**Thinking học tập + liên hệ:** Liên hệ `Tech stack cho AI Agent` bằng một scenario thật sẽ giúp thấy trade-off rõ hơn so với chỉ đọc định nghĩa. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Foundation model`, `Vector database`, `Agent framework`, `Observability`, `Tool execution`.

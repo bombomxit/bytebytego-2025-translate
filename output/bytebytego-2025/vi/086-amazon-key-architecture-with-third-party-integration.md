@@ -58,3 +58,16 @@ Khi tài xế giao hàng tới garage, logistics system cần xác minh đơn h�
 - `Device shadow`: trạng thái ảo của thiết bị trong cloud.
 - `Provisioning`: đăng ký/cấu hình thiết bị ban đầu.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Amazon Key Architecture with Third Party Integration”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: Amazon Key là bài toán IoT + logistics + security. Hệ thống phải cho phép mở khóa đúng thời điểm, đúng người/đối tác, đúng thiết bị, trong môi trường mạng không ổn định và với yêu cầu bảo mật rất cao. Vì vậy kiến trúc cần nhiều lớp: authentication/authorization, access management, partner gateway, device management, telemetry/monitoring và data analytics. Khi áp dụng vào hệ thống thật, hãy kiểm thêm requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team.
+
+**Thinking học tập + liên hệ:** Ôn tập `Kiến trúc Amazon Key với tích hợp bên thứ ba` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `IoT`, `ECS`, `DynamoDB`, `CloudWatch`, `OTA`.

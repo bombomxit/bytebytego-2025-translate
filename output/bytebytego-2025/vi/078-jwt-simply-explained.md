@@ -63,3 +63,16 @@ Trong microservices, Auth Service có thể ký JWT bằng private key. Các ser
 - `Asymmetric signature`: ký bằng private key, verify bằng public key.
 - `JWKS`: JSON Web Key Set để phân phối public key.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn có dùng JWT cho authentication không?
+
+**Trả lời:** Với `JWT được giải thích đơn giản`, cách liên hệ tốt nhất là chọn một workload nhỏ rồi kiểm chứng bằng số liệu thay vì chọn theo cảm tính. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: JWT giúp server xác thực request mà không nhất thiết phải lưu session server-side. Server chỉ cần verify chữ ký và kiểm tra claim như expiration, issuer, audience, subject. Đây là lý do JWT hay được gọi là phù hợp với stateless authentication. Điểm quan trọng là “signed” không đồng nghĩa với “encrypted”. JWT được ký để chống sửa đổi, nhưng payload có thể đọc được nếu token bị lộ. Vì vậy cần dùng HTTPS, thời hạn token ngắn và tránh chứa dữ liệu nhạy cảm trong payload.
+
+**Thinking học tập + liên hệ:** Khi tự liên hệ `JWT được giải thích đơn giản`, hãy viết ra một project cụ thể, lý do chọn công nghệ và lỗi vận hành có thể xảy ra. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `Stateless authentication`, `Registered claim`, `Public claim`, `Private claim`, `Symmetric signature`.

@@ -49,3 +49,16 @@ Script automation ngắn, data munging hoặc prototype thường hợp Python v
 - `JIT`: Just-In-Time compiler.
 - `Hot path`: đoạn code chạy thường xuyên.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Python vs Java”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Điểm khác nhau nên nhìn từ boundary và trách nhiệm chính. Với `Python vs Java`, hãy tách rõ mỗi bên giải quyết vấn đề gì, dữ liệu đi qua đâu, ai sở hữu state và lỗi sẽ lan như thế nào. Ý chính để giữ lại là: Cả Python và Java đều không chạy source code trực tiếp theo nghĩa thô. Chúng dùng bytecode và runtime. Python CPython thường interpret bytecode, nên linh hoạt nhưng chậm hơn. Java JVM có JIT compiler tối ưu hot path thành machine code, nên sau warm-up có thể chạy rất nhanh.
+
+**Thinking học tập + liên hệ:** Khi so sánh trong `Python vs Java`, hãy tách responsibility, boundary, state, failure mode và cost vận hành thay vì chỉ so tên công nghệ. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `CPython`, `Bytecode`, `.pyc`, `PVM`, `JVM`.

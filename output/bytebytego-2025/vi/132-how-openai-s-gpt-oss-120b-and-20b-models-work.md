@@ -63,3 +63,16 @@ Nếu một prompt chứa cả code và văn bản tự nhiên, router có thể
 - `Router`: module chọn expert cho token.
 - `Output projection`: chuyển hidden state thành xác suất token.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng open-source model của OpenAI chưa?
+
+**Trả lời:** Trong project thật, `GPT-OSS 120B và 20B của OpenAI hoạt động như thế nào?` đáng dùng/thử khi bài toán khớp với nhu cầu cụ thể và team đo được kết quả. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: Luồng LLM gồm tokenization, embedding, transformer computation, MoE routing, output projection và post-training alignment. Điểm nổi bật của MoE là không kích hoạt toàn bộ network cho mọi token; router chọn một số expert phù hợp, giúp giảm compute active mỗi token so với kích thước tổng của model.
+
+**Thinking học tập + liên hệ:** Câu hỏi trải nghiệm trong `GPT-OSS 120B và 20B của OpenAI hoạt động như thế nào?` nên quy về adoption: dùng cho workload nào, đo thành công bằng metric nào và có đáng giữ lâu dài trong stack không. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `BPE`, `Token`, `Embedding`, `Transformer layer`, `Self-attention`.

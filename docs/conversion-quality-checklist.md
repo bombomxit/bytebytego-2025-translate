@@ -44,6 +44,9 @@ Checklist này dùng trước khi báo hoàn tất, commit hoặc push repo.
 - [ ] Có `Tóm tắt` giúp người đọc hiểu nhanh.
 - [ ] Ví dụ tự thêm nằm trong `Ví dụ thực tế - không nằm trong tài liệu gốc`.
 - [ ] Có bảng hoặc danh sách `Thuật ngữ chính` nếu bài có nhiều thuật ngữ.
+- [ ] Cuối mỗi file có `Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ`.
+- [ ] Câu hỏi ưu tiên lấy từ tài liệu gốc; nếu suy ra từ tiêu đề/nội dung thì ghi rõ.
+- [ ] Mỗi câu hỏi có `Trả lời` và `Thinking học tập + liên hệ`.
 - [ ] Không còn placeholder như `TODO`, `TBD`, `dịch sau`, `fix later`.
 
 ## README và mục lục
@@ -75,6 +78,7 @@ required_sections = [
     '## Tóm tắt',
     '## Ví dụ thực tế - không nằm trong tài liệu gốc',
     '## Thuật ngữ chính',
+    '## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ',
 ]
 
 for md in sorted(list(root.rglob('*.md'))):
@@ -97,6 +101,8 @@ print('translations', len(translations))
 print('missing_images', len(missing_images))
 print('missing_sections', len(missing_sections))
 print('bad_placeholders', len(bad_placeholders))
+print('study_answer_blocks', sum(path.read_text().count('**Trả lời:**') for path in translations))
+print('study_thinking_connection_blocks', sum(path.read_text().count('**Thinking học tập + liên hệ:**') for path in translations))
 
 if missing_images:
     print('missing_images_sample', missing_images[:10])
@@ -114,4 +120,3 @@ PY
 - [ ] Nếu repo public, không push full text/ảnh/dịch của sách có bản quyền khi chưa có quyền phân phối.
 - [ ] Nếu cần lưu full output, chuyển repo sang private trước.
 - [ ] Commit message mô tả đúng nội dung, ví dụ `Initial commit` hoặc `Add PDF conversion workflow and notes`.
-

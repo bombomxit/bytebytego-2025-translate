@@ -47,3 +47,16 @@ Chrome có thể chạy nhiều tab/site trong các process khác nhau để tă
 - `Inter-thread communication`: giao tiếp giữa các thread.
 - `Race condition`: lỗi do nhiều luồng truy cập/sửa dữ liệu cùng lúc không kiểm soát.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Popular interview question: What is the difference between Process and Thread?
+
+**Trả lời:** Điểm khác nhau nên nhìn từ boundary và trách nhiệm chính. Với `Câu hỏi phỏng vấn phổ biến: Process và Thread khác nhau thế nào?`, hãy tách rõ mỗi bên giải quyết vấn đề gì, dữ liệu đi qua đâu, ai sở hữu state và lỗi sẽ lan như thế nào. Ý chính để giữ lại là: Process giống một ứng dụng đang chạy có vùng nhớ riêng. Thread giống các luồng công việc bên trong ứng dụng đó. Vì process tách memory nên an toàn hơn nhưng nặng hơn. Thread nhẹ và giao tiếp nhanh vì dùng chung memory, nhưng cũng dễ gây race condition nếu nhiều thread cùng sửa dữ liệu.
+
+**Thinking học tập + liên hệ:** Khi so sánh trong `Câu hỏi phỏng vấn phổ biến: Process và Thread khác nhau thế nào?`, hãy tách responsibility, boundary, state, failure mode và cost vận hành thay vì chỉ so tên công nghệ. Lens chính là feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team. Khi áp dụng vào team thật, hãy nhìn developer workflow như một hệ thống: commit, review, test, deploy và rollback đều phải giảm rủi ro production. Khi ghi chú lại, hãy giải thích được các keyword: `Process`, `Thread`, `Memory space`, `Context switching`, `Inter-thread communication`.

@@ -47,3 +47,16 @@ Một app có thể lưu session ID trong cookie `HttpOnly; Secure; SameSite=Lax
 - `SameSite`: hạn chế gửi cookie cross-site.
 - `Session store`: nơi lưu session server-side.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Cookies vs Sessions”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Điểm khác nhau nên nhìn từ boundary và trách nhiệm chính. Với `Cookies vs Sessions`, hãy tách rõ mỗi bên giải quyết vấn đề gì, dữ liệu đi qua đâu, ai sở hữu state và lỗi sẽ lan như thế nào. Ý chính để giữ lại là: Cookie là cơ chế lưu dữ liệu nhỏ ở client và tự gửi theo request tới domain phù hợp. Session là mô hình lưu state ở server, client chỉ giữ session ID. Cookie tiện và scale tốt hơn nếu stateless, nhưng dữ liệu nhạy cảm không nên để lộ. Session kiểm soát tốt hơn phía server, dễ revoke hơn, nhưng cần session store như Redis và phải scale nó.
+
+**Thinking học tập + liên hệ:** Khi so sánh trong `Cookies vs Sessions`, hãy tách responsibility, boundary, state, failure mode và cost vận hành thay vì chỉ so tên công nghệ. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `Cookie`, `Session`, `Session ID`, `HttpOnly`, `Secure`.

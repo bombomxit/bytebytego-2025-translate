@@ -57,3 +57,16 @@ Một startup video có thể bắt đầu bằng monolith để ship nhanh. Khi
 - `BFF`: Backend for Frontend.
 - `Coupling`: mức độ phụ thuộc giữa component.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn có biết nuance nào khác về cách Netflix scale tới level hiện tại không?
+
+**Trả lời:** Nên bổ sung capacity estimation trước khi chọn kiến trúc; SLO/NFR rõ cho latency, availability và durability; graceful degradation khi dependency hỏng; và data ownership và service boundary. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Netflix không nhảy thẳng từ monolith sang microservices hoàn chỉnh. Họ tiến hóa theo nhu cầu scale và tốc độ phát triển: bắt đầu với 3-tier monolith, tách dần feature thành service, rồi thêm gateway để giảm coupling giữa client và backend. Điểm đáng học là migration architecture nên đi từng bước. Microservices không phải mục tiêu tự thân; nó là công cụ khi monolith bắt đầu cản trở team velocity, scaling hoặc fault isolation.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `Quá trình tiến hóa scaling tại Netflix`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `3-tier architecture`, `Monolith`, `Microservices`, `NCCP`, `Zuul`.

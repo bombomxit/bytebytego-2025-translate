@@ -65,3 +65,17 @@ Một app du lịch nhỏ có thể dùng OpenStreetMap cho bản đồ, OpenWea
 - `Quota`: tổng mức sử dụng được cấp.
 - `SLA`: Service Level Agreement, cam kết chất lượng dịch vụ.
 - `Fallback`: phương án dự phòng khi dependency bên ngoài lỗi.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm API nào khác vào danh sách?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là idempotency key cho API ghi dữ liệu hoặc payment; OpenAPI/contract validation để giảm sai lệch client-server; correlation id/distributed tracing để debug production; và threat modeling theo OWASP API Top 10. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Danh sách này hữu ích cho developer muốn xây prototype nhanh. Thay vì tự tạo dữ liệu mẫu, bạn có thể dùng public API về bản đồ, thời tiết, tin tức, AI, thể thao, ảnh, từ điển hoặc QR code để thử ý tưởng sản phẩm. Khi dùng API bên ngoài trong production, cần kiểm tra rate limit, SLA, quota, pricing, license dữ liệu, authentication, caching policy và fallback nếu API lỗi. Free tier rất tốt cho học tập và MVP, nhưng không nên phụ thuộc mù quáng vào free API cho luồng critical.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `30 API miễn phí cho developer`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `Public API`, `Free tier`, `Rate limit`, `Quota`, `SLA`.

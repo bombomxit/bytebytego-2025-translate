@@ -51,3 +51,16 @@ Một REST API cho sản phẩm có thể dùng `GET /products` để list, `GET
 - `Cache-Control`: header kiểm soát cache.
 - `Layered system`: kiến trúc nhiều lớp trung gian.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** What is a REST API?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: REST là phong cách thiết kế API dựa trên resource và HTTP. API RESTful nên có URL resource rõ, method đúng nghĩa, stateless request, response cacheable khi phù hợp, và có thể đặt nhiều layer hạ tầng ở giữa mà client không cần biết. Khi áp dụng vào hệ thống thật, hãy kiểm thêm actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke.
+
+**Thinking học tập + liên hệ:** Ôn tập `REST API là gì?` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `REST`, `RESTful`, `Resource`, `HTTP method`, `Stateless`.

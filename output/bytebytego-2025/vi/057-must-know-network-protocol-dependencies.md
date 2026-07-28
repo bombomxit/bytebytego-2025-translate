@@ -60,3 +60,17 @@ Khi user báo không vào được website, bạn có thể kiểm tra theo lớ
 - `TLS`: protocol mã hóa và xác thực kết nối.
 - `QUIC`: transport mới trên UDP, dùng cho HTTP/3.
 - `LDAP`: protocol truy cập directory service.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm network protocol nào khác vào danh sách?
+
+**Trả lời:** Danh sách sẽ đầy đủ hơn nếu thêm DNS caching/TTL và negative caching; TLS handshake/session resumption; CDN edge caching và origin shielding; và QUIC/HTTP/3 khi cần giảm latency. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Network protocol thường xếp thành nhiều lớp phụ thuộc. IP là nền để gửi packet giữa host. Trên IP có transport protocol như TCP/UDP. Trên TCP/UDP có application protocol như HTTP, DNS, SMTP, SSH. TLS có thể nằm giữa transport và application để mã hóa, tạo ra HTTPS, IMAPS hoặc SMTPS.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `Các dependency giữa network protocol cần biết`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `Protocol dependency`, `IP`, `TCP`, `UDP`, `TLS`.

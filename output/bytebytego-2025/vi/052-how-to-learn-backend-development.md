@@ -68,3 +68,17 @@ Quan trọng là build project thật: auth, CRUD, file upload, pagination, back
 - `API`: interface để client/service giao tiếp với backend.
 - `IaC`: Infrastructure as Code.
 - `Monitoring`: theo dõi sức khỏe, metric, log và alert của hệ thống.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác vào danh sách học backend development?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là SLO/error budget để biết hệ thống đủ tốt hay chưa; blue-green/canary deployment để giảm rủi ro release; secret management và least privilege IAM; và cost monitoring/tagging cho cloud bill. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Backend development là phần xây dựng logic phía server: API, database, authentication, business logic, integration, deployment và observability. Một backend developer tốt không chỉ biết viết endpoint, mà còn hiểu HTTP, database, cache, queue, security, deployment và monitoring.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `Học Backend Development như thế nào?`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `Backend`, `ORM`, `NewSQL`, `API`, `IaC`.

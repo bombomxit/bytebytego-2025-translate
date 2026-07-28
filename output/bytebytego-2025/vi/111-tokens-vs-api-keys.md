@@ -76,3 +76,16 @@ API key không nên được xem là đủ để xác thực user cuối. Với 
 - `API Gateway`: cổng kiểm soát request.
 - `Key rotation`: thay/luân phiên key định kỳ.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác vào phần giải thích?
+
+**Trả lời:** Nên bổ sung idempotency key cho API ghi dữ liệu hoặc payment; OpenAPI/contract validation để giảm sai lệch client-server; correlation id/distributed tracing để debug production; và threat modeling theo OWASP API Top 10. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Token thường đại diện cho một user/session/context cụ thể, có thời hạn và claim như user id, role, scope. API key thường đại diện cho một application/developer/project, dùng để định danh client app, quota, billing hoặc truy cập public API. API key không nên được xem là đủ để xác thực user cuối. Với API gọi thay mặt user, token như OAuth access token/JWT phù hợp hơn. Với third-party integration server-to-server, API key có thể dùng nhưng cần rate limit, rotation, scope và secret storage đúng.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `Token vs API Key`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `Token`, `API key`, `JWT`, `Claim`, `Scope`.

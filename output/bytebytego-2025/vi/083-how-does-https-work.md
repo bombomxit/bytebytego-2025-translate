@@ -64,3 +64,16 @@ Khi bạn gọi API thanh toán qua `https://api.example.com`, attacker trên c�
 
 Mô tả trong bài dùng cách giải thích đơn giản kiểu TLS/RSA key exchange. TLS hiện đại thường dùng ephemeral key exchange như ECDHE, nơi session key không đơn giản là client tạo rồi mã hóa trực tiếp bằng public key của certificate. Ý chính về việc dùng asymmetric phase để thiết lập kênh an toàn rồi dùng symmetric encryption cho data transmission vẫn đúng.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** HTTPS thêm bao nhiêu performance overhead so với HTTP?
+
+**Trả lời:** Nên bổ sung DNS caching/TTL và negative caching; TLS handshake/session resumption; CDN edge caching và origin shielding; và QUIC/HTTP/3 khi cần giảm latency. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: HTTPS dùng TLS để bảo vệ dữ liệu trên đường truyền. Giai đoạn đầu dùng asymmetric cryptography để xác thực server và trao đổi bí mật an toàn. Sau đó hai bên dùng session key đối xứng vì symmetric encryption nhanh hơn nhiều cho dữ liệu lớn và kết nối dài. Trong TLS hiện đại, chi tiết key exchange có thể dùng cơ chế như ECDHE để cung cấp forward secrecy, nhưng ý tưởng cốt lõi vẫn là: xác thực server, thỏa thuận key chung, rồi truyền dữ liệu đã mã hóa.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `HTTPS hoạt động như thế nào?`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `HTTPS`, `TLS`, `Certificate`, `Cipher suite`, `Asymmetric encryption`.

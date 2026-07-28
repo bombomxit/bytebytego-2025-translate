@@ -69,3 +69,17 @@ Không cần đọc hết mọi cuốn trước khi code. Cách hiệu quả là
 - `Design pattern`: mẫu giải pháp lặp lại cho vấn đề thiết kế phổ biến.
 - `DDD`: Domain-Driven Design, thiết kế phần mềm xoay quanh domain nghiệp vụ.
 - `Data structures and algorithms`: cấu trúc dữ liệu và thuật toán nền tảng.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Cuốn sách yêu thích của bạn là gì?
+
+**Trả lời:** Nếu đưa `10 cuốn sách yêu thích dành cho software developer` vào stack, nên bắt đầu từ một use case hẹp, dễ rollback và có metric rõ. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: Danh sách này chia việc học software engineering thành nhiều lớp. General advice giúp hình thành tư duy nghề nghiệp và chất lượng phần mềm. Coding giúp viết code rõ ràng, dễ maintain và biết cải thiện code cũ. Software architecture giúp hiểu hệ thống dữ liệu, scalability, consistency và trade-off. Design patterns và DDD giúp tổ chức domain logic. Data structures and algorithms giúp xây nền tảng giải quyết vấn đề.
+
+**Thinking học tập + liên hệ:** Với `10 cuốn sách yêu thích dành cho software developer`, trải nghiệm thật nên được đo bằng latency, độ ổn định, chi phí, khả năng debug và mức dễ rollback. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Software architecture`, `Refactoring`, `Design pattern`, `DDD`, `Data structures and algorithms`.

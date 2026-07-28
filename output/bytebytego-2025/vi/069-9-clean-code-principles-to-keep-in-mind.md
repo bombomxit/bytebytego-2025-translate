@@ -62,3 +62,17 @@ Thay vì viết `if (score >= 65)`, hãy dùng `const PASSING_SCORE = 65`. Thay 
 - `Cognitive load`: tải nhận thức người đọc phải giữ trong đầu.
 - `Early return`: return sớm để giảm nesting.
 - `Self-explanatory`: tự giải thích qua tên và cấu trúc code.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm nguyên tắc clean code nào khác vào danh sách?
+
+**Trả lời:** Danh sách sẽ đầy đủ hơn nếu thêm capacity estimation trước khi chọn kiến trúc; SLO/NFR rõ cho latency, availability và durability; graceful degradation khi dependency hỏng; và data ownership và service boundary. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Clean code giúp code dễ đọc, dễ sửa và ít bug hơn. Tên rõ ràng giảm nhu cầu comment. Function nhỏ một trách nhiệm giúp test và reuse dễ hơn. Tránh magic number và boolean mơ hồ giúp business rule rõ hơn. Tránh nesting sâu giúp người đọc không phải giữ quá nhiều context trong đầu.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `9 nguyên tắc Clean Code cần ghi nhớ`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Clean Code`, `Magic number`, `DRY`, `Cognitive load`, `Early return`.

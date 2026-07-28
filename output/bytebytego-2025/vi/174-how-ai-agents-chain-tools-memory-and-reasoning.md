@@ -46,3 +46,16 @@ Khi bạn yêu cầu agent “phân tích lỗi API chậm”, agent có thể: 
 - `ReAct`: pattern kết hợp Reasoning và Acting.
 - `Chain`: chuỗi bước suy luận - hành động - ghi nhớ.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** How AI Agents Chain Tools, Memory, and Reasoning?
+
+**Trả lời:** Hãy tách flow thành các bước có state rõ ràng: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `AI Agent kết nối Tool, Memory và Reasoning như thế nào?`, ý chính là: AI agent không chỉ trả lời một lần như chatbot đơn giản. Nó có thể lập kế hoạch, gọi tool, đọc kết quả, lưu context rồi tiếp tục bước sau. Ba phần quan trọng là reasoning để quyết định, tools để tác động ra thế giới ngoài, và memory để không mất mạch công việc.
+
+**Thinking học tập + liên hệ:** Luồng trong `AI Agent kết nối Tool, Memory và Reasoning như thế nào?` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `AI Agent`, `Reasoning`, `Tool`, `Memory`, `ReAct`.

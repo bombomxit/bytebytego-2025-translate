@@ -59,3 +59,16 @@ Một coding agent có thể quyết định đọc file, chạy test và sửa 
 - `Tool use`: dùng API/tool bên ngoài.
 - `Human in the loop`: người tham gia kiểm soát.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng AI Agent hoặc MCP chưa?
+
+**Trả lời:** Với `AI Agent so với MCP`, cách liên hệ tốt nhất là chọn một workload nhỏ rồi kiểm chứng bằng số liệu thay vì chọn theo cảm tính. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: AI Agent là hệ thống hành động theo mục tiêu: quan sát, quyết định, dùng tool và lặp lại. MCP là giao thức/chuẩn tích hợp để agent hoặc AI app truy cập tool và dữ liệu bên ngoài. Agent là “người làm việc”; MCP là “ổ cắm chuẩn” để người đó dùng công cụ. Bài này lặp lại chủ đề đã xuất hiện ở bài 082, nhưng được giữ thành file riêng theo đúng archive.
+
+**Thinking học tập + liên hệ:** Khi tự liên hệ `AI Agent so với MCP`, hãy viết ra một project cụ thể, lý do chọn công nghệ và lỗi vận hành có thể xảy ra. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `AI Agent`, `MCP`, `Host`, `MCP Client`, `MCP Server`.

@@ -59,3 +59,16 @@ Một e-commerce API có thể dùng `GET /v1/users/{user_id}/orders` để lấ
 - `Backward compatibility`: tương thích ngược với client cũ.
 - `Rate limiting`: giới hạn tốc độ gọi API.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm principle nào khác cho API Design vào danh sách?
+
+**Trả lời:** Có thể thêm idempotency key cho API ghi dữ liệu hoặc payment; OpenAPI/contract validation để giảm sai lệch client-server; correlation id/distributed tracing để debug production; và threat modeling theo OWASP API Top 10. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: API tốt bắt đầu từ contract rõ ràng: client gửi gì, server trả gì, lỗi trả ra sao, version thay đổi thế nào. Sau đó mới chọn style phù hợp: REST đơn giản và phổ biến, GraphQL linh hoạt cho client query dữ liệu, gRPC mạnh cho service-to-service hiệu năng cao. Quan hệ giữa resource nên thể hiện tự nhiên nhưng không quá lồng sâu. Versioning giúp thay đổi an toàn. Rate limiting bảo vệ API khỏi abuse, bug client hoặc traffic spike.
+
+**Thinking học tập + liên hệ:** Danh sách trong `5 trụ cột của API Design` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `API contract`, `CRUD`, `REST`, `GraphQL`, `gRPC`.

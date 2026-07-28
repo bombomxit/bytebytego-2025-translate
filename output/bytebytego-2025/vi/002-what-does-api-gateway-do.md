@@ -74,3 +74,27 @@ Nếu `payment-service` liên tục timeout, API Gateway có thể bật `circui
 - `Service discovery`: cơ chế tìm địa chỉ service đang chạy.
 - `Circuit breaker`: mẫu thiết kế ngắt gọi tới service lỗi để tránh lan truyền sự cố.
 - `ELK`: bộ công cụ Elastic, Logstash, Kibana dùng cho log và quan sát hệ thống.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Load balancer và API Gateway khác nhau ở điểm nào?
+
+**Trả lời:** Load balancer chủ yếu phân phối traffic giữa nhiều instance/server để tăng availability và throughput. API Gateway đứng ở tầng API nên xử lý nhiều logic hơn: authentication, authorization, rate limit, routing theo path/version, logging, caching và protocol conversion. Trong kiến trúc production, hai lớp này thường đi cùng nhau: load balancer đưa traffic tới cụm gateway, gateway mới quyết định request đi tới service nào.
+
+**Thinking học tập + liên hệ:** API Gateway là boundary quan trọng, nên thinking phải xoay quanh trách nhiệm nào đặt ở gateway và trách nhiệm nào vẫn phải giữ trong service. Khi liên hệ project, hãy vẽ đường đi request từ client tới gateway tới microservice, rồi gắn auth, rate limit, logging, cache và circuit breaker vào đúng điểm. Các keyword cần tự giải thích lại: `API Gateway`, `Authentication`, `Authorization`, `Rate limiting`, `Service discovery`.
+
+### Câu hỏi 2
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Có cần dùng các API Gateway khác nhau riêng cho PC, mobile và browser không?
+
+**Trả lời:** Không bắt buộc tách ngay. Nếu Web, Mobile và PC dùng policy gần giống nhau, một API Gateway chung sẽ đơn giản và dễ vận hành hơn. Chỉ nên tách gateway/BFF riêng khi mỗi client có nhu cầu khác rõ: payload aggregation riêng, auth flow riêng, rate limit riêng, versioning riêng hoặc release cadence khác nhau.
+
+**Thinking học tập + liên hệ:** API Gateway là boundary quan trọng, nên thinking phải xoay quanh trách nhiệm nào đặt ở gateway và trách nhiệm nào vẫn phải giữ trong service. Khi liên hệ project, hãy vẽ đường đi request từ client tới gateway tới microservice, rồi gắn auth, rate limit, logging, cache và circuit breaker vào đúng điểm. Các keyword cần tự giải thích lại: `API Gateway`, `Authentication`, `Authorization`, `Rate limiting`, `Service discovery`.

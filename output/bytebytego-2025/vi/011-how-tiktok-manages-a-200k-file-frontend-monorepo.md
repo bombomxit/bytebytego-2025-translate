@@ -67,3 +67,17 @@ Nếu không có affected build, caching và sparse checkout, MonoRepo lớn d�
 - `Partial clone`: clone một phần object cần thiết của repository.
 - `Dependency management`: quản lý version và quan hệ phụ thuộc giữa package.
 - `Code sharing`: chia sẻ code/library/type giữa nhiều project.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng MonoRepo trong project của mình chưa?
+
+**Trả lời:** Trong project thật, `TikTok quản lý Frontend MonoRepo 200K file như thế nào?` đáng dùng/thử khi bài toán khớp với nhu cầu cụ thể và team đo được kết quả. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: MonoRepo giúp nhiều team dùng chung code, chuẩn hóa dependency và nhìn toàn bộ hệ thống trong một repository. Nhưng khi repo quá lớn, chính Git trở thành bottleneck: clone lâu, checkout lâu, status chậm, commit chậm và CI cũng dễ nặng. Trường hợp TikTok cho thấy khi MonoRepo đạt quy mô rất lớn, cần công cụ và workflow chuyên biệt. Sparo tối ưu bằng các kỹ thuật như sparse checkout và partial clone, tức developer chỉ tải và làm việc với phần repo cần thiết thay vì kéo toàn bộ 200K file mỗi lần.
+
+**Thinking học tập + liên hệ:** Câu hỏi trải nghiệm trong `TikTok quản lý Frontend MonoRepo 200K file như thế nào?` nên quy về adoption: dùng cho workload nào, đo thành công bằng metric nào và có đáng giữ lâu dài trong stack không. Lens chính là UX, bundle size, build time, maintainability, accessibility và tốc độ release. Khi làm frontend production, hãy nối code với người dùng thật: load có nhanh không, lỗi có thấy được không, component có tái dùng được không và build có scale với team không. Khi ghi chú lại, hãy giải thích được các keyword: `MonoRepo`, `Multi-Repo`, `Sparse checkout`, `Partial clone`, `Dependency management`.

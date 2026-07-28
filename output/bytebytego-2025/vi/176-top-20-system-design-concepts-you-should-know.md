@@ -74,3 +74,16 @@ Khi thiết kế news feed, bạn có thể dùng CDN cho static assets, cache f
 - `CDN`: Content Delivery Network.
 - `AuthN/AuthZ`: xác thực và phân quyền.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Top 20 System Design Concepts You Should Know”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Nếu rút thành checklist thiết kế thì ý chính là: Đây là checklist nền tảng cho system design. Các concept này chia thành vài nhóm: scale traffic (`Load Balancing`, `CDN`, `Rate Limiting`), scale dữ liệu (`Sharding`, `Partitioning`, `Indexing`, `Replication`), kiến trúc service (`Microservices`, `API Gateway`, `Message Queues`, `Service Discovery`), reliability (`Fault Tolerance`, `Monitoring`) và security (`Authentication`, `Authorization`). Khi áp dụng vào hệ thống thật, hãy kiểm thêm requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team.
+
+**Thinking học tập + liên hệ:** Khi học `20 khái niệm System Design bạn nên biết`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Load Balancing`, `Caching`, `Sharding`, `Replication`, `CAP Theorem`.

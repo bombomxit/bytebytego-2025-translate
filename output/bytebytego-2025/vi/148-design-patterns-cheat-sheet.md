@@ -51,3 +51,16 @@ Factory phù hợp khi tạo payment gateway theo provider. Strategy phù hợp 
 - `Observer`: publish/subscribe event.
 - `Adapter`: chuyển interface không tương thích thành interface mong muốn.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Design Patterns Cheat Sheet”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: Design pattern là lời giải đã được đúc kết cho các vấn đề thiết kế lặp lại. Creational pattern giúp tạo object linh hoạt. Structural pattern giúp tổ chức object/class. Behavioral pattern giúp điều phối hành vi và giao tiếp giữa object. Pattern hữu ích khi nó giảm complexity thật sự. Nếu áp dụng máy móc, pattern có thể làm code khó đọc hơn. Hãy bắt đầu từ vấn đề cụ thể: tạo object phức tạp, thay implementation, giảm coupling, xử lý event, hoặc đóng gói algorithm. Khi áp dụng vào hệ thống thật, hãy kiểm thêm requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team.
+
+**Thinking học tập + liên hệ:** Liên hệ `Design Patterns Cheat Sheet` bằng một scenario thật sẽ giúp thấy trade-off rõ hơn so với chỉ đọc định nghĩa. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Creational pattern`, `Structural pattern`, `Behavioral pattern`, `Factory`, `Strategy`.

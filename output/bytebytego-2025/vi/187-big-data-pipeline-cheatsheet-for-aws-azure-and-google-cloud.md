@@ -57,3 +57,16 @@ Tên dịch vụ cloud thay đổi theo thời gian; bài này nên được hi�
 - `Visualization`: trực quan hóa/report insight.
 - `AWS/Azure/GCP`: ba cloud provider lớn.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Big Data Pipeline Cheatsheet for AWS, Azure, and Google Cloud”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Trọng tâm cần đem vào thực tế là: Big data pipeline thường đi theo chuỗi: nạp dữ liệu -> lưu raw data -> xử lý/biến đổi -> lưu dạng phân tích -> trực quan hóa. Tên service khác nhau giữa cloud provider, nhưng pattern kiến trúc gần giống nhau. Khi đã hiểu stage, bạn có thể map service của AWS/Azure/GCP sang cùng một mental model. Khi áp dụng vào hệ thống thật, hãy kiểm thêm độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng.
+
+**Thinking học tập + liên hệ:** Khi học `Cheat sheet Big Data Pipeline cho AWS, Azure và Google Cloud`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `Ingestion`, `Data Lake`, `ETL`, `Data Warehouse`, `Streaming`.

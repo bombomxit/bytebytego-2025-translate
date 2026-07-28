@@ -63,3 +63,17 @@ Nếu retrieval lấy sai tài liệu, LLM có thể trả lời sai dù model r
 - `Chunking`: chia tài liệu thành đoạn nhỏ để index/retrieve.
 - `Reranking`: sắp xếp lại kết quả retrieval để chọn context tốt hơn.
 - `Context`: thông tin đưa vào prompt cho LLM xử lý.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng RAG với LLM yêu thích của mình chưa?
+
+**Trả lời:** Trong project thật, `Retrieval-Augmented Generation (RAG) là gì?` đáng dùng/thử khi bài toán khớp với nhu cầu cụ thể và team đo được kết quả. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: RAG giải quyết một vấn đề rất thực tế: LLM không luôn biết dữ liệu riêng hoặc dữ liệu mới nhất của bạn. Thay vì fine-tune model mỗi khi tài liệu thay đổi, hệ thống tìm đoạn tài liệu liên quan, đưa vào context rồi yêu cầu LLM trả lời dựa trên context đó. Một RAG system thường có hai phase. Phase ingest biến tài liệu thành chunks, tạo embedding và lưu vào vector database/search index. Phase query nhận câu hỏi, tạo embedding cho câu hỏi, tìm chunks liên quan, ghép context vào prompt và gọi LLM. Chất lượng RAG phụ...
+
+**Thinking học tập + liên hệ:** Câu hỏi trải nghiệm trong `Retrieval-Augmented Generation (RAG) là gì?` nên quy về adoption: dùng cho workload nào, đo thành công bằng metric nào và có đáng giữ lâu dài trong stack không. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `RAG`, `Knowledge base`, `Embedding`, `Vector database`, `Chunking`.

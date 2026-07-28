@@ -126,3 +126,27 @@ Khi thiết kế chat app realtime, bạn có thể dùng load balancer để ph
 - `Partitioning`: chia dữ liệu để scale.
 - `Observability`: khả năng hiểu trạng thái hệ thống qua log, metric, trace.
 - `Git rebase`: viết lại base của commit để history tuyến tính hơn.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm khái niệm System Design nào khác vào danh sách?
+
+**Trả lời:** Danh sách sẽ đầy đủ hơn nếu thêm capacity estimation trước khi chọn kiến trúc; SLO/NFR rõ cho latency, availability và durability; graceful degradation khi dependency hỏng; và data ownership và service boundary. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Phần đầu là checklist khái niệm system design nền tảng. Chúng bao phủ traffic distribution, caching, data scaling, consistency, async communication, API boundary, microservices, realtime, scalability, resilience, observability và security. Phần sau là Git cheatsheet thực dụng. Bản gốc đặt hai nội dung trong cùng một cụm trang, nên file dịch giữ cả hai để không mất nội dung.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `Top 20 khái niệm System Design bạn nên biết`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `System design`, `Replica`, `Partitioning`, `Observability`, `Git rebase`.
+
+### Câu hỏi 2
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** chúng tôi có bỏ sót gì không?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là capacity estimation trước khi chọn kiến trúc; SLO/NFR rõ cho latency, availability và durability; graceful degradation khi dependency hỏng; và data ownership và service boundary. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Phần đầu là checklist khái niệm system design nền tảng. Chúng bao phủ traffic distribution, caching, data scaling, consistency, async communication, API boundary, microservices, realtime, scalability, resilience, observability và security. Phần sau là Git cheatsheet thực dụng. Bản gốc đặt hai nội dung trong cùng một cụm trang, nên file dịch giữ cả hai để không mất nội dung.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `Top 20 khái niệm System Design bạn nên biết`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `System design`, `Replica`, `Partitioning`, `Observability`, `Git rebase`.

@@ -82,3 +82,16 @@ Một hệ thống video streaming có thể cần đếm số lần play, pause
 - `TCP handshake`: quy trình thiết lập TCP connection.
 - `SYN/ACK`: control flag trong TCP.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác để hiểu TCP Handshake process tốt hơn?
+
+**Trả lời:** Danh sách sẽ đầy đủ hơn nếu thêm query plan/EXPLAIN để biết bottleneck thật; transaction isolation để tránh race condition và dirty read; connection pooling/backpressure để database không bị quá tải; và cache invalidation strategy rõ ràng. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Distributed counter nghe đơn giản nhưng khó ở quy mô lớn vì nhiều request có thể tăng/giảm cùng một counter đồng thời. Nếu mọi request cùng update một row, database contention sẽ rất cao. Netflix giải quyết bằng cách log event trước, chia theo bucket/time partition, aggregate bất đồng bộ và cache kết quả đọc.
+
+**Thinking học tập + liên hệ:** Danh sách trong `Netflix xây dựng Distributed Counter như thế nào?` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Distributed counter`, `Idempotency`, `Time partition/bucket`, `Rollup`, `EVCache`.

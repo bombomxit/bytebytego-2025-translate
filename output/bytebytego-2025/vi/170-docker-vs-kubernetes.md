@@ -59,3 +59,16 @@ Một API nhỏ chạy nội bộ có thể chỉ cần Docker Compose trên m�
 - `Kubelet`: agent chạy trên worker node.
 - `Self-healing`: tự khôi phục khi container/node lỗi.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Docker vs Kubernetes”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Điểm khác nhau nên nhìn từ boundary và trách nhiệm chính. Với `Docker vs Kubernetes`, hãy tách rõ mỗi bên giải quyết vấn đề gì, dữ liệu đi qua đâu, ai sở hữu state và lỗi sẽ lan như thế nào. Ý chính để giữ lại là: Docker giải quyết bài toán “đóng gói và chạy app nhất quán”. Kubernetes giải quyết bài toán “vận hành nhiều container trên nhiều máy”: deploy, scale, restart khi lỗi, service discovery, rolling update và phân bổ workload. Có thể hiểu Docker giống cách đóng gói container, còn Kubernetes giống hệ thống điều phối cả cảng container.
+
+**Thinking học tập + liên hệ:** Khi so sánh trong `Docker vs Kubernetes`, hãy tách responsibility, boundary, state, failure mode và cost vận hành thay vì chỉ so tên công nghệ. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `Dockerfile`, `Image`, `Container`, `Container runtime`, `Kubernetes`.

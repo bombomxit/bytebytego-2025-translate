@@ -77,3 +77,17 @@ Khi thiết kế hệ thống workflow văn bản doanh nghiệp, architect cầ
 - `Hexagonal Architecture`: kiến trúc ports-and-adapters tách domain khỏi adapter bên ngoài.
 - `OLAP`: Online Analytical Processing cho phân tích dữ liệu.
 - `Stakeholder management`: quản lý kỳ vọng và giao tiếp với các bên liên quan.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác vào roadmap?
+
+**Trả lời:** Danh sách sẽ đầy đủ hơn nếu thêm DNS caching/TTL và negative caching; TLS handshake/session resumption; CDN edge caching và origin shielding; và QUIC/HTTP/3 khi cần giảm latency. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Software Architect không chỉ là người biết vẽ diagram. Architect cần nền tảng code đủ sâu để hiểu implementation trade-off, biết tool delivery/quality, nắm design principle, hiểu architectural pattern, biết platform/cloud/distributed systems, hiểu data/network/security và có kỹ năng giao tiếp để ra quyết định cùng stakeholder.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `Bản đồ kiến thức cho Software Architect`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `OOP/OOPS`, `TDD`, `DDD`, `CAP Theorem`, `EDA`.

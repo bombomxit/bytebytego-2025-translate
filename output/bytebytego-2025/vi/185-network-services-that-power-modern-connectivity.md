@@ -69,3 +69,16 @@ Nếu login SSO lúc được lúc không, nguyên nhân có thể không nằm 
 - `OAuth2/OIDC`: authorization/authentication hiện đại trên web.
 - `WireGuard/IPsec`: VPN tunnel mã hóa.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Network Services That Power Modern Connectivity”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Nếu rút thành checklist thiết kế thì ý chính là: Network service là các dịch vụ nền mà application phụ thuộc nhưng user thường không nhìn thấy. DNS giúp tìm server, DHCP cấp địa chỉ, NTP giữ thời gian đúng, SSH/RDP cho admin access, HTTPS bảo mật app traffic, LDAP/OIDC xử lý identity, database protocol lưu dữ liệu và VPN tunnel bảo vệ kết nối từ xa. Khi áp dụng vào hệ thống thật, hãy kiểm thêm DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer.
+
+**Thinking học tập + liên hệ:** Khi học `Các network service vận hành kết nối hiện đại`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `DNS`, `DHCP`, `NTP`, `SSH`, `RDP`.

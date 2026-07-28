@@ -76,3 +76,116 @@ Nếu bảng `orders` lưu cả `customer_name`, `customer_email`, `product_name
 - `Candidate key`: khóa ứng viên xác định row duy nhất.
 - `Load testing`: kiểm tra dưới tải cao.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm Normal Form nào khác vào danh sách?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là pre-commit hook/lint để chặn lỗi sớm; trunk-based development khi team cần release nhanh; branch protection và required checks; và reflog/revert strategy để cứu lỗi Git. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Normalization giúp schema ít trùng lặp và giảm anomaly khi insert/update/delete. 1NF xử lý atomicity, 2NF xử lý phụ thuộc vào một phần composite key, 3NF xử lý phụ thuộc bắc cầu, BCNF siết chặt candidate key, 4NF xử lý nhiều quan hệ một-nhiều độc lập trong cùng bảng.
+
+**Thinking học tập + liên hệ:** Danh sách trong `5 Database Normal Form mọi developer nên biết` nên được kiểm theo coverage: nó đã nói phần nào, thiếu phần nào và phần thiếu có làm thay đổi quyết định thiết kế không. Lens chính là feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team. Khi áp dụng vào team thật, hãy nhìn developer workflow như một hệ thống: commit, review, test, deploy và rollback đều phải giảm rủi ro production. Khi ghi chú lại, hãy giải thích được các keyword: `Normalization`, `Redundancy`, `Atomic value`, `Partial dependency`, `Transitive dependency`.
+
+### Câu hỏi 2
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Unit Testing: Bảo đảm từng code component riêng lẻ hoạt động đúng khi isolation.
+
+**Trả lời:** Luồng tốt nhất là lần theo input tới output: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `5 Database Normal Form mọi developer nên biết`, ý chính là: Normalization giúp schema ít trùng lặp và giảm anomaly khi insert/update/delete. 1NF xử lý atomicity, 2NF xử lý phụ thuộc vào một phần composite key, 3NF xử lý phụ thuộc bắc cầu, BCNF siết chặt candidate key, 4NF xử lý nhiều quan hệ một-nhiều độc lập trong cùng bảng.
+
+**Thinking học tập + liên hệ:** Luồng trong `5 Database Normal Form mọi developer nên biết` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team. Khi áp dụng vào team thật, hãy nhìn developer workflow như một hệ thống: commit, review, test, deploy và rollback đều phải giảm rủi ro production. Khi ghi chú lại, hãy giải thích được các keyword: `Normalization`, `Redundancy`, `Atomic value`, `Partial dependency`, `Transitive dependency`.
+
+### Câu hỏi 3
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Integration Testing: Verify các phần khác nhau của system hoạt động mượt mà cùng nhau.
+
+**Trả lời:** Điểm khác nhau nên nhìn từ boundary và trách nhiệm chính. Với `5 Database Normal Form mọi developer nên biết`, hãy tách rõ mỗi bên giải quyết vấn đề gì, dữ liệu đi qua đâu, ai sở hữu state và lỗi sẽ lan như thế nào. Ý chính để giữ lại là: Normalization giúp schema ít trùng lặp và giảm anomaly khi insert/update/delete. 1NF xử lý atomicity, 2NF xử lý phụ thuộc vào một phần composite key, 3NF xử lý phụ thuộc bắc cầu, BCNF siết chặt candidate key, 4NF xử lý nhiều quan hệ một-nhiều độc lập trong cùng bảng.
+
+**Thinking học tập + liên hệ:** Khi so sánh trong `5 Database Normal Form mọi developer nên biết`, hãy tách responsibility, boundary, state, failure mode và cost vận hành thay vì chỉ so tên công nghệ. Lens chính là feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team. Khi áp dụng vào team thật, hãy nhìn developer workflow như một hệ thống: commit, review, test, deploy và rollback đều phải giảm rủi ro production. Khi ghi chú lại, hãy giải thích được các keyword: `Normalization`, `Redundancy`, `Atomic value`, `Partial dependency`, `Transitive dependency`.
+
+### Câu hỏi 4
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** System Testing: Đánh giá toàn bộ system có tuân thủ user requirement và performance hay không.
+
+**Trả lời:** Bài này muốn người đọc nắm: Normalization giúp schema ít trùng lặp và giảm anomaly khi insert/update/delete. 1NF xử lý atomicity, 2NF xử lý phụ thuộc vào một phần composite key, 3NF xử lý phụ thuộc bắc cầu, BCNF siết chặt candidate key, 4NF xử lý nhiều quan hệ một-nhiều độc lập trong cùng bảng. Khi áp dụng vào hệ thống thật, hãy kiểm thêm feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team.
+
+**Thinking học tập + liên hệ:** Khi học `5 Database Normal Form mọi developer nên biết`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team. Khi áp dụng vào team thật, hãy nhìn developer workflow như một hệ thống: commit, review, test, deploy và rollback đều phải giảm rủi ro production. Khi ghi chú lại, hãy giải thích được các keyword: `Normalization`, `Redundancy`, `Atomic value`, `Partial dependency`, `Transitive dependency`.
+
+### Câu hỏi 5
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Load Testing: Test khả năng system xử lý high workload và xác định performance issue.
+
+**Trả lời:** Nếu rút thành checklist thiết kế thì ý chính là: Normalization giúp schema ít trùng lặp và giảm anomaly khi insert/update/delete. 1NF xử lý atomicity, 2NF xử lý phụ thuộc vào một phần composite key, 3NF xử lý phụ thuộc bắc cầu, BCNF siết chặt candidate key, 4NF xử lý nhiều quan hệ một-nhiều độc lập trong cùng bảng. Khi áp dụng vào hệ thống thật, hãy kiểm thêm feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team.
+
+**Thinking học tập + liên hệ:** Liên hệ `5 Database Normal Form mọi developer nên biết` bằng một scenario thật sẽ giúp thấy trade-off rõ hơn so với chỉ đọc định nghĩa. Lens chính là feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team. Khi áp dụng vào team thật, hãy nhìn developer workflow như một hệ thống: commit, review, test, deploy và rollback đều phải giảm rủi ro production. Khi ghi chú lại, hãy giải thích được các keyword: `Normalization`, `Redundancy`, `Atomic value`, `Partial dependency`, `Transitive dependency`.
+
+### Câu hỏi 6
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Error Testing: Đánh giá cách software xử lý invalid input và error condition.
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: Normalization giúp schema ít trùng lặp và giảm anomaly khi insert/update/delete. 1NF xử lý atomicity, 2NF xử lý phụ thuộc vào một phần composite key, 3NF xử lý phụ thuộc bắc cầu, BCNF siết chặt candidate key, 4NF xử lý nhiều quan hệ một-nhiều độc lập trong cùng bảng. Khi áp dụng vào hệ thống thật, hãy kiểm thêm feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team.
+
+**Thinking học tập + liên hệ:** Khi học `5 Database Normal Form mọi developer nên biết`, hãy thử viết một checklist áp dụng vào project: input, output, owner, rủi ro và metric kiểm chứng. Lens chính là feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team. Khi áp dụng vào team thật, hãy nhìn developer workflow như một hệ thống: commit, review, test, deploy và rollback đều phải giảm rủi ro production. Khi ghi chú lại, hãy giải thích được các keyword: `Normalization`, `Redundancy`, `Atomic value`, `Partial dependency`, `Transitive dependency`.
+
+### Câu hỏi 7
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Test Automation: Tự động hóa test case execution để tăng efficiency, repeatability và giảm lỗi.
+
+**Trả lời:** Nếu rút thành checklist thiết kế thì ý chính là: Normalization giúp schema ít trùng lặp và giảm anomaly khi insert/update/delete. 1NF xử lý atomicity, 2NF xử lý phụ thuộc vào một phần composite key, 3NF xử lý phụ thuộc bắc cầu, BCNF siết chặt candidate key, 4NF xử lý nhiều quan hệ một-nhiều độc lập trong cùng bảng. Khi áp dụng vào hệ thống thật, hãy kiểm thêm feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team.
+
+**Thinking học tập + liên hệ:** Ôn tập `5 Database Normal Form mọi developer nên biết` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team. Khi áp dụng vào team thật, hãy nhìn developer workflow như một hệ thống: commit, review, test, deploy và rollback đều phải giảm rủi ro production. Khi ghi chú lại, hãy giải thích được các keyword: `Normalization`, `Redundancy`, `Atomic value`, `Partial dependency`, `Transitive dependency`.
+
+### Câu hỏi 8
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Câu hỏi dành cho bạn: Bạn approach testing system functionality trong software development hoặc engineering project của mình như thế nào?
+
+**Trả lời:** Luồng tốt nhất là lần theo input tới output: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `5 Database Normal Form mọi developer nên biết`, ý chính là: Normalization giúp schema ít trùng lặp và giảm anomaly khi insert/update/delete. 1NF xử lý atomicity, 2NF xử lý phụ thuộc vào một phần composite key, 3NF xử lý phụ thuộc bắc cầu, BCNF siết chặt candidate key, 4NF xử lý nhiều quan hệ một-nhiều độc lập trong cùng bảng.
+
+**Thinking học tập + liên hệ:** Luồng trong `5 Database Normal Form mọi developer nên biết` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team. Khi áp dụng vào team thật, hãy nhìn developer workflow như một hệ thống: commit, review, test, deploy và rollback đều phải giảm rủi ro production. Khi ghi chú lại, hãy giải thích được các keyword: `Normalization`, `Redundancy`, `Atomic value`, `Partial dependency`, `Transitive dependency`.
+
+### Câu hỏi 9
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Câu hỏi dành cho bạn: Release process của công ty bạn trông như thế nào?
+
+**Trả lời:** Hãy tách flow thành các bước có state rõ ràng: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `5 Database Normal Form mọi developer nên biết`, ý chính là: Normalization giúp schema ít trùng lặp và giảm anomaly khi insert/update/delete. 1NF xử lý atomicity, 2NF xử lý phụ thuộc vào một phần composite key, 3NF xử lý phụ thuộc bắc cầu, BCNF siết chặt candidate key, 4NF xử lý nhiều quan hệ một-nhiều độc lập trong cùng bảng.
+
+**Thinking học tập + liên hệ:** Luồng trong `5 Database Normal Form mọi developer nên biết` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team. Khi áp dụng vào team thật, hãy nhìn developer workflow như một hệ thống: commit, review, test, deploy và rollback đều phải giảm rủi ro production. Khi ghi chú lại, hãy giải thích được các keyword: `Normalization`, `Redundancy`, `Atomic value`, `Partial dependency`, `Transitive dependency`.
+
+### Câu hỏi 10
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn approach testing system functionality trong software development hoặc engineering project của mình như thế nào?
+
+**Trả lời:** Luồng tốt nhất là lần theo input tới output: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `5 Database Normal Form mọi developer nên biết`, ý chính là: Normalization giúp schema ít trùng lặp và giảm anomaly khi insert/update/delete. 1NF xử lý atomicity, 2NF xử lý phụ thuộc vào một phần composite key, 3NF xử lý phụ thuộc bắc cầu, BCNF siết chặt candidate key, 4NF xử lý nhiều quan hệ một-nhiều độc lập trong cùng bảng.
+
+**Thinking học tập + liên hệ:** Luồng trong `5 Database Normal Form mọi developer nên biết` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team. Khi áp dụng vào team thật, hãy nhìn developer workflow như một hệ thống: commit, review, test, deploy và rollback đều phải giảm rủi ro production. Khi ghi chú lại, hãy giải thích được các keyword: `Normalization`, `Redundancy`, `Atomic value`, `Partial dependency`, `Transitive dependency`.
+
+### Câu hỏi 11
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Release process của công ty bạn trông như thế nào?
+
+**Trả lời:** Hãy tách flow thành các bước có state rõ ràng: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `5 Database Normal Form mọi developer nên biết`, ý chính là: Normalization giúp schema ít trùng lặp và giảm anomaly khi insert/update/delete. 1NF xử lý atomicity, 2NF xử lý phụ thuộc vào một phần composite key, 3NF xử lý phụ thuộc bắc cầu, BCNF siết chặt candidate key, 4NF xử lý nhiều quan hệ một-nhiều độc lập trong cùng bảng.
+
+**Thinking học tập + liên hệ:** Luồng trong `5 Database Normal Form mọi developer nên biết` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team. Khi áp dụng vào team thật, hãy nhìn developer workflow như một hệ thống: commit, review, test, deploy và rollback đều phải giảm rủi ro production. Khi ghi chú lại, hãy giải thích được các keyword: `Normalization`, `Redundancy`, `Atomic value`, `Partial dependency`, `Transitive dependency`.

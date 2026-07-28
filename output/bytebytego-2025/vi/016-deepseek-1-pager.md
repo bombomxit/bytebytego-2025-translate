@@ -66,3 +66,17 @@ Tuy nhiên, trước khi chọn model production, cần benchmark trên dữ li�
 - `Parameter`: trọng số học được của model.
 - `Context window`: lượng token model có thể xem trong một lần xử lý.
 - `Inference`: quá trình dùng model để sinh output sau khi đã train.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã thử DeepSeek chưa?
+
+**Trả lời:** DeepSeek đáng thử bằng một benchmark nhỏ thay vì chỉ đọc thông số: chọn vài prompt reasoning, coding, tiếng Việt và RAG nội bộ; đo chất lượng câu trả lời, latency, chi phí/token, mức ổn định và rủi ro dữ liệu. Nếu kết quả đủ tốt với cost thấp hơn, có thể dùng DeepSeek cho tác vụ ít rủi ro hoặc routing một phần request, còn tác vụ quan trọng vẫn cần model/evaluation đáng tin cậy hơn.
+
+**Thinking học tập + liên hệ:** Đừng chỉ hỏi model này có nổi tiếng không; hãy hỏi nó có thắng trên benchmark của chính mình không. Liên hệ project AI bằng checklist: task nào cho DeepSeek, task nào giữ model khác, dữ liệu có được gửi ra ngoài không, cost/token giảm bao nhiêu và hallucination có tăng không. Các keyword cần tự giải thích lại: `Supervised fine-tuning`, `Reinforcement learning`, `GRPO`, `MoE`, `Parameter`.

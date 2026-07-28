@@ -52,3 +52,26 @@ JWT phù hợp khi cần stateless authentication giữa nhiều service. Nhưng
 - `Base64URL`: kiểu encode thường dùng trong JWT.
 - `Authentication`: xác thực danh tính người dùng.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Khi nào chúng ta nên dùng JWT cho authentication?
+
+**Trả lời:** Nên dùng JWT khi hệ thống cần stateless authentication cho API/mobile/SPA, có nhiều backend service cùng verify token, traffic cao và chấp nhận mô hình access token ngắn hạn. Không nên dùng JWT như session dài hạn nếu cần revoke tức thì, kiểm soát trạng thái đăng nhập chặt hoặc lưu dữ liệu nhạy cảm trong token. Trong các case đó, server-side session, token introspection hoặc access token ngắn hạn + refresh token sẽ an toàn/dễ kiểm soát hơn.
+
+**Thinking học tập + liên hệ:** Quyết định trong `Giải thích JSON Web Token (JWT) bằng ngôn ngữ đơn giản` chỉ có ý nghĩa khi nêu được điều kiện dùng, điều kiện không dùng và tín hiệu nào chứng minh lựa chọn đang đúng. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `JWT`, `Header`, `Payload`, `Signature`, `Claim`.
+
+### Câu hỏi 2
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Có những phương pháp authentication nào khác?
+
+**Trả lời:** Ngoài JWT, các lựa chọn authentication/authentication-related phổ biến gồm server-side session bằng cookie, OAuth2/OIDC cho đăng nhập qua identity provider, SSO cho doanh nghiệp, API key cho machine-to-machine đơn giản, mTLS cho service nội bộ cần xác thực hai chiều, WebAuthn/passkey cho login chống phishing và PASETO nếu muốn token có mặc định crypto an toàn hơn JWT. Chọn cách nào phụ thuộc client là browser/mobile/service, yêu cầu revoke, mức nhạy cảm dữ liệu và khả năng vận hành key/session store.
+
+**Thinking học tập + liên hệ:** Khi bài hỏi còn thiếu gì trong `Giải thích JSON Web Token (JWT) bằng ngôn ngữ đơn giản`, hãy so danh sách hiện tại với nhu cầu production: scale, debug, security, cost và vận hành. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `JWT`, `Header`, `Payload`, `Signature`, `Claim`.

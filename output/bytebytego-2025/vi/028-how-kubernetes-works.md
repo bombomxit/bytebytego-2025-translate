@@ -80,3 +80,17 @@ Nếu một node bị lỗi, Kubernetes có thể reschedule pod sang node khác
 - `etcd`: key-value store lưu trạng thái cluster.
 - `Reconciliation`: quá trình đưa actual state về desired state.
 - `Container runtime`: runtime thực thi container, ví dụ containerd.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng Kubernetes trong project của mình chưa?
+
+**Trả lời:** Trong project thật, `Kubernetes hoạt động như thế nào?` đáng dùng/thử khi bài toán khớp với nhu cầu cụ thể và team đo được kết quả. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: Kubernetes hoạt động theo mô hình desired state. Developer khai báo “tôi muốn hệ thống trông như thế này” trong manifest, ví dụ deployment có 3 replica. Kubernetes control plane nhận cấu hình đó, lưu trạng thái vào etcd, scheduler chọn node để chạy pod, kubelet trên node tạo container, controller liên tục kiểm tra để đảm bảo actual state khớp desired state.
+
+**Thinking học tập + liên hệ:** Câu hỏi trải nghiệm trong `Kubernetes hoạt động như thế nào?` nên quy về adoption: dùng cho workload nào, đo thành công bằng metric nào và có đáng giữ lâu dài trong stack không. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `Manifest`, `Pod`, `Control plane`, `Worker node`, `etcd`.

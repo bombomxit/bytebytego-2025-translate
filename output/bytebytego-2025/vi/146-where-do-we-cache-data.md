@@ -69,3 +69,16 @@ Nếu user yêu cầu xóa dữ liệu cá nhân, chỉ xóa row database chưa 
 - `Materialized view`: view lưu sẵn kết quả.
 - `Cache invalidation`: làm cache hết hiệu lực/cập nhật.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Khi data được cache ở nhiều level như vậy, làm sao chúng ta bảo đảm sensitive user data bị xóa hoàn toàn khỏi system?
+
+**Trả lời:** Muốn xóa sensitive data khỏi nhiều tầng cache thì không thể chỉ xóa một key ở Redis. Cần thiết kế data classification, key naming nhất quán, TTL ngắn cho dữ liệu nhạy cảm, cache purge theo user/object id, event invalidation tới CDN/app/browser cache, và không cache PII khi không thật cần. Với dữ liệu bắt buộc cache, nên encrypt, version key theo policy và có audit log cho lệnh purge để kiểm chứng đã xóa ở các tầng quan trọng.
+
+**Thinking học tập + liên hệ:** Cache làm hệ thống nhanh hơn nhưng cũng tạo bản sao dữ liệu ở nhiều nơi, nên quyền được xóa dữ liệu phải được thiết kế từ đầu. Khi liên hệ production, hãy inventory mọi cache layer, TTL, key pattern, event invalidation và cách chứng minh purge đã chạy thành công. Các keyword cần tự giải thích lại: `Browser cache`, `CDN cache`, `Distributed cache`, `WAL`, `Buffer pool`.

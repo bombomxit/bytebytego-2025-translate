@@ -69,3 +69,17 @@ Một admin panel production nên bắt buộc 2FA cho account có quyền cao. 
 - `Inherence factor`: đặc điểm sinh trắc học, ví dụ vân tay/khuôn mặt.
 - `OTP`: One-Time Password, mật khẩu dùng một lần.
 - `TOTP`: OTP dựa trên thời gian, thường dùng trong authenticator app.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng two-factor authentication chưa?
+
+**Trả lời:** Với `Two-Factor Authentication (2FA) hoạt động như thế nào?`, cách liên hệ tốt nhất là chọn một workload nhỏ rồi kiểm chứng bằng số liệu thay vì chọn theo cảm tính. Nên kiểm bằng workload nhỏ trước: latency, độ ổn định, khả năng debug, cost và rủi ro vận hành. Phần cốt lõi cần đem theo từ bài là: 2FA tăng bảo mật bằng cách yêu cầu hai loại bằng chứng khác nhau. Password thuộc nhóm “thứ bạn biết”. Authenticator app hoặc hardware key thuộc nhóm “thứ bạn có”. Biometrics thuộc nhóm “thứ thuộc về bạn”. Nếu attacker biết password nhưng không có factor thứ hai, họ vẫn khó đăng nhập.
+
+**Thinking học tập + liên hệ:** Khi tự liên hệ `Two-Factor Authentication (2FA) hoạt động như thế nào?`, hãy viết ra một project cụ thể, lý do chọn công nghệ và lỗi vận hành có thể xảy ra. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `2FA`, `MFA`, `Knowledge factor`, `Possession factor`, `Inherence factor`.

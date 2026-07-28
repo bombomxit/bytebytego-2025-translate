@@ -40,3 +40,16 @@ Nếu cần chạy app Windows và Linux trên cùng một server vật lý, VM 
 - `Container engine`: runtime quản lý container.
 - `Isolation`: mức tách biệt giữa workload.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Virtualization vs. Containerization”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Nếu rút thành checklist thiết kế thì ý chính là: VM mô phỏng cả máy và OS nên isolation mạnh nhưng nặng. Container chỉ isolate process trên cùng host kernel nên nhẹ, start nhanh và mật độ deploy cao hơn, nhưng phụ thuộc kernel host. Vì vậy production cloud thường kết hợp VM để isolate hạ tầng và container để deploy app nhanh. Khi áp dụng vào hệ thống thật, hãy kiểm thêm độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng.
+
+**Thinking học tập + liên hệ:** Ôn tập `Virtualization vs Containerization` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `Virtualization`, `Containerization`, `Hypervisor`, `Guest OS`, `Host kernel`.

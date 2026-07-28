@@ -50,3 +50,16 @@ Product desktop release mỗi tháng có thể dùng Gitflow: feature merge vào
 - `tag`: nhãn version trong Git.
 - `Trunk-based development`: workflow phát triển gần main/trunk hơn.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** How Gitflow Branching Works?
+
+**Trả lời:** Luồng tốt nhất là lần theo input tới output: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `Gitflow Branching hoạt động như thế nào?`, ý chính là: Gitflow phù hợp team release theo version/chu kỳ rõ ràng. Nó tách luồng phát triển feature, chuẩn bị release và hotfix production. Đổi lại, Gitflow nhiều branch và ceremony hơn trunk-based development, nên có thể chậm với team deploy liên tục nhiều lần mỗi ngày.
+
+**Thinking học tập + liên hệ:** Luồng trong `Gitflow Branching hoạt động như thế nào?` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là feedback loop, rollback, collaboration, code review và mức tự động hóa phù hợp team. Khi áp dụng vào team thật, hãy nhìn developer workflow như một hệ thống: commit, review, test, deploy và rollback đều phải giảm rủi ro production. Khi ghi chú lại, hãy giải thích được các keyword: `Gitflow`, `develop`, `feature branch`, `release branch`, `hotfix branch`.

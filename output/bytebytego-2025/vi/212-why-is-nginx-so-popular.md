@@ -47,3 +47,16 @@ Một deployment Laravel/Node.js có thể đặt Nginx phía trước app serve
 - `SSL/TLS termination`: xử lý mã hóa HTTPS tại proxy.
 - `Worker process`: process xử lý request trong Nginx.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Why Is Nginx So Popular?
+
+**Trả lời:** Nếu rút thành checklist thiết kế thì ý chính là: Nginx phổ biến vì nó làm tốt nhiều vai trò ở edge/backend gateway: web server nhanh, reverse proxy, load balancer, cache và TLS termination. Kiến trúc event-driven giúp Nginx xử lý nhiều concurrent connection hiệu quả, đặc biệt với static file, proxy và gateway workloads. Khi áp dụng vào hệ thống thật, hãy kiểm thêm độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng.
+
+**Thinking học tập + liên hệ:** Ôn tập `Vì sao Nginx phổ biến như vậy?` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `Nginx`, `Event-driven architecture`, `Reverse proxy`, `Load balancer`, `Proxy cache`.

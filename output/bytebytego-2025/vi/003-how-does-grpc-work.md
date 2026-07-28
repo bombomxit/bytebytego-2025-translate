@@ -73,3 +73,27 @@ Khi traffic tăng cao, việc dùng Protobuf binary qua HTTP/2 giúp giảm over
 - `Stub`: code đại diện cho remote function ở phía client hoặc server.
 - `HTTP/2`: phiên bản HTTP hỗ trợ multiplexing và tối ưu truyền dữ liệu.
 - `Serialization`: chuyển object/dữ liệu thành dạng có thể truyền qua network.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn đã dùng gRPC trong project chưa?
+
+**Trả lời:** Trong một project microservices, gRPC đáng dùng khi các service nội bộ gọi nhau nhiều, cần contract chặt và latency thấp, ví dụ `order-service` gọi `payment-service` hoặc `pricing-service`. Nếu hệ thống chủ yếu phục vụ browser/public client, REST/JSON vẫn dễ debug và dễ tích hợp hơn; gRPC nên được cân nhắc ở boundary nội bộ nơi Protobuf và HTTP/2 phát huy lợi thế.
+
+**Thinking học tập + liên hệ:** gRPC nên được học như một quyết định về contract giữa service, không chỉ là protocol nhanh hơn. Khi liên hệ project, hãy kiểm boundary public/internal, versioning `.proto`, tracing qua HTTP/2, timeout/retry và khả năng debug khi production incident xảy ra. Các keyword cần tự giải thích lại: `RPC`, `gRPC`, `Protobuf`, `Stub`, `HTTP/2`.
+
+### Câu hỏi 2
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Một số hạn chế của nó là gì?
+
+**Trả lời:** gRPC có vài hạn chế rõ: khó debug bằng mắt hơn REST/JSON vì dùng Protobuf binary; browser support không tự nhiên bằng REST nếu không dùng gRPC-Web; schema `.proto` cần quản lý version cẩn thận; load balancer/proxy/observability phải hỗ trợ HTTP/2 tốt; và team cần tooling để inspect request/response. Vì vậy gRPC hợp cho service-to-service nội bộ hơn là public API cho mọi client.
+
+**Thinking học tập + liên hệ:** gRPC nên được học như một quyết định về contract giữa service, không chỉ là protocol nhanh hơn. Khi liên hệ project, hãy kiểm boundary public/internal, versioning `.proto`, tracing qua HTTP/2, timeout/retry và khả năng debug khi production incident xảy ra. Các keyword cần tự giải thích lại: `RPC`, `gRPC`, `Protobuf`, `Stub`, `HTTP/2`.

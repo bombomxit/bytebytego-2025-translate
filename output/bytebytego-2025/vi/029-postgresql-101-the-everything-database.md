@@ -76,3 +76,17 @@ Nếu cần HA, có thể dùng primary-replica replication. Primary nhận writ
 - `Autovacuum`: process dọn dead tuple và cập nhật statistics.
 - `Checkpointer`: process flush dữ liệu bẩn ra disk theo checkpoint.
 - `Replication`: sao chép dữ liệu sang node khác.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác để hiểu rõ hơn về kiến trúc PostgreSQL?
+
+**Trả lời:** Có thể thêm query plan/EXPLAIN để biết bottleneck thật; transaction isolation để tránh race condition và dirty read; connection pooling/backpressure để database không bị quá tải; và cache invalidation strategy rõ ràng. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: PostgreSQL dùng kiến trúc multiprocess. Khi client kết nối, PostgreSQL thường tạo một process riêng phục vụ connection đó. Các process này dùng shared memory để phối hợp với nhau và với các process nền. WAL, Write-Ahead Log, là thành phần cực kỳ quan trọng. Trước khi thay đổi dữ liệu được ghi bền vững vào data file, PostgreSQL ghi log thay đổi vào WAL để hỗ trợ crash recovery và replication. Checkpointer, WAL writer, background writer và autovacuum phối hợp để giữ database ổn định, nhất quán và hiệu quả.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `PostgreSQL 101: database “làm được mọi thứ”`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `ACID`, `Postmaster`, `Shared buffers`, `WAL`, `Autovacuum`.

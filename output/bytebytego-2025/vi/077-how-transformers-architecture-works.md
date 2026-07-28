@@ -65,3 +65,16 @@ Khi dịch câu “I love system design” sang tiếng Việt, attention giúp 
 - `Feed Forward`: mạng xử lý phi tuyến sau attention.
 - `Softmax`: chuyển score thành xác suất.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** How Transformers Architecture Works?
+
+**Trả lời:** Hãy tách flow thành các bước có state rõ ràng: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `Transformer Architecture hoạt động như thế nào?`, ý chính là: Transformer biến text thành vector, thêm thông tin vị trí, rồi dùng attention để học quan hệ giữa các token. Encoder tập trung hiểu input; decoder tập trung sinh output từng token một. Masking giúp decoder không “nhìn trước đáp án”, nên nó học cách dự đoán token kế tiếp.
+
+**Thinking học tập + liên hệ:** Luồng trong `Transformer Architecture hoạt động như thế nào?` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Transformer`, `Embedding`, `Positional Encoding`, `Multi-Head Attention`, `Masked Attention`.

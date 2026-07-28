@@ -44,3 +44,16 @@ Một sàn thương mại điện tử có thể dùng stream processing để p
 - `Flink`: engine xử lý stream theo real-time.
 - `HDFS`: Hadoop Distributed File System.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Batch vs Stream Processing”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Điểm khác nhau nên nhìn từ boundary và trách nhiệm chính. Với `Batch Processing vs Stream Processing`, hãy tách rõ mỗi bên giải quyết vấn đề gì, dữ liệu đi qua đâu, ai sở hữu state và lỗi sẽ lan như thế nào. Ý chính để giữ lại là: Batch giống “cuối ngày gom sổ rồi tính toán”, còn stream giống “có giao dịch nào đến thì xử lý ngay”. Batch phù hợp khi dữ liệu lớn, cần kết quả ổn định và có thể chờ. Stream phù hợp khi hành động phải xảy ra gần như tức thì, ví dụ phát hiện fraud, cập nhật dashboard live hoặc gửi alert.
+
+**Thinking học tập + liên hệ:** Khi so sánh trong `Batch Processing vs Stream Processing`, hãy tách responsibility, boundary, state, failure mode và cost vận hành thay vì chỉ so tên công nghệ. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Batch processing`, `Stream processing`, `Latency`, `Historical analysis`, `Data ingestion`.

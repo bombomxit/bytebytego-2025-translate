@@ -58,3 +58,16 @@ Một hệ thống bán hàng có thể bắt đầu bằng modular monolith g�
 - `Boundary`: ranh giới trách nhiệm của module/domain.
 - `Interface`: cách module expose capability cho phần khác dùng.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** What are Modular Monoliths?
+
+**Trả lời:** Bài này muốn người đọc nắm: Modular monolith phù hợp khi team muốn codebase gọn, boundary rõ, nhưng chưa muốn chịu độ phức tạp vận hành của microservices. Nó vẫn deploy như một app duy nhất, nhưng bên trong tách module theo domain để giảm coupling. Nếu làm tốt, sau này có thể tách một module nóng thành service riêng dễ hơn. Khi áp dụng vào hệ thống thật, hãy kiểm thêm requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team.
+
+**Thinking học tập + liên hệ:** Liên hệ `Modular Monolith là gì?` bằng một scenario thật sẽ giúp thấy trade-off rõ hơn so với chỉ đọc định nghĩa. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Monolith`, `Modular monolith`, `Microservices`, `Deployment unit`, `Cohesion`.

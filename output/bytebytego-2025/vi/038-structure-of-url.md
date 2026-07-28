@@ -59,3 +59,17 @@ API danh sách user có thể là `https://api.example.com:443/v1/users?page=2&l
 - `Path`: đường dẫn tới resource.
 - `Query string`: phần sau `?`, chứa key-value parameter.
 - `Fragment`: phần sau `#`, thường dùng ở phía client.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Structure of URL”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: URL là địa chỉ định vị resource. Trong backend/frontend, hiểu URL rất quan trọng vì routing, API design, caching, SEO, authentication callback và tracking đều phụ thuộc vào từng phần của URL. Scheme cho biết protocol dùng để truy cập. Domain xác định host. Port xác định service trên host. Path định danh resource hoặc route. Query parameter truyền filter, paging, tracking hoặc option. Fragment thường xử lý ở client/browser để nhảy tới một phần trong trang và thường không được gửi lên server trong HTTP request. Khi áp dụng vào hệ thống thật, hãy kiểm thêm UX, bundle size, build time, maintainability, accessibility và tốc độ release.
+
+**Thinking học tập + liên hệ:** Ôn tập `Cấu trúc của URL` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là UX, bundle size, build time, maintainability, accessibility và tốc độ release. Khi làm frontend production, hãy nối code với người dùng thật: load có nhanh không, lỗi có thấy được không, component có tái dùng được không và build có scale với team không. Khi ghi chú lại, hãy giải thích được các keyword: `URL`, `Scheme`, `Domain`, `Port`, `Path`.

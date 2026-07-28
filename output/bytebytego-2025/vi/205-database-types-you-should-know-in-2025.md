@@ -75,3 +75,16 @@ Một app thương mại điện tử có thể dùng PostgreSQL cho order trans
 - `Blob storage`: lưu object/file lớn.
 - `Vector database`: lưu embedding và similarity search.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Database Types You Should Know in 2025”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Nếu rút thành checklist thiết kế thì ý chính là: Database nên chọn theo access pattern. Transaction cần relational. Analytics lớn cần columnar. Cache/session cần in-memory. Event theo thời gian cần time-series. Quan hệ phức tạp cần graph. Search text cần search engine. AI retrieval cần vector database. Một hệ thống production thường dùng nhiều loại database cùng lúc. Khi áp dụng vào hệ thống thật, hãy kiểm thêm read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement.
+
+**Thinking học tập + liên hệ:** Liên hệ `Các loại database bạn nên biết trong năm 2025` bằng một scenario thật sẽ giúp thấy trade-off rõ hơn so với chỉ đọc định nghĩa. Lens chính là read/write ratio, consistency, cardinality, query pattern, growth rate và recovery requirement. Khi gặp bài toán dữ liệu, hãy nối bài học với truy vấn nóng nhất, index thật sự được dùng, cache nào có thể stale và thời gian restore sau sự cố. Khi ghi chú lại, hãy giải thích được các keyword: `Relational database`, `Columnar database`, `Key-value store`, `Time-series database`, `Graph database`.

@@ -43,3 +43,16 @@ Dashboard stock price có thể dùng SSE vì server chỉ đẩy giá mới xu�
 - `Full-duplex`: hai chiều đồng thời.
 - `Uni-directional`: một chiều.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Can a web server provide real-time updates?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: Muốn realtime trên web có nhiều mức. Short polling dễ làm nhưng tốn request. Long polling giảm request nhưng vẫn là workaround. SSE tốt cho server -> client stream như notification/feed. WebSocket tốt cho hai chiều như chat, game, collaboration. Khi áp dụng vào hệ thống thật, hãy kiểm thêm DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer.
+
+**Thinking học tập + liên hệ:** Ôn tập `Web server có thể cung cấp real-time updates không?` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là DNS, transport, TLS, HTTP, proxy/CDN, application timeout và observability theo từng layer. Khi debug production, hãy tách latency theo DNS lookup, TCP connect, TLS handshake, TTFB và download để không đoán mò. Khi ghi chú lại, hãy giải thích được các keyword: `Polling`, `Short polling`, `Long polling`, `SSE`, `WebSocket`.

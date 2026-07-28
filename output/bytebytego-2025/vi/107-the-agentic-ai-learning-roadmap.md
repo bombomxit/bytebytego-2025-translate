@@ -61,3 +61,16 @@ Một roadmap thực hành: viết Python script gọi LLM, thêm function calli
 - `Idempotency`: request lặp lại không gây side effect trùng.
 - `Human-machine collaboration`: phối hợp người và AI.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác vào AI Agent Learning Roadmap?
+
+**Trả lời:** Nên bổ sung evaluation harness để đo chất lượng thay vì cảm tính; guardrails/policy để giảm prompt injection và output nguy hiểm; observability cho prompt, context, latency, cost và hallucination; và model routing theo độ khó/cost của request. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Học Agentic AI cần đi từ nền tảng lập trình và model, rồi tới tool/framework, API design và kiến trúc agent. Agent không chỉ là prompt dài; nó là vòng lặp nhận goal, quan sát context, lập kế hoạch, gọi tool, đánh giá kết quả và có thể hỏi người khi cần. API design đặc biệt quan trọng vì agent mạnh lên nhờ tool. Tool/API càng rõ schema, auth, error code và idempotency thì agent càng dễ dùng an toàn.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `Roadmap học Agentic AI`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `Agentic AI`, `Autonomous action`, `Human guidance`, `Agent framework`, `VectorDB`.

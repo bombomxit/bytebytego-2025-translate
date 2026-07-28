@@ -65,3 +65,16 @@ Một hệ thống checkout cần availability cao qua load balancer, latency th
 - `Loose coupling`: phụ thuộc lỏng.
 - `High cohesion`: trách nhiệm trong module tập trung.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm NFR hoặc strategy nào khác vào danh sách?
+
+**Trả lời:** Nên bổ sung capacity estimation trước khi chọn kiến trúc; SLO/NFR rõ cho latency, availability và durability; graceful degradation khi dependency hỏng; và data ownership và service boundary. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: System design thường xoay quanh NFR. Functional requirement nói hệ thống làm gì; NFR nói hệ thống làm tốt đến mức nào trong thực tế. Load balancer, CDN, replication, transaction log, queue và config-as-code là các pattern/tool cụ thể để đạt NFR. Điểm cần nhớ là các NFR có trade-off. Eventual consistency cải thiện availability/scalability nhưng có thể làm user thấy dữ liệu trễ. Queue tăng resiliency nhưng làm flow bất đồng bộ và khó debug hơn.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `8 khái niệm System Design trong một diagram`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là requirement, constraint, traffic, dữ liệu, failure mode và khả năng vận hành của team. Khi gặp system design thật, hãy biến khái niệm thành quyết định: boundary ở đâu, data flow thế nào, bottleneck nào đến trước và rollback ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `NFR`, `Availability`, `Latency`, `Scalability`, `Durability`.

@@ -67,3 +67,17 @@ Một backend API trên AWS có thể dùng VPC, EC2/ECS/Lambda cho compute, RDS
 - `Region/AZ`: vùng địa lý và availability zone trong cloud.
 - `IAM`: quản lý danh tính và quyền truy cập.
 - `WAF`: Web Application Firewall.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** Bạn sẽ thêm gì khác vào danh sách học cloud computing?
+
+**Trả lời:** Phần còn thiếu đáng cân nhắc là SLO/error budget để biết hệ thống đủ tốt hay chưa; blue-green/canary deployment để giảm rủi ro release; secret management và least privilege IAM; và cost monitoring/tagging cho cloud bill. Các mục này giúp bức tranh đầy đủ hơn vì chúng chạm vào phần triển khai/vận hành mà bài gốc chưa đi sâu. Ý chính đang có của bài là: Học cloud nên đi từ mô hình trước, service sau. Trước hết hiểu cloud khác on-premise thế nào, các model public/private/hybrid/multi-cloud là gì, và IaaS/PaaS/SaaS khác nhau ra sao. Sau đó học các service cốt lõi: compute để chạy app, storage để lưu dữ liệu, networking để kết nối, security để bảo vệ, DevOps để deploy/monitor.
+
+**Thinking học tập + liên hệ:** Đừng thêm mục cho dài danh sách; với `Học Cloud Computing như thế nào?`, chỉ thêm thứ mở ra một nhóm vấn đề mới hoặc giúp ra quyết định thiết kế tốt hơn. Lens chính là độ phức tạp vận hành, rollback, cost, kỹ năng team, observability và blast radius khi hỏng. Khi đưa lên production, hãy map từng thành phần vào deploy, rollback, monitoring, alerting, secret, cost và ownership rõ ràng. Khi ghi chú lại, hãy giải thích được các keyword: `IaaS`, `PaaS`, `SaaS`, `On-premise`, `Region/AZ`.

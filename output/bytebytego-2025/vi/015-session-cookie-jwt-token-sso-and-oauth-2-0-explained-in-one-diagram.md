@@ -59,3 +59,17 @@ Nếu cho phép “Đăng nhập bằng Google”, hệ thống của bạn khô
 - `OAuth2`: framework ủy quyền truy cập giới hạn.
 - `OIDC`: OpenID Connect, lớp identity/login xây trên OAuth2.
 - `QR code login`: đăng nhập bằng token ngắn hạn được mã hóa trong QR.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Câu hỏi trong tài liệu gốc.
+
+**Câu hỏi:** QR code login đang ngày càng phổ biến. Bạn có biết nó hoạt động như thế nào không?
+
+**Trả lời:** QR code login thường hoạt động bằng cách browser/TV tạo một login session tạm thời và hiển thị mã QR chứa `login_token` hoặc URL xác thực ngắn hạn. Mobile app đã đăng nhập quét mã, gửi token đó lên server để xác nhận danh tính. Server đánh dấu session trên browser/TV là authenticated, rồi thiết bị kia tự polling hoặc nhận realtime event để chuyển sang trạng thái đã đăng nhập. Điểm quan trọng là token phải ngắn hạn, dùng một lần và bị ràng buộc với session/device ban đầu.
+
+**Thinking học tập + liên hệ:** Luồng trong `Session, Cookie, JWT, Token, SSO và OAuth 2.0 trong một sơ đồ` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `Session ID`, `Token`, `JWT`, `SSO`, `OAuth2`.

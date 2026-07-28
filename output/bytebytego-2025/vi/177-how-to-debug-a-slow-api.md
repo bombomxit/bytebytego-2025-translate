@@ -51,3 +51,16 @@ Một endpoint `/orders` chậm 2 giây. Trace cho thấy 50ms ở network, 100m
 - `Connection pool`: pool kết nối tới database/service.
 - `Profiling`: đo hiệu năng chi tiết để tìm điểm chậm.
 
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** How to Debug a Slow API?
+
+**Trả lời:** Hãy tách flow thành các bước có state rõ ràng: request/dữ liệu đi vào đâu, qua thành phần nào, state đổi ở đâu và kết quả trả ra thế nào. Với `Cách debug một API chậm`, ý chính là: Debug API chậm nên đi từ ngoài vào trong: network -> backend code -> database -> external API -> infrastructure. Quan trọng nhất là đo đạc bằng metric/tracing/profiling trước khi sửa. Nếu không có số liệu, rất dễ tối ưu sai chỗ.
+
+**Thinking học tập + liên hệ:** Luồng trong `Cách debug một API chậm` nên được vẽ từ input tới output, kèm owner của từng bước và failure mode ở mỗi boundary. Lens chính là actor, trust boundary, dữ liệu nhạy cảm, lifetime của token/key, quyền truy cập và cơ chế revoke. Khi làm API thật, một endpoint chạy được chưa đủ; phải kiểm thêm abuse, audit log, error leakage, rate limit và quyền ở service chứa dữ liệu. Khi ghi chú lại, hãy giải thích được các keyword: `Bottleneck`, `Payload`, `Hot path`, `N+1 query`, `Timeout`.

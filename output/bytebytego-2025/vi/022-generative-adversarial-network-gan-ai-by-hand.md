@@ -45,3 +45,17 @@ Trong system design AI, GAN là một pattern model-level hơn là kiến trúc 
 - `Discriminator`: mô hình phân biệt thật/giả.
 - `Training data`: dữ liệu thật dùng để huấn luyện.
 - `Adversarial training`: huấn luyện theo kiểu hai thành phần cạnh tranh nhau.
+
+## Câu hỏi ôn tập + trả lời + thinking học tập + liên hệ
+
+> Đây là phần học tập thêm ở cuối file. Câu hỏi ưu tiên lấy từ tài liệu gốc và được trả lời trực tiếp; nếu bài không có câu hỏi riêng thì dùng tiêu đề/nội dung chính để tạo câu hỏi tự kiểm tra.
+
+### Câu hỏi 1
+
+**Nguồn câu hỏi:** Suy ra từ tiêu đề/nội dung chính vì bài gốc không có câu hỏi riêng.
+
+**Câu hỏi:** Sau khi đọc bài “Generative Adversarial Network (GAN) - AI by Hand”, ý chính cần trả lời và áp dụng vào system design là gì?
+
+**Trả lời:** Sau bài này, phần đáng nhớ nhất là: GAN gồm hai mô hình học cạnh tranh với nhau. `Generator` cố tạo dữ liệu giả ngày càng giống thật. `Discriminator` cố phân biệt dữ liệu nào là thật, dữ liệu nào là giả. Qua quá trình đối kháng này, generator học cách tạo output chất lượng hơn. Ý tưởng cốt lõi là một bên “làm giả” và một bên “bắt lỗi”. Khi discriminator bắt lỗi tốt hơn, generator phải cải thiện. Khi generator tạo dữ liệu thuyết phục hơn, discriminator lại phải học tinh hơn. Khi áp dụng vào hệ thống thật, hãy kiểm thêm quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination.
+
+**Thinking học tập + liên hệ:** Ôn tập `Generative Adversarial Network (GAN) - AI vẽ tay` bằng cách biến khái niệm thành quyết định thiết kế cụ thể: chọn gì, bỏ gì, đo gì và ai chịu trách nhiệm. Lens chính là quality, latency, cost/token, privacy, cập nhật tri thức và rủi ro hallucination. Khi build AI app, hãy nối model với pipeline thật: data vào đâu, context lấy từ đâu, output được kiểm thế nào và chi phí tăng theo traffic ra sao. Khi ghi chú lại, hãy giải thích được các keyword: `GAN`, `Generator`, `Discriminator`, `Training data`, `Adversarial training`.
