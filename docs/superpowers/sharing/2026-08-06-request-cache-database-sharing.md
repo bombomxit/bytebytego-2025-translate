@@ -16,6 +16,17 @@ Một cách mở bài rất tự nhiên cho chủ đề này là bắt đầu t�
 
 ![Điều gì xảy ra khi gõ google.com vào browser](../../../output/bytebytego-2025/assets/006/figure-01.png)
 
+`Giải nghĩa hình:`
+
+- Người dùng nhập `www.google.com` vào trình duyệt.
+- Trình duyệt kiểm tra cache trước. Nếu `cache hit` thì có thể đi tiếp nhanh hơn. Nếu `cache miss` thì phải tìm IP address.
+- Quá trình DNS lookup đi qua nhiều tầng như `root nameserver`, `TLD nameserver` và `authoritative nameserver`.
+- Khi đã có IP address, browser khởi tạo `TCP connection` bằng `TCP 3-way handshake`.
+- Sau khi kết nối được thiết lập, browser gửi `HTTP request` tới server.
+- Server trả về `HTTP response`, trong đó có HTML, CSS, JavaScript và các tài nguyên liên quan.
+- Browser parse HTML, tạo `DOM tree`, parse CSS, tạo `CSSOM tree`, rồi kết hợp thành `render tree`.
+- Sau đó browser tiếp tục layout, painting và hiển thị trang lên màn hình.
+
 `Ý chính của hình này:` Một thao tác rất nhỏ ở browser thực ra kéo theo nhiều lớp như cache, DNS, network, HTTP và rendering; vì vậy `app chậm` luôn là câu chuyện nhiều tầng.
 
 Nhìn bức hình này, điều hay nhất là nó gom rất nhiều mảnh kiến thức quen mà thường ngày chúng ta hay tách rời nhau. Mọi thứ bắt đầu từ browser. Browser thử tìm trong cache trước. Nếu cache miss, nó phải tìm IP address của domain. Trên hình, phần đó đi qua các tầng DNS như root nameserver, TLD nameserver và authoritative nameserver. Có IP rồi, browser mới khởi tạo TCP connection, gửi HTTP request, nhận server response, parse HTML và CSS, tạo DOM tree, CSSOM tree rồi mới render ra thứ người dùng nhìn thấy trên màn hình.
@@ -47,6 +58,17 @@ Dữ liệu không chỉ sống ở backend hay database. Nó có thể xuất h
 
 ![Cache ở nhiều tầng](../../../output/bytebytego-2025/assets/146/figure-01.png)
 
+`Giải nghĩa hình:`
+
+- `Client App` có thể cache response ngay ở phía client hoặc browser.
+- `CDN` giữ bản sao của static asset hoặc một số nội dung để trả về từ node gần người dùng hơn.
+- `Load Balancer` hoặc edge layer trong một số kiến trúc cũng có thể cache một phần resource.
+- Ở phía service, dữ liệu có thể được giữ trong `CPU cache`, `memory cache` hoặc `disk cache` cục bộ.
+- `Message Broker` như Kafka cũng giữ dữ liệu trong một khoảng thời gian theo retention policy.
+- `Distributed Cache` như Redis giữ key-value trong memory để nhiều service cùng truy cập nhanh.
+- `Full-text Search` như Elasticsearch giữ một bản index riêng để phục vụ search.
+- Ngay cả `Relational Database` cũng có nhiều lớp như `WAL`, `buffer pool`, `materialized view`, `transaction log` và `replication log`.
+
 `Ý chính của hình này:` Cache không chỉ là Redis; dữ liệu có thể được giữ lại ở rất nhiều lớp khác nhau, từ client cho tới database.
 
 Nhìn bức tranh này, điều quan trọng nhất không phải là nhớ tên từng box, mà là hiểu một ý: cache có ở khắp nơi. Browser có cache của browser. Ứng dụng có thể nhận dữ liệu từ CDN. Service có thể giữ dữ liệu nóng trong memory. Redis là distributed cache quen thuộc nhất. Ngay cả database cũng có các lớp cache và log riêng của nó.
@@ -74,19 +96,48 @@ Nói ngắn gọn, `cache không chỉ là Redis`.
 
 ## 2. Vì sao hệ thống phải chia thành nhiều tầng: RAM và ổ cứng
 
-Muốn hiểu Redis và database khác nhau ở đâu, cách dễ nhất là quay về một khái niệm rất cơ bản: máy tính không chỉ có một loại bộ nhớ.
+Muốn hiểu vì sao hệ thống luôn phải chia thành nhiều tầng lưu trữ và xử lý, cách dễ nhất là quay về một khái niệm rất cơ bản: máy tính không chỉ có một loại bộ nhớ.
 
 ![RAM và các tầng bộ nhớ](../../../output/bytebytego-2025/assets/080/figure-01.png)
 
-`Ý chính của hình này:` Càng gần CPU thì càng nhanh nhưng càng nhỏ; Redis tận dụng memory để nhanh, còn database phải cân bằng giữa tốc độ và độ bền dữ liệu.
+`Giải nghĩa hình:`
+
+- `Input Sources` là nơi dữ liệu đi vào hệ thống, như keyboard, mouse, camera, microphone hoặc remote source.
+- `Permanent Storage` là tầng lưu trữ lâu dài, gồm hard drive, removable drive, ROM/BIOS hoặc network storage.
+- `RAM` là vùng nhớ tạm để chương trình đang chạy sử dụng.
+- `Cache` nằm gần CPU hơn RAM, dùng để giữ những dữ liệu hoặc instruction được dùng thường xuyên.
+- `CPU Register` là vùng nhớ nhỏ nhất và nhanh nhất, được processor dùng trực tiếp khi thực thi lệnh.
+- Càng đi lên gần CPU, truy cập càng nhanh nhưng dung lượng càng nhỏ.
+- Càng đi xuống xa CPU, dung lượng càng lớn hơn nhưng tốc độ chậm hơn.
+
+`Ý chính của hình này:` Càng gần CPU thì càng nhanh nhưng càng nhỏ; càng xa CPU thì càng lớn và bền hơn nhưng chậm hơn.
 
 Càng gần CPU thì truy cập càng nhanh, nhưng dung lượng càng nhỏ và chi phí càng đắt. Càng xa CPU thì chậm hơn, nhưng chứa được nhiều hơn và giữ dữ liệu lâu hơn.
 
-Điểm hay của hình này là nó cho thấy vì sao hệ thống nào cũng phải sống chung với trade-off. `CPU register` và `cache` ở gần processor nhất nên rất nhanh, nhưng cực nhỏ. `RAM` rộng hơn nhiều và vẫn khá nhanh, nên nó trở thành nơi làm việc chính của chương trình đang chạy. `Permanent storage` như SSD hoặc HDD chậm hơn hẳn, nhưng bù lại giữ được nhiều dữ liệu hơn và không mất khi tắt máy.
+Điểm hay của hình này là nó cho thấy vì sao hệ thống nào cũng phải sống chung với trade-off.
 
-Nếu đem hình này gắn vào câu chuyện Redis và database thì sẽ thấy mọi thứ tự nhiên hơn. Redis nhanh vì phần dữ liệu nó phục vụ đang nằm ở tầng gần CPU hơn, tức là memory. Database chính thường giữ dữ liệu bền vững hơn ở storage, nhưng lại phải cố kéo những phần hay dùng vào buffer/cache trong RAM để tránh đụng vào disk quá nhiều. Nói cách khác, Redis không phải phép màu. Nó chỉ tận dụng một tầng bộ nhớ nhanh hơn để phục vụ một kiểu nhu cầu khác.
+`CPU` là nơi thật sự chạy lệnh. Nhưng CPU không thể chờ quá lâu mỗi lần cần dữ liệu. Vì vậy những vùng nhớ nhỏ nhất và nhanh nhất được đặt rất sát CPU, như `register` và `CPU cache`. Chúng cực nhanh, nhưng rất nhỏ.
 
-Hình này cũng giải thích vì sao `index` lại có ích. Một index tốt giúp database giảm số lần phải đi xuống tầng chậm hơn. Thay vì đọc rất nhiều page từ disk rồi mới tìm ra dữ liệu cần thiết, database có thể dùng cấu trúc tra cứu để chạm ít dữ liệu hơn, và tăng cơ hội những page quan trọng đã nằm sẵn trong memory.
+Ra xa hơn là `RAM`. Đây là nơi chương trình đang chạy giữ dữ liệu để làm việc. Có thể xem RAM như mặt bàn làm việc: đủ rộng để bày nhiều thứ hơn CPU cache, nhưng vẫn nhanh hơn rất nhiều so với việc phải xuống ổ cứng mỗi lần cần đọc dữ liệu.
+
+Ra xa hơn nữa là `permanent storage` như SSD hoặc HDD. Đây là nơi lưu dữ liệu lâu dài. Nó chậm hơn RAM khá nhiều, nhưng dung lượng lớn hơn và không mất dữ liệu khi tắt máy.
+
+Có thể tóm rất ngắn thế này:
+
+- `CPU cache` và `register` giúp xử lý cực nhanh
+- `RAM` giúp chương trình làm việc với dữ liệu đang dùng
+- `ổ cứng` giúp lưu dữ liệu lâu dài
+
+Không có tầng nào tốt mọi mặt. Tầng gần CPU thì nhanh nhưng nhỏ. Tầng xa CPU thì lớn hơn, rẻ hơn theo dung lượng, bền hơn, nhưng chậm hơn.
+
+Đây là lý do mọi hệ thống đều cố giữ những thứ đang dùng ở tầng nhanh hơn, và chỉ đẩy xuống tầng chậm hơn khi cần. Nếu dữ liệu đang nằm sẵn trong RAM, CPU và chương trình có thể xử lý nhanh hơn rất nhiều. Nếu mỗi lần cần dữ liệu đều phải chạm xuống ổ cứng, độ trễ sẽ tăng lên rõ rệt.
+
+Chính logic này là nền cho nhiều thứ sẽ xuất hiện ở các phần sau:
+
+- cache tồn tại để giữ dữ liệu nóng ở gần tầng xử lý hơn
+- các hệ thống in-memory nhanh vì phần dữ liệu phục vụ đang ở RAM
+- các hệ thống lưu trữ bền vững phải tìm cách cân bằng giữa tốc độ và độ an toàn dữ liệu
+- những cấu trúc như index có ích vì chúng giúp giảm số lần phải đọc xuống tầng chậm hơn
 
 Có thể hình dung:
 
@@ -95,7 +146,7 @@ Có thể hình dung:
 
 Đồ đang dùng ngay thì để trên bàn cho nhanh. Đồ cần giữ lâu thì để trong kho. Hệ thống thật cũng vận hành theo logic đó. Không có một loại storage nào vừa nhanh nhất, vừa rẻ nhất, vừa lớn nhất, vừa bền dữ liệu nhất. Vì vậy chúng ta luôn phải đánh đổi giữa tốc độ và độ bền dữ liệu.
 
-Đây là nền để hiểu vì sao Redis nhanh, và vì sao database vẫn cần tồn tại.
+Đây là nền để hiểu những phần tiếp theo về cache, Redis, database và index.
 
 ### Câu hỏi phần này
 
@@ -116,6 +167,15 @@ Một số use case quen thuộc của Redis:
 - hot key lookup
 
 ![Vòng đời của một Redis query](../../../output/bytebytego-2025/assets/154/figure-01.png)
+
+`Giải nghĩa hình:`
+
+- Client gửi cache operation tới Redis.
+- Redis xử lý command trực tiếp trong RAM để đạt tốc độ rất cao.
+- Với nhánh `AOF`, sau khi chạy command trong memory, Redis append command đó vào AOF file trên disk.
+- Với nhánh `RDB`, Redis fork tiến trình `bgsave`, dùng copy-on-write và ghi snapshot của dataset xuống disk.
+- Khi cần recovery, Redis có thể replay AOF command hoặc nạp lại RDB snapshot.
+- Hình này cũng ngầm cho thấy persistence là phần bổ sung thêm sau lớp xử lý chính trong memory.
 
 `Ý chính của hình này:` Redis xử lý dữ liệu trong RAM để nhanh, rồi dùng AOF hoặc RDB để giảm rủi ro mất dữ liệu khi cần persistence.
 
@@ -199,6 +259,16 @@ Khi ứng dụng gửi một câu SQL, database không chạy ngay theo đúng d
 
 ![SQL query chạy trong database](../../../output/bytebytego-2025/assets/095/figure-01.png)
 
+`Giải nghĩa hình:`
+
+- `Transport Subsystem` là nơi database nhận kết nối và query từ client.
+- `Query Processor` gồm parser và optimizer. Parser kiểm tra cú pháp và tạo parse tree. Optimizer tìm cách chạy hiệu quả hơn.
+- Kết quả của bước xử lý đó là `execution plan`.
+- `Execution Engine` nhận execution plan và điều phối từng bước thực thi.
+- `Storage Engine` thực hiện các thao tác đọc và ghi thực tế.
+- Trong storage engine còn có các thành phần như `transaction manager`, `lock manager`, `buffer manager` và `recovery manager`.
+- Tốc độ của query phụ thuộc nhiều vào execution plan, index, statistics và việc dữ liệu đã nằm trong memory hay vẫn phải đọc từ disk.
+
 `Ý chính của hình này:` Một câu SQL phải đi qua parser, optimizer và execution engine; nhanh hay chậm phụ thuộc nhiều vào execution plan chứ không chỉ vào câu lệnh nhìn bằng mắt thường.
 
 Ở mức tổng quan, database thường làm bốn việc lớn:
@@ -250,6 +320,17 @@ Khi một bảng có index, database phải trả ít nhất ba loại chi phí:
 Vì vậy có thể hiểu theo kiểu thực tế là index thường `có mặt ở cả disk lẫn RAM`, nhưng không phải theo nghĩa hai bản độc lập ngang nhau. Disk là nơi lưu trữ lâu dài. RAM là nơi database giữ những page nóng để tra cứu nhanh hơn. Nếu index nhỏ hoặc bị truy cập liên tục, có lúc gần như toàn bộ index có thể nằm trong RAM. Nếu index lớn, chỉ một phần của nó nằm trong RAM tại một thời điểm.
 
 ![Các loại database index](../../../output/bytebytego-2025/assets/106/figure-01.png)
+
+`Giải nghĩa hình:`
+
+- `Primary index` là index gắn với primary key, thường được tạo tự động khi định nghĩa khóa chính.
+- Trong primary index có thể có dạng `dense` hoặc `sparse`.
+- `Dense index` có entry cho gần như mỗi row.
+- `Sparse index` chỉ giữ entry cho một số mốc hoặc block đại diện.
+- `Clustered index` quyết định thứ tự lưu trữ vật lý của row trong table.
+- Vì dữ liệu chỉ có thể được sắp theo một thứ tự vật lý tại một thời điểm, một table thường chỉ có một clustered index.
+- `Secondary index` là cấu trúc riêng giữ key tìm kiếm và pointer để quay về row thật.
+- Secondary index không thay đổi cách dữ liệu được lưu vật lý, nhưng giúp query theo cột khác nhanh hơn.
 
 `Ý chính của hình này:` Index không chỉ có một kiểu; primary, clustered và secondary index giúp query nhanh theo những cách khác nhau và đi kèm các trade-off khác nhau.
 
