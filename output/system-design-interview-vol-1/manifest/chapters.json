@@ -1,0 +1,729 @@
+{
+  "source": "System Design Interview by Alex Xu.pdf",
+  "sha256": "1556d7a7cbcc1ec82dacfad4ffde2d39674fef27f34e00a7b7aa483878d5e821",
+  "pages": 269,
+  "image_labels": "Giữ hình gốc; nhãn bên trong hình bằng tiếng Anh.",
+  "chapters": [
+    {
+      "chapter": 1,
+      "start": 5,
+      "end": 33,
+      "words": 4847,
+      "output": "vi/chuong-01.md",
+      "title": "Mở rộng từ con số không đến hàng triệu người dùng"
+    },
+    {
+      "chapter": 2,
+      "start": 34,
+      "end": 41,
+      "words": 872,
+      "output": "vi/chuong-02.md",
+      "title": "Ước tính sơ bộ"
+    },
+    {
+      "chapter": 3,
+      "start": 42,
+      "end": 50,
+      "words": 2260,
+      "output": "vi/chuong-03.md",
+      "title": "Khung phương pháp cho phỏng vấn thiết kế hệ thống"
+    },
+    {
+      "chapter": 4,
+      "start": 51,
+      "end": 70,
+      "words": 4287,
+      "output": "vi/chuong-04.md",
+      "title": "Thiết kế bộ giới hạn tốc độ"
+    },
+    {
+      "chapter": 5,
+      "start": 71,
+      "end": 86,
+      "words": 1600,
+      "output": "vi/chuong-05.md",
+      "title": "Thiết kế cơ chế băm nhất quán"
+    },
+    {
+      "chapter": 6,
+      "start": 87,
+      "end": 109,
+      "words": 3892,
+      "output": "vi/chuong-06.md",
+      "title": "Thiết kế kho khóa-giá trị"
+    },
+    {
+      "chapter": 7,
+      "start": 110,
+      "end": 118,
+      "words": 1445,
+      "output": "vi/chuong-07.md",
+      "title": "Thiết kế bộ sinh ID duy nhất trong hệ thống phân tán"
+    },
+    {
+      "chapter": 8,
+      "start": 119,
+      "end": 131,
+      "words": 2004,
+      "output": "vi/chuong-08.md",
+      "title": "Thiết kế dịch vụ rút gọn URL"
+    },
+    {
+      "chapter": 9,
+      "start": 132,
+      "end": 150,
+      "words": 3854,
+      "output": "vi/chuong-09.md",
+      "title": "Thiết kế trình thu thập dữ liệu web"
+    },
+    {
+      "chapter": 10,
+      "start": 151,
+      "end": 165,
+      "words": 2313,
+      "output": "vi/chuong-10.md",
+      "title": "Thiết kế hệ thống thông báo"
+    },
+    {
+      "chapter": 11,
+      "start": 166,
+      "end": 177,
+      "words": 1786,
+      "output": "vi/chuong-11.md",
+      "title": "Thiết kế hệ thống bảng tin"
+    },
+    {
+      "chapter": 12,
+      "start": 178,
+      "end": 199,
+      "words": 3933,
+      "output": "vi/chuong-12.md",
+      "title": "Thiết kế hệ thống trò chuyện"
+    },
+    {
+      "chapter": 13,
+      "start": 200,
+      "end": 219,
+      "words": 3378,
+      "output": "vi/chuong-13.md",
+      "title": "Thiết kế hệ thống tự động hoàn thành tìm kiếm"
+    },
+    {
+      "chapter": 14,
+      "start": 220,
+      "end": 243,
+      "words": 4178,
+      "output": "vi/chuong-14.md",
+      "title": "Thiết kế YouTube"
+    },
+    {
+      "chapter": 15,
+      "start": 244,
+      "end": 263,
+      "words": 4109,
+      "output": "vi/chuong-15.md",
+      "title": "Thiết kế Google Drive"
+    },
+    {
+      "chapter": 16,
+      "start": 264,
+      "end": 268,
+      "words": 473,
+      "output": "vi/chuong-16.md",
+      "title": "Tiếp tục học hỏi"
+    }
+  ],
+  "images_by_page": {
+    "1": [
+      "assets/goc-000.jpg"
+    ],
+    "6": [
+      "assets/goc-001.jpg",
+      "assets/goc-002.jpg"
+    ],
+    "7": [
+      "assets/goc-003.jpg"
+    ],
+    "8": [
+      "assets/goc-004.jpg"
+    ],
+    "10": [
+      "assets/goc-005.jpg"
+    ],
+    "12": [
+      "assets/goc-006.jpg"
+    ],
+    "14": [
+      "assets/goc-007.jpg"
+    ],
+    "15": [
+      "assets/goc-008.jpg",
+      "assets/goc-009.jpg"
+    ],
+    "16": [
+      "assets/goc-010.jpg"
+    ],
+    "17": [
+      "assets/goc-011.jpg",
+      "assets/goc-012.jpg"
+    ],
+    "19": [
+      "assets/goc-013.jpg"
+    ],
+    "20": [
+      "assets/goc-014.jpg"
+    ],
+    "21": [
+      "assets/goc-015.jpg"
+    ],
+    "22": [
+      "assets/goc-016.jpg"
+    ],
+    "23": [
+      "assets/goc-017.jpg"
+    ],
+    "24": [
+      "assets/goc-018.jpg"
+    ],
+    "25": [
+      "assets/goc-019.jpg",
+      "assets/goc-020.jpg"
+    ],
+    "27": [
+      "assets/goc-021.jpg"
+    ],
+    "28": [
+      "assets/goc-022.jpg"
+    ],
+    "29": [
+      "assets/goc-023.jpg",
+      "assets/goc-024.jpg"
+    ],
+    "31": [
+      "assets/goc-025.jpg"
+    ],
+    "35": [
+      "assets/goc-026.jpg"
+    ],
+    "36": [
+      "assets/goc-027.jpg"
+    ],
+    "37": [
+      "assets/goc-028.jpg"
+    ],
+    "38": [
+      "assets/goc-029.jpg"
+    ],
+    "45": [
+      "assets/goc-030.jpg"
+    ],
+    "46": [
+      "assets/goc-031.jpg"
+    ],
+    "48": [
+      "assets/goc-032.jpg"
+    ],
+    "49": [
+      "assets/goc-033.jpg"
+    ],
+    "53": [
+      "assets/goc-034.jpg",
+      "assets/goc-035.jpg"
+    ],
+    "54": [
+      "assets/goc-036.jpg"
+    ],
+    "55": [
+      "assets/goc-037.jpg"
+    ],
+    "56": [
+      "assets/goc-038.jpg"
+    ],
+    "57": [
+      "assets/goc-039.jpg"
+    ],
+    "58": [
+      "assets/goc-040.jpg"
+    ],
+    "59": [
+      "assets/goc-041.jpg",
+      "assets/goc-042.jpg"
+    ],
+    "60": [
+      "assets/goc-043.jpg"
+    ],
+    "61": [
+      "assets/goc-044.jpg"
+    ],
+    "62": [
+      "assets/goc-045.jpg"
+    ],
+    "65": [
+      "assets/goc-046.jpg"
+    ],
+    "66": [
+      "assets/goc-047.jpg"
+    ],
+    "67": [
+      "assets/goc-048.jpg",
+      "assets/goc-049.jpg"
+    ],
+    "68": [
+      "assets/goc-050.jpg"
+    ],
+    "72": [
+      "assets/goc-051.jpg"
+    ],
+    "73": [
+      "assets/goc-052.jpg",
+      "assets/goc-053.jpg"
+    ],
+    "74": [
+      "assets/goc-054.jpg"
+    ],
+    "75": [
+      "assets/goc-055.jpg",
+      "assets/goc-056.jpg"
+    ],
+    "76": [
+      "assets/goc-057.jpg",
+      "assets/goc-058.jpg"
+    ],
+    "77": [
+      "assets/goc-059.jpg"
+    ],
+    "78": [
+      "assets/goc-060.jpg"
+    ],
+    "79": [
+      "assets/goc-061.jpg"
+    ],
+    "80": [
+      "assets/goc-062.jpg",
+      "assets/goc-063.jpg"
+    ],
+    "81": [
+      "assets/goc-064.jpg"
+    ],
+    "82": [
+      "assets/goc-065.jpg"
+    ],
+    "83": [
+      "assets/goc-066.jpg"
+    ],
+    "84": [
+      "assets/goc-067.jpg"
+    ],
+    "87": [
+      "assets/goc-068.jpg"
+    ],
+    "90": [
+      "assets/goc-069.jpg"
+    ],
+    "91": [
+      "assets/goc-070.jpg"
+    ],
+    "92": [
+      "assets/goc-071.jpg"
+    ],
+    "93": [
+      "assets/goc-072.jpg"
+    ],
+    "94": [
+      "assets/goc-073.jpg"
+    ],
+    "95": [
+      "assets/goc-074.jpg"
+    ],
+    "97": [
+      "assets/goc-075.jpg",
+      "assets/goc-076.jpg"
+    ],
+    "98": [
+      "assets/goc-077.jpg"
+    ],
+    "100": [
+      "assets/goc-078.jpg",
+      "assets/goc-079.jpg"
+    ],
+    "101": [
+      "assets/goc-080.jpg"
+    ],
+    "102": [
+      "assets/goc-081.jpg",
+      "assets/goc-082.jpg",
+      "assets/goc-083.jpg"
+    ],
+    "103": [
+      "assets/goc-084.jpg"
+    ],
+    "104": [
+      "assets/goc-085.jpg"
+    ],
+    "105": [
+      "assets/goc-086.jpg",
+      "assets/goc-087.jpg"
+    ],
+    "106": [
+      "assets/goc-088.jpg",
+      "assets/goc-089.jpg"
+    ],
+    "108": [
+      "assets/goc-090.jpg"
+    ],
+    "110": [
+      "assets/goc-091.jpg"
+    ],
+    "112": [
+      "assets/goc-092.jpg"
+    ],
+    "113": [
+      "assets/goc-093.jpg",
+      "assets/goc-094.jpg"
+    ],
+    "114": [
+      "assets/goc-095.jpg"
+    ],
+    "115": [
+      "assets/goc-096.jpg",
+      "assets/goc-097.jpg"
+    ],
+    "121": [
+      "assets/goc-098.jpg"
+    ],
+    "122": [
+      "assets/goc-099.jpg"
+    ],
+    "123": [
+      "assets/goc-100.jpg"
+    ],
+    "124": [
+      "assets/goc-101.jpg"
+    ],
+    "125": [
+      "assets/goc-102.jpg",
+      "assets/goc-103.jpg"
+    ],
+    "126": [
+      "assets/goc-104.jpg"
+    ],
+    "127": [
+      "assets/goc-105.jpg",
+      "assets/goc-106.jpg"
+    ],
+    "128": [
+      "assets/goc-107.jpg",
+      "assets/goc-108.jpg"
+    ],
+    "129": [
+      "assets/goc-109.jpg"
+    ],
+    "132": [
+      "assets/goc-110.jpg"
+    ],
+    "136": [
+      "assets/goc-111.jpg"
+    ],
+    "138": [
+      "assets/goc-112.jpg"
+    ],
+    "139": [
+      "assets/goc-113.jpg"
+    ],
+    "140": [
+      "assets/goc-114.jpg"
+    ],
+    "141": [
+      "assets/goc-115.jpg"
+    ],
+    "142": [
+      "assets/goc-116.jpg"
+    ],
+    "143": [
+      "assets/goc-117.jpg"
+    ],
+    "144": [
+      "assets/goc-118.jpg"
+    ],
+    "146": [
+      "assets/goc-119.jpg"
+    ],
+    "147": [
+      "assets/goc-120.jpg"
+    ],
+    "151": [
+      "assets/goc-121.jpg"
+    ],
+    "153": [
+      "assets/goc-122.jpg",
+      "assets/goc-123.jpg"
+    ],
+    "154": [
+      "assets/goc-124.jpg",
+      "assets/goc-125.jpg",
+      "assets/goc-126.jpg"
+    ],
+    "155": [
+      "assets/goc-127.jpg",
+      "assets/goc-128.jpg"
+    ],
+    "156": [
+      "assets/goc-129.jpg",
+      "assets/goc-130.jpg"
+    ],
+    "158": [
+      "assets/goc-131.jpg"
+    ],
+    "159": [
+      "assets/goc-132.jpg"
+    ],
+    "160": [
+      "assets/goc-133.jpg"
+    ],
+    "162": [
+      "assets/goc-134.jpg",
+      "assets/goc-135.jpg"
+    ],
+    "163": [
+      "assets/goc-136.jpg"
+    ],
+    "166": [
+      "assets/goc-137.jpg"
+    ],
+    "169": [
+      "assets/goc-138.jpg"
+    ],
+    "170": [
+      "assets/goc-139.jpg"
+    ],
+    "171": [
+      "assets/goc-140.jpg"
+    ],
+    "173": [
+      "assets/goc-141.jpg"
+    ],
+    "174": [
+      "assets/goc-142.jpg",
+      "assets/goc-143.jpg"
+    ],
+    "175": [
+      "assets/goc-144.jpg"
+    ],
+    "178": [
+      "assets/goc-145.jpg"
+    ],
+    "180": [
+      "assets/goc-146.jpg"
+    ],
+    "181": [
+      "assets/goc-147.jpg"
+    ],
+    "182": [
+      "assets/goc-148.jpg"
+    ],
+    "183": [
+      "assets/goc-149.jpg",
+      "assets/goc-150.jpg"
+    ],
+    "184": [
+      "assets/goc-151.jpg"
+    ],
+    "186": [
+      "assets/goc-152.jpg"
+    ],
+    "188": [
+      "assets/goc-153.jpg",
+      "assets/goc-154.jpg"
+    ],
+    "190": [
+      "assets/goc-155.jpg"
+    ],
+    "191": [
+      "assets/goc-156.jpg"
+    ],
+    "192": [
+      "assets/goc-157.jpg"
+    ],
+    "193": [
+      "assets/goc-158.jpg"
+    ],
+    "194": [
+      "assets/goc-159.jpg",
+      "assets/goc-160.jpg"
+    ],
+    "195": [
+      "assets/goc-161.jpg"
+    ],
+    "196": [
+      "assets/goc-162.jpg",
+      "assets/goc-163.jpg"
+    ],
+    "200": [
+      "assets/goc-164.jpg"
+    ],
+    "203": [
+      "assets/goc-165.jpg"
+    ],
+    "204": [
+      "assets/goc-166.jpg",
+      "assets/goc-167.jpg",
+      "assets/goc-168.jpg"
+    ],
+    "207": [
+      "assets/goc-169.jpg",
+      "assets/goc-170.jpg"
+    ],
+    "208": [
+      "assets/goc-171.jpg"
+    ],
+    "209": [
+      "assets/goc-172.jpg"
+    ],
+    "210": [
+      "assets/goc-173.jpg"
+    ],
+    "211": [
+      "assets/goc-174.jpg",
+      "assets/goc-175.jpg"
+    ],
+    "212": [
+      "assets/goc-176.jpg"
+    ],
+    "213": [
+      "assets/goc-177.jpg"
+    ],
+    "214": [
+      "assets/goc-178.jpg"
+    ],
+    "215": [
+      "assets/goc-179.jpg"
+    ],
+    "216": [
+      "assets/goc-180.jpg",
+      "assets/goc-181.jpg"
+    ],
+    "217": [
+      "assets/goc-182.jpg"
+    ],
+    "220": [
+      "assets/goc-183.jpg"
+    ],
+    "222": [
+      "assets/goc-184.jpg"
+    ],
+    "223": [
+      "assets/goc-185.jpg"
+    ],
+    "224": [
+      "assets/goc-186.jpg"
+    ],
+    "226": [
+      "assets/goc-187.jpg"
+    ],
+    "227": [
+      "assets/goc-188.jpg"
+    ],
+    "228": [
+      "assets/goc-189.jpg"
+    ],
+    "230": [
+      "assets/goc-190.jpg"
+    ],
+    "231": [
+      "assets/goc-191.jpg",
+      "assets/goc-192.jpg"
+    ],
+    "232": [
+      "assets/goc-193.jpg",
+      "assets/goc-194.jpg",
+      "assets/goc-195.jpg"
+    ],
+    "233": [
+      "assets/goc-196.jpg",
+      "assets/goc-197.jpg"
+    ],
+    "234": [
+      "assets/goc-198.jpg",
+      "assets/goc-199.jpg"
+    ],
+    "235": [
+      "assets/goc-200.jpg",
+      "assets/goc-201.jpg",
+      "assets/goc-202.jpg"
+    ],
+    "236": [
+      "assets/goc-203.jpg",
+      "assets/goc-204.jpg",
+      "assets/goc-205.jpg"
+    ],
+    "237": [
+      "assets/goc-206.jpg",
+      "assets/goc-207.jpg"
+    ],
+    "238": [
+      "assets/goc-208.jpg"
+    ],
+    "239": [
+      "assets/goc-209.jpg"
+    ],
+    "240": [
+      "assets/goc-210.jpg"
+    ],
+    "244": [
+      "assets/goc-211.jpg"
+    ],
+    "245": [
+      "assets/goc-212.jpg"
+    ],
+    "248": [
+      "assets/goc-213.jpg"
+    ],
+    "249": [
+      "assets/goc-214.jpg"
+    ],
+    "250": [
+      "assets/goc-215.jpg",
+      "assets/goc-216.jpg"
+    ],
+    "251": [
+      "assets/goc-217.jpg"
+    ],
+    "252": [
+      "assets/goc-218.jpg",
+      "assets/goc-219.jpg"
+    ],
+    "253": [
+      "assets/goc-220.jpg"
+    ],
+    "255": [
+      "assets/goc-221.jpg"
+    ],
+    "256": [
+      "assets/goc-222.jpg"
+    ],
+    "257": [
+      "assets/goc-223.jpg"
+    ],
+    "258": [
+      "assets/goc-224.jpg"
+    ],
+    "259": [
+      "assets/goc-225.jpg"
+    ]
+  },
+  "title": "System Design Interview: An Insider's Guide - Tập 1",
+  "author": "Alex Xu",
+  "language": "vi",
+  "source_included": false,
+  "reading_entrypoint": "README.md",
+  "front_matter": {
+    "start": 1,
+    "end": 4,
+    "output": "vi/00-loi-mo-dau.md"
+  },
+  "afterword": {
+    "start": 269,
+    "end": 269,
+    "output": "vi/17-loi-ket.md"
+  }
+}

@@ -1,63 +1,71 @@
-# ByteByteGo 2025 - Vietnamese System Design Study Notes
+# Tủ sách System Design - Tiếng Việt
 
-Repo này lưu bản chuyển đổi từ PDF `Bytebytego_Big_Archive_System_Design_2025.pdf` sang Markdown để học system design theo luồng dễ đọc hơn.
+Hai bộ tài liệu để học thiết kế hệ thống: **System Design Interview** của Alex Xu để đọc theo chương và luyện bài thiết kế; **ByteByteGo 2025** để tra cứu từng chủ đề qua bài ngắn và sơ đồ.
 
-Mỗi bài được tách riêng thành 2 bản:
+## Chọn tài liệu
 
-- Bản gốc tiếng Anh đã extract và làm sạch nhẹ.
-- Bản tiếng Việt dịch sát, có giải thích theo tư duy lập trình/system design.
+| Bộ tài liệu | Nội dung | Bắt đầu đọc |
+| --- | --- | --- |
+| **System Design Interview - Tập 1** | 16 chương, lời đầu và lời kết; đối chiếu 269 trang PDF nguồn, 226 ảnh gốc | [Mục lục tập 1](output/system-design-interview-vol-1/README.md) · [Chương 1](output/system-design-interview-vol-1/vi/chuong-01.md) |
+| **ByteByteGo 2025** | 217 bài tiếng Việt, bản đối chiếu tiếng Anh và 226 ảnh | [Mục lục tóm tắt](output/bytebytego-2025/vi/000-muc-luc-tom-tat.md) · [Danh sách đầy đủ](output/bytebytego-2025/README.md) |
+
+[Mở thư mục docs](docs/README.md) để xem các bộ tài liệu, bài chia sẻ và hướng dẫn biên tập ở cùng một nơi.
+
+## Cách dùng
+
+- **Học theo mạch:** đọc tập 1 từ chương 1-3 để xây nền tảng và khung phỏng vấn, rồi chọn bài thiết kế từ chương 4-15. Mỗi chương có điều hướng trước/sau và về mục lục.
+- **Tra cứu nhanh:** mở mục lục ByteByteGo, tìm tên chủ đề và đọc từng bài. Bản gốc và bản Việt giữ cùng số thứ tự để dễ đối chiếu.
+- **Liên hệ công việc:** đọc bài [Một request chậm đi qua hệ thống như thế nào](docs/superpowers/sharing/2026-08-06-request-cache-database-sharing.md), từ browser tới Redis và database.
+
+## Quy ước nội dung
+
+Bản dịch chính giữ ý và cấu trúc của nguồn. Ghi chú, ví dụ hoặc phần học tập được bổ sung có nhãn riêng để phân biệt với lời tác giả. Ảnh được nhúng bằng đường dẫn tương đối; nhãn trong ảnh gốc có thể vẫn là tiếng Anh. Mỗi bộ ghi rõ phạm vi và cách kiểm tra ở README của bộ đó.
 
 > Lưu ý bản quyền: nội dung gốc thuộc tác giả/đơn vị phát hành tài liệu. Repo này nên dùng cho mục đích học cá nhân hoặc nội bộ khi có quyền sử dụng phù hợp; không nên public lại toàn bộ sách nếu chưa có quyền phân phối.
-
-## Nội dung
-
-- Tổng số bài đã tách: `217`.
-- Tổng số ảnh/diagram đã tách: `226`.
-- Mục lục tiếng Việt: `output/bytebytego-2025/vi/000-muc-luc-tom-tat.md`.
-- README chi tiết theo bộ sách: `output/bytebytego-2025/README.md`.
-- Script pipeline hiện tại: `scripts/bytebytego_pipeline.py`.
 
 ## Cấu trúc
 
 ```text
 .
 ├── docs/
-│   ├── conversion-quality-checklist.md
+│   ├── README.md                         # Tủ sách, bài chia sẻ, hướng dẫn biên tập
 │   ├── pdf-to-markdown-workflow.md
-│   └── pdf-to-markdown-prompt-template.md
+│   ├── pdf-to-markdown-prompt-template.md
+│   ├── conversion-quality-checklist.md
+│   └── superpowers/sharing/               # Bài chia sẻ theo chủ đề
 ├── output/
-│   └── bytebytego-2025/
-│       ├── assets/        # ảnh/diagram tách từ PDF
-│       ├── manifest/      # danh sách bài, page range, đường dẫn
-│       ├── original/      # Markdown gốc tiếng Anh
-│       ├── vi/            # Markdown dịch tiếng Việt
-│       └── README.md      # mục lục tiến độ từng bài
+│   ├── bytebytego-2025/                   # Giữ các đường dẫn hiện có
+│   │   ├── original/
+│   │   ├── vi/
+│   │   ├── assets/
+│   │   ├── manifest/
+│   │   └── README.md
+│   └── system-design-interview-vol-1/
+│       ├── vi/                           # 16 chương, lời đầu/kết, thuật ngữ
+│       ├── assets/                       # 226 ảnh gốc
+│       ├── manifest/                     # Phạm vi trang và metadata kiểm tra
+│       ├── QA.md
+│       └── README.md
 └── scripts/
+    ├── audit_docs.py                      # Kiểm tra cả hai bộ và liên kết
     ├── add_study_questions.py
     └── bytebytego_pipeline.py
 ```
 
-## Cách đọc
+## Biên tập và kiểm tra
 
-- Nếu muốn học nhanh bằng tiếng Việt: mở `output/bytebytego-2025/vi/000-muc-luc-tom-tat.md`.
-- Nếu muốn đối chiếu bản gốc: mở file cùng số thứ tự trong `output/bytebytego-2025/original/` và `output/bytebytego-2025/vi/`.
-- Ảnh được tách riêng trong `output/bytebytego-2025/assets/` và nhúng lại vào từng file Markdown bằng relative link.
+- [Workflow PDF sang Markdown](docs/pdf-to-markdown-workflow.md)
+- [Prompt mẫu cho tài liệu mới](docs/pdf-to-markdown-prompt-template.md)
+- [Checklist chất lượng](docs/conversion-quality-checklist.md)
 
-## Quy ước bản dịch
+Kiểm tra liên kết Markdown, ảnh và phạm vi tập 1 từ thư mục repo; lệnh này không cần PDF nguồn hoặc thư viện ngoài:
 
-- Dịch sát ý gốc, không tự thêm nội dung vào phần dịch chính.
-- Giữ thuật ngữ tiếng Anh khi đó là thuật ngữ kỹ thuật quen dùng: `API Gateway`, `cache`, `JWT`, `RAG`, `load balancer`, `rate limiting`.
-- Ví dụ tự thêm luôn nằm trong mục `Ví dụ thực tế - không nằm trong tài liệu gốc`.
-- Mỗi bài tiếng Việt ưu tiên cấu trúc: hình minh họa, dịch sát, tóm tắt, ví dụ thực tế, thuật ngữ chính, câu hỏi ôn tập + trả lời + thinking học tập + liên hệ.
-- `Thinking học tập + liên hệ` là khung suy nghĩ công khai để người đọc biết cách trả lời và nối kiến thức với project thật, không phải phần suy luận ẩn của AI.
+```sh
+python3 scripts/audit_docs.py
+```
 
-## Tái sử dụng cho PDF khác
-
-Các tài liệu trong `docs/` mô tả lại luồng chính để convert PDF khác sang Markdown:
-
-- `docs/pdf-to-markdown-workflow.md`: workflow từng bước từ PDF sang Markdown có ảnh.
-- `docs/pdf-to-markdown-prompt-template.md`: prompt mẫu để đưa cho Codex/AI khi convert sách khác.
-- `docs/conversion-quality-checklist.md`: checklist audit trước khi commit/push.
+<details>
+<summary>Chạy lại pipeline và audit riêng ByteByteGo</summary>
 
 ## Chạy lại pipeline ByteByteGo
 
@@ -131,3 +139,5 @@ readme_done_rows 217
 missing_image_links 0
 missing_study_questions 0
 ```
+
+</details>

@@ -1,5 +1,7 @@
 # ByteByteGo Big Archive System Design 2025 - Vietnamese Study Notes
 
+[← Tủ sách và tài liệu](../../docs/README.md) · [System Design Interview - Tập 1](../system-design-interview-vol-1/README.md)
+
 Bộ ghi chú này tách PDF thành từng bài. Mỗi bài có bản gốc tiếng Anh, bản dịch tiếng Việt, ảnh minh họa tách riêng, tóm tắt và ví dụ thực tế nếu cần.
 
 ## Quy ước

@@ -1,0 +1,250 @@
+{
+  "source_sha256": "1556d7a7cbcc1ec82dacfad4ffde2d39674fef27f34e00a7b7aa483878d5e821",
+  "files_expected": 18,
+  "files_ready": 18,
+  "pages_expected": 269,
+  "pages_marked": 269,
+  "images_expected": 226,
+  "images_linked": 226,
+  "urls_to_review": 0,
+  "files": [
+    {
+      "file": "vi/00-loi-mo-dau.md",
+      "pages": [
+        1,
+        4
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 942,
+      "images": 1,
+      "page_markers": 4,
+      "ready": true
+    },
+    {
+      "file": "vi/chuong-01.md",
+      "pages": [
+        5,
+        33
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 6755,
+      "images": 25,
+      "page_markers": 29,
+      "ready": true
+    },
+    {
+      "file": "vi/chuong-02.md",
+      "pages": [
+        34,
+        41
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 1265,
+      "images": 4,
+      "page_markers": 8,
+      "ready": true
+    },
+    {
+      "file": "vi/chuong-03.md",
+      "pages": [
+        42,
+        50
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 2902,
+      "images": 4,
+      "page_markers": 9,
+      "ready": true
+    },
+    {
+      "file": "vi/chuong-04.md",
+      "pages": [
+        51,
+        70
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 5234,
+      "images": 17,
+      "page_markers": 20,
+      "ready": true
+    },
+    {
+      "file": "vi/chuong-05.md",
+      "pages": [
+        71,
+        86
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 2030,
+      "images": 17,
+      "page_markers": 16,
+      "ready": true
+    },
+    {
+      "file": "vi/chuong-06.md",
+      "pages": [
+        87,
+        109
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 5344,
+      "images": 23,
+      "page_markers": 23,
+      "ready": true
+    },
+    {
+      "file": "vi/chuong-07.md",
+      "pages": [
+        110,
+        118
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 1927,
+      "images": 7,
+      "page_markers": 9,
+      "ready": true
+    },
+    {
+      "file": "vi/chuong-08.md",
+      "pages": [
+        119,
+        131
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 2618,
+      "images": 12,
+      "page_markers": 13,
+      "ready": true
+    },
+    {
+      "file": "vi/chuong-09.md",
+      "pages": [
+        132,
+        150
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 5029,
+      "images": 11,
+      "page_markers": 19,
+      "ready": true
+    },
+    {
+      "file": "vi/chuong-10.md",
+      "pages": [
+        151,
+        165
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 3309,
+      "images": 16,
+      "page_markers": 15,
+      "ready": true
+    },
+    {
+      "file": "vi/chuong-11.md",
+      "pages": [
+        166,
+        177
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 2373,
+      "images": 8,
+      "page_markers": 12,
+      "ready": true
+    },
+    {
+      "file": "vi/chuong-12.md",
+      "pages": [
+        178,
+        199
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 5111,
+      "images": 19,
+      "page_markers": 22,
+      "ready": true
+    },
+    {
+      "file": "vi/chuong-13.md",
+      "pages": [
+        200,
+        219
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 4280,
+      "images": 19,
+      "page_markers": 20,
+      "ready": true
+    },
+    {
+      "file": "vi/chuong-14.md",
+      "pages": [
+        220,
+        243
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 5168,
+      "images": 28,
+      "page_markers": 24,
+      "ready": true
+    },
+    {
+      "file": "vi/chuong-15.md",
+      "pages": [
+        244,
+        263
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 4686,
+      "images": 15,
+      "page_markers": 20,
+      "ready": true
+    },
+    {
+      "file": "vi/chuong-16.md",
+      "pages": [
+        264,
+        268
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 945,
+      "images": 0,
+      "page_markers": 5,
+      "ready": true
+    },
+    {
+      "file": "vi/17-loi-ket.md",
+      "pages": [
+        269,
+        269
+      ],
+      "errors": [],
+      "urls_to_review": [],
+      "words": 244,
+      "images": 0,
+      "page_markers": 1,
+      "ready": true
+    }
+  ],
+  "scope": "Kiểm tra bản dịch đã nhập vào repo; đối chiếu nội dung với bản Markdown local trước nhập, không bao gồm PDF nguồn.",
+  "vi_files": 19,
+  "source_pdf_included": false,
+  "source_text_included": false
+}
