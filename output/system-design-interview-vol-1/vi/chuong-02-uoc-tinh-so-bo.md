@@ -1,5 +1,7 @@
 # Chương 2: Ước tính sơ bộ
 
+[English](../original/chuong-02-uoc-tinh-so-bo.md) · [Mục lục](../README.md)
+
 Tên chương gốc: **Back-of-the-Envelope Estimation**. Trang PDF: **034–041**.
 
 <!-- trang-pdf:034 -->

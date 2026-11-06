@@ -14,7 +14,21 @@
 - URL trong văn bản nguồn được đối chiếu với bản dịch, có xử lý URL bị PDF ngắt dòng. Đây là kiểm tra giữ đúng URL, không phải xác nhận các website cũ còn hoạt động.
 - Có điều hướng về mục lục và chương trước/sau. Các câu bị ngắt giữa hai trang PDF được nối lại khi biên tập.
 
-Chạy kiểm tra cấu trúc từ repo root: `python3 scripts/audit_docs.py`. Kết quả kiểm tra lúc nhập bộ sách được lưu trong [quality-check.json](manifest/quality-check.json). PDF và văn bản trích xuất nguồn không đóng gói trong repo; bước đối chiếu URL nguồn và kiểm tra giải mã ảnh đã được thực hiện ở workspace dịch trước khi nhập. Nội dung Markdown khi nhập được đối chiếu với bản dịch local, chỉ thay đổi đường dẫn và cách dẫn nguồn PDF.
+Chạy kiểm tra cấu trúc từ repo root: `python3 scripts/audit_docs.py`. Kết quả kiểm tra lúc nhập bản Việt được lưu trong [quality-check.json](manifest/quality-check.json). PDF và file `.txt` trung gian không đóng gói trong repo; bản tiếng Anh hiện có trong `original/`. Bước đối chiếu URL nguồn và kiểm tra giải mã ảnh đã được thực hiện ở workspace dịch trước khi nhập. Nội dung Markdown khi nhập được đối chiếu với bản dịch local, chỉ thay đổi đường dẫn và cách dẫn nguồn PDF.
+
+## Bản gốc tiếng Anh
+
+- 18 file Markdown: 16 chương, lời đầu và lời kết; không tạo bản tiếng Anh cho bảng thuật ngữ bổ trợ do người dịch biên soạn.
+- Trích trực tiếp từ PDF có SHA-256 khớp manifest, không dịch ngược từ bản Việt. Giữ nội dung của đủ 269 trang và dùng chung 226 hình, không nhân bản ảnh.
+- So sánh SHA-256 văn bản từng trang sau khi chuẩn hóa khoảng trắng và giải mã HTML entities với [hash nguồn](manifest/original-text-checks.json). Audit kiểm tra đủ trang theo đúng thứ tự, toàn bộ hình và liên kết Anh ↔ Việt.
+- Hình nằm sau phần chữ của trang PDF tương ứng. Đây là văn bản trích xuất để đọc và đối chiếu; ngắt dòng, bảng và công thức trong lớp chữ có thể không giữ cách trình bày PDF. Các hình, bảng và code dạng ảnh vẫn được giữ nguyên.
+
+Tạo lại bản Anh từ đúng PDF local (cần Poppler `pdftotext`, không cần thư viện Python ngoài):
+
+```sh
+python3 scripts/import_system_design_originals.py /duong/dan/tap-1.pdf
+python3 scripts/audit_docs.py
+```
 
 ## Đọc chéo nội dung
 

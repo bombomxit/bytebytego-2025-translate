@@ -1,5 +1,7 @@
 # Chương 1: Mở rộng từ con số không đến hàng triệu người dùng
 
+[English](../original/chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md) · [Mục lục](../README.md)
+
 Tên chương gốc: **Scale From Zero to Millions of Users**. Trang PDF: **005–033**.
 
 <!-- trang-pdf:005 -->

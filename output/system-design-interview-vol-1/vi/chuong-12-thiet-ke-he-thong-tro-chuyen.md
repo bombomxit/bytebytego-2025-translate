@@ -1,5 +1,7 @@
 # Chương 12: Thiết kế hệ thống trò chuyện
 
+[English](../original/chuong-12-thiet-ke-he-thong-tro-chuyen.md) · [Mục lục](../README.md)
+
 *Tên gốc: Design a Chat System. Nguồn: trang PDF 178-199. Hình và nhãn bên trong hình được giữ nguyên từ PDF.*
 
 <!-- trang-pdf:178 -->

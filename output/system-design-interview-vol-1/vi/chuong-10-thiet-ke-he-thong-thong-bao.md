@@ -1,5 +1,7 @@
 # Chương 10: Thiết kế hệ thống thông báo
 
+[English](../original/chuong-10-thiet-ke-he-thong-thong-bao.md) · [Mục lục](../README.md)
+
 *Tên gốc: Design a Notification System. Nguồn: trang PDF 151-165. Hình, ví dụ mã dạng ảnh và nhãn tiếng Anh bên trong ảnh được giữ từ bản gốc.*
 
 <!-- trang-pdf:151 -->

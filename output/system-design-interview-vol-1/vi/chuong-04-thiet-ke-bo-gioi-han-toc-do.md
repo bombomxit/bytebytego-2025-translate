@@ -1,5 +1,7 @@
 # Chương 4: Thiết kế bộ giới hạn tốc độ
 
+[English](../original/chuong-04-thiet-ke-bo-gioi-han-toc-do.md) · [Mục lục](../README.md)
+
 Tên chương gốc: **Design a Rate Limiter**. Trang PDF: **051–070**.
 
 <!-- trang-pdf:051 -->

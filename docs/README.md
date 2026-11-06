@@ -6,10 +6,10 @@
 
 | Tài liệu | Phù hợp khi | Mở đọc |
 | --- | --- | --- |
-| **System Design Interview - Tập 1, Alex Xu** | Cần học nền tảng, khung phỏng vấn và luyện bài thiết kế theo chương | [Mục lục 16 chương](../output/system-design-interview-vol-1/README.md) · [Bắt đầu từ chương 1](../output/system-design-interview-vol-1/vi/chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md) |
+| **System Design Interview - Tập 1, Alex Xu** | Cần học nền tảng, khung phỏng vấn và luyện bài thiết kế theo chương | [Mục lục Anh - Việt](../output/system-design-interview-vol-1/README.md) · Chương 1: [Việt](../output/system-design-interview-vol-1/vi/chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md) / [English](../output/system-design-interview-vol-1/original/chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md) |
 | **ByteByteGo Big Archive System Design 2025** | Cần tra cứu chủ đề, xem sơ đồ và ôn nhanh từng bài | [Mục lục tóm tắt 217 bài](../output/bytebytego-2025/vi/000-muc-luc-tom-tat.md) · [Bản gốc và bản dịch](../output/bytebytego-2025/README.md) |
 
-Mỗi bộ có mục lục riêng và ảnh đi cùng bài. Tập 1 có liên kết chương trước/sau; ByteByteGo giữ số thứ tự tương ứng giữa bản gốc và bản Việt.
+Mỗi bộ có mục lục riêng, bản gốc tiếng Anh trong `original/`, bản Việt trong `vi/` và ảnh đi cùng bài. Tập 1 có liên kết đổi ngôn ngữ theo chương và chương trước/sau; ByteByteGo giữ số thứ tự tương ứng giữa bản gốc và bản Việt.
 
 ## Bài chia sẻ
 

@@ -1,5 +1,7 @@
 # Chương 16: Tiếp tục học hỏi
 
+[English](../original/chuong-16-tiep-tuc-hoc-hoi.md) · [Mục lục](../README.md)
+
 *Tên gốc: The Learning Continues. Nguồn: trang PDF 264-268. Các URL bên dưới được giữ theo nguồn; tên gốc của tài liệu được giữ kèm tên dịch khi cần tra cứu.*
 
 <!-- trang-pdf:264 -->

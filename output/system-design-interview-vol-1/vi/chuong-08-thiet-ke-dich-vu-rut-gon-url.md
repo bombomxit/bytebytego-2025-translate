@@ -1,5 +1,7 @@
 # Chương 8: Thiết kế dịch vụ rút gọn URL
 
+[English](../original/chuong-08-thiet-ke-dich-vu-rut-gon-url.md) · [Mục lục](../README.md)
+
 *Tên gốc: Design a URL Shortener. Nguồn: trang PDF 119-131. Hình, bảng và nhãn tiếng Anh bên trong ảnh được giữ từ bản gốc.*
 
 <!-- trang-pdf:119 -->

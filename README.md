@@ -1,4 +1,4 @@
-# Tủ sách System Design - Tiếng Việt
+# Tủ sách System Design - Anh - Việt
 
 Hai bộ tài liệu để học thiết kế hệ thống: **System Design Interview** của Alex Xu để đọc theo chương và luyện bài thiết kế; **ByteByteGo 2025** để tra cứu từng chủ đề qua bài ngắn và sơ đồ.
 
@@ -6,7 +6,7 @@ Hai bộ tài liệu để học thiết kế hệ thống: **System Design Inte
 
 | Bộ tài liệu | Nội dung | Bắt đầu đọc |
 | --- | --- | --- |
-| **System Design Interview - Tập 1** | 16 chương, lời đầu và lời kết; đối chiếu 269 trang PDF nguồn, 226 ảnh gốc | [Mục lục tập 1](output/system-design-interview-vol-1/README.md) · [Chương 1](output/system-design-interview-vol-1/vi/chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md) |
+| **System Design Interview - Tập 1** | 16 chương, lời đầu và lời kết bằng Anh - Việt; 269 trang PDF nguồn, dùng chung 226 ảnh gốc | [Mục lục song ngữ](output/system-design-interview-vol-1/README.md) · Chương 1: [Việt](output/system-design-interview-vol-1/vi/chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md) / [English](output/system-design-interview-vol-1/original/chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md) |
 | **ByteByteGo 2025** | 217 bài tiếng Việt, bản đối chiếu tiếng Anh và 226 ảnh | [Mục lục tóm tắt](output/bytebytego-2025/vi/000-muc-luc-tom-tat.md) · [Danh sách đầy đủ](output/bytebytego-2025/README.md) |
 
 [Mở thư mục docs](docs/README.md) để xem các bộ tài liệu, bài chia sẻ và hướng dẫn biên tập ở cùng một nơi.
@@ -15,6 +15,7 @@ Hai bộ tài liệu để học thiết kế hệ thống: **System Design Inte
 
 - **Học theo mạch:** đọc tập 1 từ chương 1-3 để xây nền tảng và khung phỏng vấn, rồi chọn bài thiết kế từ chương 4-15. Mỗi chương có điều hướng trước/sau và về mục lục.
 - **Tra cứu nhanh:** mở mục lục ByteByteGo, tìm tên chủ đề và đọc từng bài. Bản gốc và bản Việt giữ cùng số thứ tự để dễ đối chiếu.
+- **Đối chiếu Anh - Việt:** cả hai bộ có thư mục `original/` và `vi/`. Tập 1 có nút chuyển ngôn ngữ theo chương; tên file tương ứng giữ cùng số và tên tiếng Việt không dấu.
 - **Liên hệ công việc:** đọc bài [Một request chậm đi qua hệ thống như thế nào](docs/superpowers/sharing/2026-08-06-request-cache-database-sharing.md), từ browser tới Redis và database.
 
 ## Quy ước nội dung
@@ -41,6 +42,7 @@ Bản dịch chính giữ ý và cấu trúc của nguồn. Ghi chú, ví dụ h
 │   │   ├── manifest/
 │   │   └── README.md
 │   └── system-design-interview-vol-1/
+│       ├── original/                     # 18 file tiếng Anh trích từ PDF
 │       ├── vi/                           # 16 chương, lời đầu/kết, thuật ngữ
 │       ├── assets/                       # 226 ảnh gốc
 │       ├── manifest/                     # Phạm vi trang và metadata kiểm tra

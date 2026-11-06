@@ -1,5 +1,7 @@
 # Chương 9: Thiết kế trình thu thập dữ liệu web
 
+[English](../original/chuong-09-thiet-ke-trinh-thu-thap-du-lieu-web.md) · [Mục lục](../README.md)
+
 *Tên gốc: Design a Web Crawler. Nguồn: trang PDF 132-150. Hình gốc và nhãn tiếng Anh bên trong hình được giữ nguyên.*
 
 <!-- trang-pdf:132 -->

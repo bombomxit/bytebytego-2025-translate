@@ -1,5 +1,7 @@
 # Chương 5: Thiết kế cơ chế băm nhất quán
 
+[English](../original/chuong-05-thiet-ke-co-che-bam-nhat-quan.md) · [Mục lục](../README.md)
+
 Tên chương gốc: **Design Consistent Hashing**. Trang PDF: **071–086**.
 
 <!-- trang-pdf:071 -->

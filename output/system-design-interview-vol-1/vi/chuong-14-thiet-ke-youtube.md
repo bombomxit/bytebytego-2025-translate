@@ -1,5 +1,7 @@
 # Chương 14: Thiết kế YouTube
 
+[English](../original/chuong-14-thiet-ke-youtube.md) · [Mục lục](../README.md)
+
 *Tên gốc: Design YouTube. Nguồn: trang PDF 220-243. Hình và nhãn bên trong hình được giữ nguyên từ PDF.*
 
 <!-- trang-pdf:220 -->

@@ -1,5 +1,7 @@
 # Chương 11: Thiết kế hệ thống bảng tin
 
+[English](../original/chuong-11-thiet-ke-he-thong-bang-tin.md) · [Mục lục](../README.md)
+
 *Tên gốc: Design a News Feed System. Nguồn: trang PDF 166-177. Hình gốc và nhãn tiếng Anh bên trong hình được giữ nguyên.*
 
 <!-- trang-pdf:166 -->

@@ -1,5 +1,7 @@
 # Chương 13: Thiết kế hệ thống tự động hoàn thành tìm kiếm
 
+[English](../original/chuong-13-thiet-ke-he-thong-tu-dong-hoan-thanh-tim-kiem.md) · [Mục lục](../README.md)
+
 *Tên gốc: Design a Search Autocomplete System. Nguồn: trang PDF 200-219. Hình và nhãn bên trong hình được giữ nguyên từ PDF.*
 
 <!-- trang-pdf:200 -->

@@ -8,3 +8,4 @@
 - Bảng, công thức hoặc mã nguồn nằm trong ảnh được giữ bằng ảnh gốc để tránh sai lệch khi trích xuất. Không bỏ qua ảnh vì phần trích xuất văn bản không đọc được nó.
 - Giữ các URL và số dẫn chiếu tham khảo. Tên tác phẩm trong danh mục tham khảo có thể giữ nguyên để tra cứu.
 - Ghi chú bổ sung phải mang nhãn **Ghi chú bản dịch**, không hòa vào lời tác giả. Các nhận định của sách phản ánh thời điểm xuất bản, không được âm thầm sửa thành kiến thức mới.
+- `original/` chứa bản tiếng Anh trích trực tiếp từ PDF, giữ cùng tên file với bản Việt trong `vi/`. Đầu mỗi file có liên kết đổi ngôn ngữ. Hình dùng chung trong `assets/`; mỗi trang bản Anh có marker mở và đóng để kiểm tra nguyên văn theo hash nguồn, chỉ bỏ khác biệt khoảng trắng và giải mã HTML entities khi đối chiếu.

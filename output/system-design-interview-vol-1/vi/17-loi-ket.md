@@ -1,5 +1,7 @@
 # Lời kết
 
+[English](../original/17-loi-ket.md) · [Mục lục](../README.md)
+
 *Afterword - trang PDF 269.*
 
 <!-- trang-pdf:269 -->

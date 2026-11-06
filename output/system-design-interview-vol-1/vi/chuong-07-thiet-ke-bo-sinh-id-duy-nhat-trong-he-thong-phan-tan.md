@@ -1,5 +1,7 @@
 # Chương 7: Thiết kế bộ sinh ID duy nhất trong hệ thống phân tán
 
+[English](../original/chuong-07-thiet-ke-bo-sinh-id-duy-nhat-trong-he-thong-phan-tan.md) · [Mục lục](../README.md)
+
 *Tên gốc: Design a Unique ID Generator in Distributed Systems. Nguồn: trang PDF 110-118. Hình gốc và nhãn tiếng Anh bên trong hình được giữ nguyên.*
 
 <!-- trang-pdf:110 -->

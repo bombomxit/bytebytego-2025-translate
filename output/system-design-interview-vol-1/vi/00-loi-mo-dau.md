@@ -1,5 +1,7 @@
 # Thông tin sách và lời nói đầu
 
+[English](../original/00-loi-mo-dau.md) · [Mục lục](../README.md)
+
 *System Design Interview: An Insider's Guide - Alex Xu.*
 
 Nguồn: PDF do người dùng cung cấp, trang PDF 1-4. Bản dịch tiếng Việt phục vụ việc học; hình gốc được giữ nguyên.

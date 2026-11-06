@@ -1,5 +1,7 @@
 # Chương 6: Thiết kế kho khóa-giá trị
 
+[English](../original/chuong-06-thiet-ke-kho-khoa-gia-tri.md) · [Mục lục](../README.md)
+
 *Tên gốc: Design a Key-Value Store. Nguồn: trang PDF 87-109. Hình, bảng và mã nguồn dạng ảnh được giữ từ bản gốc; nhãn bên trong ảnh bằng tiếng Anh.*
 
 <!-- trang-pdf:087 -->

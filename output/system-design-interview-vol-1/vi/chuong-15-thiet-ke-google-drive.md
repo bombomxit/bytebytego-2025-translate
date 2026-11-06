@@ -1,5 +1,7 @@
 # Chương 15: Thiết kế Google Drive
 
+[English](../original/chuong-15-thiet-ke-google-drive.md) · [Mục lục](../README.md)
+
 *Tên gốc: Design Google Drive. Nguồn: trang PDF 244-263. Hình và nhãn bên trong hình được giữ nguyên từ PDF.*
 
 <!-- trang-pdf:244 -->

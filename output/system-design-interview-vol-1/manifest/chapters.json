@@ -10,7 +10,9 @@
       "end": 33,
       "words": 4847,
       "output": "vi/chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md",
-      "title": "Mở rộng từ con số không đến hàng triệu người dùng"
+      "title": "Mở rộng từ con số không đến hàng triệu người dùng",
+      "original_path": "original/chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md",
+      "original_title": "Scale From Zero to Millions of Users"
     },
     {
       "chapter": 2,
@@ -18,7 +20,9 @@
       "end": 41,
       "words": 872,
       "output": "vi/chuong-02-uoc-tinh-so-bo.md",
-      "title": "Ước tính sơ bộ"
+      "title": "Ước tính sơ bộ",
+      "original_path": "original/chuong-02-uoc-tinh-so-bo.md",
+      "original_title": "Back-of-the-Envelope Estimation"
     },
     {
       "chapter": 3,
@@ -26,7 +30,9 @@
       "end": 50,
       "words": 2260,
       "output": "vi/chuong-03-khung-phuong-phap-cho-phong-van-thiet-ke-he-thong.md",
-      "title": "Khung phương pháp cho phỏng vấn thiết kế hệ thống"
+      "title": "Khung phương pháp cho phỏng vấn thiết kế hệ thống",
+      "original_path": "original/chuong-03-khung-phuong-phap-cho-phong-van-thiet-ke-he-thong.md",
+      "original_title": "A Framework for System Design Interviews"
     },
     {
       "chapter": 4,
@@ -34,7 +40,9 @@
       "end": 70,
       "words": 4287,
       "output": "vi/chuong-04-thiet-ke-bo-gioi-han-toc-do.md",
-      "title": "Thiết kế bộ giới hạn tốc độ"
+      "title": "Thiết kế bộ giới hạn tốc độ",
+      "original_path": "original/chuong-04-thiet-ke-bo-gioi-han-toc-do.md",
+      "original_title": "Design a Rate Limiter"
     },
     {
       "chapter": 5,
@@ -42,7 +50,9 @@
       "end": 86,
       "words": 1600,
       "output": "vi/chuong-05-thiet-ke-co-che-bam-nhat-quan.md",
-      "title": "Thiết kế cơ chế băm nhất quán"
+      "title": "Thiết kế cơ chế băm nhất quán",
+      "original_path": "original/chuong-05-thiet-ke-co-che-bam-nhat-quan.md",
+      "original_title": "Design Consistent Hashing"
     },
     {
       "chapter": 6,
@@ -50,7 +60,9 @@
       "end": 109,
       "words": 3892,
       "output": "vi/chuong-06-thiet-ke-kho-khoa-gia-tri.md",
-      "title": "Thiết kế kho khóa-giá trị"
+      "title": "Thiết kế kho khóa-giá trị",
+      "original_path": "original/chuong-06-thiet-ke-kho-khoa-gia-tri.md",
+      "original_title": "Design a Key-Value Store"
     },
     {
       "chapter": 7,
@@ -58,7 +70,9 @@
       "end": 118,
       "words": 1445,
       "output": "vi/chuong-07-thiet-ke-bo-sinh-id-duy-nhat-trong-he-thong-phan-tan.md",
-      "title": "Thiết kế bộ sinh ID duy nhất trong hệ thống phân tán"
+      "title": "Thiết kế bộ sinh ID duy nhất trong hệ thống phân tán",
+      "original_path": "original/chuong-07-thiet-ke-bo-sinh-id-duy-nhat-trong-he-thong-phan-tan.md",
+      "original_title": "Design a Unique ID Generator in Distributed Systems"
     },
     {
       "chapter": 8,
@@ -66,7 +80,9 @@
       "end": 131,
       "words": 2004,
       "output": "vi/chuong-08-thiet-ke-dich-vu-rut-gon-url.md",
-      "title": "Thiết kế dịch vụ rút gọn URL"
+      "title": "Thiết kế dịch vụ rút gọn URL",
+      "original_path": "original/chuong-08-thiet-ke-dich-vu-rut-gon-url.md",
+      "original_title": "Design a URL Shortener"
     },
     {
       "chapter": 9,
@@ -74,7 +90,9 @@
       "end": 150,
       "words": 3854,
       "output": "vi/chuong-09-thiet-ke-trinh-thu-thap-du-lieu-web.md",
-      "title": "Thiết kế trình thu thập dữ liệu web"
+      "title": "Thiết kế trình thu thập dữ liệu web",
+      "original_path": "original/chuong-09-thiet-ke-trinh-thu-thap-du-lieu-web.md",
+      "original_title": "Design a Web Crawler"
     },
     {
       "chapter": 10,
@@ -82,7 +100,9 @@
       "end": 165,
       "words": 2313,
       "output": "vi/chuong-10-thiet-ke-he-thong-thong-bao.md",
-      "title": "Thiết kế hệ thống thông báo"
+      "title": "Thiết kế hệ thống thông báo",
+      "original_path": "original/chuong-10-thiet-ke-he-thong-thong-bao.md",
+      "original_title": "Design a Notification System"
     },
     {
       "chapter": 11,
@@ -90,7 +110,9 @@
       "end": 177,
       "words": 1786,
       "output": "vi/chuong-11-thiet-ke-he-thong-bang-tin.md",
-      "title": "Thiết kế hệ thống bảng tin"
+      "title": "Thiết kế hệ thống bảng tin",
+      "original_path": "original/chuong-11-thiet-ke-he-thong-bang-tin.md",
+      "original_title": "Design a News Feed System"
     },
     {
       "chapter": 12,
@@ -98,7 +120,9 @@
       "end": 199,
       "words": 3933,
       "output": "vi/chuong-12-thiet-ke-he-thong-tro-chuyen.md",
-      "title": "Thiết kế hệ thống trò chuyện"
+      "title": "Thiết kế hệ thống trò chuyện",
+      "original_path": "original/chuong-12-thiet-ke-he-thong-tro-chuyen.md",
+      "original_title": "Design a Chat System"
     },
     {
       "chapter": 13,
@@ -106,7 +130,9 @@
       "end": 219,
       "words": 3378,
       "output": "vi/chuong-13-thiet-ke-he-thong-tu-dong-hoan-thanh-tim-kiem.md",
-      "title": "Thiết kế hệ thống tự động hoàn thành tìm kiếm"
+      "title": "Thiết kế hệ thống tự động hoàn thành tìm kiếm",
+      "original_path": "original/chuong-13-thiet-ke-he-thong-tu-dong-hoan-thanh-tim-kiem.md",
+      "original_title": "Design a Search Autocomplete System"
     },
     {
       "chapter": 14,
@@ -114,7 +140,9 @@
       "end": 243,
       "words": 4178,
       "output": "vi/chuong-14-thiet-ke-youtube.md",
-      "title": "Thiết kế YouTube"
+      "title": "Thiết kế YouTube",
+      "original_path": "original/chuong-14-thiet-ke-youtube.md",
+      "original_title": "Design YouTube"
     },
     {
       "chapter": 15,
@@ -122,7 +150,9 @@
       "end": 263,
       "words": 4109,
       "output": "vi/chuong-15-thiet-ke-google-drive.md",
-      "title": "Thiết kế Google Drive"
+      "title": "Thiết kế Google Drive",
+      "original_path": "original/chuong-15-thiet-ke-google-drive.md",
+      "original_title": "Design Google Drive"
     },
     {
       "chapter": 16,
@@ -130,7 +160,9 @@
       "end": 268,
       "words": 473,
       "output": "vi/chuong-16-tiep-tuc-hoc-hoi.md",
-      "title": "Tiếp tục học hỏi"
+      "title": "Tiếp tục học hỏi",
+      "original_path": "original/chuong-16-tiep-tuc-hoc-hoi.md",
+      "original_title": "The Learning Continues"
     }
   ],
   "images_by_page": {
@@ -719,11 +751,20 @@
   "front_matter": {
     "start": 1,
     "end": 4,
-    "output": "vi/00-loi-mo-dau.md"
+    "output": "vi/00-loi-mo-dau.md",
+    "original_path": "original/00-loi-mo-dau.md",
+    "original_title": "Book Information and Foreword"
   },
   "afterword": {
     "start": 269,
     "end": 269,
-    "output": "vi/17-loi-ket.md"
-  }
+    "output": "vi/17-loi-ket.md",
+    "original_path": "original/17-loi-ket.md",
+    "original_title": "Afterword"
+  },
+  "original_language": "en",
+  "available_languages": [
+    "en",
+    "vi"
+  ]
 }

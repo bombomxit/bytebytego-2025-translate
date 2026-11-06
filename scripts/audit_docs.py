@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Audit portable: liên kết Markdown, tập 1 và cấu trúc ByteByteGo."""
 
+import hashlib
+import html
 import json
 from pathlib import Path
 import re
@@ -92,6 +94,46 @@ def audit():
     if list(BOOK.rglob("*.pdf")) or list(BOOK.rglob("*.txt")) or (BOOK / "nguon").exists():
         errors.append("Bộ sách đóng gói chứa PDF hoặc văn bản nguồn local")
 
+    original_sections = [manifest["front_matter"], *chapters, manifest["afterword"]]
+    text_checks = json.loads((BOOK / "manifest/original-text-checks.json").read_text())
+    if text_checks["source_sha256"] != manifest["sha256"]:
+        errors.append("SHA-256 nguồn bản tiếng Anh không khớp manifest")
+    original_files = sorted((BOOK / "original").glob("*.md"))
+    original_pages = []
+    original_images = 0
+    for section in original_sections:
+        filename = section["original_path"]
+        expected_path = "original/" + Path(section["output"]).name
+        if filename != expected_path:
+            errors.append(f"Tên file Anh/Việt phải tương ứng: {expected_path}")
+        path = BOOK / filename
+        text = path.read_text()
+        pages = re.findall(r"<!-- trang-pdf:(\d{3}) -->(.*?)<!-- /trang-pdf:\1 -->", text, re.S)
+        page_numbers = [int(number) for number, _ in pages]
+        if page_numbers != list(range(section["start"], section["end"] + 1)):
+            errors.append(f"{filename}: phạm vi trang tiếng Anh không khớp")
+        original_pages.extend(page_numbers)
+        for number, body in pages:
+            body = re.sub(r"!\[[^\]]*\]\([^)]+\)", "", body)
+            normalized = " ".join(html.unescape(body).split())
+            digest = hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+            if digest != text_checks["page_text_sha256"].get(str(int(number))):
+                errors.append(f"{filename}: văn bản tiếng Anh trang {number} khác bản trích xuất")
+        images = re.findall(r"!\[[^\]]*\]\(([^)]+)\)", text)
+        expected_images = ["../" + image for number in page_numbers
+                           for image in manifest["images_by_page"].get(str(number), [])]
+        original_images += len(images)
+        if images != expected_images:
+            errors.append(f"{filename}: hình tiếng Anh thiếu, thừa hoặc sai thứ tự")
+        if len(re.findall(r"^# ", text, re.M)) != 1:
+            errors.append(f"{filename}: cần đúng một H1")
+        if f"(../vi/{Path(section['output']).name})" not in text:
+            errors.append(f"{filename}: thiếu liên kết sang bản Việt")
+        if f"(../original/{path.name})" not in (BOOK / section["output"]).read_text():
+            errors.append(f"{section['output']}: thiếu liên kết sang bản Anh")
+    if len(original_files) != 18 or original_pages != list(range(1, 270)) or original_images != 226:
+        errors.append("Bản tiếng Anh cần 18 file, 269 trang nguồn và 226 ảnh")
+
     byte_manifest = json.loads((BYTEBYTEGO / "manifest/articles.json").read_text())
     articles = byte_manifest["articles"]
     original_count = len(list((BYTEBYTEGO / "original").glob("*.md")))
@@ -114,6 +156,8 @@ def audit():
             "vi_files_with_glossary": len(vi_files),
             "source_page_markers": markers_total,
             "images": len(assets), "image_links": images_total,
+            "original_files": len(original_files), "original_page_markers": len(original_pages),
+            "original_image_links": original_images,
         },
         "bytebytego": {"originals": original_count, "translations": vi_count, "images": byte_images},
         "errors": errors,

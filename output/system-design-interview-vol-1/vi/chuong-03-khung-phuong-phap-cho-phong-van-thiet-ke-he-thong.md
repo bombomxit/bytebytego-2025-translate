@@ -1,5 +1,7 @@
 # Chương 3: Khung phương pháp cho phỏng vấn thiết kế hệ thống
 
+[English](../original/chuong-03-khung-phuong-phap-cho-phong-van-thiet-ke-he-thong.md) · [Mục lục](../README.md)
+
 Tên chương gốc: **A Framework for System Design Interviews**. Trang PDF: **042–050**.
 
 <!-- trang-pdf:042 -->
