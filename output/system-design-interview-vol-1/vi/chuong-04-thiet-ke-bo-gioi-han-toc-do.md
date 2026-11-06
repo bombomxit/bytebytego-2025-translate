@@ -474,4 +474,4 @@ Chúc mừng bạn đã đi đến đây! Hãy tự thưởng cho mình một l�
 
 ---
 
-[← Chương 3](chuong-03.md) · [Mục lục](../README.md) · [Chương 5 →](chuong-05.md)
+[← Chương 3](chuong-03-khung-phuong-phap-cho-phong-van-thiet-ke-he-thong.md) · [Mục lục](../README.md) · [Chương 5 →](chuong-05-thiet-ke-co-che-bam-nhat-quan.md)

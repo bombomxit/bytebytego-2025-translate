@@ -201,4 +201,4 @@ Câu hỏi phỏng vấn thiết kế hệ thống thường rất rộng; 45 ph
 
 ---
 
-[← Chương 2](chuong-02.md) · [Mục lục](../README.md) · [Chương 4 →](chuong-04.md)
+[← Chương 2](chuong-02-uoc-tinh-so-bo.md) · [Mục lục](../README.md) · [Chương 4 →](chuong-04-thiet-ke-bo-gioi-han-toc-do.md)

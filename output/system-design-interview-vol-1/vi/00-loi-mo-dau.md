@@ -31,22 +31,22 @@ Biên tập: Paul Solomon.
 ## Mục lục
 
 - [Lời nói đầu](#lời-nói-đầu)
-- [Chương 1: Mở rộng từ con số không đến hàng triệu người dùng](chuong-01.md)
-- [Chương 2: Ước tính sơ bộ](chuong-02.md)
-- [Chương 3: Khung tiếp cận phỏng vấn thiết kế hệ thống](chuong-03.md)
-- [Chương 4: Thiết kế bộ giới hạn tốc độ](chuong-04.md)
-- [Chương 5: Thiết kế băm nhất quán](chuong-05.md)
-- [Chương 6: Thiết kế kho lưu trữ khóa-giá trị](chuong-06.md)
-- [Chương 7: Thiết kế bộ sinh ID duy nhất trong hệ thống phân tán](chuong-07.md)
-- [Chương 8: Thiết kế dịch vụ rút gọn URL](chuong-08.md)
-- [Chương 9: Thiết kế trình thu thập dữ liệu web](chuong-09.md)
-- [Chương 10: Thiết kế hệ thống thông báo](chuong-10.md)
-- [Chương 11: Thiết kế hệ thống bảng tin](chuong-11.md)
-- [Chương 12: Thiết kế hệ thống trò chuyện](chuong-12.md)
-- [Chương 13: Thiết kế hệ thống tự động hoàn thành tìm kiếm](chuong-13.md)
-- [Chương 14: Thiết kế YouTube](chuong-14.md)
-- [Chương 15: Thiết kế Google Drive](chuong-15.md)
-- [Chương 16: Tiếp tục học hỏi](chuong-16.md)
+- [Chương 1: Mở rộng từ con số không đến hàng triệu người dùng](chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md)
+- [Chương 2: Ước tính sơ bộ](chuong-02-uoc-tinh-so-bo.md)
+- [Chương 3: Khung tiếp cận phỏng vấn thiết kế hệ thống](chuong-03-khung-phuong-phap-cho-phong-van-thiet-ke-he-thong.md)
+- [Chương 4: Thiết kế bộ giới hạn tốc độ](chuong-04-thiet-ke-bo-gioi-han-toc-do.md)
+- [Chương 5: Thiết kế băm nhất quán](chuong-05-thiet-ke-co-che-bam-nhat-quan.md)
+- [Chương 6: Thiết kế kho lưu trữ khóa-giá trị](chuong-06-thiet-ke-kho-khoa-gia-tri.md)
+- [Chương 7: Thiết kế bộ sinh ID duy nhất trong hệ thống phân tán](chuong-07-thiet-ke-bo-sinh-id-duy-nhat-trong-he-thong-phan-tan.md)
+- [Chương 8: Thiết kế dịch vụ rút gọn URL](chuong-08-thiet-ke-dich-vu-rut-gon-url.md)
+- [Chương 9: Thiết kế trình thu thập dữ liệu web](chuong-09-thiet-ke-trinh-thu-thap-du-lieu-web.md)
+- [Chương 10: Thiết kế hệ thống thông báo](chuong-10-thiet-ke-he-thong-thong-bao.md)
+- [Chương 11: Thiết kế hệ thống bảng tin](chuong-11-thiet-ke-he-thong-bang-tin.md)
+- [Chương 12: Thiết kế hệ thống trò chuyện](chuong-12-thiet-ke-he-thong-tro-chuyen.md)
+- [Chương 13: Thiết kế hệ thống tự động hoàn thành tìm kiếm](chuong-13-thiet-ke-he-thong-tu-dong-hoan-thanh-tim-kiem.md)
+- [Chương 14: Thiết kế YouTube](chuong-14-thiet-ke-youtube.md)
+- [Chương 15: Thiết kế Google Drive](chuong-15-thiet-ke-google-drive.md)
+- [Chương 16: Tiếp tục học hỏi](chuong-16-tiep-tuc-hoc-hoi.md)
 - [Lời kết](17-loi-ket.md)
 
 <!-- trang-pdf:004 -->
@@ -65,4 +65,4 @@ Cuốn sách cung cấp nền tảng kiến thức vững chắc để xây dự
 
 Cuốn sách cũng cung cấp một khung tiếp cận từng bước để xử lý câu hỏi thiết kế hệ thống. Nhiều ví dụ minh họa cách tiếp cận có hệ thống, kèm các bước chi tiết mà bạn có thể làm theo. Khi luyện tập đều đặn, bạn sẽ có sự chuẩn bị tốt để giải quyết các câu hỏi phỏng vấn thiết kế hệ thống.
 
-[Mục lục bản dịch](../README.md) · [Chương 1 →](chuong-01.md)
+[Mục lục bản dịch](../README.md) · [Chương 1 →](chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md)

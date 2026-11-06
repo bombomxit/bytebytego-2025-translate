@@ -100,4 +100,4 @@ Dưới đây là danh sách blog kỹ thuật của một số công ty lớn v
 
 ---
 
-[← Chương 15](chuong-15.md) · [Mục lục](../README.md) · [Lời kết →](17-loi-ket.md)
+[← Chương 15](chuong-15-thiet-ke-google-drive.md) · [Mục lục](../README.md) · [Lời kết →](17-loi-ket.md)

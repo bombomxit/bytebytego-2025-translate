@@ -329,4 +329,4 @@ Chúc mừng bạn đã đi tới đây! Hãy tự ghi nhận nỗ lực của m
 
 ---
 
-[← Chương 9](chuong-09.md) · [Mục lục](../README.md) · [Chương 11 →](chuong-11.md)
+[← Chương 9](chuong-09-thiet-ke-trinh-thu-thap-du-lieu-web.md) · [Mục lục](../README.md) · [Chương 11 →](chuong-11-thiet-ke-he-thong-bang-tin.md)

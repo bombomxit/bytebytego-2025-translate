@@ -4,28 +4,28 @@
 
 **Tác giả:** Alex Xu. Bản dịch gồm 16 chương, lời đầu và lời kết, tương ứng 269 trang PDF nguồn.
 
-Bắt đầu từ [lời nói đầu](vi/00-loi-mo-dau.md), hoặc vào ngay [chương 1](vi/chuong-01.md). Mỗi chương là một file Markdown riêng, có liên kết chương trước/sau và đường về mục lục này.
+Bắt đầu từ [lời nói đầu](vi/00-loi-mo-dau.md), hoặc vào ngay [chương 1](vi/chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md). Mỗi chương là một file Markdown riêng, có liên kết chương trước/sau và đường về mục lục này.
 
 ## Mục lục
 
 | Chương | Nội dung | Trang PDF nguồn |
 | --- | --- | --- |
-| 1 | [Mở rộng từ con số không đến hàng triệu người dùng](vi/chuong-01.md) | 5-33 |
-| 2 | [Ước tính sơ bộ](vi/chuong-02.md) | 34-41 |
-| 3 | [Khung phương pháp cho phỏng vấn thiết kế hệ thống](vi/chuong-03.md) | 42-50 |
-| 4 | [Thiết kế bộ giới hạn tốc độ](vi/chuong-04.md) | 51-70 |
-| 5 | [Thiết kế cơ chế băm nhất quán](vi/chuong-05.md) | 71-86 |
-| 6 | [Thiết kế kho khóa-giá trị](vi/chuong-06.md) | 87-109 |
-| 7 | [Thiết kế bộ sinh ID duy nhất trong hệ thống phân tán](vi/chuong-07.md) | 110-118 |
-| 8 | [Thiết kế dịch vụ rút gọn URL](vi/chuong-08.md) | 119-131 |
-| 9 | [Thiết kế trình thu thập dữ liệu web](vi/chuong-09.md) | 132-150 |
-| 10 | [Thiết kế hệ thống thông báo](vi/chuong-10.md) | 151-165 |
-| 11 | [Thiết kế hệ thống bảng tin](vi/chuong-11.md) | 166-177 |
-| 12 | [Thiết kế hệ thống trò chuyện](vi/chuong-12.md) | 178-199 |
-| 13 | [Thiết kế hệ thống tự động hoàn thành tìm kiếm](vi/chuong-13.md) | 200-219 |
-| 14 | [Thiết kế YouTube](vi/chuong-14.md) | 220-243 |
-| 15 | [Thiết kế Google Drive](vi/chuong-15.md) | 244-263 |
-| 16 | [Tiếp tục học hỏi](vi/chuong-16.md) | 264-268 |
+| 1 | [Mở rộng từ con số không đến hàng triệu người dùng](vi/chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md) | 5-33 |
+| 2 | [Ước tính sơ bộ](vi/chuong-02-uoc-tinh-so-bo.md) | 34-41 |
+| 3 | [Khung phương pháp cho phỏng vấn thiết kế hệ thống](vi/chuong-03-khung-phuong-phap-cho-phong-van-thiet-ke-he-thong.md) | 42-50 |
+| 4 | [Thiết kế bộ giới hạn tốc độ](vi/chuong-04-thiet-ke-bo-gioi-han-toc-do.md) | 51-70 |
+| 5 | [Thiết kế cơ chế băm nhất quán](vi/chuong-05-thiet-ke-co-che-bam-nhat-quan.md) | 71-86 |
+| 6 | [Thiết kế kho khóa-giá trị](vi/chuong-06-thiet-ke-kho-khoa-gia-tri.md) | 87-109 |
+| 7 | [Thiết kế bộ sinh ID duy nhất trong hệ thống phân tán](vi/chuong-07-thiet-ke-bo-sinh-id-duy-nhat-trong-he-thong-phan-tan.md) | 110-118 |
+| 8 | [Thiết kế dịch vụ rút gọn URL](vi/chuong-08-thiet-ke-dich-vu-rut-gon-url.md) | 119-131 |
+| 9 | [Thiết kế trình thu thập dữ liệu web](vi/chuong-09-thiet-ke-trinh-thu-thap-du-lieu-web.md) | 132-150 |
+| 10 | [Thiết kế hệ thống thông báo](vi/chuong-10-thiet-ke-he-thong-thong-bao.md) | 151-165 |
+| 11 | [Thiết kế hệ thống bảng tin](vi/chuong-11-thiet-ke-he-thong-bang-tin.md) | 166-177 |
+| 12 | [Thiết kế hệ thống trò chuyện](vi/chuong-12-thiet-ke-he-thong-tro-chuyen.md) | 178-199 |
+| 13 | [Thiết kế hệ thống tự động hoàn thành tìm kiếm](vi/chuong-13-thiet-ke-he-thong-tu-dong-hoan-thanh-tim-kiem.md) | 200-219 |
+| 14 | [Thiết kế YouTube](vi/chuong-14-thiet-ke-youtube.md) | 220-243 |
+| 15 | [Thiết kế Google Drive](vi/chuong-15-thiet-ke-google-drive.md) | 244-263 |
+| 16 | [Tiếp tục học hỏi](vi/chuong-16-tiep-tuc-hoc-hoi.md) | 264-268 |
 
 [Lời kết](vi/17-loi-ket.md) · [Bảng thuật ngữ](vi/thuat-ngu.md)
 

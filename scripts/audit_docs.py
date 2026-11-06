@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import re
 import sys
+import unicodedata
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -38,6 +39,13 @@ def audit():
     chapters = manifest["chapters"]
     if [c["chapter"] for c in chapters] != list(range(1, 17)):
         errors.append("Manifest tập 1 phải có đúng chương 1-16 theo thứ tự")
+    for chapter in chapters:
+        title = unicodedata.normalize("NFD", chapter["title"].lower().replace("đ", "d"))
+        title = "".join(char for char in title if not unicodedata.combining(char))
+        slug = re.sub(r"[^a-z0-9]+", "-", title).strip("-")
+        expected = f"vi/chuong-{chapter['chapter']:02d}-{slug}.md"
+        if chapter["output"] != expected:
+            errors.append(f"Tên file chương phải theo số và tiêu đề tiếng Việt không dấu: {expected}")
 
     targets = [("vi/00-loi-mo-dau.md", 1, 4)]
     targets += [(c["output"], c["start"], c["end"]) for c in chapters]

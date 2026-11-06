@@ -404,4 +404,4 @@ Chúc mừng bạn đã đi tới đây! Hãy tự ghi nhận nỗ lực của m
 
 ---
 
-[← Chương 8](chuong-08.md) · [Mục lục](../README.md) · [Chương 10 →](chuong-10.md)
+[← Chương 8](chuong-08-thiet-ke-dich-vu-rut-gon-url.md) · [Mục lục](../README.md) · [Chương 10 →](chuong-10-thiet-ke-he-thong-thong-bao.md)

@@ -119,4 +119,4 @@ Chúc mừng bạn đã đi đến đây! Hãy tự thưởng cho mình một l�
 
 ---
 
-[← Chương 1](chuong-01.md) · [Mục lục](../README.md) · [Chương 3 →](chuong-03.md)
+[← Chương 1](chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md) · [Mục lục](../README.md) · [Chương 3 →](chuong-03-khung-phuong-phap-cho-phong-van-thiet-ke-he-thong.md)

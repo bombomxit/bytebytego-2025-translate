@@ -471,4 +471,4 @@ Chúc mừng bạn đã đi được đến đây! Hãy tự dành cho mình m�
 
 ---
 
-[← Chương 13](chuong-13.md) · [Mục lục](../README.md) · [Chương 15 →](chuong-15.md)
+[← Chương 13](chuong-13-thiet-ke-he-thong-tu-dong-hoan-thanh-tim-kiem.md) · [Mục lục](../README.md) · [Chương 15 →](chuong-15-thiet-ke-google-drive.md)

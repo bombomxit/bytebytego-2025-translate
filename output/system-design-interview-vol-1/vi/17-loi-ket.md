@@ -16,4 +16,4 @@ Hãy đăng ký danh sách email nếu bạn muốn được thông báo khi có
 
 Nếu có nhận xét hoặc câu hỏi về cuốn sách, bạn có thể gửi email đến systemdesigninsider@gmail.com. Ngoài ra, nếu phát hiện lỗi, hãy cho chúng tôi biết để có thể sửa trong lần xuất bản tiếp theo. Xin cảm ơn!
 
-[← Chương 16](chuong-16.md) · [Mục lục bản dịch](../README.md)
+[← Chương 16](chuong-16-tiep-tuc-hoc-hoi.md) · [Mục lục bản dịch](../README.md)

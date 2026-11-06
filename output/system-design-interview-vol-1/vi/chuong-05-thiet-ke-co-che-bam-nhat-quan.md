@@ -185,4 +185,4 @@ Chúc mừng bạn đã đi đến đây! Hãy tự thưởng cho mình một l�
 
 ---
 
-[← Chương 4](chuong-04.md) · [Mục lục](../README.md) · [Chương 6 →](chuong-06.md)
+[← Chương 4](chuong-04-thiet-ke-bo-gioi-han-toc-do.md) · [Mục lục](../README.md) · [Chương 6 →](chuong-06-thiet-ke-kho-khoa-gia-tri.md)

@@ -6,7 +6,7 @@ Hai bộ tài liệu để học thiết kế hệ thống: **System Design Inte
 
 | Bộ tài liệu | Nội dung | Bắt đầu đọc |
 | --- | --- | --- |
-| **System Design Interview - Tập 1** | 16 chương, lời đầu và lời kết; đối chiếu 269 trang PDF nguồn, 226 ảnh gốc | [Mục lục tập 1](output/system-design-interview-vol-1/README.md) · [Chương 1](output/system-design-interview-vol-1/vi/chuong-01.md) |
+| **System Design Interview - Tập 1** | 16 chương, lời đầu và lời kết; đối chiếu 269 trang PDF nguồn, 226 ảnh gốc | [Mục lục tập 1](output/system-design-interview-vol-1/README.md) · [Chương 1](output/system-design-interview-vol-1/vi/chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md) |
 | **ByteByteGo 2025** | 217 bài tiếng Việt, bản đối chiếu tiếng Anh và 226 ảnh | [Mục lục tóm tắt](output/bytebytego-2025/vi/000-muc-luc-tom-tat.md) · [Danh sách đầy đủ](output/bytebytego-2025/README.md) |
 
 [Mở thư mục docs](docs/README.md) để xem các bộ tài liệu, bài chia sẻ và hướng dẫn biên tập ở cùng một nơi.

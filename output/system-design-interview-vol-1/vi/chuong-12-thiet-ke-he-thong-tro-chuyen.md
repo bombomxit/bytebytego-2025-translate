@@ -377,4 +377,4 @@ Chúc mừng bạn đã đi được đến đây! Hãy tự dành cho mình m�
 
 ---
 
-[← Chương 11](chuong-11.md) · [Mục lục](../README.md) · [Chương 13 →](chuong-13.md)
+[← Chương 11](chuong-11-thiet-ke-he-thong-bang-tin.md) · [Mục lục](../README.md) · [Chương 13 →](chuong-13-thiet-ke-he-thong-tu-dong-hoan-thanh-tim-kiem.md)

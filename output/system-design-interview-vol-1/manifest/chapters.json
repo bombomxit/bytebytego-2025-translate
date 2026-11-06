@@ -9,7 +9,7 @@
       "start": 5,
       "end": 33,
       "words": 4847,
-      "output": "vi/chuong-01.md",
+      "output": "vi/chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md",
       "title": "Mở rộng từ con số không đến hàng triệu người dùng"
     },
     {
@@ -17,7 +17,7 @@
       "start": 34,
       "end": 41,
       "words": 872,
-      "output": "vi/chuong-02.md",
+      "output": "vi/chuong-02-uoc-tinh-so-bo.md",
       "title": "Ước tính sơ bộ"
     },
     {
@@ -25,7 +25,7 @@
       "start": 42,
       "end": 50,
       "words": 2260,
-      "output": "vi/chuong-03.md",
+      "output": "vi/chuong-03-khung-phuong-phap-cho-phong-van-thiet-ke-he-thong.md",
       "title": "Khung phương pháp cho phỏng vấn thiết kế hệ thống"
     },
     {
@@ -33,7 +33,7 @@
       "start": 51,
       "end": 70,
       "words": 4287,
-      "output": "vi/chuong-04.md",
+      "output": "vi/chuong-04-thiet-ke-bo-gioi-han-toc-do.md",
       "title": "Thiết kế bộ giới hạn tốc độ"
     },
     {
@@ -41,7 +41,7 @@
       "start": 71,
       "end": 86,
       "words": 1600,
-      "output": "vi/chuong-05.md",
+      "output": "vi/chuong-05-thiet-ke-co-che-bam-nhat-quan.md",
       "title": "Thiết kế cơ chế băm nhất quán"
     },
     {
@@ -49,7 +49,7 @@
       "start": 87,
       "end": 109,
       "words": 3892,
-      "output": "vi/chuong-06.md",
+      "output": "vi/chuong-06-thiet-ke-kho-khoa-gia-tri.md",
       "title": "Thiết kế kho khóa-giá trị"
     },
     {
@@ -57,7 +57,7 @@
       "start": 110,
       "end": 118,
       "words": 1445,
-      "output": "vi/chuong-07.md",
+      "output": "vi/chuong-07-thiet-ke-bo-sinh-id-duy-nhat-trong-he-thong-phan-tan.md",
       "title": "Thiết kế bộ sinh ID duy nhất trong hệ thống phân tán"
     },
     {
@@ -65,7 +65,7 @@
       "start": 119,
       "end": 131,
       "words": 2004,
-      "output": "vi/chuong-08.md",
+      "output": "vi/chuong-08-thiet-ke-dich-vu-rut-gon-url.md",
       "title": "Thiết kế dịch vụ rút gọn URL"
     },
     {
@@ -73,7 +73,7 @@
       "start": 132,
       "end": 150,
       "words": 3854,
-      "output": "vi/chuong-09.md",
+      "output": "vi/chuong-09-thiet-ke-trinh-thu-thap-du-lieu-web.md",
       "title": "Thiết kế trình thu thập dữ liệu web"
     },
     {
@@ -81,7 +81,7 @@
       "start": 151,
       "end": 165,
       "words": 2313,
-      "output": "vi/chuong-10.md",
+      "output": "vi/chuong-10-thiet-ke-he-thong-thong-bao.md",
       "title": "Thiết kế hệ thống thông báo"
     },
     {
@@ -89,7 +89,7 @@
       "start": 166,
       "end": 177,
       "words": 1786,
-      "output": "vi/chuong-11.md",
+      "output": "vi/chuong-11-thiet-ke-he-thong-bang-tin.md",
       "title": "Thiết kế hệ thống bảng tin"
     },
     {
@@ -97,7 +97,7 @@
       "start": 178,
       "end": 199,
       "words": 3933,
-      "output": "vi/chuong-12.md",
+      "output": "vi/chuong-12-thiet-ke-he-thong-tro-chuyen.md",
       "title": "Thiết kế hệ thống trò chuyện"
     },
     {
@@ -105,7 +105,7 @@
       "start": 200,
       "end": 219,
       "words": 3378,
-      "output": "vi/chuong-13.md",
+      "output": "vi/chuong-13-thiet-ke-he-thong-tu-dong-hoan-thanh-tim-kiem.md",
       "title": "Thiết kế hệ thống tự động hoàn thành tìm kiếm"
     },
     {
@@ -113,7 +113,7 @@
       "start": 220,
       "end": 243,
       "words": 4178,
-      "output": "vi/chuong-14.md",
+      "output": "vi/chuong-14-thiet-ke-youtube.md",
       "title": "Thiết kế YouTube"
     },
     {
@@ -121,7 +121,7 @@
       "start": 244,
       "end": 263,
       "words": 4109,
-      "output": "vi/chuong-15.md",
+      "output": "vi/chuong-15-thiet-ke-google-drive.md",
       "title": "Thiết kế Google Drive"
     },
     {
@@ -129,7 +129,7 @@
       "start": 264,
       "end": 268,
       "words": 473,
-      "output": "vi/chuong-16.md",
+      "output": "vi/chuong-16-tiep-tuc-hoc-hoi.md",
       "title": "Tiếp tục học hỏi"
     }
   ],

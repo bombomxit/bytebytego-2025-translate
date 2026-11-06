@@ -434,4 +434,4 @@ Chúc mừng bạn đã đi được đến đây! Hãy tự dành cho mình m�
 
 ---
 
-[← Chương 14](chuong-14.md) · [Mục lục](../README.md) · [Chương 16 →](chuong-16.md)
+[← Chương 14](chuong-14-thiet-ke-youtube.md) · [Mục lục](../README.md) · [Chương 16 →](chuong-16-tiep-tuc-hoc-hoi.md)

@@ -399,4 +399,4 @@ Chương này bao gồm nhiều khái niệm và kỹ thuật. Để ôn lại, 
 
 ---
 
-[← Chương 5](chuong-05.md) · [Mục lục](../README.md) · [Chương 7 →](chuong-07.md)
+[← Chương 5](chuong-05-thiet-ke-co-che-bam-nhat-quan.md) · [Mục lục](../README.md) · [Chương 7 →](chuong-07-thiet-ke-bo-sinh-id-duy-nhat-trong-he-thong-phan-tan.md)

@@ -401,4 +401,4 @@ Chúc mừng bạn đã đi đến đây! Hãy tự thưởng cho mình một l�
 
 ---
 
-[← Lời nói đầu](00-loi-mo-dau.md) · [Mục lục](../README.md) · [Chương 2 →](chuong-02.md)
+[← Lời nói đầu](00-loi-mo-dau.md) · [Mục lục](../README.md) · [Chương 2 →](chuong-02-uoc-tinh-so-bo.md)

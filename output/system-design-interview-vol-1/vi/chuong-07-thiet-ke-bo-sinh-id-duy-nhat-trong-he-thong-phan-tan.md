@@ -191,4 +191,4 @@ Chúc mừng bạn đã đi tới đây! Hãy tự ghi nhận nỗ lực của m
 
 ---
 
-[← Chương 6](chuong-06.md) · [Mục lục](../README.md) · [Chương 8 →](chuong-08.md)
+[← Chương 6](chuong-06-thiet-ke-kho-khoa-gia-tri.md) · [Mục lục](../README.md) · [Chương 8 →](chuong-08-thiet-ke-dich-vu-rut-gon-url.md)

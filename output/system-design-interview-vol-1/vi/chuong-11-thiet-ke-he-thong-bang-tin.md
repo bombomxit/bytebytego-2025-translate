@@ -245,4 +245,4 @@ Chúc mừng bạn đã đi tới đây! Hãy tự ghi nhận nỗ lực của m
 
 ---
 
-[← Chương 10](chuong-10.md) · [Mục lục](../README.md) · [Chương 12 →](chuong-12.md)
+[← Chương 10](chuong-10-thiet-ke-he-thong-thong-bao.md) · [Mục lục](../README.md) · [Chương 12 →](chuong-12-thiet-ke-he-thong-tro-chuyen.md)

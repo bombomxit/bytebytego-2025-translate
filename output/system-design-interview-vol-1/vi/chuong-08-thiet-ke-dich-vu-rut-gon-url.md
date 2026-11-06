@@ -245,4 +245,4 @@ Chúc mừng bạn đã đi tới đây! Hãy tự ghi nhận nỗ lực của m
 
 ---
 
-[← Chương 7](chuong-07.md) · [Mục lục](../README.md) · [Chương 9 →](chuong-09.md)
+[← Chương 7](chuong-07-thiet-ke-bo-sinh-id-duy-nhat-trong-he-thong-phan-tan.md) · [Mục lục](../README.md) · [Chương 9 →](chuong-09-thiet-ke-trinh-thu-thap-du-lieu-web.md)

@@ -390,4 +390,4 @@ Chúc mừng bạn đã đi được đến đây! Hãy tự dành cho mình m�
 
 ---
 
-[← Chương 12](chuong-12.md) · [Mục lục](../README.md) · [Chương 14 →](chuong-14.md)
+[← Chương 12](chuong-12-thiet-ke-he-thong-tro-chuyen.md) · [Mục lục](../README.md) · [Chương 14 →](chuong-14-thiet-ke-youtube.md)
