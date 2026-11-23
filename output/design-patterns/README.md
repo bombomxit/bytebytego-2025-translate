@@ -16,41 +16,41 @@ This book covers all 23 object-oriented Gang of Four (GoF) patterns through Type
 
 ### Khởi tạo · Creational
 
-| # | Mẫu · Pattern | Tiếng Việt | English |
-| --- | --- | --- | --- |
-| 01 | Factory Method | [Đọc](vi/01-factory-method.md) | [Read](original/01-factory-method.md) |
-| 02 | Abstract Factory | [Đọc](vi/02-abstract-factory.md) | [Read](original/02-abstract-factory.md) |
-| 03 | Builder | [Đọc](vi/03-builder.md) | [Read](original/03-builder.md) |
-| 04 | Prototype | [Đọc](vi/04-prototype.md) | [Read](original/04-prototype.md) |
-| 05 | Singleton | [Đọc](vi/05-singleton.md) | [Read](original/05-singleton.md) |
+| # | Mẫu · Pattern | Dùng để làm gì? · Purpose | Tiếng Việt | English |
+| --- | --- | --- | --- | --- |
+| 01 | Factory Method | Cho lớp con chọn đối tượng được tạo trong một quy trình có sẵn.<br>_Lets subclasses choose what an existing workflow creates._ | [Đọc](vi/01-factory-method.md) | [Read](original/01-factory-method.md) |
+| 02 | Abstract Factory | Tạo một nhóm đối tượng liên quan có thể làm việc cùng nhau.<br>_Creates a family of related objects designed to work together._ | [Đọc](vi/02-abstract-factory.md) | [Read](original/02-abstract-factory.md) |
+| 03 | Builder | Lắp ráp đối tượng phức tạp qua từng bước.<br>_Builds a complex object step by step._ | [Đọc](vi/03-builder.md) | [Read](original/03-builder.md) |
+| 04 | Prototype | Tạo đối tượng mới bằng cách sao chép một mẫu đã cấu hình.<br>_Creates a new object by copying a configured prototype._ | [Đọc](vi/04-prototype.md) | [Read](original/04-prototype.md) |
+| 05 | Singleton | Giữ đúng một instance của một lớp trong phạm vi đã định.<br>_Keeps one instance of a class within a defined scope._ | [Đọc](vi/05-singleton.md) | [Read](original/05-singleton.md) |
 
 ### Cấu trúc · Structural
 
-| # | Mẫu · Pattern | Tiếng Việt | English |
-| --- | --- | --- | --- |
-| 06 | Adapter | [Đọc](vi/06-adapter.md) | [Read](original/06-adapter.md) |
-| 07 | Bridge | [Đọc](vi/07-bridge.md) | [Read](original/07-bridge.md) |
-| 08 | Composite | [Đọc](vi/08-composite.md) | [Read](original/08-composite.md) |
-| 09 | Decorator | [Đọc](vi/09-decorator.md) | [Read](original/09-decorator.md) |
-| 10 | Facade | [Đọc](vi/10-facade.md) | [Read](original/10-facade.md) |
-| 11 | Flyweight | [Đọc](vi/11-flyweight.md) | [Read](original/11-flyweight.md) |
-| 12 | Proxy | [Đọc](vi/12-proxy.md) | [Read](original/12-proxy.md) |
+| # | Mẫu · Pattern | Dùng để làm gì? · Purpose | Tiếng Việt | English |
+| --- | --- | --- | --- | --- |
+| 06 | Adapter | Chuyển interface của một API sang interface mà ứng dụng cần.<br>_Makes an API fit the interface the application expects._ | [Đọc](vi/06-adapter.md) | [Read](original/06-adapter.md) |
+| 07 | Bridge | Tách hai phần để chúng thay đổi độc lập, ví dụ loại báo cáo và định dạng xuất.<br>_Lets two parts vary independently, such as report type and export format._ | [Đọc](vi/07-bridge.md) | [Read](original/07-bridge.md) |
+| 08 | Composite | Xử lý từng phần tử và cả nhóm lồng nhau qua cùng một interface.<br>_Treats individual items and nested groups through one interface._ | [Đọc](vi/08-composite.md) | [Read](original/08-composite.md) |
+| 09 | Decorator | Bọc đối tượng để thêm hành vi, chẳng hạn ghi log, mà vẫn giữ interface.<br>_Wraps an object to add behavior such as logging while preserving its interface._ | [Đọc](vi/09-decorator.md) | [Read](original/09-decorator.md) |
+| 10 | Facade | Cung cấp một điểm gọi đơn giản cho một phân hệ phức tạp.<br>_Offers a simple entry point to a complex subsystem._ | [Đọc](vi/10-facade.md) | [Read](original/10-facade.md) |
+| 11 | Flyweight | Giảm bộ nhớ bằng cách dùng chung dữ liệu lặp lại giữa nhiều đối tượng.<br>_Saves memory by sharing repeated data across many objects._ | [Đọc](vi/11-flyweight.md) | [Read](original/11-flyweight.md) |
+| 12 | Proxy | Đứng thay đối tượng thật để kiểm soát truy cập hoặc trì hoãn khởi tạo.<br>_Stands in for an object to control access or defer creation._ | [Đọc](vi/12-proxy.md) | [Read](original/12-proxy.md) |
 
 ### Hành vi · Behavioral
 
-| # | Mẫu · Pattern | Tiếng Việt | English |
-| --- | --- | --- | --- |
-| 13 | Chain of Responsibility | [Đọc](vi/13-chain-of-responsibility.md) | [Read](original/13-chain-of-responsibility.md) |
-| 14 | Command | [Đọc](vi/14-command.md) | [Read](original/14-command.md) |
-| 15 | Interpreter | [Đọc](vi/15-interpreter.md) | [Read](original/15-interpreter.md) |
-| 16 | Iterator | [Đọc](vi/16-iterator.md) | [Read](original/16-iterator.md) |
-| 17 | Mediator | [Đọc](vi/17-mediator.md) | [Read](original/17-mediator.md) |
-| 18 | Memento | [Đọc](vi/18-memento.md) | [Read](original/18-memento.md) |
-| 19 | Observer | [Đọc](vi/19-observer.md) | [Read](original/19-observer.md) |
-| 20 | State | [Đọc](vi/20-state.md) | [Read](original/20-state.md) |
-| 21 | Strategy | [Đọc](vi/21-strategy.md) | [Read](original/21-strategy.md) |
-| 22 | Template Method | [Đọc](vi/22-template-method.md) | [Read](original/22-template-method.md) |
-| 23 | Visitor | [Đọc](vi/23-visitor.md) | [Read](original/23-visitor.md) |
+| # | Mẫu · Pattern | Dùng để làm gì? · Purpose | Tiếng Việt | English |
+| --- | --- | --- | --- | --- |
+| 13 | Chain of Responsibility | Chuyển yêu cầu qua một chuỗi, nơi từng bước có thể xử lý hoặc chuyển tiếp.<br>_Passes a request along handlers that can handle it or forward it._ | [Đọc](vi/13-chain-of-responsibility.md) | [Read](original/13-chain-of-responsibility.md) |
+| 14 | Command | Đóng gói một yêu cầu để có thể đưa vào hàng đợi hoặc hỗ trợ hoàn tác.<br>_Packages a request for queueing or undo._ | [Đọc](vi/14-command.md) | [Read](original/14-command.md) |
+| 15 | Interpreter | Đánh giá biểu thức viết theo một ngữ pháp nhỏ, như quy tắc lọc tài liệu.<br>_Evaluates expressions in a small grammar, such as document filter rules._ | [Đọc](vi/15-interpreter.md) | [Read](original/15-interpreter.md) |
+| 16 | Iterator | Duyệt từng phần tử mà không cần biết tập hợp lưu dữ liệu thế nào.<br>_Traverses a collection without exposing how it stores items._ | [Đọc](vi/16-iterator.md) | [Read](original/16-iterator.md) |
+| 17 | Mediator | Tập trung việc phối hợp để các thành phần ít phụ thuộc trực tiếp vào nhau.<br>_Centralizes coordination so components depend less on one another._ | [Đọc](vi/17-mediator.md) | [Read](original/17-mediator.md) |
+| 18 | Memento | Lưu và khôi phục trạng thái đối tượng mà vẫn giữ kín cấu trúc bên trong.<br>_Saves and restores an object's state without exposing its internals._ | [Đọc](vi/18-memento.md) | [Read](original/18-memento.md) |
+| 19 | Observer | Thông báo thay đổi cho các thành phần đã đăng ký theo dõi.<br>_Notifies subscribed components when something changes._ | [Đọc](vi/19-observer.md) | [Read](original/19-observer.md) |
+| 20 | State | Đổi hành vi và các bước chuyển hợp lệ theo trạng thái hiện tại.<br>_Varies behavior and allowed transitions with the current state._ | [Đọc](vi/20-state.md) | [Read](original/20-state.md) |
+| 21 | Strategy | Cho phép thay quy tắc hoặc thuật toán mà vẫn dùng chung cách gọi.<br>_Makes rules or algorithms interchangeable behind one interface._ | [Đọc](vi/21-strategy.md) | [Read](original/21-strategy.md) |
+| 22 | Template Method | Giữ trình tự xử lý chung và cho lớp con triển khai từng bước được định sẵn.<br>_Keeps a fixed workflow while subclasses implement selected steps._ | [Đọc](vi/22-template-method.md) | [Read](original/22-template-method.md) |
+| 23 | Visitor | Thêm thao tác trên nhiều loại phần tử mà không sửa các lớp phần tử hiện có.<br>_Adds operations across element types without changing their existing classes._ | [Đọc](vi/23-visitor.md) | [Read](original/23-visitor.md) |
 
 ## Chạy ví dụ · Run an example
 
