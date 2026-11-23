@@ -8,8 +8,9 @@
 | --- | --- | --- |
 | **System Design Interview - Tập 1, Alex Xu** | Cần học nền tảng, khung phỏng vấn và luyện bài thiết kế theo chương | [Mục lục Anh - Việt](../output/system-design-interview-vol-1/README.md) · Chương 1: [Việt](../output/system-design-interview-vol-1/vi/chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md) / [English](../output/system-design-interview-vol-1/original/chuong-01-mo-rong-tu-con-so-khong-den-hang-trieu-nguoi-dung.md) |
 | **ByteByteGo Big Archive System Design 2025** | Cần tra cứu chủ đề, xem sơ đồ và ôn nhanh từng bài | [Mục lục tóm tắt 217 bài](../output/bytebytego-2025/vi/000-muc-luc-tom-tat.md) · [Bản gốc và bản dịch](../output/bytebytego-2025/README.md) |
+| **Design Patterns** | Cần hiểu 23 mẫu GoF và chọn mẫu qua ví dụ TypeScript | [Mục lục Anh–Việt](../output/design-patterns/README.md) · [Tra mẫu theo tình huống](../output/design-patterns/vi/24-chon-mau.md) |
 
-Mỗi bộ có mục lục riêng, bản gốc tiếng Anh trong `original/`, bản Việt trong `vi/` và ảnh đi cùng bài. Tập 1 có liên kết đổi ngôn ngữ theo chương và chương trước/sau; ByteByteGo giữ số thứ tự tương ứng giữa bản gốc và bản Việt.
+Mỗi bộ có mục lục riêng, bản Anh trong `original/` và bản Việt trong `vi/`. Tập 1 và Design Patterns có liên kết đổi ngôn ngữ theo chương. ByteByteGo giữ số thứ tự tương ứng giữa bản gốc và bản Việt.
 
 ## Bài chia sẻ
 
@@ -24,4 +25,4 @@ Mỗi bộ có mục lục riêng, bản gốc tiếng Anh trong `original/`, b�
 | [Checklist chất lượng](conversion-quality-checklist.md) | Rà độ đầy đủ, ảnh, liên kết và nội dung trước khi đưa vào repo |
 | [Kết quả kiểm tra tập 1](../output/system-design-interview-vol-1/QA.md) | Xem phạm vi kiểm tra và giới hạn của bản dịch |
 
-Chạy `python3 scripts/audit_docs.py` từ thư mục gốc repo để kiểm tra cấu trúc và liên kết của cả hai bộ.
+Chạy `python3 scripts/audit_docs.py` từ thư mục gốc repo để kiểm tra liên kết toàn tủ sách và cấu trúc hai bộ Alex Xu, ByteByteGo.
