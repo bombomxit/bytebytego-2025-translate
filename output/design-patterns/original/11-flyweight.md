@@ -62,6 +62,11 @@ if (dark.style === first.style || dark.style.border === first.style.border ||
 
 Use the pattern when many live objects repeat stable state and measurements show that sharing it reduces memory or construction cost. This example has only four possible keys. With configuration-driven styles, choose a pool scope that matches the lifetime of the data you intend to share.
 
+### Common use cases
+
+- **Storing styles for a large diagram.** Nodes of the same kind and theme share shape, border color, and font data. Coordinates and selection state remain per node. Shared data should be immutable, and its lookup key must include everything that changes the style.
+- **Sharing fonts and icons in a renderer.** Many elements can reference the same icon description while retaining their positions. Measure memory before introducing a shared pool. If the number of variants grows with input data, scope the pool to a document or bound the retained descriptions.
+
 ## When a simpler approach is enough
 
 A constant or small static map is sufficient for a few known combinations. Store a scalar or style ID when consumers already resolve it efficiently. Keep the straightforward per-node representation until allocation pressure justifies a pool.

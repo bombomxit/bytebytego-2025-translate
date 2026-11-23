@@ -64,6 +64,11 @@ if ([...new DocumentTree({ kind: "folder", entries: [] })].length !== 0) {
 
 Use an iterator when callers benefit from a shared traversal contract, early termination, or multiple independent traversals. For remote pages, consider an async iterator and choose how callers cancel in-flight requests and observe errors.
 
+### Common use cases
+
+- **Walking a directory tree on demand.** One traversal can stop as soon as it finds a file, while another can walk the whole tree for a report. Document the order of files and folders and what happens if the tree changes mid-traversal.
+- **Reading paginated API data.** An async iterator loads the next page when the caller needs more records. Keep a separate cursor per traversal and propagate API errors to the caller. On early exit, release resources or cancel in-flight requests where needed.
+
 ## When a simpler approach is enough
 
 If the data is already an array and the default traversal meets the need, use its built-in iterator with `for...of`. An eager array result is practical when callers need random access to a small result.

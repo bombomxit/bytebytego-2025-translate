@@ -59,6 +59,11 @@ if (indexed.join() !== "proposal" || journal.join() !== "1,2") {
 
 Dùng Observer khi nhiều bên nhận độc lập trong cùng tiến trình cần cùng sự kiện và danh sách hoặc vòng đời của chúng có thể đổi. Gắn việc hủy đăng ký với vòng đời của đối tượng như thành phần giao diện.
 
+### Bài toán thường gặp
+
+- **Phản ứng khi tài liệu được công bố.** Bên phát đưa ra sự kiện chứa mã tài liệu và phiên bản. Danh sách đang mở có thể tải lại, còn bộ đếm cập nhật số lượng. Các phản ứng độc lập có thể đăng ký riêng. Nếu cập nhật nào bắt buộc để thao tác công bố thành công, giữ nó trong luồng xử lý chính.
+- **Đồng bộ giao diện với mô hình soạn thảo.** Thanh trạng thái theo dõi thay đổi số từ, còn cây mục lục theo dõi cấu trúc đề mục. Hủy đăng ký khi đóng cửa sổ. Xác định cách xử lý ngoại lệ nếu các bên khác vẫn phải nhận thông báo khi một bên theo dõi gặp lỗi.
+
 ## Khi cách đơn giản đã đủ
 
 Một phản ứng duy nhất và ổn định có thể gọi trực tiếp. Dùng một luồng điều phối tường minh khi nhiều bước phải hoàn thành theo thứ tự cụ thể thì ca sử dụng mới được coi là thành công.

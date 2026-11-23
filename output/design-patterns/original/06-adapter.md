@@ -77,6 +77,11 @@ if (directory.find("d2").kind !== "missing" ||
 
 Use it when the same provider-specific concepts recur across callers, or when you must run old and new integrations under one application contract. In this example a second provider can return the same union from a different response without changing the portal or its jobs.
 
+### Common use cases
+
+- **Changing file-storage services.** The application needs to read and write files and receive file IDs under its own contract. Each adapter maps a provider's calls, results, and errors to that contract. Test both missing files and a temporarily unavailable service.
+- **Gradually replacing a legacy HR system.** The legacy adapter normalizes department codes while the new adapter receives codes already in the application format. Both can serve the same screen during the transition. A pure mapping function is often sufficient for a few field renames at a single call site.
+
 ## When a simpler approach is enough
 
 For a single field rename after one request, a local mapping function can be sufficient. An object adapter earns its place when the application needs a stable dependency with several implementations, a lifetime to manage, or multiple operations backed by the same provider.

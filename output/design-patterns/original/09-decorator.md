@@ -77,6 +77,11 @@ if (!missing || metrics.attempts !== 2 || events.length !== 1) {
 
 Use it when clients share a stable interface and need independent, optional responsibilities in different combinations. With the same reader contract, the audit wrapper can also wrap a filesystem reader or a storage gateway. If the framework already provides middleware or interceptors at the right boundary, those may supply the same composition without another layer.
 
+### Common use cases
+
+- **Measuring file-read latency.** A timing decorator wraps the existing reader, calls it, and records duration even when it fails. A logging decorator can be added for some requests. With a cache, the wrapping order determines whether measurements include cache hits or only underlying reads.
+- **Adding optional export behavior.** One wrapper compresses the result and records the encoding in its metadata, while another sets a download filename. Both implement the same export contract, so callers can select a combination. A framework's layering mechanism can serve the same purpose when it preserves that contract.
+
 ## When a simpler approach is enough
 
 One invariant rule may belong inside the component or in its single caller. A higher-order function may serve the same purpose when the interface is just one function and has no per-instance configuration or state.

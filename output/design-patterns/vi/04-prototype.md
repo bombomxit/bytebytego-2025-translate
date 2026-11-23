@@ -79,6 +79,11 @@ if (first.reviewersFor("approval").join(",") !== "Hanh,Linh" ||
 
 Dùng Prototype khi một đối tượng đã cấu hình là điểm xuất phát phù hợp nhất cho đối tượng mới, đồng thời quy tắc sao chép thay đổi theo kiểu cụ thể. Xác định trường nào thuộc bản sao, giá trị bất biến nào có thể dùng chung và trường định danh hay vòng đời nào phải tạo lại. Nghiệp vụ quyết định sao chép đến đâu. Bản nháp quy trình có thể kế thừa người rà soát mặc định và nhận tên hoặc ID mới.
 
+### Bài toán thường gặp
+
+- **Nhân bản mẫu quy trình.** Tạo bản nháp từ quy trình đã cấu hình bằng cách sao chép các bước và quy tắc phân công. Cấp mã mới cho bản nháp và tạo bản sao riêng cho danh sách bước để sửa bản nháp không làm đổi mẫu.
+- **Tạo mẫu báo cáo theo đơn vị.** Bắt đầu từ báo cáo có sẵn các cột, bộ lọc và lịch trình. Sao chép cấu hình mà người dùng được quyền dùng lại, rồi đặt lại người nhận và lịch sử chạy. Nếu chỉ có vài mặc định bất biến, dùng một cấu hình mặc định và hàm tạo.
+
 ## Khi cách đơn giản đã đủ
 
 Factory thông thường nhận một đối tượng tham số sẽ đơn giản hơn nếu đầu vào khởi tạo đã rõ và chỉ có một kiểu cụ thể. Với cấu hình dữ liệu thuần bất biến, dùng chung mẫu và chỉ thay giá trị khác biệt cũng có thể đủ. Dùng phương thức sao chép đa hình khi bên gọi phải tự lặp lại logic khởi tạo hoặc sao chép vốn thuộc về lớp cụ thể.

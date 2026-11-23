@@ -77,6 +77,11 @@ if (!missing || metrics.attempts !== 2 || events.length !== 1) {
 
 Dùng khi các bên gọi có chung interface ổn định và cần ghép những trách nhiệm tùy chọn theo từng tổ hợp. Với cùng hợp đồng đọc, lớp ghi sự kiện có thể bọc bộ đọc từ hệ thống tệp hoặc cổng lưu trữ. Nếu framework đã có middleware hay interceptor ở đúng ranh giới, chúng có thể đáp ứng cách ghép này.
 
+### Bài toán thường gặp
+
+- **Theo dõi thời gian đọc tệp.** Lớp đo thời gian bọc bộ đọc hiện có, gọi nó và ghi thời lượng kể cả khi gặp lỗi. Có thể ghép thêm lớp ghi nhật ký cho một nhóm yêu cầu. Khi có bộ nhớ đệm, thứ tự bọc quyết định phép đo có tính cả lượt truy cập đã có sẵn trong bộ đệm hay chỉ tính lượt đọc thật.
+- **Thêm tùy chọn vào luồng xuất.** Một lớp bọc nén kết quả và ghi rõ kiểu mã hóa trong siêu dữ liệu, lớp khác gắn tên tệp tải xuống. Cả hai dùng chung hợp đồng xuất, cho phép chọn tổ hợp theo từng nơi gọi. Có thể dùng cơ chế xếp lớp sẵn có của khung ứng dụng nếu nó đáp ứng cùng hợp đồng.
+
 ## Khi cách đơn giản đã đủ
 
 Một quy tắc luôn áp dụng có thể đặt trong thành phần hoặc tại bên gọi duy nhất. Hàm bậc cao cũng có thể đủ nếu interface chỉ có một hàm và mỗi instance không cần cấu hình hoặc trạng thái riêng.

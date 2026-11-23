@@ -64,6 +64,11 @@ if (needsReview.evaluate({ labels: ["internal"], pages: 18 })) {
 
 Dùng khi các phép toán cho phép tạo thành một tập nhỏ, ổn định, các quy tắc có thể tổ hợp, và ứng dụng cần đánh giá nhiều biểu thức theo cùng cách diễn giải.
 
+### Bài toán thường gặp
+
+- **Ghép bộ lọc hồ sơ.** Chọn các phép có sẵn như kiểm tra nhãn, so sánh số trang, và ghép điều kiện bằng phép VÀ hoặc HOẶC. Mỗi nút của cây biết cách tính kết quả từ dữ liệu hồ sơ. Nếu cho nhập dưới dạng văn bản, bước phân tích cú pháp dựng cây trước khi đánh giá.
+- **Cấu hình điều kiện chuyển xử lý.** Người quản trị ghép điều kiện theo nhóm hồ sơ và thuộc tính đã công bố. Giới hạn tập phép toán, kiểu tham số và độ sâu biểu thức, để người dùng có thể dự đoán kết quả. Nếu nghiệp vụ chỉ có vài quy tắc cố định, dùng biểu thức thông thường trong mã.
+
 ## Khi cách đơn giản đã đủ
 
 Một quy tắc cố định thường dễ đọc dưới dạng biểu thức Boolean trực tiếp. Nếu ứng dụng đã dùng ngôn ngữ truy vấn trưởng thành cho đúng mục đích đó, hãy dùng các điều kiện và cơ chế kiểm tra hợp lệ mà nó hỗ trợ.

@@ -44,6 +44,11 @@ if (statusLine(batch, scheduledEstimate) !== "Estimated time: 75 seconds") {
 
 Dùng Strategy khi các cách tính thay đổi độc lập nhưng vẫn dùng chung đầu vào và đầu ra. Mẫu này cũng phù hợp khi hai bên gọi cần cùng một luồng xử lý với hai quy tắc riêng.
 
+### Bài toán thường gặp
+
+- **Tính phí vận chuyển.** Giao tiêu chuẩn có thể tính theo trọng lượng, còn giao nhanh tính thêm phụ phí. Bên gọi chọn cách tính theo dịch vụ đã mua. Các cách tính nên trả kết quả cùng đơn vị và áp dụng cùng quy tắc làm tròn để bên gọi xử lý nhất quán.
+- **Chọn cách tính khuyến mãi.** Một chương trình giảm theo phần trăm, chương trình khác giảm một số tiền cố định. Luồng thanh toán chọn đúng một quy tắc rồi truyền vào bước tính giá. Nếu chỉ khác một giá trị phần trăm, truyền tham số. Nếu nhiều khuyến mãi được phép cộng dồn, cần quy tắc riêng cho thứ tự kết hợp.
+
 ## Khi cách đơn giản đã đủ
 
 Giữ câu điều kiện nếu các quy tắc ngắn, ít thay đổi và chỉ dùng ở một chỗ. Nếu chỉ khác thời gian chờ, truyền tham số hoặc dùng bảng tra.

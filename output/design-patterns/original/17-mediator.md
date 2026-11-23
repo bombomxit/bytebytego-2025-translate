@@ -82,6 +82,11 @@ if (form.submit.enabled) {
 
 Use a mediator when several reusable peers need coordination and changes to one peer currently spread its dependencies across the others. Scope each mediator to a coherent interaction such as one form or workflow step.
 
+### Common use cases
+
+- **Coordinating form fields.** The file picker, consent checkbox, and classification field report changes to a form mediator. It determines when to enable submission, so each field can remain unaware of the others. The server still validates submitted data.
+- **Synchronizing editor components.** When the user selects a paragraph, both the toolbar and the properties panel need to update. A mediator receives the selection and coordinates the necessary updates. Scope it to each editor window so a selection does not affect another window.
+
 ## When a simpler approach is enough
 
 If a form component already receives the input values and computes one disabled flag, use that component and a simple expression. The boundary matters more than adding another class.

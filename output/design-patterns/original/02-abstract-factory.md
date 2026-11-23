@@ -88,6 +88,11 @@ if (!rejected) throw new Error("A receipt from the wrong family must be rejected
 
 Use Abstract Factory when clients need multiple products from one family and mixing families can violate a constraint such as protocol version, provider, or rendering theme. Choose the family once per use case or configuration scope. Dynamic tenant routing still needs an application-level policy to choose the family.
 
+### Common use cases
+
+- **Integrating digital-signature providers.** Each provider has its own components for submitting requests, checking status, and verifying results under the same protocol. Select a factory once per signing transaction so all three steps use the same provider.
+- **Themed user-interface components.** Each theme supplies buttons, dialogs, and fields that follow the same visual rules. The pattern helps when components have distinct implementations per theme. Theme variables or palettes suffice when only colors and sizes differ.
+
 ## When a simpler approach is enough
 
 If the integration exposes one small object, supply it directly. If all components are already constructed together at startup, pass a typed object containing the collaborators. It keeps the providers together with less creation code. Factory Method serves one overridable creation hook. Abstract Factory groups the creation of related products.

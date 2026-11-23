@@ -62,6 +62,11 @@ if (dark.style === first.style || dark.style.border === first.style.border ||
 
 Dùng khi nhiều đối tượng đang tồn tại lặp lại trạng thái ổn định và phép đo cho thấy chia sẻ giúp giảm bộ nhớ hoặc chi phí khởi tạo. Ví dụ chỉ có bốn khóa khả dĩ. Nếu style đến từ cấu hình, hãy chọn phạm vi pool phù hợp với vòng đời của dữ liệu cần chia sẻ.
 
+### Bài toán thường gặp
+
+- **Lưu kiểu trình bày của sơ đồ lớn.** Nút cùng loại và chủ đề chia sẻ thông tin hình dạng, màu viền và phông chữ. Tọa độ và trạng thái chọn vẫn thuộc từng nút. Thông tin dùng chung cần bất biến, đồng thời khóa tra cứu phải bao gồm mọi yếu tố làm thay đổi kiểu trình bày.
+- **Dùng chung phông và biểu tượng trong trình kết xuất.** Nhiều phần tử có thể tham chiếu cùng mô tả biểu tượng và giữ vị trí riêng. Đo bộ nhớ trước khi tạo kho đối tượng dùng chung. Nếu số biến thể tăng theo dữ liệu đầu vào, đặt phạm vi theo tài liệu hoặc giới hạn lượng mô tả giữ lại.
+
 ## Khi cách đơn giản đã đủ
 
 Dùng hằng số hoặc map tĩnh với vài tổ hợp đã biết. Có thể lưu giá trị vô hướng hoặc mã style nếu bên đọc đã có cách tra cứu hiệu quả. Giữ biểu diễn riêng trên từng nút đến khi áp lực cấp phát đủ lớn để cần pool.

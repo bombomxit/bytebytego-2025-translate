@@ -82,6 +82,11 @@ if (emptyReport.totalBytes !== 0) throw new Error("Expected zero attachment byte
 
 Dùng Visitor khi tập loại phần tử ổn định và thường có thêm thao tác xử lý mỗi loại theo cách riêng. Interface của visitor buộc mỗi thao tác khai báo rõ cách xử lý các loại phần tử được hỗ trợ.
 
+### Bài toán thường gặp
+
+- **Lập báo cáo trên cây tài liệu.** Cây có mục, đoạn văn và tệp đính kèm. Một visitor cộng kích thước tệp, visitor khác đếm đoạn văn hoặc liệt kê nơi có liên kết. Mỗi báo cáo mới triển khai cách xử lý từng loại nút, còn mô hình cây giữ nguyên.
+- **Phân tích cây biểu thức.** Một bộ phân tích cú pháp đã có các nút hằng, biến và phép toán. Có thể thêm visitor để tìm biến chưa khai báo hoặc in biểu thức theo chuẩn trình bày. Nếu thường xuyên thêm loại nút, hãy tính chi phí phải cập nhật mọi visitor hiện có.
+
 ## Khi cách đơn giản đã đủ
 
 Discriminated union kèm switch bao phủ đầy đủ có thể dễ đọc hơn nếu chỉ có vài thao tác và các phần tử là dữ liệu thuần. Một vòng lặp nhận callback thường đủ nếu xử lý mọi phần tử theo cùng một cách.

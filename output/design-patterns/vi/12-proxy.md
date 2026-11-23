@@ -59,6 +59,11 @@ if (catalog.lookup("unknown") !== undefined || loadCount !== 1) {
 
 Dùng khi đối tượng đích tốn tài nguyên để khởi tạo và bên gọi cần interface ổn định. Các cách dùng quen thuộc khác gồm đối tượng đại diện cho một đối tượng từ xa hoặc protection proxy kiểm tra quyền ở ranh giới tin cậy. Với mỗi cách dùng, hãy quy định rõ bên gọi nhận được gì khi thành công và khi lỗi.
 
+### Bài toán thường gặp
+
+- **Trì hoãn tải bản xem trước.** Giao diện hiển thị thông tin tài liệu trước, còn đối tượng đại diện chỉ mở tài nguyên khi người dùng yêu cầu xem. Với tải bất đồng bộ, nhiều lượt xem đồng thời có thể dùng chung một yêu cầu đang chạy. Quy định lúc được thử lại nếu lần tải đầu thất bại.
+- **Đại diện cho dịch vụ từ xa.** Bên gọi dùng đối tượng đại diện qua cùng giao diện của dịch vụ. Đối tượng này gửi lời gọi qua mạng và báo lỗi hết thời gian chờ khi cần. Hợp đồng nên mô tả rõ lỗi mạng và điều kiện gọi lại an toàn vì một lệnh từ xa có thể đã chạy trước khi mất phản hồi.
+
 ## Khi cách đơn giản đã đủ
 
 Nếu khởi tạo rẻ hoặc tiến trình nào cũng cần danh mục ngay, hãy tạo đối tượng thật trực tiếp. Nếu chỉ có một bên gọi, getter nạp khi cần hoặc một thao tác nạp rõ ràng tại chỗ dùng có thể đủ để quản lý vòng đời.

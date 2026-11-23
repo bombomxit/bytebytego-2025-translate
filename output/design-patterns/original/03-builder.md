@@ -114,6 +114,11 @@ if (!rejected) throw new Error("The recipe must reject an empty checklist")
 
 Use Builder when assembling an object takes several steps, or when the same assembly sequence produces different representations. Identify which combinations are valid and make the result available only after the requirements for its particular construction path are satisfied. A director is useful when several clients need the same recipe.
 
+### Common use cases
+
+- **Configuring a recurring report.** The user selects a data source, filters, a format, and a schedule over several steps. A builder accumulates these choices and produces the final configuration once required fields are present, such as a time zone for the delivery schedule.
+- **Assembling an export package.** The workflow may include multiple documents, a table of contents, and optional encryption. A builder checks combinations at completion, such as requiring a valid recipient for an encrypted package. A function that takes a configuration object may suffice when all inputs are available at once and checked together.
+
 ## When a simpler approach is enough
 
 Start with a typed options object and a validation function if every field is available at once and there is one representation. If the two outputs are simply serializations of a complete, stable domain object, construct that object once and write two serializers. Builders are useful when each representation gains work that is incremental or sensitive to the sequence.

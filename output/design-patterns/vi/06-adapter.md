@@ -77,6 +77,11 @@ if (directory.find("d2").kind !== "missing" ||
 
 Dùng khi nhiều bên gọi phải hiểu cùng một quy ước riêng của nhà cung cấp, hoặc khi cần chạy đồng thời tích hợp cũ và mới dưới một hợp đồng ứng dụng. Trong ví dụ, nhà cung cấp thứ hai có thể trả về cùng kiểu union từ một phản hồi khác mà không cần sửa cổng tài liệu hay tác vụ nền.
 
+### Bài toán thường gặp
+
+- **Đổi dịch vụ lưu trữ tệp.** Ứng dụng cần đọc, ghi và nhận mã tệp theo hợp đồng nội bộ. Mỗi bộ chuyển đổi ánh xạ cách gọi, kết quả và lỗi của một nhà cung cấp sang hợp đồng đó. Kiểm thử cả trường hợp tệp không tồn tại và dịch vụ tạm thời không truy cập được.
+- **Thay dần hệ thống nhân sự cũ.** Bộ chuyển đổi cho nguồn cũ thống nhất mã phòng ban, trong khi bộ chuyển đổi cho nguồn mới nhận sẵn mã theo chuẩn ứng dụng. Cả hai có thể phục vụ cùng màn hình trong giai đoạn chuyển đổi. Một hàm ánh xạ thuần thường đủ nếu chỉ cần đổi tên vài trường trong một lần gọi.
+
 ## Khi cách đơn giản đã đủ
 
 Nếu chỉ đổi tên một trường sau một request tại một chỗ, hàm ánh xạ cục bộ có thể đủ. Adapter dạng đối tượng có ích khi ứng dụng cần một dependency ổn định với nhiều cách triển khai, cần quản lý vòng đời, hoặc có nhiều thao tác dùng cùng một nhà cung cấp.

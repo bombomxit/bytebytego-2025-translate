@@ -86,6 +86,11 @@ if (exporter.prepare("draft").kind !== "approval-required" ||
 
 Dùng khi bên gọi cần một thao tác ổn định gồm nhiều lời gọi hoặc quy tắc ở mức thấp hơn. Endpoint xuất tài liệu trên mobile và worker có thể dùng chung hợp đồng ngay cả khi cách lưu trữ hay kết xuất thay đổi. Nếu interface của nhà cung cấp không tương thích, facade có thể dùng adapter làm một thành phần.
 
+### Bài toán thường gặp
+
+- **Xuất một bộ hồ sơ.** Giao diện người dùng và tác vụ nền cùng gọi một thao tác xuất. Phân hệ bên trong xác định tài liệu cần lấy, dựng mục lục, đóng gói và trả kết quả. Các quy tắc nghiệp vụ cốt lõi vẫn thuộc về thành phần chuyên trách.
+- **Lấy bản xem trước tài liệu.** Một điểm gọi có thể che bớt quy trình tra bản đã tạo, chuyển đổi định dạng khi cần và trả trạng thái đang xử lý. Hợp đồng trả kết quả nên nêu rõ trạng thái chờ, thành công và lỗi để bên gọi biết bước tiếp theo.
+
 ## Khi cách đơn giản đã đủ
 
 Nếu một bên gọi chỉ gọi một thao tác ổn định, dùng hệ thống con trực tiếp. Một hàm nhỏ có thể đủ để điều phối hai lời gọi thuộc cùng module. Tách facade khi ca sử dụng cần một ranh giới rõ ràng và nhiều bên gọi có thể dùng chung ranh giới đó.

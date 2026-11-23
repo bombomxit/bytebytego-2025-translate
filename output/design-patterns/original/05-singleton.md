@@ -61,6 +61,11 @@ releaseBackground()
 
 Consider Singleton when uniqueness is an intentional invariant inside a documented ownership scope and multiple entry points must find the same owner. State what process or container creates it, when it is initialized, and who handles shutdown if it owns a resource.
 
+### Common use cases
+
+- **Coordinating work inside one process.** Several entry points submit work to one coordinator so they share a concurrency limit. The uniqueness scope is that process. Enforcing a common limit across processes requires a shared coordination mechanism.
+- **Managing an exclusive resource.** If a process may open only one session with a device, a manager can own opening it, granting access to it, and closing it at shutdown. When the application has a clear startup entry point, creating the manager there and injecting it where needed is often sufficient.
+
 ## When a simpler approach is enough
 
 When you control application startup, construct one object there and inject the same instance into the import screen and background task. This keeps dependency and lifetime visible. A stateless utility can be a module function. If independent processes have to share a scanner, use coordination with the actual device driver or another owner visible to all contenders.

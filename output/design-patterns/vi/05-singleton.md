@@ -61,6 +61,11 @@ releaseBackground()
 
 Cân nhắc Singleton khi việc chỉ có một đầu mối là ràng buộc chủ đích trong một phạm vi quản lý rõ ràng và nhiều đường vào cần tìm cùng đối tượng đó. Ghi rõ tiến trình hoặc container nào tạo nó, khi nào khởi tạo và bên nào chịu trách nhiệm dọn dẹp khi tắt nếu đối tượng quản lý tài nguyên.
 
+### Bài toán thường gặp
+
+- **Điều phối tác vụ trong một tiến trình.** Nhiều điểm vào cùng nộp việc cho một bộ điều phối để áp dụng chung giới hạn số việc chạy đồng thời. Phạm vi duy nhất là tiến trình đó. Nếu nhiều tiến trình cần cùng tuân theo một giới hạn, phải có cơ chế điều phối dùng chung.
+- **Quản lý một tài nguyên độc quyền.** Nếu một tiến trình chỉ được mở một phiên giao tiếp với thiết bị, một đối tượng quản lý có thể nắm quyền mở, cấp quyền sử dụng và đóng phiên khi tắt. Nếu ứng dụng có một điểm khởi tạo rõ ràng, tạo rồi truyền đối tượng đó vào nơi cần dùng thường đủ.
+
 ## Khi cách đơn giản đã đủ
 
 Nếu kiểm soát được lúc khởi động ứng dụng, hãy tạo một đối tượng ở đó rồi inject cùng instance vào màn hình nhập và tác vụ nền. Cách này làm rõ dependency và vòng đời. Tiện ích không giữ trạng thái có thể là hàm module. Nếu nhiều tiến trình độc lập cần dùng chung máy quét, hãy phối hợp thông qua driver thiết bị hoặc một đầu mối mà tất cả tiến trình đều truy cập được.

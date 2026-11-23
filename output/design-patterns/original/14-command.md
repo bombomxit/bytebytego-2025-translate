@@ -87,6 +87,11 @@ if (!commandHistory.undoLast() || draft.getTitle() !== "Draft" || commandHistory
 
 Use commands when operations need a shared execution policy such as undo, scheduling, or recording, and the operations evolve independently. In a durable job system, store a versioned description of the request and resolve the handler when processing it.
 
+### Common use cases
+
+- **Undoing edits.** Renaming, moving, and tagging a document are commands with a common execution contract. The history records commands after successful execution. Each command captures the old value when it runs so changes can be undone in the right order.
+- **Queueing report exports.** Store the command type, request ID, arguments, and command schema version so a worker can find the right handler. Define what happens if it receives the same command again. For example, enforce uniqueness by request ID to prevent two workers from creating the same report.
+
 ## When a simpler approach is enough
 
 If a button calls one operation immediately and the application has no execution policy to share, a direct function call keeps the flow easy to follow.

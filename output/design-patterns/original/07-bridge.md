@@ -81,6 +81,11 @@ if (new StorageReport(json).export() !== '{"title":"Storage","rows":[["Used byte
 
 Use Bridge when both dimensions already vary or when a second dimension has a concrete roadmap. Look for combinations that share a real contract. For example, a new plain-text renderer should be able to represent every existing report using the same title and rows.
 
+### Common use cases
+
+- **Report types and export formats.** Inventory and revenue reports prepare their own domain data while a renderer produces PDF or CSV. A new renderer can serve several reports when they already provide data through a common contract.
+- **Tools that work with multiple storage backends.** Synchronization and archival can both work with local disk or object storage. Separate the workflows from the storage implementation when both sides gain variants and the resulting combinations are meaningful.
+
 ## When a simpler approach is enough
 
 One exported report with one stable format can use a function. A formatter function passed as a parameter may also suffice if only formatting varies and reports have no common operations. Extract a named implementation interface when the two dimensions need stable contracts and independent implementations.

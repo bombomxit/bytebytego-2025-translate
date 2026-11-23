@@ -44,6 +44,11 @@ if (statusLine(batch, scheduledEstimate) !== "Estimated time: 75 seconds") {
 
 Use Strategy when alternatives evolve independently and need one stable set of inputs and outputs. It also fits when two callers need the same surrounding workflow with different rules.
 
+### Common use cases
+
+- **Calculating shipping fees.** Standard delivery may charge by weight while express delivery adds a surcharge. The caller selects a calculation based on the purchased service. Calculations should agree on units and rounding rules so callers can handle their results consistently.
+- **Selecting a discount calculation.** One campaign gives a percentage discount and another gives a fixed discount. Checkout selects one rule and supplies it to pricing. If only a percentage changes, pass it as a parameter. If multiple discounts can stack, define how to order their application.
+
 ## When a simpler approach is enough
 
 Keep a conditional when the rules are short, stable, and used once. If only the delay value varies, accept the value as a parameter or use a lookup table.

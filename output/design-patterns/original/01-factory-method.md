@@ -75,6 +75,11 @@ if (jsonFile.mediaType !== "application/json" ||
 
 Use Factory Method when a base class already owns a recurring workflow and subclasses need to decide which collaborator it creates. A useful signal is that every new product forces edits to a stable workflow. Keep the factory hook narrow so the base operation can enforce a common product contract.
 
+### Common use cases
+
+- **Exporting reports in several formats.** The shared workflow selects data, normalizes it, and returns the result. The CSV and JSON exporters override only the method that creates a writer. Adding another format leaves normalization in the base class.
+- **Importing submissions from different file types.** The shared importer manages reading records, validation, and error reporting. Each subclass creates a CSV or spreadsheet parser through the same record-reading interface. A function that accepts a parser is often sufficient when there is no existing class hierarchy.
+
 ## When a simpler approach is enough
 
 A small function with a format switch is enough for a fixed list of writers. If the caller can supply a writer or a function that creates one, constructor injection can reuse the same workflow with fewer classes. A static `fromFormat(format)` method is a named factory whose selection logic stays inside that method.

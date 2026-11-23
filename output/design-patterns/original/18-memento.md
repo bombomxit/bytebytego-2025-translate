@@ -75,6 +75,11 @@ if (otherDraft.restore(checkpoint) || otherDraft.view().title !== "Notes") {
 
 Use Memento when restore should recover a coherent private state and several fields may change together. A checkpoint fits cases where edits support rollback at snapshots, including edits that lack an operation-specific inverse.
 
+### Common use cases
+
+- **Restoring a draft checkpoint.** The draft captures its title, body, and tags at a particular version. History holds the checkpoint and passes it back for restoration. With collaborative editing, use a version check or require a merge to avoid overwriting newer changes.
+- **Trying and reverting a diagram layout.** Before automatic layout, the diagram saves node positions and affected connections. If the user cancels, it can restore those values together. Limit the number of checkpoints or share immutable structures for large diagrams.
+
 ## When a simpler approach is enough
 
 If only one scalar value must be restored, keep the previous value in the code that owns it. A normal immutable value can already serve as a snapshot when its complete shape is an appropriate public contract.

@@ -55,6 +55,11 @@ if (json.documentId !== "doc-8" || json.body !== '{"title":"Release notes"}') {
 
 Use Template Method when related implementations share an order that should evolve in one place, with one or two well-defined points that vary. It fits an inheritance relationship where each subclass already represents a valid specialization of the base.
 
+### Common use cases
+
+- **Importing data from different formats.** The base class always reads, validates, and reports results in the same order. Each subclass converts CSV rows or JSON records into a common representation. Add a format by implementing the reading step while retaining shared validation.
+- **Exporting documents through a common workflow.** Exporters normalize the title, render the content, and attach the document ID in the same order. Each subclass supplies rendering for its format. If only one transformation varies and inheritance is unnecessary, pass a rendering function to the shared workflow.
+
 ## When a simpler approach is enough
 
 A standalone export function and a formatter callback are usually enough when formatting is the only variation. Choose a Strategy when the caller needs to pick or replace the formatting policy during execution.

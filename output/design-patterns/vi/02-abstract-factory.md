@@ -88,6 +88,11 @@ if (!rejected) throw new Error("A receipt from the wrong family must be rejected
 
 Dùng Abstract Factory khi bên gọi cần nhiều product cùng họ và việc trộn các họ có thể vi phạm ràng buộc về phiên bản giao thức, nhà cung cấp hay chủ đề giao diện. Chọn họ một lần cho mỗi use case hoặc phạm vi cấu hình. Khi phải định tuyến theo tenant trong lúc chạy, tầng ứng dụng vẫn cần chính sách chọn họ cho tenant đó.
 
+### Bài toán thường gặp
+
+- **Tích hợp nhà cung cấp ký số.** Mỗi nhà cung cấp có bộ gửi yêu cầu ký, kiểm tra trạng thái và xác minh kết quả theo cùng giao thức của họ. Chọn nhà máy một lần cho một giao dịch ký để cả ba bước dùng cùng nhà cung cấp.
+- **Bộ giao diện theo chủ đề.** Mỗi chủ đề tạo nút, hộp thoại và trường nhập liệu theo cùng quy chuẩn hiển thị. Mẫu này có ích khi các thành phần thực sự có triển khai riêng theo chủ đề. Dùng biến giao diện hoặc bảng màu nếu khác biệt chỉ nằm ở màu và kích thước.
+
 ## Khi cách đơn giản đã đủ
 
 Nếu tích hợp chỉ cung cấp một đối tượng nhỏ, hãy truyền trực tiếp đối tượng đó. Nếu các thành phần đã được tạo cùng nhau lúc khởi động, hãy truyền một đối tượng có kiểu rõ ràng chứa các thành phần cộng tác. Cách này giữ các thành phần cùng nhà cung cấp đi với nhau với ít mã khởi tạo hơn. Factory Method cung cấp một phương thức tạo đối tượng có thể ghi đè. Abstract Factory gom việc tạo nhiều product liên quan.

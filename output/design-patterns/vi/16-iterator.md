@@ -64,6 +64,11 @@ if ([...new DocumentTree({ kind: "folder", entries: [] })].length !== 0) {
 
 Dùng khi bên gọi cần một giao diện duyệt dùng chung, khả năng dừng sớm hoặc nhiều lượt duyệt độc lập. Với dữ liệu phân trang từ xa, cân nhắc async iterator và quy định cách hủy yêu cầu đang chạy cũng như cách báo lỗi.
 
+### Bài toán thường gặp
+
+- **Duyệt cây thư mục theo nhu cầu.** Một lần duyệt có thể dừng ngay khi tìm thấy tệp cần dùng. Lần duyệt khác có thể đi hết cây để lập báo cáo. Làm rõ thứ tự giữa các thư mục và tệp, và cách ứng xử nếu cây thay đổi trong lúc duyệt.
+- **Đọc dữ liệu phân trang từ API.** Bộ lặp bất đồng bộ tải trang kế tiếp khi bên gọi cần thêm bản ghi. Cần giữ con trỏ phân trang riêng cho mỗi lượt duyệt và chuyển lỗi API về bên gọi. Nếu dừng sớm, giải phóng tài nguyên hoặc hủy yêu cầu còn chạy khi cần.
+
 ## Khi cách đơn giản đã đủ
 
 Nếu dữ liệu đã là mảng và cách duyệt mặc định đáp ứng nhu cầu, dùng iterator sẵn có qua `for...of`. Có thể trả luôn một mảng kết quả khi tập kết quả nhỏ và bên gọi cần truy cập theo chỉ số.

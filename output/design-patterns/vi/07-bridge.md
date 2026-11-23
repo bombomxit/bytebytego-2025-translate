@@ -81,6 +81,11 @@ if (new StorageReport(json).export() !== '{"title":"Storage","rows":[["Used byte
 
 Dùng Bridge khi cả hai chiều đã có biến thể hoặc chiều thứ hai có kế hoạch thay đổi cụ thể. Tìm các tổ hợp có chung một hợp đồng thực sự. Chẳng hạn, renderer văn bản thuần mới nên biểu diễn được các báo cáo hiện có từ cùng tiêu đề và các dòng dữ liệu.
 
+### Bài toán thường gặp
+
+- **Báo cáo và định dạng xuất.** Báo cáo tồn kho hoặc doanh thu chuẩn bị dữ liệu theo nghiệp vụ, còn bộ kết xuất định dạng PDF hoặc CSV. Có thể thêm một bộ kết xuất dùng chung cho nhiều báo cáo nếu dữ liệu đầu vào đã có hợp đồng chung.
+- **Công cụ làm việc với nhiều kho lưu trữ.** Đồng bộ và lưu trữ dài hạn là hai nghiệp vụ có thể cùng dùng đĩa cục bộ hoặc kho đối tượng. Tách lớp nghiệp vụ khỏi phần triển khai kho khi cả hai phía thường phát sinh biến thể và mỗi tổ hợp có ý nghĩa.
+
 ## Khi cách đơn giản đã đủ
 
 Một báo cáo với một định dạng ổn định có thể dùng một hàm. Truyền một hàm định dạng làm tham số cũng có thể đủ nếu chỉ định dạng thay đổi và các báo cáo chưa có thao tác chung. Tách interface có tên khi hai chiều cần hợp đồng ổn định và cách triển khai riêng.

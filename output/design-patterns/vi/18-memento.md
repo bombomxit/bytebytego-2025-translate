@@ -75,6 +75,11 @@ if (otherDraft.restore(checkpoint) || otherDraft.view().title !== "Notes") {
 
 Dùng Memento khi cần khôi phục một trạng thái nội bộ nhất quán và nhiều trường có thể đổi cùng nhau. Điểm khôi phục phù hợp với các chỉnh sửa có thể quay lại theo snapshot, kể cả khi từng chỉnh sửa không có thao tác nghịch đảo riêng.
 
+### Bài toán thường gặp
+
+- **Khôi phục điểm lưu của bản nháp.** Bản nháp tự chụp tiêu đề, nội dung và thẻ ở một phiên bản. Lịch sử chỉ giữ dấu mốc rồi gửi lại khi người dùng muốn khôi phục. Nếu có nhiều người chỉnh sửa, cần kiểm tra phiên bản hoặc yêu cầu hợp nhất để tránh ghi đè thay đổi mới hơn.
+- **Thử bố cục sơ đồ rồi quay lại.** Trước khi chạy sắp xếp tự động, sơ đồ lưu vị trí nút và các kết nối chịu ảnh hưởng. Nếu người dùng hủy, sơ đồ có thể khôi phục đồng thời các giá trị đó. Giới hạn số điểm lưu hoặc chia sẻ cấu trúc bất biến nếu sơ đồ lớn.
+
 ## Khi cách đơn giản đã đủ
 
 Nếu chỉ cần khôi phục một giá trị vô hướng, giữ giá trị trước đó ngay tại nơi sở hữu nó. Một giá trị bất biến cũng có thể làm snapshot nếu cấu trúc đầy đủ của nó phù hợp để công khai.

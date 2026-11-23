@@ -114,6 +114,11 @@ if (!rejected) throw new Error("The recipe must reject an empty checklist")
 
 Dùng Builder khi phải lắp đối tượng qua nhiều bước hoặc khi một trình tự lắp ráp có thể tạo nhiều cách biểu diễn. Xác định các tổ hợp hợp lệ và chỉ cho lấy kết quả sau khi các điều kiện của luồng khởi tạo tương ứng đã được đáp ứng. Director hữu ích khi nhiều bên gọi dùng chung trình tự.
 
+### Bài toán thường gặp
+
+- **Cấu hình báo cáo định kỳ.** Người dùng chọn nguồn dữ liệu, bộ lọc, định dạng và lịch gửi qua nhiều bước. Builder gom các lựa chọn và chỉ tạo cấu hình cuối khi có đủ trường bắt buộc, chẳng hạn lịch gửi phải có múi giờ.
+- **Dựng bộ hồ sơ xuất.** Quy trình có thể gắn nhiều tài liệu, thêm mục lục và bật mã hóa. Builder kiểm tra tổ hợp ở bước hoàn tất, chẳng hạn hồ sơ bật mã hóa phải có người nhận hợp lệ. Nếu toàn bộ tham số đã có ngay và chỉ cần kiểm tra một lần, hàm tạo nhận một đối tượng cấu hình có thể đủ.
+
 ## Khi cách đơn giản đã đủ
 
 Bắt đầu với một đối tượng tùy chọn có kiểu và một hàm kiểm tra nếu mọi trường đã sẵn sàng cùng lúc và chỉ có một cách biểu diễn. Nếu hai đầu ra chỉ là cách tuần tự hóa khác nhau của một domain object hoàn chỉnh và ổn định, hãy khởi tạo đối tượng một lần rồi viết hai serializer. Builder có ích khi từng đầu ra có thêm bước xử lý tăng dần hoặc phụ thuộc thứ tự.

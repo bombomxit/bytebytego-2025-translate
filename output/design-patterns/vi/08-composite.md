@@ -62,6 +62,11 @@ if (bundle.contentBytes() !== 200 || fitsLimit(bundle, 199)) {
 
 Dùng khi dữ liệu có phân cấp thực sự và thao tác trên nhóm có thể suy ra nhất quán từ các thành phần con. Ví dụ thường gặp là cộng tổng, kết xuất các phần theo thứ tự và áp dụng một quy tắc lên cây con. Việc thêm loại nút lá có thể chỉ cần sửa cục bộ nếu nó đáp ứng hợp đồng hiện có.
 
+### Bài toán thường gặp
+
+- **Tính dung lượng cây thư mục.** Một tệp trả dung lượng của chính nó, còn thư mục cộng dung lượng của từng mục con. Bên gọi dùng cùng một thao tác khi người dùng chọn tệp hay thư mục. Quy định rõ cách đếm tệp xuất hiện nhiều lần và cách xử lý liên kết vòng.
+- **Hiển thị menu nhiều cấp.** Từng mục biết cách hiển thị nhãn, còn một nhóm hiển thị cả các mục con theo thứ tự. Màn hình hiển thị menu qua giao diện chung. Giữ thao tác thêm và xóa mục con ở lớp nhóm vì mục đơn không có con.
+
 ## Khi cách đơn giản đã đủ
 
 Nếu cấu trúc cây ít thay đổi và chỉ có một thao tác duyệt, một discriminated union và một hàm đệ quy có thể rõ hơn. Nếu việc phân nhóm không ảnh hưởng nghiệp vụ, danh sách phẳng và phép cộng là đủ.

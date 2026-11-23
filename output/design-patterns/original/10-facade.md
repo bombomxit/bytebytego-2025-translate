@@ -86,6 +86,11 @@ if (exporter.prepare("draft").kind !== "approval-required" ||
 
 Use it when a client needs a stable operation built from several lower-level calls or rules. A mobile export endpoint can share the same contract with a worker, even if storage and rendering change internally. If a provider uses an incompatible interface, a facade can use an adapter as one of its components.
 
+### Common use cases
+
+- **Exporting a document package.** The UI and a background job call the same export operation. The subsystem identifies the documents, builds the table of contents, packages them, and returns a result. Core business rules stay with their owning components.
+- **Getting a document preview.** One entry point can hide the lookup of an existing preview, conversion when needed, and the reporting of pending work. Its result should distinguish pending, successful, and failed operations so callers know what to do next.
+
 ## When a simpler approach is enough
 
 If a single client calls one stable operation, use that subsystem directly. A small function may be enough to coordinate two calls owned by the same module. Extract a facade when the use case benefits from a named boundary and clients can usefully share it.

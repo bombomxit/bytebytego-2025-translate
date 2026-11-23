@@ -59,6 +59,11 @@ if (indexed.join() !== "proposal" || journal.join() !== "1,2") {
 
 Use Observer when independent in-process consumers need the same event and their participants or lifetimes can change. Tie unsubscription to the lifetime of objects such as views.
 
+### Common use cases
+
+- **Reacting to document publication.** The publisher emits an event with the document ID and version. An open list can reload while a counter updates. Independent reactions can subscribe separately. Keep any update required for successful publication in the main workflow.
+- **Keeping editor views in sync.** A status bar observes word-count changes while the outline observes heading changes. Release subscriptions when the window closes. Define error handling when other observers must still be notified after one throws.
+
 ## When a simpler approach is enough
 
 A single stable reaction is easy to follow as a direct call. Use explicit orchestration when several steps must all finish in a particular order before a use case can succeed.

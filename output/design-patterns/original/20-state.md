@@ -86,6 +86,11 @@ if (review.dispatch("request-changes") || review.status() !== "approved") {
 
 Use State when the same operations behave differently across lifecycle stages and those stages are acquiring distinct rules. Validate permissions before applying any authorized transition where the workflow has actors with different rights.
 
+### Common use cases
+
+- **Approving a submission.** A draft can be submitted, an item under review can be approved or returned, and an approved item has its own rules. Group action handling by state. For persisted data, check its version when writing so concurrent actions cannot both proceed from the same old state.
+- **Handling an import lifecycle.** Cancel can discard a queued import immediately and request termination for a running one. A completed import can reject cancellation. A transition table is often sufficient when each action only determines a next state and behavior has yet to diverge.
+
 ## When a simpler approach is enough
 
 For a small transition graph with no state-specific behavior, an explicit table of allowed actions and outcomes keeps the whole graph visible. A short switch can serve a stable two-state workflow.

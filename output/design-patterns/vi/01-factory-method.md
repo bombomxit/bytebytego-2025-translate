@@ -75,6 +75,11 @@ if (jsonFile.mediaType !== "application/json" ||
 
 Dùng Factory Method khi lớp cơ sở đã quản lý một luồng lặp lại và cần để lớp con chọn đối tượng cộng tác mà luồng sẽ tạo. Dấu hiệu dễ thấy là loại product mới nào cũng buộc sửa luồng đã ổn định. Giữ phương thức khởi tạo đủ hẹp để thao tác cơ sở áp dụng được cùng một hợp đồng cho mọi product.
 
+### Bài toán thường gặp
+
+- **Xuất báo cáo theo định dạng.** Luồng chung chọn dữ liệu, chuẩn hóa và trả kết quả. Lớp xuất CSV và lớp xuất JSON chỉ ghi đè phương thức tạo bộ ghi. Khi thêm một định dạng, logic chuẩn hóa vẫn ở lớp cơ sở.
+- **Nhập hồ sơ từ tệp khác nhau.** Lớp nhập chung quản lý việc đọc bản ghi, kiểm tra hợp lệ và báo lỗi. Mỗi lớp con tạo bộ phân tích CSV hoặc bảng tính theo cùng giao diện đọc bản ghi. Một hàm nhận bộ phân tích làm tham số thường đủ khi không có sẵn hệ lớp dùng chung.
+
 ## Khi cách đơn giản đã đủ
 
 Một hàm chọn writer theo định dạng là đủ khi danh sách định dạng cố định. Nếu bên gọi truyền vào được writer hoặc hàm khởi tạo writer, constructor injection cho phép tái dùng luồng với ít lớp hơn. Phương thức tĩnh `fromFormat(format)` là một factory có tên với logic lựa chọn nằm trong chính phương thức đó.

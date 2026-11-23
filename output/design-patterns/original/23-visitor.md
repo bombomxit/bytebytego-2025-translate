@@ -82,6 +82,11 @@ if (emptyReport.totalBytes !== 0) throw new Error("Expected zero attachment byte
 
 Use Visitor when the set of element types is stable and operations that handle those types in different ways are added frequently. A visitor interface makes each operation account explicitly for supported elements.
 
+### Common use cases
+
+- **Reporting on a document tree.** The tree contains sections, paragraphs, and attachments. One visitor totals attachment sizes while another counts paragraphs or lists link locations. Each new report implements handling for every node type while the tree model stays the same.
+- **Analyzing an expression tree.** A parser already produces constant, variable, and operator nodes. Add a visitor to find undeclared variables or format expressions. If node types change frequently, account for the cost of updating existing visitors.
+
 ## When a simpler approach is enough
 
 A discriminated union and an exhaustive switch may be clearer when there are few operations and the element model consists of plain data. A loop with a callback often suffices when it applies the same work to every element.

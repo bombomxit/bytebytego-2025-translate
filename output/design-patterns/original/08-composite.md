@@ -62,6 +62,11 @@ if (bundle.contentBytes() !== 200 || fitsLimit(bundle, 199)) {
 
 Use it when your data really forms a hierarchy and an operation on a group has a consistent interpretation derived from its children. Totals, rendering ordered sections, and applying a rule across a subtree are common cases. Adding a new kind of leaf can then stay local as long as it fulfills the existing component contract.
 
+### Common use cases
+
+- **Calculating the size of a directory tree.** A file reports its own size and a folder sums its children's sizes. A caller uses the same operation for a selected file or directory. Define how to count files that appear more than once and how to handle cycles introduced by links.
+- **Rendering nested menus.** A menu item renders its label, and a group renders its child items in order. The screen renders either through a common interface. Keep child insertion and removal on the group because individual items have no children.
+
 ## When a simpler approach is enough
 
 A discriminated union with one recursive function may be clearer when the tree shape is closed and only one operation walks it. A flat list and a sum suffice when grouping has no effect on the domain.

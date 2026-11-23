@@ -53,6 +53,11 @@ if (selectQueue({ regulated: false, pages: 5 }, handlers) !== undefined) {
 
 Dùng khi điều kiện giữa các quy tắc có thể chồng lấn, thứ tự ảnh hưởng đến kết quả, và từng đợt triển khai có thể thêm hoặc sắp xếp lại các quy tắc do nhiều bên phụ trách. Nếu bên gọi cần retry an toàn, giữ bước chọn hàng đợi không thực hiện thao tác ghi.
 
+### Bài toán thường gặp
+
+- **Chọn nơi thẩm định hồ sơ.** Kiểm tra hồ sơ thuộc diện tuân thủ trước, rồi đến hồ sơ giá trị lớn. Nếu nhiều quy tắc cùng khớp, quy tắc đứng trước quyết định nơi nhận. Kiểm thử cả đầu vào khớp nhiều quy tắc lẫn đường chuyển về hàng đợi mặc định khi không khớp.
+- **Xử lý yêu cầu qua nhiều lớp.** Các bước kiểm tra định dạng và quyền có thể trả lỗi sớm hoặc chuyển tiếp đến bước xử lý tiếp theo. Ghi rõ bước nào được dừng chuỗi và bước nào cần luôn chạy. Nếu mọi bước bắt buộc thực hiện theo thứ tự cố định, một hàm điều phối tuần tự dễ theo dõi hơn.
+
 ## Khi cách đơn giản đã đủ
 
 Hai phép kiểm tra ổn định có thể đặt trong một hàm. Nếu luôn quyết định được bằng một khóa chính xác như loại tài liệu khai báo, dùng bảng tra cứu.

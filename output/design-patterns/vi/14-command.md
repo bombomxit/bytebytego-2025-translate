@@ -87,6 +87,11 @@ if (!commandHistory.undoLast() || draft.getTitle() !== "Draft" || commandHistory
 
 Dùng khi các thao tác chia sẻ chính sách thực thi như hoàn tác, lên lịch hoặc ghi nhận, trong khi từng thao tác vẫn phát triển độc lập. Với hệ thống chạy job bền vững, hãy lưu mô tả yêu cầu có phiên bản rồi tìm handler khi xử lý.
 
+### Bài toán thường gặp
+
+- **Hoàn tác chỉnh sửa.** Đổi tên, di chuyển và gắn thẻ tài liệu là các lệnh có cùng cách thực thi. Lịch sử ghi lệnh sau khi chạy thành công. Lệnh cần ghi giá trị cũ lúc thực thi để hoàn tác theo đúng thứ tự.
+- **Xếp hàng xuất báo cáo.** Lưu loại lệnh, mã yêu cầu, tham số và phiên bản cấu trúc lệnh để tác vụ nền tìm đúng bộ xử lý. Quy định điều gì xảy ra nếu cùng một lệnh được nhận lại. Ví dụ, đặt ràng buộc duy nhất theo mã yêu cầu để hai tác vụ không cùng tạo một báo cáo.
+
 ## Khi cách đơn giản đã đủ
 
 Nếu một nút chỉ gọi ngay một thao tác và ứng dụng chưa có chính sách thực thi dùng chung, gọi hàm trực tiếp giúp luồng dễ đọc.

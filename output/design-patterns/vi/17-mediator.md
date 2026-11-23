@@ -82,6 +82,11 @@ if (form.submit.enabled) {
 
 Dùng khi nhiều thành phần có thể tái sử dụng cần phối hợp và việc thay đổi một thành phần đang làm lan thêm phụ thuộc sang các thành phần khác. Giới hạn mỗi mediator ở một tương tác thống nhất như một biểu mẫu hay một bước quy trình.
 
+### Bài toán thường gặp
+
+- **Phối hợp các trường trên biểu mẫu.** Bộ chọn tệp, ô đồng ý và trường phân loại báo thay đổi cho bộ điều phối của biểu mẫu. Bộ điều phối tính khi nào được bật nút gửi, giúp từng trường không cần biết các trường còn lại. Máy chủ vẫn kiểm tra dữ liệu khi nhận yêu cầu.
+- **Đồng bộ thao tác trong trình soạn thảo.** Khi người dùng chọn một đoạn, thanh công cụ và bảng thuộc tính đều cần cập nhật. Bộ điều phối nhận thao tác chọn và phân phối phần cập nhật cần thiết. Giới hạn phạm vi theo mỗi cửa sổ soạn thảo để một lựa chọn không làm đổi cửa sổ khác.
+
 ## Khi cách đơn giản đã đủ
 
 Nếu thành phần biểu mẫu đã nhận các giá trị đầu vào và tính được một cờ vô hiệu hóa, dùng luôn thành phần đó với một biểu thức đơn giản. Ranh giới trách nhiệm quan trọng hơn việc thêm lớp.

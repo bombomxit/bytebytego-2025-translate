@@ -79,6 +79,11 @@ if (first.reviewersFor("approval").join(",") !== "Hanh,Linh" ||
 
 Use Prototype when a configured example is the most useful starting point for new objects and copying rules vary by concrete type. Identify which fields are owned by the clone, which immutable values can be shared, and which identity or lifecycle fields must be regenerated. The appropriate copy boundary comes from the domain. A draft workflow can inherit default reviewers while receiving a new name or ID.
 
+### Common use cases
+
+- **Duplicating a workflow template.** Create a draft from an existing workflow by copying its steps and assignment rules. Give the draft a new identifier and copy the step list so editing the draft leaves the template intact.
+- **Creating a department report from a prototype.** Start from a report with columns, filters, and a schedule already configured. Copy settings the user can reuse and reset recipients and run history. A defaults object and a constructor function suffice for a few immutable defaults.
+
 ## When a simpler approach is enough
 
 An ordinary factory with a parameter object is simpler when all creation inputs are explicit and there is one concrete type. For plain, immutable configuration, sharing a preset and replacing only the values that differ can also be sufficient. Reach for a polymorphic copy method when callers otherwise need to reproduce private construction or copying rules.

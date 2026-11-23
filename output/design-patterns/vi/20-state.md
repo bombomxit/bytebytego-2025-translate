@@ -86,6 +86,11 @@ if (review.dispatch("request-changes") || review.status() !== "approved") {
 
 Dùng State khi cùng một thao tác có hành vi khác nhau theo giai đoạn của vòng đời và mỗi giai đoạn đang có thêm quy tắc riêng. Nếu các tác nhân trong quy trình có quyền khác nhau, kiểm tra quyền trước khi áp dụng bước chuyển.
 
+### Bài toán thường gặp
+
+- **Phê duyệt hồ sơ.** Bản nháp có thể gửi, hồ sơ đang duyệt có thể được phê duyệt hoặc trả về, còn hồ sơ đã phê duyệt có quy tắc riêng. Gom cách xử lý từng hành động theo trạng thái. Với dữ liệu lưu trong cơ sở dữ liệu, kiểm tra phiên bản khi ghi để hai thao tác đồng thời không cùng đi tiếp từ một trạng thái cũ.
+- **Xử lý vòng đời một lượt nhập dữ liệu.** Thao tác hủy có thể bỏ ngay lượt đang chờ và gửi yêu cầu dừng cho lượt đang chạy. Lượt đã hoàn tất có thể từ chối thao tác này. Bảng chuyển trạng thái thường đủ khi mỗi bước chỉ xác định trạng thái kế tiếp và chưa có hành vi riêng.
+
 ## Khi cách đơn giản đã đủ
 
 Nếu đồ thị chuyển trạng thái nhỏ và chưa có hành vi riêng theo state, lập một bảng hành động và kết quả hợp lệ để dễ thấy toàn bộ đồ thị. Một lệnh switch ngắn cũng có thể phục vụ quy trình hai trạng thái ổn định.

@@ -55,6 +55,11 @@ if (json.documentId !== "doc-8" || json.body !== '{"title":"Release notes"}') {
 
 Dùng Template Method khi các triển khai liên quan có chung một trình tự cần được cập nhật tại một nơi, với một vài điểm thay đổi đã xác định. Mẫu phù hợp khi mỗi lớp con thực sự là một dạng chuyên biệt của lớp cơ sở.
 
+### Bài toán thường gặp
+
+- **Nhập dữ liệu từ nhiều định dạng.** Lớp cơ sở luôn thực hiện đọc, kiểm tra dữ liệu và báo kết quả theo cùng trình tự. Lớp con biết cách chuyển dòng CSV hoặc bản ghi JSON sang cấu trúc chung. Thêm định dạng bằng cách triển khai bước đọc trong khi giữ các bước kiểm tra chung.
+- **Xuất tài liệu theo một chuẩn chung.** Các lớp xuất giữ chung thứ tự chuẩn hóa tiêu đề, kết xuất nội dung rồi gắn mã tài liệu. Mỗi lớp con thay phần kết xuất theo định dạng của mình. Nếu chỉ khác một phép biến đổi và không cần mô hình kế thừa, truyền một hàm kết xuất vào quy trình chung.
+
 ## Khi cách đơn giản đã đủ
 
 Một hàm xuất độc lập nhận callback định dạng thường đủ nếu chỉ khác cách định dạng. Chọn Strategy khi bên gọi cần chọn hoặc thay quy tắc định dạng trong lúc chương trình chạy.

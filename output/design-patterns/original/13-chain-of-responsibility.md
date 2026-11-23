@@ -53,6 +53,11 @@ if (selectQueue({ regulated: false, pages: 5 }, handlers) !== undefined) {
 
 Use a chain when eligibility rules overlap, their order matters, and deployments are likely to add or reorder independently owned rules. Keep route selection free from writes when the caller needs to retry safely.
 
+### Common use cases
+
+- **Routing submissions for review.** Check compliance cases first, then high-value cases. If several rules match, the first match determines the destination. Test requests that match multiple rules and the fallback to the default queue when none match.
+- **Passing a request through multiple processing layers.** Format and permission checks can return errors early or forward the request to the next step. Define which steps may terminate the chain and which must always run. If every step is mandatory in a fixed order, a sequential orchestration function is easier to follow.
+
 ## When a simpler approach is enough
 
 Two stable checks can live in a single function. An exact key such as the declared document type generally fits a lookup table.

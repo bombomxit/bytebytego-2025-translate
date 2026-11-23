@@ -59,6 +59,11 @@ if (catalog.lookup("unknown") !== undefined || loadCount !== 1) {
 
 Use it when a subject has an expensive initialization, and preserving a stable interface matters to clients. Other familiar uses include a representative for a remote object or a protection proxy that checks access at a trusted boundary. In all cases, define what a successful call and failure look like to the client.
 
+### Common use cases
+
+- **Loading document previews on demand.** The UI shows document metadata first, and a proxy opens the preview when the user requests it. With asynchronous loading, simultaneous viewers can share the in-flight request. Define when another attempt is allowed after a failed load.
+- **Representing a remote service.** Callers use a proxy through the service interface. It sends calls over the network and reports timeouts. The contract should spell out network errors and safe retry conditions because a remote operation may execute before its response is lost.
+
 ## When a simpler approach is enough
 
 If initialization is cheap or every process uses the catalog immediately, construct the real subject directly. With a single caller, a lazy getter or one explicit load at the use site may handle the lifetime clearly enough.

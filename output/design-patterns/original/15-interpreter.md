@@ -64,6 +64,11 @@ if (needsReview.evaluate({ labels: ["internal"], pages: 18 })) {
 
 Use Interpreter when the permitted operations form a small, stable vocabulary, rules can be composed, and the application benefits from evaluating many expressions with the same semantics.
 
+### Common use cases
+
+- **Composing document filters.** Offer predefined operations such as testing labels, comparing page counts, and combining conditions with AND or OR. Each node in the tree evaluates against the document facts. If users can enter text, parse it into the tree before evaluation.
+- **Configuring routing conditions.** An administrator combines conditions over submission categories and supported attributes. Bound the operator set, argument types, and expression depth so users can predict the result. Use ordinary expressions in code when the business has only a few fixed rules.
+
 ## When a simpler approach is enough
 
 A single hard-coded rule is easiest to read as a Boolean expression. If an application already uses a mature query language for the same purpose, rely on its supported predicates and validation.
